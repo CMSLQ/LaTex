@@ -1,0 +1,1671 @@
+\documentclass[colclass=cmspaper]{combine}
+\usepackage{lineno}
+\begin{document}
+\begin{linenumbers}
+\pagestyle{combine}
+
+%\documentclass{cmspaper}
+%\begin{document}
+
+\begin{titlepage}
+
+% select one of the following and type in the proper number:
+   %\cmsnote{2008/000}
+  \cmsan{2008/000}
+%  \internalnote{2005/000}
+%  \conferencereport{2005/000}
+   \date{29 August 2008}
+
+
+  \title{Search for First Generation Scalar Leptoquarks at the CMS experiment}
+
+  \begin{Authlist}
+   Sarah Eno, Paolo Rumerio, Francesco Santanastasio, Elizabeth Twedt
+       \Instfoot{cern}{University of Maryland, College Park, MD, USA}
+  \end{Authlist}
+
+
+  \begin{abstract}
+    The discovery potential for pair production of first generation scalar leptoquarks 
+    decaying to an electron and quark is investigated 
+    at the CMS experiment using Monte Carlo samples produced with a full simulation of the detector response.  
+    The analysis strategy is defined assuming an available integrated luminosity of 100 pb$^{-1}$.
+    Event selection and reconstruction and identification of high energy electrons and jets are discussed.
+    The electron-jet invariant mass distribution is reconstructed
+    and used to identify the possible presence of a leptoquark signal.
+    Data-driven techiques are discussed to determine the main Standard Model backgrounds using 
+    control samples. The signal yield is extracted using a maximum likelihood fit to the 
+    electron-jet invariant mass distribution, and the significance of the measurement is estimated.
+    Finally the CMS discovery potential is quantified for different leptoquark mass hyphotheses.
+
+%The leptoquarks are assumed to decay exclusively to electrons and quarks.  Detailed explanations of the discovery techniques and data driven methods to extract the signal from background events are given.  
+%Both exclusion limits and discovery potential are discussed for masses of the leptoquark ranging from around the current limit of 251 GeV to 1 TeV.
+  \end{abstract} 
+
+\end{titlepage}
+
+\setcounter{page}{2}%JPP
+
+\section{Introduction}
+
+This note describes the analysis techniques that will be used to search for evidence of first generation scalar leptoquarks 
+at the CMS experiment. The methods described are evaluated using Monte Carlo (MC) simulations assuming an availability of 
+100 pb$^{-1}$ of integrated luminosity and 7 TeV proton beams.
+
+Leptoquarks (LQ) are conjectured exotic particles with both baryon and lepton number, allowing their decay into a lepton and quark.    
+Several models of new physics beyond the Standard Model (SM) predict the existence of leptoquarks, including General Unified Theories, 
+technicolor and composite models \cite{theories}.  
+%% OTHER MODELS (SUSY WITH R-PARITY???)
+
+These exotic particles carry color and fractional electric 
+charge, and may be either scalar or vector particles. Three generations of leptoquarks are predicted, 
+corresponding to the generations of quarks and leptons in the SM.  Intergenerational coupling of leptoquarks is forbidden 
+due to the experimental limits on flavor changing neutral currents. 
+
+The model parameters are 1) $M_{LQ}$, the LQ mass, 2) $\beta$, the branching ratio of the decay 
+$\mbox{LQ} \rightarrow l + q$, where $l$ is a charged lepton and $q$ is a quark, 
+3) $\lambda_{\mbox{LQ}lq}$, the coupling between LQ, lepton and quark ($\mbox{LQ}-l-q$ vertex). 
+The results of the HERA experiments show that the data are in agreement with a scenario of weak 
+$\lambda_{\mbox{LQ}lq}$ coupling \cite{hera}. The choice is to fix the paramameter 
+$\lambda_{\mbox{LQ}lq} = \lambda_{EM} \approx 0.3$, which gives 
+a theoretical LQ relative width ($\Gamma_{LQ}/M_{LQ}$) around 0.2\%. 
+Therefore the measurement of $\Gamma_{LQ}/M_{LQ}$ cannot be performed at LHC, since 
+it is completely dominated by the detector resolution.  
+
+Experiments at the Tevatron have placed the current lower limit on the mass of first generation scalar 
+leptoquarks around 290 GeV (assuming $\beta=1$ in the electron channel) \cite{d02008}.
+At the LHC, the dominant production modes of leptoquarks will be through gluon-gluon fusion and 
+quark-antiquark annihilation producing a leptoquark-antileptoquark pair. 
+The cross section of these two processes is almost independent from the value of 
+$\lambda_{\mbox{LQ}lq}$, since there is no $\mbox{LQ}-l-q$ vertex in the Feynman diagram 
+at leading order. This note studies the signal of first generation scalar leptoquarks decaying into electron and 
+(light) quark with a branching ratio $\beta=1$. 
+For this scenario, the experimental signature of a LQ event is striking: two 
+high transverse momentum electrons and two high transverse momentum jets 
+whose combination gives a peak in the electron-jet invariant mass 
+spectrum corresponding to the LQ mass. No true missing transverse energy is expected in LQ events.
+
+This note is organized as follows. 
+The signal and background MC samples used in this study are described in Section \ref{sec:MCSamples}.
+The online selection and the trigger efficiency to select LQ events are discussed in Section \ref{sec:trig}.
+The LQ signal is reconstructed using mainly data from the
+electromagnetic (ECAL) and hadronic (HCAL) calorimeters for energy measurements, while tracker information 
+is mostly used for electron identification and isolation. 
+The reconstruction and identification of high energy electrons and jets are described respectively 
+in Section \ref{sec:electrons} and \ref{sec:jet}.
+Techniques used here to identify the LQ signal include a search for features in the invariant mass
+spectrum of the electron-jet pairs, and data driven techniques to estimate 
+and separate the dominant background processes.
+In Section \ref{sec:eventSelection}, the analysis strategy and the efficiencies of the selection criteria 
+are discussed. Data-driven techniques for background estimate are presented in Section \ref{sec:bkgStudy}.
+Finally the procedure for signal extraction, and the CMS discovery potential in this channel are described
+respectively in Section \ref{sec:signalExtraction} and \ref{CMSpotential}.
+
+
+%Experiments at the Tevatron have placed the current lower mass limit of the first generation scalar leptoquark at 251 GeV (assuming a branching ratio of 1 into electrons) \cite{d02007}.  This study includes 
+%signal samples produced at a range of masses from 250 GeV to 1 TeV.  Monte Carlo simulation studies show the reach of CMS to be leptoquarks of masses around 1 TeV.  Assuming a mass of the leptoquark at the 
+%current limit the studies show a $5 \sigma$ discovery possibility with just above $5pb^{-1}$ of integrated luminosity.  With the full statistics used in this study of  $100pb^{-1}$  a leptoquark of mass close 
+%to 500 GeV could be discovered with a significance of $5 \sigma$.
+%Limits if no discovery?
+
+\section{Monte Carlo Samples} \label{sec:MCSamples}
+
+%By far the dominant process is that of gluon-gluon 
+%fusion, as can been seen in table~\ref{tab:CTEQ6} where the leading order and next to leading order cross sections are shown, 
+%as well as the ratio of the processes contributing to the total cross section.  
+%A more detailed description of the calculations of these numbers can be found in ~\cite{Kramer}.
+
+%  \begin{table}[htb]
+%    \caption{\small \sl Cross Section and K-factors using CTEQ6L1 and CTEQ6M parton densities for LQ productions at a variety of LQ masses\cite{Kramer} }
+%    \label{tab:CTEQ6}
+%    \begin{center}
+%      \begin{tabular}{|l|cccc|} \hline
+%           $M_{LQ}$ (GeV) & $\sigma_{LO}$ & $\sigma_{NLO}$ & gg:qq:gq & K \\ \hline
+%        200  & $0.500\times10^{2}$ &  $0.742\times10^{2}$ &  $0.94:0.05:0.01$ &  $1.48$  \\ \hline
+%        400  & $0.140\times10^{1}$ &  $0.224\times10^{1}$ &  $0.91:0.10:-0.01$ &  $1.60$  \\ \hline
+%        600  & $0.135$ &  $0.225$ &  $0.88:0.15:-0.03$ &  $1.67$  \\ \hline
+%        800  & $0.219\times10^{-1}$ &  $0.378\times10^{-1}$ &  $0.84:0.19:-0.03$ &  $1.73$  \\ \hline
+%        1000  & $0.471\times10^{-2}$ &  $0.836\times10^{-2}$ &  $0.82:0.22:-0.04$ &  $1.77$  \\ \hline
+%      \end{tabular}
+%    \end{center}
+%  \end{table}
+
+MC signal samples are generated with leptoquark masses ranging from 250 GeV to 1 TeV and $\beta=1$. 
+At the LHC the three main processes by which leptoquark pair production could occur are gluon-gluon fusion, 
+quark-antiquark annihilation, and quark-gluon fusion. In the mass range investigated the dominant process is gluon-gluon fusion. 
+
+The Full Simulation (FullSim) signal samples are produced using 
+CMSSW\_1\_4\_12 (pythia version 6.227 and GEANT 4) 
+for generation and simulation, and CMSSW\_1\_6\_7  for digitization and reconstruction. 
+These CMSSW versions are chosen in order to produce samples
+compatible with the officially produced background samples described later in this section. 
+These signal samples have been produced with a 100 $\mbox{pb}^{-1}$ mis-calibration and mis-alignment 
+scenario of the detector performances. Table~1
+%\ref{tab:NumEvents} 
+shows the number of events and the cross sections at leading order (LO) for samples generated at different LQ mass.
+
+Additionally, samples produced with the Fast Simulation (FastSim) in CMSSW version 1\_6\_9 are 
+studied in order to validate the quality of the FastSim process. The FastSim uses a parameterization 
+of the detector response instead of using the full GEANT-based simulation to determine the detector response.
+The FastSim samples are created with the same mis-calibration and mis-alignment scheme as the FullSim samples. 
+%Table ~\ref{tab:FastVsFullSim} shows the relative time and size advantage of using the FastSim over the FullSim for leptoquark event production.  
+The use of the FastSim would be highly beneficial to this analysis, as the production of events with such large EM showers, and large numbers of particles generated 
+are quite time consuming in the FullSim.  
+%The comparison of the MC events generated with FullSim to the FastSim shows an agreement at few \% level in 
+%the shape of reconstructed quantities, and some discrepancies around 5-10\% in the reconstruction efficiencies. 
+Plots comparing various reconstructed quantities are included in some sub-sections of this note.  
+The main results of this analysis, including selection efficiencies and discovery potential are obtained with FullSim samples.
+
+%\begin{table}[htb]
+%  \label{tab:NumEvents}
+%  \begin{center}
+%    \begin{tabular}{|l|ccc|} \hline
+%%      & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\ 
+%      LQ mass (GeV) & FullSim & FastSim & $\sigma_{LO}$ (pb) \\ \hline
+%      250  & 1k  &  20k  &  14   \\
+%      400  & 1k  &  20k  & 1.2    \\
+%      650  & 2.5k &  20k  & 0.076    \\
+%      1000 & 1k  &  20k  & 0.0047    \\
+%      \hline
+%    \end{tabular}
+%    \caption{\small \sl Number of generated events and cross sections at LO, for LQ MC samples with various masses.  
+%      FullSim samples made with CMSSW\_1\_4\_12 + CMSSW\_1\_6\_7, FastSim samples made with CMSSW\_1\_6\_9.}
+%  \end{center}
+%\end{table}
+%
+\begin{table}[htb]
+  \label{tab:NumEvents}
+  \begin{center}
+    \begin{tabular}{|l|ccc|} \hline
+%      & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\ 
+      LQ mass (GeV) & FullSim & FastSim & $\sigma_{LO}$ (pb) \\ \hline
+      250  & 1k  &  20k & 14 \\
+      400  & 1k  &  20k & 1.2 \\
+      650  & 2.5k &  20k & 0.076 \\
+      1000 & 1k  &  20k & 0.0047 \\
+      \hline
+    \end{tabular}
+    \caption{\small \sl Number of generated events and cross sections at LO, for LQ MC samples with various masses.  
+      FullSim samples made with CMSSW\_1\_4\_12 + CMSSW\_1\_6\_7, FastSim samples made with CMSSW\_1\_6\_9.}
+  \end{center}
+\end{table}
+
+ 
+%from : twiki.cern.ch/twiki/bin/view/CMS/CSA07Physics
+%https://twiki.cern.ch/twiki/bin/view/CMS/GeneratorProduction2007CSA07
+
+
+%  \begin{table}[htb]
+%    \caption{\small \sl Average time needed to produce one event and size of one event for samples in FastSim and FullSim}
+%    \label{tab:FastVsFullSim}
+%    \begin{center}
+%      \begin{tabular}{|l|c|cccc|} \hline
+%               & \multicolumn{1}{c|}{FullSim} & \multicolumn{4}{c|}{FastSim} \\ 
+%        Leptoquark Mass (GeV) &  650 & 250 & 400 & 650 & 1000  \\ \hline
+%        Time per Event (sec) & 330  &  X  & 2.1  & 2.4  &  2.7     \\
+%        Size of Event (kbytes)  & 3.5M (Reco) & Y & 116k &  123k & 132k  \\ \hline
+%
+%      \end{tabular}
+%    \end{center}
+%  \end{table}
+
+%twiki.cern.ch/twiki/bin/view/CMS/FastSimPhysicsValidationInfo
+%twiki.cern.ch/twiki/bin/view/CMS/SWGuideFastSimulation
+
+The SM background samples are taken from the CSA07 official production,
+which consists of more than 150M events of various SM processes roughly representing the first 100 pb$^{-1}$ of LHC data.
+All events are generated and simulated with CMSSW\_1\_4\_12 and reconstructed with CMSSW\_1\_6\_7. 
+The CSA07 samples used for this analysis are listed below:
+\begin{itemize}
+%
+\item $t\bar{t}$+Njet events (where N=0,1,..,4), generated with ALPGEN \cite{Mangano:2002ea} inclusive production (all decays), LO-NLO K factor applied 
+in the cross section; 
+%
+\item $Z/\gamma$+Njet events (where N=0,1,..,5), generated with ALPGEN, $ 0 < P_{T}^{Z/\gamma} < 300 $ GeV and $40<M_{Z/\gamma}<200$ GeV, 
+$Z/\gamma*$ decaying into charged leptons;  
+%
+\item $W$+Njet events (where N=0,1,..,5), generated with ALPGEN, $ 0 < P_{T}^{W} < 300 $ GeV, $W$ decaying into leptons;  
+%
+\item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
+%
+\item $\gamma$+jet events, generated with PYTHIA, $ 0 < P_{T}^{jet} < 7000 $ GeV;  
+%
+\item $WW$, $WZ$, $ZZ$ events, generated with PYTHIA, inclusive production (all decays).
+\end{itemize} 
+
+%In the CSA07 production there were three flavors of Standard Model event combinations, two of which were used in this analysis: 
+%the {\sl Chowder} contains ALPGEN W+jet, Z+jet and tt+jet samples, and the {\sl Gumbo} which contains QCD, Photon+jets, MinBias.  
+%The event samples for each process within the soups were produced with numbers of events corresponding to a variety of integrated luminosities. 
+%In order to scale the sample sizes correctly a central module that calculates the event weights has been used ({\sl CSA07EventWeightProducer.cc}) . 
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document}
+\section{Trigger Studies} \label{sec:trig}
+% why I did it...
+%All the trigger plots and explanations
+%Quality of selection
+%eff before and after analysis cuts, justification
+
+The presence in the final state of two high energy electrons is exploited for the online selection 
+of candidate leptoquark-antileptoquark events. 
+Three electromagnetic High Level Trigger (HLT) paths have been investigated
+ \footnote{In the most recent HLT trigger table these names have been changed to $HLT\_EM80$, $HLT\_EM200$, 
+and $HLT\_IsoEle18\_L1R$.}
+%In the most recent HLT trigger table these names have been chaged to HLT_EM80, HLT_EM200, and HLT_IsoEle18_L1R}
+:
+\begin{itemize}
+\item the EMHighEt trigger 
+\item the EMVeryHighEt  trigger
+\item the SingleElectronRelaxed trigger.
+\end{itemize}
+
+The EMHighEt and EMVeryHighEt triggers have been specifically designed in order to have a high 
+efficiency for electrons and photons with high transverse energy. 
+Their input is the Level-1 relaxed single electromagnetic trigger.
+EMHighEt triggers on a high transverse energy electromagnetic deposit (supercluster) with
+$E_t>80~$GeV and loose isolation requirements (less than 5 GeV deposit in a 
+cone of $\Delta R<0.3$ \footnote{$\Delta R=\sqrt{\Delta\eta^2 + \Delta\phi ^2}$} in ECAL, less than 
+8 GeV in cone of $0.15<\Delta R<0.3$ in HCAL and less than 4 tracks in a cone $\Delta R<0.3$ of the tracker).
+EMVeryHighEt triggers on a very high transverse energy supercluster with $E_t>200~$GeV and no isolation 
+requirements. SingleElectronRelaxed selects an electron with $E_t>18~$GeV, an HCAL over ECAL energy ratio less than 5\%, 
+and $(1/E-1/p)<0.03$. More details on these triggers can be found in \cite{HeepHlt}.
+% see https://twiki.cern.ch/twiki/bin/view/CMS/HEEPOnline
+% https://twiki.cern.ch/twiki/bin/view/CMS/HighLevelTrigger06ExerciseDocumentation
+% CMS AN 2007/009 and CMS Note 2006/078
+
+The efficiencies for leptoquark events of the considered triggers have been studied with the FullSim 
+samples of Section~\ref{sec:MCSamples} at four leptoquark mass points and are reported in Table~\ref{tab:HLTeffic} and 
+Fig.~\ref{fig:HLTeffic}.
+% The efficiency of the OR of the 2 high energy triggers is high in the mass range ...
+At a luminosity of $10^{32}~cm^{-1}s^{-1}$ the estimated rates of the EMHighEt, EMVeryHighEt and SingleElectronRelaxed triggers 
+are 0.5, 0.1 and 10 Hz, respectively.
+In order to guarantee a high efficiency and at the same time contain the data sample size, the current decision is to perform 
+the analysis on the OR of the EMHighEt and EMVeryHighEt triggers.
+
+
+  \begin{table}[htbp]
+    \caption{\small \sl High Level Trigger efficiencies for LQ events at different mass. 
+      Single triggers and their $OR$ are shown.}
+    \label{tab:HLTeffic}
+    \begin{center}
+      \begin{tabular}{|l|cccc|} \hline
+               & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\
+                                                     & 250 & 400 & 650 & 1000 \\ \hline
+        EMHighEt                                     & 0.838$\pm$.012 & 0.933$\pm$.008 & 0.938$\pm$.005 & 0.944$\pm$.007   \\
+        EMVeryHighEt                                 & 0.230$\pm$.013 & 0.648$\pm$.015 & 0.937$\pm$.005 & 0.990$\pm$.003   \\ 
+        SingleElectronRelaxed                        & 0.805$\pm$.012 & 0.808$\pm$.013 & 0.765$\pm$.009 & 0.667$\pm$.015   \\ \hline
+        EMHighEt OR EMVeryHighEt                     & 0.850$\pm$.011 & 0.963$\pm$.006 & 0.985$\pm$.002 & 0.994$\pm$.002   \\
+        The above OR SingleElectronRelaxed           & 0.950$\pm$.007 & 0.979$\pm$.005 & 0.989$\pm$.002 & 0.995$\pm$.002   \\ \hline
+      \end{tabular}
+    \end{center}
+  \end{table}
+
+\begin{figure}[htbp]
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{12cm}{!}{\includegraphics{plots/triggerEffic.eps}} 
+  \end{tabular}
+    \caption{\small \sl High Level Trigger efficiencies for LQ events at different mass. 
+      Single triggers and their $OR$ are shown.}
+    \label{fig:HLTeffic}
+  \end{center}
+\end{figure}
+
+
+
+
+% add here the 1/30 of singleElecRelaxed?
+
+%\end{document}
+
+% \documentclass{cmspaper}
+%\begin{document}
+
+\section{Electron Studies} \label{sec:electrons}
+
+\subsection{Identification and Isolation} \label{sec:IdAndIso}
+
+An electron reconstructed object is formed from a deposit of energy in ECAL (called ``supercluster'') with a track pointing towards it.
+In this study the standard ``PixelMatchGsfElectrons'' collection is used \cite{GSFele}.
+In this reconstruction algorithm the supercluster is first matched to hits in the pixel detector.
+The pixel hits are then used to seed track finding.  Finally a track fit is performed using the Gaussian Sum Filter 
+(GSF) algorithm, which allows the track to be reconstructed up to the ECAL surface
+despite kinks due to radiated bremsstrahlung.  
+The $P_{T}$ and $\eta$ of the electrons are calculated using both calorimeter and tracker informations, 
+taking into account the different detector resolutions as a function of $P_{T}$.
+Standard CMSSW corrections are applied to set correctly the electromagnetic (e.m.) energy scale.
+%that is matched with hits in the pixel detector.  Few electrons loose momentum to radiated photons before the pixel detector since the majority of the material in the tracker is after the pixels.  Thus, the energy-weighted average impact point of the electrons and radiated photons with the supercluster will correspond well with the track found using these pixel hits as seeds.  
+
+The criteria for electron identification (ID) at the reconstruction level are very loose, resulting in several fake electrons 
+in the collection. In this analysis the HEEP selections for electron ID and isolation \cite{EleID}, which is optimized for 
+electrons with an energy of hundreds of GeV, have been applied in an effort to 1) keep the efficiency high on electrons with high $P_{T}$ from LQ decays, and 
+2) reduce the number of jets faking electrons in the collection.
+The definitions of the variables are the following:
+%
+\begin{itemize}
+%
+\item $H/E$: the ratio of the hadronic energy of all the HCAL Rec Hits in a cone of $\Delta R=0.1$, centered on the 
+electron's position in the calorimeter, to the electromagnetic energy of the supercluster associated to the electron;
+%
+\item $\sigma_{\eta\eta}$: the shape variable, which describes the electron shower size along the $\eta$ direction, is 
+defined as 
+\begin{displaymath}
+\sigma_{\eta\eta} = \sum_{i \in \mathrm{crystals}} ( \eta_i - \eta_s )^2 \frac{E_i}{E_{\mbox{seed cluster}}} \quad ,
+\end{displaymath}
+where $i$ is the index of a crystal, and $s$ is the index of the seed cluster of the electron's supercluster;
+%
+\item $\Delta\eta_{in}$ and $\Delta\phi_{in}$: the difference in $\eta$ and $\phi$ between the track position as 
+measured in the inner layer tracker, extrapolated to the ECAL surface, and the $\eta$ and $\phi$ of the supercluster;
+%
+\item number of tracks: with $P_{T}>1.5$ GeV in a cone of $0.1 < \Delta\mbox{R} < 0.2 $ around the electron direction;
+%
+\item track isolation: the sum of the $P_{T}$ of the tracks (as defined above) divided by the $E_{T}$ of the supercluster;
+%
+\item e.m. isolation: the transverse electromagnetic energy of all the clusters in a cone $\Delta\mbox{R} < 0.3$ centered on the 
+electron's position in the calorimeter, excluding the clusters that make up the supercluster;
+%
+\item hadronic isolation: the transverse hadronic energy of all the HCAL Rec Hits with an $E_{T}>0$ in a cone of
+$0.15 < \Delta\mbox{R} < 0.3$ centered on the electron's position in the calorimeter. 
+%
+\end{itemize}
+
+Figure~\ref{fig:elecID} and Figure~\ref{fig:elecIso} show, respectively, the distributions of ID and isolation variables, 
+for both true electrons coming from LQ decays, and fake electrons from the sample of QCD multi-jets events. 
+Table~3
+%\ref{tab:HEEPselection} 
+summarizes the cuts from HEEP selection which are 
+used in this analysis. In addition only reconstructed electrons with $P_{T}>30$ GeV and 
+within the ECAL fiducial region 
+$|\eta|<1.4$ + $1.6<|\eta|<2.0$ are included in the electron collection used in the analysis.  
+
+Recentely the HEEP selection criteria have been sligthly improved on e.m. and hadronic isolation, 
+leading to a better rejection of jets faking electrons, and keeping the same efficiency on real electrons.
+The impact of this improved selection criteria on the results here presented will be investigated in 
+future upgrades of this analysis. 
+
+%The quantities used in this definition are the ratio of hadronic to electromagnetic energy (H/E), shower shape along psudorapidity ($\sigma_{\eta\eta}$), difference in psudorapidity between the track and the supercluster ($\Delta\eta_{in}$), and the difference in phi between the track and supercluster ($\Delta\phi_{in}$). These cuts are appropriate for start up conditions as they allow a high efficiency.  The quatities and values used for these selection can be found in table~\ref{tab:ElecIdIso}. Figure~\ref{fig:elecID} shows the distributions of these variables for both true electrons coming from the leptoquark decays and fake electrons from a QCD sample.
+
+%Further cleaning of the collection is achieved through requiring that the electron be isolated.  The three quantities considered are the number of tracks within a cone of radius 0.2 of the contact with the supercluster, the ratio of the sum of transverse energy of tracks within a cone of radius 0.2 to that of the electron track (Track Et ratio), and the ratio of transverse energy in the ECAL within a cone of radius 0.4 to that of the electron (ECAL Et ratio).  These are also found in table~\ref{tab:ElecIdIso}.  The distributions of these variables for both true electrons from the leptoquark decay and fake electrons from QCD events can be seen in figure~\ref{fig:elecIso}
+ 
+%From : twiki.cern.ch/twiki/bin/view/CMS/SWGuideEgamma
+
+% Robust Electron Def from : twiki.cern.ch/twiki/bin/view/CMS/SWGuideElectronID
+% Ele Isolation from : twiki.cern.ch/twiki/bin/view/CMS/SWGuideEgamma 
+
+%Still need description of these plots, like what cuts were used...
+
+%\begin{2figures}{hbtp}
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleDeltaEtaTrkSC.eps}} &
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleDeltaPhiTrkSC.eps}} \\
+%  \caption{eleDeltaEtaTrkSC}
+%  \label{fig:eleDeltaEtaTrkSC} &
+%  \caption{\small \sl eleDeltaPhiTrkSC}
+%  \label{fig:eleDeltaPhiTrkSC} \\
+%\end{2figures}
+%\begin{2figures}{hbtp}
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleHoE.eps}} &
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleSigmaEE.eps}} \\
+%  \caption{\small \sl eleHoE}
+%  \label{fig:eleHoE} &
+%  \caption{\small \sl eleSigmaEE}
+%  \label{fig:eleSigmaEE} \\
+%\end{2figures}
+%\begin{2figures}{hbtp}
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleNumTrkIso.eps}} &
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleEcalIso.eps}} \\
+%  \caption{\small \sl eleNumTrkIso}
+%  \label{fig:eleNumTrkIso} &
+%  \caption{\small \sl eleEcalIso}
+%  \label{fig:eleEcalIso} \\
+%\end{2figures}
+%\begin{figure}
+%  \begin{center}
+%    \resizebox{0.5\linewidth}{!}{\includegraphics{plots/h_eleTrkIso.eps}}
+%    \caption{\small \sl eleTrkIso}
+%    \label{fig:eleTrkIso}
+%  \end{center}
+%\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleHoE.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleSigmaEE.eps}} \\
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleDeltaEtaTrkSC.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleDeltaPhiTrkSC.eps}} \\
+  \end{tabular} 
+  \caption{\small \sl Distribution of electron ID variables for true electrons coming from the decay of a 650 GeV mass LQ, and for fake electrons from 
+the sample of QCD multijets events. Reconstructed electrons with $P_{T}>150$ 
+GeV are showed. Reconstructed electrons from LQ decay are matched with generated electrons if $\Delta$R between them is less than 0.02. The left(right) peak in the $\sigma_{\eta\eta}$ distribution is relative to electrons falling in the 
+ECAL barrel(endcap).}
+ \label{fig:elecID}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleNumTrkIso.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleTrkIsoAbs.eps}}\\
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleEcalIsoAbs.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleHcalIsoAbs.eps}} \\
+  \end{tabular}
+  \caption{\small \sl Distribution of electron isolation variables for true electrons coming from the decay of a 650 GeV mass LQ, 
+    and for fake electrons from the sample of QCD multijets events. Reconstructed electrons with $P_{T}>150$ GeV are showed. 
+    Reconstructed electrons from LQ decay are matched with generated electrons if $\Delta$R between them is less than 0.02.}
+    \label{fig:elecIso}
+  \end{center}
+\end{figure}
+
+\begin{table}[htbp]
+  \label{tab:HEEPselection}
+  \begin{center}
+    \begin{tabular}{|lcc|lcc|} \hline
+      \multicolumn{3}{|c|}{ID Variables} & \multicolumn{3}{|c|}{Isolation Variables} \\ 
+      Variable & Barrel & Endcap & Variable & Barrel & Endcap  \\ \hline
+      $H/E$  & $<0.05$ & $<0.08$ & number of tracks  & $<4$ & $<4$ \\ \hline
+      $\sigma_{\eta\eta}$  & $<0.011$ & $<0.0275$ & track isolation (GeV) & $<7.5$ & $<15$ \\ \hline
+      $|\Delta\eta_{in}|$  & $<0.005$ & $<0.007$ & e.m. isolation (GeV) & $<6+0.01*E_{t}$ & $<6+0.01*E_{t}$ \\ \hline
+      $|\Delta\phi_{in}|$  & $<0.09$ & $<0.09$ & hadronic isolation (GeV) & $<4+0.005*E_{t}$ & $<4+0.005*E_{t}$ \\ \hline
+    \end{tabular}
+  \caption{\small \sl HEEP electron identification and isolation selection criteria}
+  \end{center}
+\end{table}
+
+
+\subsection{Acceptance and Reconstruction Efficiency}
+
+Electrons coming from leptoquark decays, 
+being typically isolated from jets and having a $P_{T}$ of hundreds of GeV can be easily reconstructed with high efficiency. 
+Table~4
+%\ref{tab:ElecEffAcc} 
+shows the electron acceptance in the fiducial region ($A_{FR}$), the 
+reconstruction efficiency within the fiducial region ($\varepsilon_{FR}^{reco}$), and the overall reconstruction efficiency 
+($A_{FR} \times \varepsilon_{FR}^{reco}$) for single electrons coming from LQ decays at different LQ mass.
+The overall reconstruction efficiency on a single electron, including the acceptance cuts, is around $70\%$ for LQ masses between 250 GeV and 1 TeV.
+As an illustration, Figure \ref{fig:elecEffFV} shows the reconstruction efficiency of an electron
+from a LQ of mass 650 GeV as a function of $\eta$. The plot has been done using the FastSim 
+due to the higher statistics available in FastSim samples with respect to FullSim ones. 
+%Inside the fiducial region, the reconstruction efficiency is high, and only slightly dependent on $\eta$. 
+A relevant loss of efficiency is seen in the region around $|\eta| \approx 1.5$ due to the detector crack between the ECAL barrel and the endcaps, 
+which is excluded from the analyis. %INEFFICIENCY AT HIGH ETA? 
+
+\begin{table}[htb]
+  \label{tab:ElecEffAcc}
+  \begin{center}
+    \begin{tabular}{|l|c|c|c|} \hline
+      LQ mass (GeV) & $A_{FR}$ & $\varepsilon_{FR}^{reco}$ & $A_{FR} \times \varepsilon_{FR}^{reco}$\\ \hline
+      250 & 80.8\% & 88.1\% & 71.2\% \\ \hline
+      400 & 84.4\% & 87.1\% & 73.5\% \\ \hline
+      650 & 87.3\% & 86.6\% & 75.6\% \\ \hline
+      1000 & 89.2\% & 83.1\% & 74.1\% \\ \hline
+    \end{tabular}
+    \caption{\small \sl Electron acceptance in the fiducial region ($A_{FR}$), the 
+      reconstruction efficiency within the fiducial region ($\varepsilon_{FR}^{reco}$), and the overall reconstruction efficiency 
+      ($A_{FR} \times \varepsilon_{FR}^{reco}$) for single electrons coming from LQ decays. Efficiency are 
+      calculated using FullSim samples at different LQ mass. Statistical relative errors on efficiency are less than 2\%.}
+  \end{center}
+\end{table}
+
+\begin{figure}
+  \begin{center}
+    \resizebox{9cm}{!}{\includegraphics{plots/Ele_eff_M650GeV.eps}}
+    \caption{\small \sl Electron reconstruction efficiency as a function of $\eta$. The filled area represents the  
+      ECAL regions out of the fiducial volume defined at \ref{sec:IdAndIso}. The plot is done using a 
+      LQ sample of 650 GeV mass produced with FastSim.}
+    \label{fig:elecEffFV}
+  \end{center}
+\end{figure}
+
+% indico.cern.ch/getFile.py/access?contribId=3&resId=0&materialId=slides&confId=32048
+
+\subsection{Comparison of Electron Variables between FastSim and FullSim} \label{sec:elecFastSimCompare}
+%\subsection{Kinematic Distributions for Signal Electrons}
+An effort is made to compare reconstructed quantities between FastSim and FullSim for high energy electrons.
+The comparison is performed using LQ samples produced with FastSim in CMSSW\_1\_6\_9. 
+Several kinematics variables, ID and isolation variables, and efficiencies have been investigated. 
+Figure \ref{fig:elecVariables} shows the distributions of some of these quantities for reconstructed electrons from LQ decay 
+for both FastSim and FullSim.
+A generally good agreement within a few \% is found in the shape of all the distributions studied for reconstructed electrons matched 
+with real electrons from LQ decay. Some discrepancies of up to 5\% are observed in the electron 
+reconstruction efficiency,  which is overestimated in FastSim. 
+These studies will be repeated in future with more recent versions of FastSim in order to verify if the level 
+of agreement with FullSim, in particular for the efficiency, has been improved. 
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{c}
+    %\resizebox{9cm}{!}{\includegraphics{plots/Ele_eff_M650GeV.eps}}
+    \resizebox{10cm}{!}{\includegraphics{plots/pT_eta_FastVsFull_M650.eps}} \\
+    \resizebox{10cm}{!}{\includegraphics{plots/DPhi_DEta_FastVsFull_M650.eps}} \\ 
+%  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+%  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \end{tabular}
+  \caption{\small \sl Distributions of some reconstructed quantities for electrons from LQ decay, 
+    obtained with FastSim (blue filled histogram) and FullSim (black dots) 
+    samples with $M_{LQ}=650$ GeV.
+    From the top-left to the bottom-right: $P_{T}$, $\eta$, $\Delta\phi_{in}$, $\Delta\eta_{in}$.}
+  \label{fig:elecVariables}
+  \end{center}
+\end{figure}
+
+%efficiency (pT, eta) (no deltaR from genJet since already showed distance OK above)
+%pT, eta dist
+%{\Large \sl Energy Resolution}
+%fast vs full
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document}
+\section{Jet Studies} \label{sec:jet}
+%from : /twiki.cern.ch/twiki/bin/view/CMS/WorkBookJetAnalysis
+
+\subsection{Jet Algorithm and Disambiguation}
+%monicava.web.cern.ch/monicava/Talks/JetTutorial130.pdf
+%http://64.233.169.104/search?q=cache:ON_R5d7inNQJ:arxiv.org/pdf/0705.2696+iterative+cone+algorithm&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a
+
+The reconstruction jet algorithm used in this analysis is an interative cone algorithm with a radius of $\Delta R=0.5$ \cite{JetAlg}.  
+The algorithm starts with seeds in a calorimeter tower (combined ECAL and HCAL) with energy greater than 
+1 GeV. It then considers the weighted average of all energy in the cone of radius 0.5 around this seed to form a proto-jet.  
+A cone of radius 0.5 is then constructed around the four-vector of each new proto-jet,  
+and the process is continued iteratively until a stable jet four-vector is obtained.
+
+This algorithm allows high energy electrons to be included in the jet collection. 
+In order to remove the electrons from the jet collection (disambiguation) a simple procedure is applied.  The collection 
+of electrons passing the ID selection criteria is first create, as described in Section \ref{sec:electrons}.  The three-vector of the 
+two leading electrons with highest $P_{T}$ is then compared to the three-vector of the jets. 
+A jet is dismissed if it is within a $\Delta R$ of 0.5 from one of the two leading electrons. 
+
+%   1.  convert ADC counts to energy in one calorimeter cell
+%          * HcalSimpleReconstructor does this calculation for HCAL
+%          * ECAL does it in two steps
+%                o first produces uncalibrated hits: EcalWeightUncalibratedRecHitProducer
+%                o then calibrates hits: EcalAnalFitUncalibratedRecHitProducer 
+%   2. combine ECAL and HCAL cells into projective towers corresponding to HCAL granularity
+%          * CaloTowersCreator does this operation 
+%   3. convert CaloTowers into standard objects CaloTowerCandidateCreator (see more details in the next section)
+%   4. run clustering algorithm to produce Jets
+%          * Several basic algorithms and corresponding producers are currently implemented for CMS
+%                o Midpoint Cone algorithm: midpointJetProducer <-- used in this tutorial
+%                o Iterative Cone algorithm: iterativeConeJetProducer
+%                o KT algorithm: ktJetProducer
+%                o Seedless Infrared Safe cone algorithm: sisConeProducer 
+
+\subsection{Jet Energy Corrections}
+
+The corrections for the Jet Energy Scale (JES) are divided into various levels in CMSSW \cite{JES}.  
+In this analysis the jet energy is corrected with the level 2, 3, and 5 corrections.  
+
+The level 2 jet energy corrections are the 
+``relative jet corrections'', and correct the energy in order to have a uniform response in psudorapidity.  
+The level 3 corrections are the ``absolute jet corrections''.  These aim at correcting the jet energy in the 
+region of $\eta < 1.3$ back to the particle level energy, which would correspond to the generator jet energy in the MC samples. 
+Figure~\ref{fig:CorrRatios}-left shows the ratio of the energy of the jets, after 
+the level 2 and 3 corrections have been applied, to the uncorrected jet energy.  
+The level 2 and 3 corrections are the standard CMSSW corrections recommended for all analysis. 
+The corrections change the energy of the jets 20\% on average.
+
+In addition, level 5 corrections are applied to take into account the flavor of the parton from which the jet originated.
+Figure~\ref{fig:CorrRatios}-right shows the mean correction factor for the jets based on the level 5 corrections for light quarks.  
+There is a change of only a few percent in the overall energy of the jet.  
+
+The level 2 and 3 corrections are calculated for samples enriched in gluon-jets (as QCD multi-jet events). Jets from 
+first generation LQ decays, however, come only from light quarks instead of a mixture of quarks and gluons.  Since the gluon-jets have
+a softer fragmentation function, the level 2 and 3 corrections tend to overcompensate the loss of energy when applied to jets originated 
+from quarks. This is the reason why the level 5 corrections for light quarks decrease the average energy of the jet, 
+as shown in Figure~\ref{fig:CorrRatios}-right. 
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{7.5cm}{!}{\includegraphics{plots/L23Raw.eps}} &
+  \resizebox{7.5cm}{!}{\includegraphics{plots/L5L23.eps}} \\
+  \end{tabular}
+  \caption{\small \sl Left - Mean ratio of jet energy after the level 2 and 3 corrections to that with no correction as a function of $P_T$. Right 
+    - Ratio of jet energy after the level 2,3, and 5 corrections to that with only level 2 and 3 corrections as a function of $P_T$.  
+    Plots show the average correction for all jets in each $P_T$ bin.  These jets were from a LQ sample with a mass of 650 GeV. }
+    \label{fig:CorrRatios}
+  \end{center}
+\end{figure}
+
+
+%\subsection{Efficiencies}
+
+%The reconstruction efficiency of the jets from the leptoquark decays is quite high in the fiducial volume of the barrel and endcap.  Fortunately, the majority of the jets from the leptoquark decay are central 
+%(see figure~\ref{fig:jetVariables}).  The barrel region for CMS ends at $\eta = 1.3$, so any objects hitting the detector in this region will have a much greater likelihood of being properly reconstructed.  
+%Figure\ref{fig:jetEffFV} shows that for any jets within the barrel region with a pT greater than approximately 50 GeV the reconstruction efficiency is better than 90\%.  The efficiency in the endcap region is 
+%slightly lower, but still quite good.  The jet efficiency is shown to be high enough that no optimization of the cuts on jet variables has yet been done.  
+ 
+%  \begin{figure}
+%    \begin{center}
+%    \begin{tabular}{cc}
+%      \resizebox{0.3\linewidth}{!}{\includegraphics{plots/JetEffEta.eps}} &
+%      \resizebox{0.3\linewidth}{!}{\includegraphics{plots/JetEffPt.eps}}
+%     \end{tabular}
+%      \caption{\small \sl Efficiency of Jet Reconstruction of jets from a LQ of mass 650 GeV with respect to $\eta$ and $P_T$}
+%      \label{fig:jetEffFV}
+%    \end{center}
+%  \end{figure}
+ 
+
+%  \begin{table}[htb]
+%    \caption{\small \sl Electron Acceptance-Efficiency (FastSim)}
+%    \label{tab:JetEffAcc}
+%    \begin{center}
+%      \begin{tabular}{|l|c|c|c|} \hline
+%	    LQ mass (GeV) & $A_{Fiducial Region}$ & $\epsilon_{Fiducial Region}$ & $A\times\epsilon_{Fiducial Region}$\\ \hline
+%	    250 & XX\% & XX\% & XX\% \\ \hline
+%	    400 & XX\% & XX\% & XX\% \\ \hline
+%	    600 & XX\% & XX\% & XX\% \\ \hline
+%	    1000 & XX\% & XX\% & XX\% \\ \hline
+%      \end{tabular}
+%    \end{center}
+%  \end{table}
+%
+
+\subsection{Comparison of Jet Quantities between FastSim and FullSim}
+
+An effort is made to compare reconstructed quantities between FastSim and FullSim for high energy jets.
+The comparison is performed using LQ samples produced with FastSim in CMSSW\_1\_6\_12. 
+Several kinematics variables, ID and isolation variables, and efficiencies have been investigated. 
+Figure \ref{fig:jetVariables} shows the distributions of some of these quantities for reconstructed jets from LQ decay 
+for both FastSim and FullSim.
+As for the electrons, a generally good agreement at the level of a few \% is observed in the shape of the reconstructed quantities investigated.
+
+%The quantities crucial for this analysis show a good agreement in FastSim and FullSim.  Figure\ref{fig:jetVariables} compares some of the most important jet variables between FastSim and FullSim.  These plots were made with a cut of 50 GeV on the reconstructed Jets unless otherwise specified.  They correspond to a leptoquark of mass 650 GeV.  Clearly the 
+%pT of the jet is the most crucial variable as sT, the scalar sum of the pT of the 4 leading objects is used to extract the signal from the background.  This variable is relatively similar in the Fast and FullSim.  
+%The distribution of jets in the barrel and endcap is also important to the reconstruction efficiency.  The plot of the eta distribution of the jets in figure\ref{fig:jetVariables} shows that this variable agrees 
+%well in the Fast and FullSim.
+
+\begin{figure}
+  \begin{center}
+    \begin{tabular}{cc}
+      \resizebox{7cm}{!}{\includegraphics{plots/NcaloJetsPtCut.eps}} &
+      \resizebox{7cm}{!}{\includegraphics{plots/NcaloJetsMatchedPtCut.eps}} \\
+      \resizebox{7cm}{!}{\includegraphics{plots/etaCaloJetMatched50GeV.eps}} &
+      \resizebox{7cm}{!}{\includegraphics{plots/ptCaloJetMatched50GeV.eps}} \\
+    \end{tabular}
+    \caption{\small \sl Distributions of jet reconstructed quantities in FastSim and Full Sim samples with $M_{LQ}=650$ GeV.  
+      Jets are matched to a quark from a leptoquark by a $\Delta R<0.5$. Only jets with $P_{T}>50$ GeV are considered.
+      From the top left to the bottom right: number of jets per event, number of jets coming from LQ decays per event, 
+    $\eta$, and $P_{T}$.}
+    \label{fig:jetVariables}
+  \end{center}
+\end{figure}
+
+%disambiguation, corrections
+
+%pT, eta dist
+
+%efficiencies (pT, eta)
+
+%fast vs full
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document}
+
+\section{Event Selection} \label{sec:eventSelection}
+
+% Analysis strategy (M dist, bump search)
+% Optimize signal, minimize bkgd
+% Plots of selection variables
+% (optimization of selection criteria)
+% List of selection criteria (Mee, St, etc.)
+
+The basic strategy to identify the existence of a particle that decays to a jet and an electron 
+is to study the invariant mass of the electron-jet pairs in the events. 
+The signal of a leptoquark would appear as a bump in the distribution of this invariant mass.
+The decay of a particle to a jet and a lepton is forbidden in the standard model.  
+Thus, a peak at the mass of the leptoquark would be the only resonance in this distribution. 
+The electron-jet combinations of the background events have a different shape than that 
+of the leptoquark resonance. 
+Nonetheless, the number of background events could dominate over the number of signal events.  
+The following selections have been made in order to minimize the number of background events 
+selected while retaining a high signal efficiency.
+
+The decay of a leptoquark and an anti-leptoquark produces two high energy jets and two high energy 
+electrons.  
+The online selection of candidate events is made by the HLT triggers EMHighEt and EMVeryHighEt 
+described in Section~\ref{sec:trig} while the offline identification of electrons and jets 
+proceeds as described in Sections~\ref{sec:electrons} and \ref{sec:jet}, respectively.
+The offline selection of the eejj sample continues with the following cuts:
+%
+\begin{enumerate}
+\item at least 2 isolated electrons, one required to have $P_T>85$~GeV, 
+and the other $P_T>30$~GeV 
+\item at least 2 jets, both required to have $P_T>50$~GeV
+\item $M_{ee}>100$~GeV
+\item $S_T\equiv P_T(e_1)+P_T(e_2)+P_T(j_1)+P_T(j_2)>400$~GeV
+\end{enumerate}
+%
+The $P_T$ threshold for one electron in cut 1 is set to 5~GeV above the threshold of the $EMHighEt$ trigger 
+in order to increase the confidence that the trigger was actually fired by a real electron in all events.
+The other electron will have a $P_T>30$~GeV, as it is implicit in the definition of electron. 
+Cut 3, where $M_{ee}$ is the invariant mass of the electron pair, removes background events from 
+$Z/\gamma$+jets events as shown in Figure~\ref{fig:Mee_St_distributions}-left.
+Cut 4, where the variable $S_T$ is defined as the scalar sum of the transverse momenta of the 
+2 electrons and 2 jets, is applied following the approach of the experiment $D0$ in 
+\cite{Abazov:2001mx}. In that paper, an event selection optimization as a function of
+the combinations of several kinematic variables has shown that $S_T$ is the most powerful one 
+and little is gained by adding cuts on other variables. The distribution of $S_T$ for the present
+analysis is shown in Figure~\ref{fig:Mee_St_distributions}-right.
+
+Once the eejj sample is built, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
+For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
+of the two electron-jet pairs is chosen. 
+The resulting $M_{ej}$ distribution is shown in Figure~\ref{fig:Mej_allComb} for the signal and remaining backgrounds. 
+A detailed study of the optimization of the selection criteria, and of alternative algorithms to identify the best candidate 
+electron-jet combinations, will be performed in future upgrades of this analysis.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \begin{tabular}{cc}
+      \resizebox{7.5cm}{!}{\includegraphics{plots/Mee_distribution.eps}} &
+      \resizebox{7.5cm}{!}{\includegraphics{plots/St_distribution.eps}} \\
+    \end{tabular}
+    \caption{\small \sl Left: invariant mass of the electron pair, $M_{ee}$. 
+             Right: scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
+	     In each histogram, the distributions for the signal (for leptoquark mass 250 and 650~GeV) and the 
+	     relevant backgrounds are shown after applying all cuts except the one involving the 
+	     plotted variable. 
+	     The background histograms are summed on top of each other.
+	     The histogram labeled with ``Others'' contains: 1) for $M_{ee}$, $W$+jets (33\%), 
+	     $WW$ (11\%), $ZZ$ (20\%), and $WZ$ (36\%) events; 2) for $S_{T}$, $W$+jets (57\%), 
+	     $WW$ (19\%), $ZZ$ (8\%), $WZ$ (14\%), and $\gamma$+jet (2\%) events.
+	     With the available MC statistics, no QCD multi-jet events pass 
+	     the selection.}
+	     %Arrows indicate the cut subsequently applied.
+    \label{fig:Mee_St_distributions}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{10cm}{!}{\includegraphics{plots/Mej_best_Meecut_Stcut.eps}}
+    \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, 
+      of the electron-jet pairs 
+      with smaller $\Delta M_{ej}$
+      for signal (at 250~GeV and 650~GeV LQ mass) and backgrounds. 
+      The complete event selection has been applied.
+      The background histograms are summed on top of each other.
+      The histogram labeled with ``Others'' contains $W$+jets (65\%), 
+      $WW$ (20\%), $ZZ$ (8\%), and $WZ$ (7\%) events. 
+      With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass 
+      the selection.}
+    \label{fig:Mej_allComb}
+  \end{center}
+\end{figure}
+
+
+Tables from \ref{tab:selection_effic_250} to \ref{tab:selection_effic_1000} show the efficiency 
+of each selection cut for signal events, using FullSim samples at different LQ masses (from 250 GeV to 1 TeV).
+Tables \ref{tab:selection_effic_ttbar} and \ref{tab:selection_effic_zjet} show the efficiency of each selection cut 
+for $t\bar{t}$ and $Z/\gamma$+jet events, which are the dominant backgrounds in the eejj sample. 
+A summary of the number of selected signal and background events expected in 100 pb$^{-1}$ of data 
+is reported in Table \ref{tab:EventSelSummary}. 
+The overall signal selection efficiencies are around 30-50\% for the LQ masses investigated. 
+After the described event selection, the dominant background contributions 
+are $t\bar{t}$ and $Z/\gamma$+jets. Data-driven techniques to estimate these backgrounds
+are discussed in the next section.
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
+no cut &1400 $\pm$ 44& 1000 & - \\
++ hlt (HE or VHE) &1121 $\pm$ 40 & 801 & 8.01e-01 $\pm$ 1.26e-02\\
++ 2 ele (ID) $P_{T} >30$ GeV &644 $\pm$ 30 & 460 & 5.74e-01 $\pm$ 3.36e-02\\
++ 2 ele (ID+Iso) $P_{T} >30$ GeV &592 $\pm$ 29 & 423 & 9.20e-01 $\pm$ 6.19e-02\\
++ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &508 $\pm$ 27& 363 & 8.58e-01 $\pm$ 6.14e-02\\
++ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &506 $\pm$ 27& 362 & 9.97e-01 $\pm$ 7.41e-02\\
++ $M_{ee} >100$ GeV& 455 $\pm$ 25& 325 & 8.98e-01 $\pm$ 6.86e-02\\
++ $S_{T} >400$ GeV &425 $\pm$ 24& 304 & 9.35e-01 $\pm$ 7.46e-02\\
+\hline
+
+full selection efficiency& &  & 3.04e-01 $\pm$ 1.45e-02\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl LQ sample with $M_{LQ}=250$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
+\label{tab:selection_effic_250}
+\end{table}
+
+%old
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+%no cut &1400.0 $\pm$ 44.3& 1000.0 & - \\
+%+ hlt (HE or VHE) &1124.2 $\pm$ 39.7& 803.0 & 8.0e-01 $\pm$ 1.3e-02\\
+%%+  &1121.4 $\pm$ 39.6& 801.0 & 1.0e+00 $\pm$ 5.0e-02\\
+%+ 2 ele (no Iso) pT $>30.0$ GeV &644.0 $\pm$ 30.0& 460.0 & 5.7e-01 $\pm$ 3.4e-02\\
+%+ 2 ele (Iso) pT $>30.0$ GeV &596.4 $\pm$ 28.9& 426.0 & 9.3e-01 $\pm$ 6.2e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &512.4 $\pm$ 26.8& 366.0 & 8.6e-01 $\pm$ 6.1e-02\\
+%+ pT 1st ele $>$ 85.0 GeV &511.0 $\pm$ 26.7& 365.0 & 1.0e+00 $\pm$ 7.4e-02\\
+%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&499.8 $\pm$ 26.5& 357.0 & 9.8e-01 $\pm$ 7.3e-02\\
+%+ St $>400.0$ GeV &462.0 $\pm$ 25.4& 330.0 & 9.2e-01 $\pm$ 7.1e-02\\
+%\hline
+%full selection efficiency& &  & 4.1e-01 $\pm$ 2.7e-02\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\caption{\small \sl LQ sample with $M_{LQ}=250$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
+%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
+%The overall selection efficiency is shown in the last line.}
+%\label{tab:selection_effic_250}
+%\end{table}
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
+no cut &120.0 $\pm$ 3.8 & 1000 & - \\
++ hlt (HE or VHE) &111.1 $\pm$ 3.6& 926 & 9.26e-01 $\pm$ 8.28e-03\\
++ 2 ele (ID) $P_{T} >30$ GeV &67.1 $\pm$ 2.8& 559 & 6.04e-01 $\pm$ 3.23e-02\\
++ 2 ele (ID+Iso) $P_{T} >30$ GeV &59.5 $\pm$ 2.7& 496 & 8.87e-01 $\pm$ 5.47e-02\\
++ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &55.4 $\pm$ 2.6& 462 & 9.31e-01 $\pm$ 6.02e-02\\
++ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &55.4 $\pm$ 2.6& 462 & 1.00e+00 $\pm$ 6.58e-02\\
++ $M_{ee} >100$ GeV&52.7 $\pm$ 2.5& 439 & 9.50e-01 $\pm$ 6.33e-02\\
++ $S_{T} >400$ GeV &52.4 $\pm$ 2.5& 437 & 9.95e-01 $\pm$ 6.73e-02\\
+\hline
+
+full selection efficiency& &  & 4.37e-01 $\pm$ 1.57e-02\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl LQ sample with $M_{LQ}=400$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
+\label{tab:selection_effic_400}
+\end{table}
+
+%old
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+
+%no cut &120.0 $\pm$ 3.8& 1000.0 & - \\
+%+ hlt (HE or VHE) &111.1 $\pm$ 3.7& 926.0 & 9.3e-01 $\pm$ 8.3e-03\\
+%%+  &111.1 $\pm$ 3.7& 926.0 & 1.0e+00 $\pm$ 4.6e-02\\
+%+ 2 ele (no Iso) pT $>30.0$ GeV &67.1 $\pm$ 2.8& 559.0 & 6.0e-01 $\pm$ 3.2e-02\\
+%+ 2 ele (Iso) pT $>30.0$ GeV &61.1 $\pm$ 2.7& 509.0 & 9.1e-01 $\pm$ 5.6e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &56.8 $\pm$ 2.6& 473.0 & 9.3e-01 $\pm$ 5.9e-02\\
+%+ pT 1st ele $>$ 85.0 GeV &56.8 $\pm$ 2.6& 473.0 & 1.0e+00 $\pm$ 6.5e-02\\
+%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&55.4 $\pm$ 2.6& 462.0 & 9.8e-01 $\pm$ 6.4e-02\\
+%+ St $>400.0$ GeV &55.2 $\pm$ 2.6& 460.0 & 1.0e+00 $\pm$ 6.6e-02\\
+%\hline
+
+%full selection efficiency& &  & 5.0e-01 $\pm$ 2.8e-02\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\caption{\small \sl LQ sample with $M_{LQ}=400$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
+%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
+%The overall selection efficiency is shown in the last line.}
+%\label{tab:selection_effic_400}
+%\end{table}
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
+no cut &7.20 $\pm$ 0.14& 2500 & - \\
++ hlt (HE or VHE) &6.94 $\pm$ 0.14& 2408 & 9.63e-01 $\pm$ 3.76e-03\\
++ 2 ele (ID) $P_{T} >30$ GeV &4.15 $\pm$ 0.11& 1440 & 5.98e-01 $\pm$ 1.99e-02\\
++ 2 ele (ID+Iso) $P_{T} >30$ GeV &3.58 $\pm$ 0.10 & 1243 & 8.63e-01 $\pm$ 3.34e-02\\
++ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &3.45 $\pm$ 0.10& 1198 & 9.64e-01 $\pm$ 3.90e-02\\
++ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &3.45 $\pm$ 0.10& 1198 & 1.00e+00 $\pm$ 4.09e-02\\
++ $M_{ee} >100$ GeV&3.41 $\pm$ 0.10& 1184 & 9.88e-01 $\pm$ 4.05e-02\\
++ $S_{T} >400$ GeV &3.41 $\pm$ 0.10& 1184 & 1.00e+00 $\pm$ 4.11e-02\\
+\hline
+
+full selection efficiency& &  & 4.74e-01 $\pm$ 9.99e-03\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl LQ sample with $M_{LQ}=650$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
+\label{tab:selection_effic_650}
+\end{table}
+
+
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+
+%no cut &7.2 $\pm$ 0.1& 2500.0 & - \\
+%+ hlt (HE or VHE) &6.9 $\pm$ 0.1& 2408.0 & 9.6e-01 $\pm$ 3.8e-03\\
+%%+  &6.9 $\pm$ 0.1& 2408.0 & 1.0e+00 $\pm$ 2.9e-02\\
+%+ 2 ele (no Iso) pT $>30.0$ GeV &4.2 $\pm$ 0.1& 1441.0 & 6.0e-01 $\pm$ 2.0e-02\\
+%+ 2 ele (Iso) pT $>30.0$ GeV &3.7 $\pm$ 0.1& 1292.0 & 9.0e-01 $\pm$ 3.4e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &3.6 $\pm$ 0.1& 1247.0 & 9.7e-01 $\pm$ 3.8e-02\\
+%+ pT 1st ele $>$ 85.0 GeV &3.6 $\pm$ 0.1& 1247.0 & 1.0e+00 $\pm$ 4.0e-02\\
+%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&3.6 $\pm$ 0.1& 1241.0 & 1.0e+00 $\pm$ 4.0e-02\\
+%+ St $>400.0$ GeV &3.6 $\pm$ 0.1& 1241.0 & 1.0e+00 $\pm$ 4.0e-02\\
+%\hline
+
+%full selection efficiency& &  & 5.2e-01 $\pm$ 1.8e-02\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\caption{\small \sl LQ sample with $M_{LQ}=650$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
+%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
+%The overall selection efficiency is shown in the last line.}
+%\label{tab:selection_effic_650}
+%\end{table}
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
+no cut &0.47 $\pm$ 0.01& 1000 & - \\
++ hlt (HE or VHE) &0.45 $\pm$ 0.01& 967 & 9.67e-01 $\pm$ 5.65e-03\\
++ 2 ele (ID) $P_{T} >30$ GeV &0.27 $\pm$ 0.01& 583 & 6.03e-01 $\pm$ 3.16e-02\\
++ 2 ele (ID+Iso) $P_{T} >30$ GeV &0.21 $\pm$ 0.01& 455 & 7.80e-01 $\pm$ 4.88e-02\\
++ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &0.21 $\pm$ 0.01& 443 & 9.74e-01 $\pm$ 6.50e-02\\
++ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &0.21 $\pm$ 0.01& 443 & 1.00e+00 $\pm$ 6.72e-02\\
++ $M_{ee} >100$ GeV&0.21 $\pm$ 0.01& 443 & 1.00e+00 $\pm$ 6.72e-02\\
++ $S_{T} >400$ GeV &0.21 $\pm$ 0.01& 443 & 1.00e+00 $\pm$ 6.72e-02\\
+\hline
+
+full selection efficiency& &  & 4.43e-01 $\pm$ 1.57e-02\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl LQ sample with $M_{LQ}=1000$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
+\label{tab:selection_effic_1000}
+\end{table}
+
+
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+
+%no cut &0.50 $\pm$ 0.01& 1000.0 & - \\
+%+ hlt (HE or VHE) &0.50 $\pm$ 0.01& 967.0 & 9.7e-01 $\pm$ 5.6e-03\\
+%%+ hlt (HE or VHE) &0.5 $\pm$ 0.0& 967.0 & 1.0e+00 $\pm$ 4.5e-02\\
+%+ 2 ele (no Iso) pT $>30.0$ GeV &0.30 $\pm$ 0.01& 583.0 & 6.0e-01 $\pm$ 3.2e-02\\
+%+ 2 ele (Iso) pT $>30.0$ GeV &0.20 $\pm$ 0.01& 491.0 & 8.4e-01 $\pm$ 5.2e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &0.20 $\pm$ 0.01& 478.0 & 9.7e-01 $\pm$ 6.3e-02\\
+%+ pT 1st ele $>$ 85.0 GeV &0.20 $\pm$ 0.01& 478.0 & 1.0e+00 $\pm$ 6.5e-02\\
+%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&0.20 $\pm$ 0.01& 478.0 & 1.0e+00 $\pm$ 6.5e-02\\
+%+ St $>400.0$ GeV &0.20 $\pm$ 0.01& 478.0 & 1.0e+00 $\pm$ 6.5e-02\\
+%\hline
+
+%full selection efficiency& &  & 4.9e-01 $\pm$ 2.8e-02\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\caption{\small \sl LQ sample with $M_{LQ}=1000$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
+%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
+%The overall selection efficiency is shown in the last line.}
+%\label{tab:selection_effic_1000}
+%\end{table}
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
++ hlt (HE or VHE) &2115.9 $\pm$ 9.7 & 48359 & - \\
++ 2 ele (ID) $P_{T} >30$ GeV &137.4 $\pm$ 2.5& 3139 & 6.49e-02 $\pm$ 1.20e-03\\
++ 2 ele (ID+Iso) $P_{T} >30$ GeV &105.4 $\pm$ 2.1 & 2408 & 7.67e-01 $\pm$ 2.08e-02\\
++ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &49.6 $\pm$ 1.5& 1117 & 4.71e-01 $\pm$ 1.71e-02\\
++ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &47.2 $\pm$ 1.4& 1063 & 9.52e-01 $\pm$ 4.09e-02\\
++ $M_{ee} >100$ GeV&40.2 $\pm$ 1.3& 905 & 8.52e-01 $\pm$ 3.87e-02\\
++ $S_{T} >400$ GeV &21.26 $\pm$ 0.98 & 476 & 5.29e-01 $\pm$ 3.00e-02\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl $t\bar{t}$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut.}
+\label{tab:selection_effic_ttbar}
+\end{table}
+
+
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+
+
+%%no cut &0.0 $\pm$ 0.0& 0.0 & - \\
+%%+ LQ skim &2391.5 $\pm$ 10.3& 54697.0 & inf $\pm$ 0.0e+00\\
+%hlt (HE or VHE) &2115.9 $\pm$ 9.6& 48359.0 & 8.8e-01 $\pm$ 5.5e-03\\
+%+ 2 ele (no Iso) pT $>30.0$ GeV &138.5 $\pm$ 2.5& 3164.0 & 6.5e-02 $\pm$ 1.2e-03\\
+%+ 2 ele (Iso) pT $>30.0$ GeV &106.4 $\pm$ 2.2& 2432.0 & 7.7e-01 $\pm$ 2.1e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &50.2 $\pm$ 1.5& 1131.0 & 4.7e-01 $\pm$ 1.7e-02\\
+%+ pT 1st ele $>$ 85.0 GeV &47.8 $\pm$ 1.5& 1076.0 & 9.5e-01 $\pm$ 4.1e-02\\
+%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&45.0 $\pm$ 1.4& 1013.0 & 9.4e-01 $\pm$ 4.1e-02\\
+%+ St $>400.0$ GeV &23.3 $\pm$ 1.0& 523.0 & 5.2e-01 $\pm$ 2.8e-02\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\caption{\small \sl $t\bar{t}$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
+%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut.}
+%\label{tab:selection_effic_ttbar}
+%\end{table}
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
++ hlt (HE or VHE) &2466 $\pm$ 14& 30413 & - \\
++ 2 ele (ID) $P_{T} >30$ GeV &1356 $\pm$ 12& 13136 & 5.50e-01 $\pm$ 5.95e-03\\
++ 2 ele (ID+Iso) $P_{T} >30$ GeV &1329 $\pm$ 12& 12830 & 9.80e-01 $\pm$ 1.27e-02\\
++ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &124.7 $\pm$ 3.0 & 1807 & 9.38e-02 $\pm$ 2.42e-03\\
++ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &115.7 $\pm$ 2.9& 1694 & 9.28e-01 $\pm$ 3.21e-02\\
++ $M_{ee} >100$ GeV&10.82 $\pm$ 0.89& 157 & 9.35e-02 $\pm$ 8.00e-03\\
++ $S_{T} >400$ GeV &5.10 $\pm$ 0.60& 76 & 4.71e-01 $\pm$ 6.75e-02\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl $Z/\gamma$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut.}
+\label{tab:selection_effic_zjet}
+\end{table}
+
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+
+%hlt (HE or VHE) &2466.4 $\pm$ 14.4& 30413.0 & 4.1e-01 $\pm$ 3.0e-03\\
+%+ 2 ele (no Iso) pT $>30.0$ GeV &1357.5 $\pm$ 12.3& 13151.0 & 5.5e-01 $\pm$ 5.9e-03\\
+%+ 2 ele (Iso) pT $>30.0$ GeV &1330.8 $\pm$ 12.2& 12851.0 & 9.8e-01 $\pm$ 1.3e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &124.9 $\pm$ 3.0& 1810.0 & 9.4e-02 $\pm$ 2.4e-03\\
+%+ pT 1st ele $>$ 85.0 GeV &115.9 $\pm$ 2.9& 1697.0 & 9.3e-01 $\pm$ 3.2e-02\\
+%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&16.2 $\pm$ 1.1& 235.0 & 1.4e-01 $\pm$ 1.0e-02\\
+%+ St $>400.0$ GeV &8.2 $\pm$ 0.8& 120.0 & 5.0e-01 $\pm$ 5.8e-02\\
+%\hline
+
+%\end{tabular}
+%\end{center}
+%\caption{\small \sl $Z/\gamma$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
+%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
+%The overall selection efficiency is shown in the last line.}
+%\label{tab:selection_effic_zjet}
+%\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|cccc||ccc|}
+\hline
+                 &   Signal&         &          & & Background & \\
+$M_{LQ}$=250 GeV & 400 GeV & 650 GeV & 1000 GeV & $t\bar{t}$  & $Z/\gamma$+jet & Others \\
+\hline
+425 $\pm$ 24 & 52.4 $\pm$ 2.5 & 3.4 $\pm$ 0.1 & 0.21 $\pm$ 0.01 & 21.3 $\pm$ 1.0 & 5.1 $\pm$ 0.6 & 1.1 $\pm$ 0.3 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl Number of selected events in the eejj sample expected in 100 pb$^{-1}$ of data for signal events at different LQ masses 
+and for background events. 
+The LQ cross section rapidly falls at high LQ mass, thus 
+producing a relative decrease in the number of selected events. 
+In the background part, ``Others'' includes $W$+jet, and 
+di-boson ($WW$,$WZ$,$ZZ$) events. 
+With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass the final selection.}
+\label{tab:EventSelSummary}
+\end{table}
+
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\hline
+% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+%\hline
+%\hline
+
+%+ LQ skim &1400.1 $\pm$ 14.0& 10000.0 & 1.0e+00 $\pm$ 1.4e-02\\
+%+ 2 ele (no Iso) pT $>20.0$ GeV &793.3 $\pm$ 10.5& 5666.0 & 5.7e-01 $\pm$ 9.4e-03\\
+%+ 2 ele (Iso) pT $>20.0$ GeV &689.4 $\pm$ 9.8& 4924.0 & 8.7e-01 $\pm$ 1.7e-02\\
+%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$20.0(20.0) GeV &675.7 $\pm$ 9.7& 4826.0 & 9.8e-01 $\pm$ 2.0e-02\\
+%+ ele, jet kinematics cuts &593.9 $\pm$ 9.1& 4242.0 & 8.8e-01 $\pm$ 1.8e-02\\
+%+ Mee $<80.0$ GeV OR Mee $>100.0$ GeV&568.0 $\pm$ 8.9& 4057.0 & 9.6e-01 $\pm$ 2.1e-02\\
+%+ St $>400.0$ GeV &562.4 $\pm$ 8.9& 4017.0 & 9.9e-01 $\pm$ 2.2e-02\\
+%\hline
+
+%full selection efficiency& &  & 4.0e-01 $\pm$ 7.5e-03\\
+%\hline
+%\end{tabular}
+%\end{center}
+% \caption{\small \sl $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected event (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut}
+%\caption{\small \sl $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected event (unweighted for the cross section), $\varepsilon$ is the selection efficiency of each cut relatively to the sample selected by all the cuts above it.}
+%\label{tab:selection_effic}
+%\end{table}
+
+% This is where I put figure~\ref{fig:Mej_allComb}.  I'm not sure if it's the correct place.
+%INSERT SUMMARY TABLE WITH NUMBER OF BACKGROUND EVENTS. 
+
+
+
+
+%Efficiencies (table of diff masses, bkgd, cut by cut)
+%Number of selected events (for luminosity)
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document} 
+
+\section{Data-driven techniques for background estimate} \label{sec:bkgStudy}
+After the event selection the dominant number of SM background events in the two electron and two jet sample come from $t\bar{t}$ and 
+$Z/\gamma$+jet processes, as summarized in Table \ref{tab:EventSelSummary}. 
+This section describes data-driven techniques used to estimate the shape of $M_{ej}$ distribution for these two backgrounds using 
+control samples. These shapes are used in a fit to the data to extract the number of signal events, as described 
+in Section \ref{sec:signalExtraction}. The methods for background estimation described here will not rely on the Monte Carlo 
+once real data is available. They are
+therefore particularly suited for first data taking when confidence that the MC describes
+the data well is expected to be limited.
+
+The main properties of a control sample to estimate a background $X$ are:
+\begin{itemize}
+%
+\item to have similar topology of the $X$ events in the signal sample concerning a given reconstructed quantity 
+under investigation (in this case the signal samples is the eejj sample of selected events, 
+and the reconstructed quantity investigated is lepton-jet invariant mass);  
+%
+\item to be independent from the signal sample;
+%
+\item to be enriched in $X$ events.
+%
+\end{itemize}
+%
+The control samples for the $t\bar{t}$ and $Z/\gamma$+jet backgrounds discussed below both satisfy these three conditions.
+
+% NOTE: the more detailed discussion on different amount of background should be discussed in the section Event Selection 
+% when you show the table with the number of selected events
+
+%The four main source of background events that pass the High Level Trigger are ttbar, Z+jets, QCD and W+jets.  The application of the electron isolation criteria sufficiently limits the number of fake electrons in the offline selection that the QCD and W+jets background are negligible.  The small contribution of the events with fake electrons from the QCD and W+jet channels can be seen in figure~\ref{fig:Mej_allComb}.
+
+\subsection{$t\bar{t}$ background shape}
+
+The shape of the $M_{ej}$ distribution for $t\bar{t}$ events can be estimated directly from data using a control sample. 
+The basic idea is to select events that are independent from the eejj sample, but have $M_{ej}$ shape and resolution 
+similar to the $t\bar{t}$ component in the eejj sample.
+
+A good control sample can be obtained by using the same selection criteria applied for the eejj sample, but 
+requiring at least one electron and one muon (e$\mu$jj sample) instead of 2 electrons 
+in the final state in addition to the two jets. 
+For $t\bar{t}$ events, the $M_{lj}$ distributions of the e$\mu$jj and the eejj samples
+are expected to be very similar in shape since the kinematics of the process does not depend 
+on the nature of the lepton. Figure~\ref{fig:ttbar} shows a good agreement between 
+the shape of the two distributions with the current MC statistics available. 
+With 100 pb$^{-1}$ of data the e$\mu$jj sample is expected to have about 30 events 
+($\approx 60$ entries in the $M_{lj}$ distribution).
+%which is roughtly two times the number of $t\bar{t}$ events in the eejj sample. 
+The e$\mu$jj sample is enriched in $t\bar{t}$ events with a small contamination of about 
+2\%, dominated by $WW$ and $Z/\gamma$+jet events. 
+
+For a sample of $t\bar{t}$ events at generator level, the number of e$\mu$jj events is expected to be exactly two times the number of 
+eejj events, considering all the possible combinations of the $W$ decays. The trigger filter, the offline selection, 
+and the different reconstruction efficiency, acceptance and $P_{T}$ resolution between electron and muon
+put a bias in the relative amount of eejj and e$\mu$jj events.
+In general it is possible to correct for these effects in order to estimate the number of eejj in the signal sample directly from 
+the size of the e$\mu$jj control sample. In this way the control sample can be used to estimate both the normalization and the shape
+of the $t\bar{t}$ background. In this analysis only the shape of the e$\mu$jj sample is used in the signal extraction, but
+the possibility to get also the normalization from the control sample will be investigated in future upgrades of this analysis.
+
+%The number and shape of events from ttbar with two electrons in our sample can be estimated by examining the number and shape of events from ttbar events that contain one muon and one electron.  One would expect this number to be double the number of events with two muons.  However, due to the online selection of events with one high pT electron a number of events with one high pT muon and a lower pT electron will be excluded.  This will cause a reduction in the ration of $e\mu$ events to $ee$ events, but the shape will not be effected.  If the change in the size of the $e\mu$ sample is well understood this method can still be used to estimate the total number and shape of the background events in our sample that come from ttbar events with two electrons.  Figure~\ref{fig:ttbar} compares the distribution of the invariant mass of the lepton+jet in $e\mu$ ttbar events to that of $ee$ ttbar events using Monte Carlo truth.
+
+%{\sl Discussion of how clearly this plot shows similar shape and how this will be used}
+
+\begin{figure}[htb]
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{10cm}{!}{\includegraphics{plots/Mlj_eejj_emujj_ttbarControlSample.eps}} \\ 
+  \end{tabular}
+  \caption{\small \sl Distributions of the lepton-jet invariant mass for the eejj and the e$\mu$ samples, for $t\bar{t}$ events}
+  \label{fig:ttbar}
+  \end{center}
+\end{figure}
+
+\subsection{$Z/\gamma$+jet background shape} 
+
+The same concept of control sample can be applied to estimate the $M_{ej}$ shape of the $Z/\gamma$+jet background.
+In this case the control sample can be obtained by using the same selection criteria applied for the eejj sample except the $M_{ee}$ cut, which is modified to select events with a real $Z$ boson reconstructed ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$). 
+This control sample is an almost pure sample of  
+$Z/\gamma$+jet events (about 4\% contamination dominated by $t\bar{t}$ and $WZ$ events) 
+since the cross section of the process is resonant at the Z mass, and is 
+independent from the signal sample by construction. In addition the control sample has about 10 times the number of $Z/\gamma$+jet events in 
+the signal sample (about 50 events expected in the control sample for 100 pb$-1$ of data), which 
+is important to reduce the statistical errors in the determination of the background shape.
+
+Figure~\ref{fig:zjet} shows the good agreement between the shape of the $M_{ej}$ distribution for the two samples 
+with the current MC statistics available. The agreement observed can be interpreted as the consequence of the 
+weak correlation between the two reconstructed quantities $M_{ej}$ and $M_{ee}$ for selected events.  
+%In other words it is observed that eejj events with high $M_{ej}$ are equally likely to havec high or low $M_{ee}$.
+
+The selected events pass the cut $S_{t}>400~$GeV, which requires the presence of high $P_{T}$ electrons in the final state. 
+The two most probable ways to produce high $P_{T}$ electrons in the $Z/\gamma$+jet process are 1) via the decay of a high mass (real or virtual) boson, 
+or 2) because of the substantial boost of the electrons, coming from the decay of a high $P_{T}$ boson (even with low $M_{ee}$) 
+which recoils from a high $P_{T}$ parton (jet). 
+If the selected events were dominated by the case 1) then a strong correlation between $M_{ej}$ and $M_{ee}$ would be expected, but this is not observed.
+On the contrary the selected events are dominated by the case 2), as confirmed by Figure \ref{fig:pTeePair}, which shows the $P_{T}$
+distribution at generator level of the $ee$ pair (the $P_{T}$ boson distribution) for events in the control sample (low $M_{ee}$ region) and in the signal sample (high $M_{ee}$ region).
+For this reason a strong correlation between $M_{ej}$ and $M_{ee}$ is not found, and this allows the use of events within the 
+Z mass window as control sample for the signal region.
+
+\begin{figure}[htb]
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{10cm}{!}{\includegraphics{plots/Mej_eejjIN_eejjOUT_zjetControlSample.eps}} \\ 
+  \end{tabular}
+  \caption{\small \sl Distributions of the electron-jet invariant mass for the signal eejj sample 
+    (cut 1,2,3,4)
+    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
+  \label{fig:zjet}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{10cm}{!}{\includegraphics{plots/pTee.eps}} \\ 
+  \end{tabular}
+  \caption{\small \sl Distribution of the $P_{T}$ at generator level of the electron pair ($P_{T}$ of the boson) 
+    for $Z/\gamma$+jet events in the signal eejj sample 
+    (cut 1,2,3,4)
+    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
+  \label{fig:pTeePair}
+  \end{center}
+\end{figure}
+
+
+%http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/Configuration/CSA07Production/data/CSA07_zjet_ptjgt20_Rmatch0.7_excl.cfg?revision=1.2&view=markup
+
+%alpgen
+%zjet_0ptz100gen
+%z2j_0ptz100
+%njets 2
+%ebeam 7000
+%ih2 1  - for proton/proton collisions
+%ickkw 1 - CKKW prescription for the running of alphas's in the extra gluon emission processes	
+%iqopt 1 - renormalization scale
+%ptjmin 20
+%etajmax 5
+%drjmin 0.7
+%izdecmode 4
+
+%Fit method (histogram, unbinned, function, combination...)
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document}
+
+%Fit method (histogram, unbinned, function, combination...)
+
+\section{Signal Extraction} \label{sec:signalExtraction}
+
+This section describes the procedure and verifies the ability to extract the 
+number of signal events from a distribution of the invariant mass, $M_{ej}$, of the 
+electron-jet pairs with the characteristics expected from the studies 
+of the previous sections.
+
+MC experiments are generated to produce $M_{ej}$ distributions that are the sum
+of a leptoquark signal and the only relevant backgrounds: $t\bar{t}$ and $Z/\gamma$+jets.
+The average leptoquark signal distribution, $h_s$, is taken from the fullSim MC 
+sample at the leptoquark mass under consideration after applying the selection
+described in Section \ref{sec:eventSelection}.
+The average distributions, $h_{t\bar{t}}$ and $h_{Z/\gamma\mathrm{+jets}}$ 
+of the $t\bar{t}$ and $Z/\gamma$+jets backgrounds are determined from the control samples
+and procedures described in Section~\ref{sec:bkgStudy}.
+
+A log-likelihood fit is performed on the histogram of each generated MC experiment
+using a function
+\begin{displaymath}
+  h_{s+b} = N_s \cdot \tilde{h}_s + N_b \cdot \tilde{h}_b
+\end{displaymath}
+where $N_s$ and $N_b$ are the free parameters of the fit for the number of signal and background events,
+\begin{displaymath}
+  \tilde{h}_b = \frac{R}{1+R} \tilde{h}_{t\bar{t}} + \frac{1}{1+R} \cdot \tilde{h}_{Z/\gamma\mathrm{+jets}}~\mathrm{,}
+\end{displaymath}
+and $\tilde{h}_x$ represents a general distribution $h_x$ normalized to unity. 
+
+The ratio
+\begin{displaymath}
+  R \equiv N_{t\bar{t}} / N_{Z/\gamma\mathrm{+jets}}~\mathrm{,}
+\end{displaymath}
+between the number of $t\bar{t}$ and $Z/\gamma$+jets events is currently determined from 
+MC and has a value $R_{MC}=4.2$.
+Figure~\ref{fig:Mej_fit} shows a MC experiment and the result of the fit.
+A tendency of the fit to underestimate the number of signal events is observed. 
+Such an effect amounts to about 10\% with a moderate dependency on the leptoquark mass and the 
+integrated luminosity. This effect may bias the results towards an overestimation of the integrated
+luminosity needed for discovery.
+
+The fitting procedure described in this section is used in the following section
+to determine the CMS potential for discovering a leptoquark signal. 
+
+ \begin{figure}[htb]
+   \begin{center}
+     \resizebox{7cm}{!}{\includegraphics{plots/Mej_fit.eps}}
+     \caption{\small \sl A MC experiment (dots with error bars) generated for a leptoquark mass of 
+       400~GeV (blue-filled histogram), a sum of the $t\bar{t}$ and $Z/\gamma$+jets 
+       backgrounds (gray-filled histogram) with a relative ratio R=4.2 determined from 
+       full simulation MC, and a number of signal events $N_s=50$ corresponding
+       to an integrated luminosity of 95~$pb^{-1}$.
+       The blue-line open histogram is the result of the fit and the estimate of signal 
+       events is 48.5$\pm$ 3.8.}
+     \label{fig:Mej_fit}
+   \end{center}
+ \end{figure}
+
+
+%Quality of fit?
+
+%Pulls, etc...
+
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document}
+
+\section{CMS Potential} \label{CMSpotential}
+
+%Discovery luminosity
+
+%5 sigma discovery
+
+%Upper limits in absence of signal
+
+%\subsection{Discovery Luminosity}
+
+In order to estimate the integrated luminosity needed by CMS to claim 
+a discovery in the electron channel of the first generation leptoquark
+several MC experiments with signal and background events are produced
+as described in Section \ref{sec:signalExtraction}.
+
+The significance of each experiment is extracted using the log-likelihood estimator 
+\begin{displaymath}
+S_L \equiv \sqrt{2\cdot ln{(L_{s+b}/L_{b})}}~\mathrm{,}
+\end{displaymath}
+where $L_{s+b}$ and $L_b$ are the maximum likelihood values for the fit to
+the signal plus background and background only hypothesis, respectively.
+
+A set of MC experiments is generated for a leptoquark mass and a value of 
+the integrated luminosity.
+The distribution of $S_L$ of the set of experiments is approximately gaussian 
+and its median is used as the estimate of the significance.
+The procedure is repeated for leptoquark masses of 250, 400 and 650~GeV and
+different values of the integrated luminosity. The results are shown in
+Figure~\ref{fig:sign_vs_Lint_sysR}, which includes also the effect of the systematic 
+uncertainties discussed in the next section. 
+
+% \begin{figure}
+%   \begin{center}
+%     \resizebox{7cm}{!}{\includegraphics{plots/significanceDistribution.eps}}
+%     \caption{\small \sl significanceDistribution}
+%     \label{fig:significanceDistribution}
+%   \end{center}
+% \end{figure}
+
+% \begin{figure}
+%   \begin{center}
+%     \resizebox{10cm}{!}{\includegraphics{plots/significanceVsIntLum.eps}}
+%     \caption{\small \sl Significance of the discovery as a function of integrated luminosity.
+%     The curves represents fits to the points of a certain leptoquark mass using a 
+%     square root function. The horizontal line represents a 5 sigma discovery.}
+%     \label{fig:significanceVsIntLum}
+%   \end{center}
+% \end{figure}
+
+\subsection{Systematic uncertainties}
+
+%The impact of systematic effects on the discovery potential and the determination 
+%of the experiment sensitivity are not yet included in this study.
+
+%A study for determining the sensitivity of the experiment will be performed.
+%It will be used to set upper limits in case a signal is not observed. 
+%It will be used an approach similar to the one used in \ref{highmassToMuons}.
+%The same tools to generate MC experiments and perform log-likelihood fits will be used.
+
+%Systematics: Luminosity(+_10\%), JES (+_10\%), ratio ttbar/Zgammajets, etc.
+
+The method used to discriminate between signal and background events and extract the significance 
+of a possible observed leptoquark signal 
+relies on the knowledge of the shape of the signal and background distributions 
+by fitting the $M_{ej}$ distribution of the eejj sample.
+The shape of the background distributions will be determined from the data as 
+described in Section~\ref{sec:bkgStudy}.
+As a consequence, once real data is available, the uncertainty on the knowledge of quantities 
+such as the integrated luminosity, the efficiency of the signal selection, the signal cross section, 
+and the magnitude of the total background cross section, will not have an impact on the 
+determination of the significance.
+On the other hand, uncertainties that affect the knowledge of the shape of the distributions of 
+the total background and the signal will have an impact on the significance and have to be 
+accounted for as systematic uncertainties.
+
+The value of $R$, defined in Section \ref{sec:signalExtraction} as 
+the ratio between the number of $t\bar{t}$ and $Z/\gamma$+jets events in the final sample,
+directly affects the shape of the total background distribution used in the fit by changing the
+mixture of the two backgrounds. 
+Hence, the impact of the uncertainty on its value has to be included in the significance systematics.
+The current knowledge, $R_{MC}$, of $R$ comes from the Monte Carlo
+study and may introduce a deviation $\delta \equiv R/R_{MC}$ from the true value of $R$
+due, for example, to imperfect knowledge of the relative magnitude of the two background 
+cross sections and respective selection efficiencies.
+
+Once real data is available there will be a way to infer the departure of $\delta$ from unity.
+If $\tilde{R}$ is defined as the ratio between the number of $t\bar{t}$ and $Z/\gamma$+jets events in the
+control samples described in Section~\ref{sec:bkgStudy} and $\tilde{R}_{MC}$ is its
+estimate from Monte Carlo, it is reasonable to expect that the main reasons that
+make $\delta$ deviate from unity do affect $\tilde{R}/\tilde{R}_{MC}$ in the same way.
+This is because the largest uncertainties of the MC are expected to come from the estimate 
+of the cross section of the $t\bar{t}$ and $Z/\gamma$+jets processes, 
+which affects equally $\tilde{R}_{MC}$ and $R_{MC}$.
+Therefore, it can be concluded that $\delta \simeq \tilde{R}/\tilde{R}_{MC}$ and, once real data is available
+to calculate $\tilde{R}$ from the control samples of $t\bar{t}$ and $Z/\gamma$+jets, this estimate 
+of $\delta$ will be used to improve the knowledge of $R$ from the current estimate, $R_{MC}$, 
+to $R_{data+MC} \equiv \delta \cdot R_{MC}$.
+The significance fit will then be done using $R_{data+MC}$. 
+
+The uncertainty on the estimate of $\delta$ given by $\tilde{R}/\tilde{R}_{MC}$ will be 
+dominated by the statistical error of $\tilde{R}$ from the number of events in the control samples. 
+This will propagate to give an uncertainty $\Delta R_{data+MC}$ on $R_{data+MC}$ and will
+be larger for small integrated luminosities. 
+Currently, $\Delta R_{data+MC}$ is estimated using the CSA07 control samples.
+The fit to extract the significance is here repeated changing the value of $R$ by 
+$\pm\Delta R_{data+MC}$ from its central value $R_{MC}$ \footnote{Not having real data yet, 
+exact correctness of the MC is currently assumed by setting $\delta=1$, 
+making effectively $R_{data+MC}=R_{MC}$.}, and the results are shown in 
+Figure~\ref{fig:sign_vs_Lint_sysR}.
+The systematic uncertainty due to $R$ is larger, for the same integrated luminosity, for a
+LQ mass of 250~GeV. This is due to the topology of the $M_{ej}$ distribution 
+of the signal that, at small LQ masses, peaks where the background does.
+For higher values of the LQ mass, the significance determination seems to be little 
+sensible to variations of $R$. This may be understood by considering the increased separation
+between the main features of the signal and backgound distributions, and the relative similarity 
+between the two backgound shapes: 
+the mixture between $t\bar{t}$ and $Z/\gamma$+jets events may vary, but
+the mixture between total background and signal does little.
+As an example, for the point at $M_{LQ}=400$~GeV, integrated luminosity=100~$pb^{-1}$ and significance=12.7
+the uncertainty  $\Delta R_{data+MC}$ is about 15\%, but this determines a change of 
+significance of only 1\%.
+
+The fact that, apart from the small LQ mass region and low luminosity scenario where special care
+will have to be applied, the uncertainty 
+of $R$ tends to be ``absorbed'' in the fitting procedure and have a limited impact on the 
+significance determination indicates that this systematics is reasonably under control. 
+In addition, it reassures that once the real data is available and the value of the correction 
+factor $\delta$, currently set to unity, can be estimated as described above and used in the fit,
+even a significant departure from unity will not require a drastic re-assessment of
+the current estimate of the luminosity needed for discovery.
+The uncertainty on the knowledge of the signal shape used in the fit may also produce a systematic
+uncertainty on the significance. A study of this effect will have to be performed.
+
+ \begin{figure}
+   \begin{center}
+     \resizebox{10cm}{!}{\includegraphics{plots/sign_vs_Lint_sysR.eps}}
+     \caption{\small \sl Significance of the discovery as a function of the integrated luminosity.
+       For each LQ mass, the fit to extract the significance is repeated varying the value of $R$
+       (the ratio between the number of $t\bar{t}$ and $Z/\gamma$+jets events in the final sample)
+       of an amount $\pm\Delta R_{data+MC}$ from its central value $R_{data+MC}$ 
+       (see text for details).
+       Apart from a couple of points at a LQ mass of 650~GeV, the higher curves correspond to
+       the higher value of $R$. 
+       The horizontal line represents a 5 sigma discovery.}
+     \label{fig:sign_vs_Lint_sysR}
+   \end{center}
+ \end{figure}
+
+In the case of setting an upper limit in the case of absence of signal, a larger number of systematic
+uncertainties will have to be considered as they do have a direct impact on it. 
+Such uncertainties include the one on the integrated luminosity, the detector efficiency and 
+resolution, the jet energy scale, and theoretical uncertainties such as those on parton distributions
+and higher-order corrections on the cross sections. Different scenarios of levels of background
+and signal will have to be studied. The procedure for setting an upper limit and the study of the 
+systematics involved is not yet included in this version of the analysis.
+
+
+
+%\end{document}
+%\documentclass{cmspaper}
+%\begin{document}
+
+\section{Conclusion}
+
+A MC-based analysis of the pair production of first generation leptoquarks that decay to
+an electron and a jet has been presented.
+The analysis strategy and detector performance description corresponds to a 100$~pb^{-1}$ scenario.
+Standard CMS techniques are used for electron and jet identification. 
+%Electron efficiencies will be determined from data using the Tag$\&$Pro [REF] technique. 
+A cut-based event selection has been applied and its optimization study will come in a future upgrade
+of the analysis.
+Several background sources have been studied and only two of them provide a significant contribution
+after event selection. 
+Data-driven techniques to understand the characteristics of these contributions have been developed 
+and studied on the CSA07 samples.
+
+The signal component is extracted with a log-likelihood fit that does not rely on precise knowledge
+of the level of the background but rather by exploiting the different shapes of the signal and background
+distributions. 
+The discovery potential of this analysis has been determined using a likelihood ratio estimator. 
+This has shown that, for leptoquark masses just above the Tevatron exclusion limit of 290~GeV
+\cite{d02008}, an early discovery is possible with a few $pb^{-1}$ of data.
+With an integrated luminosity of 100~$pb^{-1}$, discovery should be possible up
+to LQ mass of about 500 GeV.
+The procedure for setting an upper limit in case of absence of signal will be studied 
+in the next upgrade of the analysis.
+
+
+
+%To say:
+%- room for improvement, however striking signal features ...
+%- optimization of selection to be done
+%- data-driven method for bkg used
+%- TagAndPro for electron effic determination
+%- systematics for 5sigma discovery, more important for sensitivity curve, will use approach of CMS-AN-2007-038
+
+
+
+%\end{document}
+
+
+
+%\documentclass{cmspaper}
+%\begin{document}
+
+\begin{thebibliography}{9}
+  \bibitem {theories} {D.Acosta and S.K.Blessing, Ann.Rev.Nucl.Part.Sci 49,389},
+    1999,
+    {\em From June 2005}
+  \bibitem{hera}{H1 collaboration, Search for leptoquark bosons in ep collisions at HERA}, hep-ex/0506044,
+  \bibitem{d02008}{Search for First-Generation Leptoquarks in the dielectron channel with the DO Detector in $p\bar{p}$ Collisions at $\sqrt{s}=1.96$ TeV}, Jun 2008,
+  {\em DO Note 5644-CONF}
+
+%  \bibitem{d02007}{Searches for LQ production at D0}, Oct 2007,
+%    {\em arXiv0710.0255v1}
+
+    %\cite{Mangano:2002ea}
+  \bibitem{Mangano:2002ea}
+    M.~L.~Mangano, M.~Moretti, F.~Piccinini, R.~Pittau and A.~D.~Polosa,
+    ``ALPGEN, a generator for hard multiparton processes in hadronic collisions,''
+    JHEP {\bf 0307} (2003) 001
+    [arXiv:hep-ph/0206293].
+    %%CITATION = JHEPA,0307,001;%%
+
+  \bibitem{HeepHlt}{D. Acosta et al., The CMS High Level Trigger}, CMS AN 2007/009,
+  \bibitem{Kramer}{M.Kramer et al., Pair production of scalar leptoquarks at the LHC},Jan 2008 ,{\em arXiv 0411038v2}
+    %\cite{Abazov:2001mx} 	 
+  \bibitem{GSFele}{S. Baffioni et al., Electron Reconstruction in CMS}, CMS NOTE 2006/040,
+  \bibitem{EleID}{D. Newbold et al., Electron ID at High Energies}, CMS AN 2008/045,
+  \bibitem{Abazov:2001mx} 	 
+    V.~M.~Abazov {\it et al.}  [D0 Collaboration], 	 
+    %``Search for first-generation scalar and vector leptoquarks,'' 	 
+    Phys.\ Rev.\  D {\bf 64} (2001) 092004 	 
+    [arXiv:hep-ex/0105072]. 	 
+    %%CITATION = PHRVA,D64,092004;%%
+%  \bibitem{highmassToMuons}{\bf I. Altsybeev et al., Search for new high-mass resonances decaying to muon pairs in the CMS experiment}, CMS AN 2007/038,
+  \bibitem{JetAlg} {P. Schieferdecker et al., Performance of Jet Algorithms in CMS}, CMS AN-2008/01,
+  \bibitem{JES} {R. Harris, K. Kousouris, MC Truth L2 \& L3 Factorized Jet Corrections at CMS}, CMS AN-2008/03,
+ 
+ 
+ \end{thebibliography}
+ 
+
+%\end{document}
+\end{linenumbers}
+\end{document}

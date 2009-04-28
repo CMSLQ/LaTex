@@ -1,0 +1,155 @@
+%\documentclass{cmspaper}
+%\begin{document}
+\section{Jet Studies} \label{sec:jet}
+%from : /twiki.cern.ch/twiki/bin/view/CMS/WorkBookJetAnalysis
+
+\subsection{Jet Algorithm and Disambiguation}
+%monicava.web.cern.ch/monicava/Talks/JetTutorial130.pdf
+%http://64.233.169.104/search?q=cache:ON_R5d7inNQJ:arxiv.org/pdf/0705.2696+iterative+cone+algorithm&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a
+
+The reconstruction jet algorithm used in this analysis is an interative cone algorithm with a radius of $\Delta R=0.5$ \cite{JetAlg}.  
+The algorithm starts with seeds in a calorimeter tower (combined ECAL and HCAL) with energy greater than 
+1 GeV. It then considers the weighted average of all energy in the cone of radius 0.5 around this seed to form a proto-jet.  
+A cone of radius 0.5 is then constructed around the four-vector of each new proto-jet,  
+and the process is continued iteratively until a stable jet four-vector is obtained.
+
+This algorithm allows high energy electrons to be included in the jet collection. 
+In order to remove the electrons from the jet collection (disambiguation) a simple procedure is applied.  The collection 
+of electrons passing the ID selection criteria is first created, as described in section \ref{sec:electrons}.  The three-vector of the 
+two leading electrons with highest $P_{T}$ is then compared to the three-vector of the jets. 
+A jet is removed if it is within a $\Delta R$ of 0.5 from one of the two leading electrons. 
+
+%   1.  convert ADC counts to energy in one calorimeter cell
+%          * HcalSimpleReconstructor does this calculation for HCAL
+%          * ECAL does it in two steps
+%                o first produces uncalibrated hits: EcalWeightUncalibratedRecHitProducer
+%                o then calibrates hits: EcalAnalFitUncalibratedRecHitProducer 
+%   2. combine ECAL and HCAL cells into projective towers corresponding to HCAL granularity
+%          * CaloTowersCreator does this operation 
+%   3. convert CaloTowers into standard objects CaloTowerCandidateCreator (see more details in the next section)
+%   4. run clustering algorithm to produce Jets
+%          * Several basic algorithms and corresponding producers are currently implemented for CMS
+%                o Midpoint Cone algorithm: midpointJetProducer <-- used in this tutorial
+%                o Iterative Cone algorithm: iterativeConeJetProducer
+%                o KT algorithm: ktJetProducer
+%                o Seedless Infrared Safe cone algorithm: sisConeProducer 
+
+\subsection{Jet Energy Corrections}
+
+The corrections for the Jet Energy Scale (JES) are divided into various levels in CMSSW \cite{JES}.  
+In this analysis the jet energy is corrected with the level 2, 3, and 5 corrections.
+
+The level 2 jet energy corrections are the 
+``relative jet corrections'', and correct the energy in order to have a uniform response in psudorapidity.  
+The level 3 corrections are the ``absolute jet corrections''.  These aim at correcting the jet energy in the 
+region of $\eta < 1.3$ back to the particle level energy, which would correspond to the generator jet energy in the MC samples. 
+Figure~\ref{fig:CorrRatios}-left shows the ratio of the energy of the jets, after 
+the level 2 and 3 corrections have been applied, to the uncorrected jet energy.  
+The level 2 and 3 corrections are the standard CMSSW corrections recommended for all analysis. 
+The corrections change the energy of the jets 20\% on average.
+
+In addition, level 5 corrections are applied to take into account the flavor of the parton from which the jet originated.
+Figure~\ref{fig:CorrRatios}-right shows the mean correction factor for the jets based on the level 5 corrections for light quarks.  
+There is a change of only a few percent in the overall energy of the jet.  
+
+The level 2 and 3 corrections are calculated for samples enriched in gluon-jets (as QCD multi-jet events). Jets from 
+first generation LQ decays, however, come only from light quarks instead of a mixture of quarks and gluons.  Since the gluon-jets have
+a softer fragmentation function, the level 2 and 3 corrections tend to overcompensate the loss of energy when applied to jets originated 
+from quarks. This is the reason why the level 5 corrections for light quarks decrease the average energy of the jet, 
+as shown in Figure~\ref{fig:CorrRatios}-right. 
+
+The optional level 4 corrections aim at correcting the electromagnetic fraction of the jet, a quantity not used in the analsysis.  
+Hence these corrections were not applied.
+The level 7 corrections attempt to correct the energy of the jet back to the energy of the parton producing the jet based on the process
+by which the jet was produced, for example light quark jets from a dijet process or a charm quark from a ttbar process.  There is not an appropriate 
+correction funtion at this level for this analysis.
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+    a.
+  \resizebox{7.5cm}{!}{\includegraphics{plots/L23Raw.eps}}                  &
+   b.
+  \resizebox{7.5cm}{!}{\includegraphics{plots/L5L23.eps}} \\
+  \end{tabular}
+  \caption{\small \sl a - Mean ratio of jet energy after the level 2 and 3 corrections to that with no correction as a function of $P_T$. b 
+    - Ratio of jet energy after the level 2,3, and 5 corrections to that with only level 2 and 3 corrections as a function of $P_T$.  
+    Plots show the average correction for all jets in each $P_T$ bin.  These jets were from a LQ sample with a mass of 650 GeV. }
+    \label{fig:CorrRatios}
+  \end{center}
+\end{figure}
+
+
+%\subsection{Efficiencies}
+
+%The reconstruction efficiency of the jets from the leptoquark decays is quite high in the fiducial volume of the barrel and endcap.  Fortunately, the majority of the jets from the leptoquark decay are central 
+%(see figure~\ref{fig:jetVariables}).  The barrel region for CMS ends at $\eta = 1.3$, so any objects hitting the detector in this region will have a much greater likelihood of being properly reconstructed.  
+%Figure\ref{fig:jetEffFV} shows that for any jets within the barrel region with a pT greater than approximately 50 GeV the reconstruction efficiency is better than 90\%.  The efficiency in the endcap region is 
+%slightly lower, but still quite good.  The jet efficiency is shown to be high enough that no optimization of the cuts on jet variables has yet been done.  
+ 
+%  \begin{figure}
+%    \begin{center}
+%    \begin{tabular}{cc}
+%      \resizebox{0.3\linewidth}{!}{\includegraphics{plots/JetEffEta.eps}} &
+%      \resizebox{0.3\linewidth}{!}{\includegraphics{plots/JetEffPt.eps}}
+%     \end{tabular}
+%      \caption{\small \sl Efficiency of Jet Reconstruction of jets from a LQ of mass 650 GeV with respect to $\eta$ and $P_T$}
+%      \label{fig:jetEffFV}
+%    \end{center}
+%  \end{figure}
+ 
+
+%  \begin{table}[htb]
+%    \caption{\small \sl Electron Acceptance-Efficiency (FastSim)}
+%    \label{tab:JetEffAcc}
+%    \begin{center}
+%      \begin{tabular}{|l|c|c|c|} \hline
+%	    LQ mass (GeV) & $A_{Fiducial Region}$ & $\epsilon_{Fiducial Region}$ & $A\times\epsilon_{Fiducial Region}$\\ \hline
+%	    250 & XX\% & XX\% & XX\% \\ \hline
+%	    400 & XX\% & XX\% & XX\% \\ \hline
+%	    600 & XX\% & XX\% & XX\% \\ \hline
+%	    1000 & XX\% & XX\% & XX\% \\ \hline
+%      \end{tabular}
+%    \end{center}
+%  \end{table}
+%
+
+\subsection{Comparison of Jet Quantities between FastSim and FullSim}
+
+An effort is made to compare reconstructed quantities between FastSim and FullSim for high energy jets.
+The comparison is performed using LQ samples produced with FastSim in CMSSW\_1\_6\_12. 
+Several kinematics variables, ID and isolation variables, and efficiencies have been investigated. 
+Figure \ref{fig:jetVariables} shows the distributions of some of these quantities for reconstructed jets from LQ decay 
+for both FastSim and FullSim.
+As for the electrons, a generally good agreement at the level of a few \% is observed in the shape of the reconstructed quantities investigated.
+
+%The quantities crucial for this analysis show a good agreement in FastSim and FullSim.  Figure\ref{fig:jetVariables} compares some of the most important jet variables between FastSim and FullSim.  These plots were made with a cut of 50 GeV on the reconstructed Jets unless otherwise specified.  They correspond to a leptoquark of mass 650 GeV.  Clearly the 
+%pT of the jet is the most crucial variable as sT, the scalar sum of the pT of the 4 leading objects is used to extract the signal from the background.  This variable is relatively similar in the Fast and FullSim.  
+%The distribution of jets in the barrel and endcap is also important to the reconstruction efficiency.  The plot of the eta distribution of the jets in figure\ref{fig:jetVariables} shows that this variable agrees 
+%well in the Fast and FullSim.
+
+\begin{figure}
+  \begin{center}
+    \begin{tabular}{cc}
+      \resizebox{7cm}{!}{\includegraphics{plots/NcaloJetsPtCut.eps}} &
+      \resizebox{7cm}{!}{\includegraphics{plots/NcaloJetsMatchedPtCut.eps}} \\
+      \resizebox{7cm}{!}{\includegraphics{plots/etaCaloJetMatched50GeV.eps}} &
+      \resizebox{7cm}{!}{\includegraphics{plots/ptCaloJetMatched50GeV.eps}} \\
+    \end{tabular}
+    \caption{\small \sl Distributions of jet reconstructed quantities in FastSim and Full Sim samples with $M_{LQ}=650$ GeV.  
+      Jets are matched to a quark from a leptoquark by a $\Delta R<0.5$. Only jets with $P_{T}>50$ GeV are considered.
+      From the top left to the bottom right: number of jets per event, number of jets coming from LQ decays per event, 
+    $\eta$, and $P_{T}$.}
+    \label{fig:jetVariables}
+  \end{center}
+\end{figure}
+
+%disambiguation, corrections
+
+%pT, eta dist
+
+%efficiencies (pT, eta)
+
+%fast vs full
+
+%\end{document}

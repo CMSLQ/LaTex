@@ -1,0 +1,492 @@
+\documentclass{cmspaper}
+\begin{document}
+
+\begin{titlepage}
+
+% select one of the following and type in the proper number:
+   \cmsnote{2008/000}
+%  \internalnote{2005/000}
+%  \conferencereport{2005/000}
+   \date{17 June 2008}
+
+  \title{First Generation Scalar Leptoquarks at the Compact Muon Solenoid}
+
+  \begin{Authlist}
+   Paolo Rumerio, Francesco Santanastasio, Elizabeth Twedt
+       \Instfoot{cern}{University of Maryland, College Park, MD, USA}
+  \end{Authlist}
+
+
+  \begin{abstract}
+    Abstract to describe what the heck we are doing and why we think it is important...
+  \end{abstract} 
+
+\end{titlepage}
+
+\setcounter{page}{2}%JPP
+
+\section{Introduction}
+
+This note describes the developement of analysis techniques that will be used to search for evidence  of Leptoquarks at the CMS experiment.  Leptoquarks are theoretical particles with both baryon and lepton number and hence decay to both leptons and quarks.  These techniques have been studied using Monte Carlo samples produced assuming colliding proton beams of 7 TeV each with an integrated luminosity of $100^{-1}pb$. 
+
+Many models of new physics predict the existence of leptoquarks, including General Unified Theories, technicolor and composite models \cite{theories}.  These exotic particles carry color and fractional electric charge and may be either scalar or vector particles.  Three generations of leptoquarks are predicted,  corresponding to the generations of quarks and leptons.  Intergenerational coupling of leptoquarks is forbidden due to the experimental limits on flavor changing neutral currents.  This note studies the signal of a first generation scalar leptoquark decaying into an electron and quark with a branching ratio of 1. 
+
+The dominant production modes of leptoquarks at the LHC will be through gluon-gluon fusion and quark-antiquark anihilation producing a leptoquark-antileptoquark pair.  This provides a striking signal of two high transverse momentum electrons and two high transverse momentum jets with no true missing transverse energy.  The efficiency of events passing the online trigger is high.  Detailed analysis of both electron and jet variables show a high reconstruction efficiency.  The signal is reconstructed here using largely data from the Electromagnetic and Hadronic Calorimeters, using information from the Tracker only for electron identification and isolation.  Techniques used here to identify this signal include a search for features in the invariant mass spectrum of the electron-jet pairs, and data driven techniques to estimate and seperate the dominant background processes.
+
+Experiments at the Tevatron have placed the current lower mass limit of the first generation scalar leptoquark at 251 GeV (assuming a branching ratio of 1 into electrons) \cite{d02007}.  Here we study signal samples produced at a range of masses from 250 GeV to 1 TeV.  Monte Carlo simulation studies show the reach of CMS to be leptoquarks of masses around 1 TeV.
+
+discovery and limit 
+
+Smallest integrated L in order to discover LQ with certain mass. (10pb-1)
+
+With full statistics (100 fb-1) could discover up to what mass?
+
+\section{Model Prediction}
+Cross section, plots and formulae
+
+plots at gen level
+
+(DeltaR electron/genJet (cleaned genJet collection of elec))
+
+
+\section{MC signal samples}
+
+MC signal samples generated with CMSSW\_1\_4\_12 (pythia version 6.227) and reconstructed with CMSSW\_1\_6\_7 Full Simulation (GEANT 4) are studied with leptoquark masses ranging from 250 GeV to 1 TeV.  These particular CMSSW versions were chosen in ordre to produce samples compatable with the officially produced background samples described later in this section.  These signal samples have been produced with a $100^{-1}pb$ miscalibration and misalignment scheme.  Table~\ref{tab:NumEvents} shows the number of events in each sample used. 
+
+  \begin{table}[htb]
+    \caption{Number of Events in MC Signal Samples}
+    \label{tab:NumEvents}
+    \begin{center}
+      \begin{tabular}{|l|cccc|} \hline
+               & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\ 
+         & 250 & 400 & 650 & 1000 \\ \hline
+        FullSim & X  &  X  & X  &  X  \\
+        FastSim  & Y & Y & Y &  Y  \\ \hline
+      \end{tabular}
+    \end{center}
+  \end{table}
+
+
+The background samples are taken from the CSA07 official production.  All events were generated with CMSSW\_1\_4\_12 and reconstructed with CMSSW\_1\_6\_7.  In this production there were three flavors of Standard Model event combinations, two of which were used in this analysis.  The {\sl Chowder} contains the ALPGEN W+jet, Z+jet and tt+jet samples, and {\sl Gumbo} which contains QCD, Photon+jets, MinBias.  The event samples for each process within the soups were produced with numbers of events corresponding to a variety of integrated luminosities.  In order to scale the sample sizes correctly a central module that calculates the event weights has been used ({\sl CSA07EventWeightProducer.cc}) . 
+
+%from : twiki.cern.ch/twiki/bin/view/CMS/CSA07Physics
+%https://twiki.cern.ch/twiki/bin/view/CMS/GeneratorProduction2007CSA07
+
+Additionally, samples reconstructed with the Fast Simulation (FastSim) in CMSSW version 1\_6\_12 are studied in order to validate the quality of the FastSim process.  The FastSim uses a parameterization of the detector response instead of using the traditional GEANT simulation package to determine the detector response.  The FastSim samples were created with the same misalignment and miscalibration scheme as the Full Simulation samples. Table ~\ref{tab:FastVsFullSim} shows the relative time and size advantage to uing the FastSim over the FullSim for leptoquark event production.  The use of the FastSim would be highly beneficial to this analysis as the production of events with such large EM showers and large numbers of particles generated therein are quite time consuming in the Full Simulation.  
+
+  \begin{table}[htb]
+    \caption{Time and size of samples in FastSim and FullSim}
+    \label{tab:FastVsFullSim}
+    \begin{center}
+      \begin{tabular}{|l|cccc|cccc|} \hline
+               & \multicolumn{4}{c|}{FullSim} & \multicolumn{4}{c|}{FastSim} \\ 
+        Leptoquark Mass (GeV) & 250 & 400 & 650 & 1000 &
+                  250 & 400 & 650 & 1000  \\ \hline
+        Time per Event (sec) & X  &  X  & X  &  X  &  X  &  X  &  X  &  X   \\
+        Size of Event (kbytes)  & Y & Y & Y &  Y & Y & Y & Y & Y \\ \hline
+      \end{tabular}
+    \end{center}
+  \end{table}
+
+%twiki.cern.ch/twiki/bin/view/CMS/FastSimPhysicsValidationInfo
+%twiki.cern.ch/twiki/bin/view/CMS/SWGuideFastSimulation
+
+The comparison of the Full Simulation to the FastSim data shows good agreement.  Plots comparing various quantities are included in each subsection of this note.  The discrepancies are small enough between these two simulation methods that the continuation of this analysis will use dominantly samples produced with FastSim in order to take advantage of higher statistics.
+
+\section{Trigger Studies} - why I did it...
+
+All the trigger plots and explanations
+
+Quality of selection
+
+eff before and after analysis cuts, justification
+
+
+\section{Data Flow} - what I did
+
+Primary data set?  What cuts to make skim, filter events...
+
+description of final samples after skim - size, time estimates of access
+
+
+
+fast vs full
+
+\section{Electron Studies}
+
+\subsection{Definition, Identification and Isolation}
+
+The electron object is formed from a deposit of energy in an ECAL supercluster that is matched with hits in the pixel detector.  Few electrons lose momentum to radiated photons before the pixel detector since the majority of the material in the tracker is after the pixels.  Thus, the energy-weighted average impact point of the electrons and radiated photons with the supercluster will correspond well with the track found using these pixel hits as seeds.  
+
+The criteria for electron ID at the reconstruction level are very loose, resulting in many fake electrons in the collection.  In this analysis the cuts corresponding to the definition of a ``Robust Electron'' have been applied in an effort to reduce the number of fake electrons in the collection.  The quantities used in this definition are the ratio of hadronic to electromagnetic energy (H/E), shower shape along psudorapidity ($\sigma_{\eta\eta}$), difference in psudorapidity between the track and the supercluster ($\Delta\eta_{in}$), and the difference in phi between the track and supercluster ($\Delta\phi_{in}$). These cuts are appropriate for start up conditions as they allow a high efficiency.  The quatities and values used for these selection can be found in table~\ref{tab:ElecIdIso}. Figure~\ref{fig:elecID} shows the distributions of these variables for both true electrons coming from the leptoquark decays and fake electrons from a QCD sample.
+
+Further cleaning of the collection is achieved through requiring that the electron be isolated.  The three quantities considered are the number of tracks within a cone of radius 0.2 of the contact with the supercluster, the ratio of the sum of transverse energy of tracks within a cone of radius 0.2 to that of the electron track (Track Et ratio), and the ratio of transverse energy in the ECAL within a cone of radius 0.4 to that of the electron (ECAL Et ratio).  These are also found in table~\ref{tab:ElecIdIso}.  The distributions of these variables for both true electrons from the leptoquark decay and fake electrons from QCD events can be seen in figure~\ref{fig:elecIso}.  
+
+  \begin{table}[htb]
+    \caption{Electron Identification and Isolation Variables}
+    \label{tab:ElecIdIso}
+    \begin{center}
+      \begin{tabular}{|ccc|cc|} \hline
+                \multicolumn{3}{c|}{ID Variables} & \multicolumn{2}{c|}{Isolation Variables} \\ 
+	    Variable & Barrel Threshold & Endcap Threshold & Variable & Threshold \\ \hline
+        H/E  & 0.115 & 0.150 & Number of Tracks  & 1 \\ \hline
+        $\sigma_{\eta\eta}$  & 0.0140 & 0.0275 & Track Et ratio  & 0.01\\ \hline
+        $\Delta\eta_{in}$  & 0.0532 & 0.092 & ECAL Et ratio & 0.01 \\ \hline
+        $\Delta\phi_{in}$  & 0.0090 & 0.0105 &  & \\ \hline
+      \end{tabular}
+    \end{center}
+  \end{table}
+
+%From : twiki.cern.ch/twiki/bin/view/CMS/SWGuideEgamma
+
+% Robust Electron Def from : twiki.cern.ch/twiki/bin/view/CMS/SWGuideElectronID
+% Ele Isolation from : twiki.cern.ch/twiki/bin/view/CMS/SWGuideEgamma 
+
+
+%Still need description of these plots, like what cuts were used...
+
+%\begin{2figures}{hbtp}
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleDeltaEtaTrkSC.eps}} &
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleDeltaPhiTrkSC.eps}} \\
+%  \caption{eleDeltaEtaTrkSC}
+%  \label{fig:eleDeltaEtaTrkSC} &
+%  \caption{eleDeltaPhiTrkSC}
+%  \label{fig:eleDeltaPhiTrkSC} \\
+%\end{2figures}
+%\begin{2figures}{hbtp}
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleHoE.eps}} &
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleSigmaEE.eps}} \\
+%  \caption{eleHoE}
+%  \label{fig:eleHoE} &
+%  \caption{eleSigmaEE}
+%  \label{fig:eleSigmaEE} \\
+%\end{2figures}
+%\begin{2figures}{hbtp}
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleNumTrkIso.eps}} &
+%  \resizebox{\linewidth}{!}{\includegraphics{plots/h_eleEcalIso.eps}} \\
+%  \caption{eleNumTrkIso}
+%  \label{fig:eleNumTrkIso} &
+%  \caption{eleEcalIso}
+%  \label{fig:eleEcalIso} \\
+%\end{2figures}
+%\begin{figure}
+%  \begin{center}
+%    \resizebox{0.5\linewidth}{!}{\includegraphics{plots/h_eleTrkIso.eps}}
+%    \caption{eleTrkIso}
+%    \label{fig:eleTrkIso}
+%  \end{center}
+%\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleHoE.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleSigmaEE.eps}} \\
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleDeltaEtaTrkSC.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleDeltaPhiTrkSC.eps}} \\
+  \end{tabular}
+  \caption{Identification Variables: H/E,SigmaEtaEta, DetlaEtaIn, DeltaPhiIn }
+    \label{fig:elecID}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleNumTrkIso.eps}} &
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleTrkIso.eps}}\\
+  \resizebox{7cm}{!}{\includegraphics{plots/h_eleEcalIso.eps}} \\
+  \end{tabular}
+  \caption{Isolation Variables: NumTrk, TrkIso, EcalIso  }
+    \label{fig:elecIso}
+  \end{center}
+\end{figure}
+
+\subsection{Efficiency and Acceptance}
+
+The reconstruction efficiency ($\epsilon$) with these cuts is high enough to allow the use of only the fiducial volume containing the barrel and endcap regions of the calorimeters without comprimising the signal to background ratio.  On average in the barrel region the electron efficiency is nearly 90\% for a single electron from a leptoquark of mass 250 GeV.  Limiting the fiducial volume to only the barrel and endcaps gives a total acceptance of about 80\%. Figure~\ref{fig:elecEffFV} shows the electron efficiency as a function of both transverse momentum and psudorapidity over the range of the detector for a leptoquark of mass 250 GeV.  Table~\ref{tab:ElecEffAcc} shows the acceptance (A) and efficiency values for samples produced in FastSim.
+
+ \begin{figure}
+   \begin{center}
+     \resizebox{0.5\linewidth}{!}{\includegraphics{plots/UMD.eps}}
+     \caption{Efficiency of Electron Reconstruction in Fiducial Volume with respect to $\eta$ and Transverse Momentum}
+     \label{fig:elecEffFV}
+   \end{center}
+ \end{figure}
+
+  \begin{table}[htb]
+    \caption{Electron Acceptance-Efficiency (FastSim)}
+    \label{tab:ElecEffAcc}
+    \begin{center}
+      \begin{tabular}{|l|c|c|c|} \hline
+	    LQ mass (GeV) & $A_{Fiducial Region}$ & $\epsilon_{Fiducial Region}$ & $A\times\epsilon_{Fiducial Region}$\\ \hline
+	    250 & 80.3\% & 88.0\% & 70.6\% \\ \hline
+	    400 & 84.2\% & 87.6\% & 73.8\% \\ \hline
+	    600 & 87.2\% & 87.2\% & 76.1\% \\ \hline
+	    1000 & 89.3\% & 87.0\% & 77.7\% \\ \hline
+      \end{tabular}
+    \end{center}
+  \end{table}
+
+% indico.cern.ch/getFile.py/access?contribId=3&resId=0&materialId=slides&confId=32048
+
+\subsection{Comparison of Electron Quantities between FastSim and FullSim}
+%\subsection{Kinematic Distributions for Signal Electrons}
+The electrons from the signal are concentrated at low $\eta$, which contributes to the high recongstruction efficiency.  The distribution of transverse momentum shows a peak close to half the leptoquark mass, as would be expected.  These quantities are shown in figure~\ref{fig:elecVariables}, along with the same quatities from the FastSim samples for comparison.  The agreement between the FastSim and FullSim for these quatities is quite good, especially in the fiducial volume for this analysis (barrel and endcap regions).
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \end{tabular}
+  \caption{Distributions of electron quantities in both Fast and Full Sim: $\eta$, $p_{T}$, etc... }
+    \label{fig:elecVariables}
+  \end{center}
+\end{figure}
+
+
+%efficiency (pT, eta) (no deltaR from genJet since already showed distance OK above)
+%pT, eta dist
+
+{\Large \sl Energy Resolution}
+
+%fast vs full
+
+\section{Jet Studies}
+%from : /twiki.cern.ch/twiki/bin/view/CMS/WorkBookJetAnalysis
+
+\subsection{Jet Algorith and Disambiguation}
+%monicava.web.cern.ch/monicava/Talks/JetTutorial130.pdf
+
+The reconstruction jet algorithm used in this analysis is a midpoint cone algorithm with a radius of 0.5.  The algorithm starts with seeds in a calorimeter tower (combined ECAL and HCAL) with energy greater than 1 GeV. It then considers the weighted average of all energy in the cone of radius 0.5 around this seed to form a ``proto-jet''.  A cone of radius 0.5 is then constructed around the four-vector of each new proto-jet and the process is continued iteratively until a stable jet four-vector is obtained.
+
+This process allows for most of the electrons and some other non-jet objects to be included in the jet collection.  In order to remove electron objects from the collection (disambiguation) in this analysis the collection of electrons passing the identification and isolation criteria is first created (see the section on Electron Studies above).  Any object in the jet collection within a distance of 0.5 of the two highest transverse momentum electrons is then removed from the jet collection.
+
+
+%   1.  convert ADC counts to energy in one calorimeter cell
+%          * HcalSimpleReconstructor does this calculation for HCAL
+%          * ECAL does it in two steps
+%                o first produces uncalibrated hits: EcalWeightUncalibratedRecHitProducer
+%                o then calibrates hits: EcalAnalFitUncalibratedRecHitProducer 
+%   2. combine ECAL and HCAL cells into projective towers corresponding to HCAL granularity
+%          * CaloTowersCreator does this operation 
+%   3. convert CaloTowers into standard objects CaloTowerCandidateCreator (see more details in the next section)
+%   4. run clustering algorithm to produce Jets
+%          * Several basic algorithms and corresponding producers are currently implemented for CMS
+%                o Midpoint Cone algorithm: midpointJetProducer <-- used in this tutorial
+%                o Iterative Cone algorithm: iterativeConeJetProducer
+%                o KT algorithm: ktJetProducer
+%                o Seedless Infrared Safe cone algorithm: sisConeProducer 
+
+\subsection{Jet Energy Corrections}
+
+The corrections for the Jet Energy Scale is divided into various levels in CMSSW.  In this analysis the jet energy is corrected with the level 2, 3,and 5 corrections.  The level 2 jet energy corrections are the ``Relative Jet Corrections'' and correct the energy in order to have a uniform response in psudorapidity.  The level 3 corrections are the ``Absolute Jet Corrections'' and aim at correcting the jet energy in the region of $\eta < 1.3$ back to the particle level energy, which would correspond to the generator jet energy in the Monte Carlo samples. Figure~\ref{fig:CorrRatios} shows the ratio of the energy of the jets after the level 2 and 3 corrections have been applied to the uncorrected jet energies.  The level 2 and 3 corrections are the standard CMSSW corrections recommended for all analysis.  The corrections change the energy of the jets nearly 20\% on average.
+
+The level 5 corrections are applied based on the assumed flavor of the jet.  In this analysis these corrections are applied only to jets assumed to have come from the leptoquark decay and hence uniformly up quarks.  Hence the correction factor corresponding to that for up quark jets is used to scale the energy and momentum of the jets coming from the signal events.  The second plot in figure~\ref{fig:CorrRatios} shows correction factor for the jets based on the level 5 corrections.  There is a change of only a few percent in the overall energy of the jet.
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \end{tabular}
+  \caption{Ratio of L23 corrected energy to Raw, and L5 to L23 as function of Transverse Momentum }
+    \label{fig:CorrRatios}
+  \end{center}
+\end{figure}
+
+\subsection{Efficiencies}
+
+The reconstruction efficiency of the jets from the leptoquark decays is quite high in the fiducial volume of the barrel and endcap.  Fortunately, the majority of the jets from the leptoquark decay are central (see figure XX).  Table~\ref{tab:JetEffAcc} shows the values of acceptance and efficiency for jets coming from leptoquarks with various masses.  These values and figures are assuming a cut on the transverse momentum of the jet at 20 GeV (?????).
+
+ \begin{figure}
+   \begin{center}
+   \begin{tabular}{cc}
+     \resizebox{0.5\linewidth}{!}{\includegraphics{plots/JetEffEta.eps}} &
+     \resizebox{0.5\linewidth}{!}{\includegraphics{plots/JetEffPt.eps}}
+    \end{tabular}
+     \caption{Efficiency of Jet Reconstruction in Fiducial Volume with respect to $\eta$ and Transverse Momentum}
+     \label{fig:jetEffFV}
+   \end{center}
+ \end{figure}
+
+  \begin{table}[htb]
+    \caption{Electron Acceptance-Efficiency (FastSim)}
+    \label{tab:JetEffAcc}
+    \begin{center}
+      \begin{tabular}{|l|c|c|c|} \hline
+	    LQ mass (GeV) & $A_{Fiducial Region}$ & $\epsilon_{Fiducial Region}$ & $A\times\epsilon_{Fiducial Region}$\\ \hline
+	    250 & XX\% & XX\% & XX\% \\ \hline
+	    400 & XX\% & XX\% & XX\% \\ \hline
+	    600 & XX\% & XX\% & XX\% \\ \hline
+	    1000 & XX\% & XX\% & XX\% \\ \hline
+      \end{tabular}
+    \end{center}
+  \end{table}
+
+
+\subsection{Comparison of Jet Quantities between FastSim and FullSim}
+
+The quantities crucial for this analysis show a good agreement in FastSim and FullSim.  {\sl More discussion about why we care about these quatities, is it what we expect to see, etc...}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \end{tabular}
+  \caption{Distributions of jet quantities in both Fast and Full Sim: N-jets, $\eta$, $p_{T}$, etc... }
+    \label{fig:jetVariables}
+  \end{center}
+\end{figure}
+
+%disambiguation, corrections
+
+%pT, eta dist
+
+%efficiencies (pT, eta)
+
+{\Large \sl Energy Resolution}
+
+
+%fast vs full
+
+\section{Event Selection}
+
+The basic strategy to identify the existence of a particle such as the leptoquark which decays to a jet and electron is to study the invariant mass of the electron-jet pairs in the events.  The signal of a leptoquark would appear as a bump in the distribution of this invariant mass, at the mass of the leptoquark.  The decay of a particle to a jet and lepton is forbidden in the standard model.  Thus the peak at the mass of the leptoquark would be the only resonance peak in this distribution.  The electron-jet combinations of the background events will have a very different shape than that of the mass resonance of the leptoquark.  None the less, the number of background events could dominate over the numbre of signal events.  The following selections have been made in order to minimize the number of background events selected.
+
+The signal of the leptoquark decay is two high energy jets and two high energy electrons.  The initial selection of events that fit this description is through the HLT triggers of HE and VHE.  
+
+Analysis strategy (M dist, bump search)
+
+Optimize signal, minimize bkgd
+
+
+
+Plots of selection variables
+
+(optimization of selection criteria)
+
+List of selection criteria (Mee, St, etc.)
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+ & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
+\hline
+\hline
+
++ LQ skim &1400.1 $\pm$ 14.0& 10000.0 & 1.0e+00 $\pm$ 1.4e-02\\
++ 2 ele (no Iso) pT $>20.0$ GeV &793.3 $\pm$ 10.5& 5666.0 & 5.7e-01 $\pm$ 9.4e-03\\
++ 2 ele (Iso) pT $>20.0$ GeV &689.4 $\pm$ 9.8& 4924.0 & 8.7e-01 $\pm$ 1.7e-02\\
++ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$20.0(20.0) GeV &675.7 $\pm$ 9.7& 4826.0 & 9.8e-01 $\pm$ 2.0e-02\\
++ ele, jet kinematics cuts &593.9 $\pm$ 9.1& 4242.0 & 8.8e-01 $\pm$ 1.8e-02\\
++ Mee $<80.0$ GeV OR Mee $>100.0$ GeV&568.0 $\pm$ 8.9& 4057.0 & 9.6e-01 $\pm$ 2.1e-02\\
++ St $>400.0$ GeV &562.4 $\pm$ 8.9& 4017.0 & 9.9e-01 $\pm$ 2.2e-02\\
+\hline
+
+full selection efficiency& &  & 4.0e-01 $\pm$ 7.5e-03\\
+\hline
+\end{tabular}
+\end{center}
+\caption{$N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected event, $\varepsilon$ is the relative selection efficiency with respect to the previous cut}
+\end{table}
+
+This is where I put figure~\ref{fig:Mej_allComb}.  I'm not sure if it's the correct place.
+
+
+%Efficiencies (table of diff masses, bkgd, cut by cut)
+%Number of selected events (for luminosity)
+
+\section{Background}
+The four main source of background events that pass the High Level Trigger are ttbar, Z+jets, QCD and W+jets.  The application of the electron isolation criteria sufficiently limits the number of fake electrons in the offline selection that the QCD and W+jets background are negligible.  The small contribution of the events with fake electrons from the QCD and W+jet channels can be seen in figure~\ref{fig:Mej_allComb}.
+
+\subsection{ttbar}
+
+The number and shape of events from ttbar with two electrons in our sample can be estimated by examining the number and shape of events from ttbar events that contain one muon and one electron.  One would expect this number to be double the number of events with two muons.  However, due to the online selection of events with one high pT electron a number of events with one high pT muon and a lower pT electron will be excluded.  This will cause a reduction in the ration of $e\mu$ events to $ee$ events, but the shape will not be effected.  If the change in the size of the $e\mu$ sample is well understood this method can still be used to estimate the total number and shape of the background events in our sample that come from ttbar events with two electrons.  Figure~\ref{fig:ttbar} compares the distribution of the invariant mass of the lepton+jet in $e\mu$ ttbar events to that of $ee$ ttbar events using Monte Carlo truth.
+
+{\sl Discussion of how clearly this plot shows similar shape and how this will be used}
+
+\begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+  \end{tabular}
+  \caption{pT distribution of ttbar events with $e\mu$ (left) and $ee$ (right) }
+    \label{fig:ttbar}
+  \end{center}
+\end{figure}
+
+
+\subsection{Z+jets} 
+
+compare jet variables in and outside Zmass window
+
+%http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/Configuration/CSA07Production/data/CSA07_zjet_ptjgt20_Rmatch0.7_excl.cfg?revision=1.2&view=markup
+
+%alpgen
+%zjet_0ptz100gen
+%z2j_0ptz100
+%njets 2
+%ebeam 7000
+%ih2 1  - for proton/proton collisions
+%ickkw 1 - CKKW prescription for the running of alphas's in the extra gluon emission processes	
+%iqopt 1 - renormalization scale
+%ptjmin 20
+%etajmax 5
+%drjmin 0.7
+%izdecmode 4
+
+Fit method (histogram, unbinned, function, combination...)
+
+\section{Signal Extraction}
+
+ \begin{figure}
+   \begin{center}
+     \resizebox{7cm}{!}{\includegraphics{plots/Mej_allComb_Meecut_Stcut.eps}}
+     \caption{Que Bello!!}
+     \label{fig:Mej_allComb}
+   \end{center}
+ \end{figure}
+
+
+Fit of Mass Distribution and bdkg
+
+Quality of fit?
+
+Pulls, etc...
+
+
+\section{CMS Potential}
+Discovery luminosity
+
+5 sigma discovery
+
+Upper limits in absence of signal
+
+
+\section{Conclusion}
+
+
+
+\begin{thebibliography}{9}
+  \bibitem {theories} {\bf D.Acosta and S.K.Blessing, Ann.Rev.Nucl.Part.Sci 49,389},
+    1999,
+    {\em From June 2005}
+  \bibitem{d02007}{\bf Searches for LQ production at D0}, Oct 2007,
+    {\em arXiv0710.0255v1}
+    
+ 
+ 
+ \end{thebibliography}
+ 
+
+\end{document}
