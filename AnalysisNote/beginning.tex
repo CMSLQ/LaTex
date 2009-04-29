@@ -9,10 +9,10 @@
   \cmsan{2008/000}
 %  \internalnote{2005/000}
 %  \conferencereport{2005/000}
-   \date{30th October 2008}
+   \date{12 May 2009}
 
 
-  \title{Search for First Generation Scalar Leptoquarks at the CMS experiment}
+  \title{Search for First Generation Scalar Leptoquarks at the CMS Experiment}
 
   \begin{Authlist}
    Sarah Eno, Paolo Rumerio, Francesco Santanastasio, Elizabeth Twedt
@@ -21,17 +21,16 @@
 
 
   \begin{abstract}
-    The discovery potential for pair production of first generation scalar leptoquarks 
-    decaying to an electron and quark is investigated 
-    at the CMS experiment using Monte Carlo samples produced with a full simulation of the detector response.  
-    The analysis strategy is defined assuming an available integrated luminosity of 100 pb$^{-1}$.
+    The discovery potential for pair production of first generation scalar leptoquarks that 
+    decay to an electron and quark is investigated 
+    at the CMS experiment using Monte Carlo samples produced with a full simulation of detector response.  
+    The analysis strategy assumes an integrated luminosity of 100 pb$^{-1}$.
     Event selection and reconstruction and identification of high energy electrons and jets are discussed.
     The electron-jet invariant mass distribution is reconstructed
     and used to identify the possible presence of a leptoquark signal.
-    Data-driven techiques are discussed to determine the main Standard Model backgrounds using 
-    control samples. The signal yield is extracted using a maximum likelihood fit to the 
-    electron-jet invariant mass distribution, and the significance of the measurement is estimated.
-    Finally the CMS discovery potential is quantified for different leptoquark mass hyphotheses.
+    Data-driven techiques are discussed to determine the main standard model backgrounds through use of 
+    control samples. The signal and its significance are extracted using XXXXXX.
+    Finally, the CMS discovery potential is quantified for different leptoquark mass hyphotheses.
 
 %The leptoquarks are assumed to decay exclusively to electrons and quarks.  Detailed explanations of the discovery techniques and data driven methods to extract the signal from background events are given.  
 %Both exclusion limits and discovery potential are discussed for masses of the leptoquark ranging from around the current limit of 251 GeV to 1 TeV.
@@ -44,59 +43,59 @@
 \section{Introduction}
 
 This note describes the analysis techniques that will be used to search for evidence of first generation scalar leptoquarks 
-at the CMS experiment. The methods described are evaluated using Monte Carlo (MC) simulations assuming an availability of 
-100 pb$^{-1}$ of integrated luminosity and 7 TeV proton beams.
+at the CMS experiment. The methods described are evaluated using Monte Carlo (MC) simulations assuming 
+100 pb$^{-1}$ of integrated luminosity and 5 TeV proton beams.
 
-Leptoquarks (LQ) are conjectured exotic particles with both baryon and lepton number, allowing their decay into a lepton and quark.    
-Several models of new physics beyond the Standard Model (SM) predict the existence of leptoquarks, including General Unified Theories, 
+Leptoquarks (LQ) are new exotic particles conjectured to have both baryon and lepton number and primary decays into leptons and quarks.    
+Several models of physics beyond the standard model (SM) predict the existence of leptoquarks, including General Unified Theories, 
 technicolor and composite models \cite{theories}.  
 %% OTHER MODELS (SUSY WITH R-PARITY???)
 
-These exotic particles carry color and fractional electric 
-charge, and may be either scalar or vector particles. Three generations of leptoquarks are predicted, 
-corresponding to the generations of quarks and leptons in the SM.  Intergenerational coupling of leptoquarks is forbidden 
-due to the experimental limits on flavor changing neutral currents. 
+Leptoquarks carry color and fractional electric 
+charge, and can be either scalar or vector particles. The three generations of predicted leptoquarks 
+correspond to the families of quarks and leptons in the SM.  Intergenerational coupling of leptoquarks is forbidden 
+a priori by the experimental upper limits on flavor-changing neutral currents. 
 
-The model parameters are 1) $M_{LQ}$, the LQ mass, 2) $\beta$, the branching ratio of the decay 
-$\mbox{LQ} \rightarrow l + q$, where $l$ is a charged lepton and $q$ is a quark, 
-3) $\lambda_{\mbox{LQ}lq}$, the coupling between LQ, lepton and quark ($\mbox{LQ}-l-q$ vertex). 
-The complementary decay with a branching ratio of 1-$\beta$ describes the decay $\mbox{LQ} \rightarrow \nu + q$, 
-where $\nu$ is a nutrino.
-The results of the HERA experiments show that the data are in agreement with a scenario of weak 
-$\lambda_{\mbox{LQ}lq}$ coupling \cite{hera}. The choice is to fix the paramameter 
-$\lambda_{\mbox{LQ}lq} = \lambda_{EM} \approx 0.3$, which gives 
-a theoretical LQ relative width ($\Gamma_{LQ}/M_{LQ}$) around 0.2\%. 
-Therefore the measurement of $\Gamma_{LQ}/M_{LQ}$ cannot be performed at LHC, since 
-it is completely dominated by the detector resolution.  
+The parameters of the model are i) $M_{LQ}$, the LQ mass, ii) $\beta$, the branching fraction for the decay 
+$\mbox{LQ} \rightarrow l + q$, where $l$ is a charged lepton and $q$ is a quark, and
+iii) $\lambda_{\mbox{LQ}lq}$, the coupling between LQ, lepton and quark ($\mbox{LQ}-l-q$ vertex). 
+The complementary decay of a branching ratio 1-$\beta$ describes the decay $\mbox{LQ} \rightarrow \nu + q$, 
+where $\nu$ is a weak-isospin partner of the lepton.
+Results from HERA on upper limits for LQ production restrict  
+$\lambda_{\mbox{LQ}lq}$ to relatively weak coupling\cite{hera}. For example, fixing the paramameter 
+$\lambda_{\mbox{LQ}lq} = \lambda_{EM} \approx 0.3$, leads to 
+a theoretical relative width for the LQ of ($\Gamma_{LQ}/M_{LQ}$) around 0.2\%. 
+Consequently, $\Gamma_{LQ}/M_{LQ}$ will not be able to be measured at the LHC, since 
+the width of any peak on the mass distribution of the LQ will be dominated by detector resolution.  
 
-Experiments at the Tevatron have placed the current lower limit on the mass of first generation scalar 
-leptoquarks around 290 GeV (assuming $\beta=1$ in the electron channel) \cite{d02008}.
-At the LHC, the dominant production modes of leptoquarks will be through gluon-gluon fusion and 
-quark-antiquark annihilation producing a leptoquark-antileptoquark pair. 
-The cross section of these two processes is almost independent from the value of 
-$\lambda_{\mbox{LQ}lq}$, since there is no $\mbox{LQ}-l-q$ vertex in the Feynman diagram 
-at leading order. This note studies the signal of first generation scalar leptoquarks decaying into electron and 
-(light) quark with a branching ratio $\beta=1$. 
-For this scenario, the experimental signature of a LQ event is striking: two 
-high transverse momentum electrons and two high transverse momentum jets 
-whose combination gives a peak in the electron-jet invariant mass 
-spectrum corresponding to the LQ mass. No true missing transverse energy is expected in LQ events.
+Experiments at the Tevatron have placed the most stringent lower limit on the mass of first-generation scalar 
+leptoquarks of approximately 290 GeV (assuming $\beta=1$ for the electron channel) \cite{d02008}.
+At the LHC, the production of leptoquarks will take place mainly through gluon-gluon fusion and 
+quark-antiquark annihilation, yielding $LQ + \bar(LQ)$. 
+The cross sections for the two sub-processes are almost independent of the value of 
+$\lambda_{\mbox{LQ}lq}$, since there is no $\mbox{LQ}-l-q$ vertex in the Feynman diagram for LQ pair production 
+at leading order. This note examines the signal for first-generation scalar leptoquarks that decay into electrons and 
+(light) quarks with a branching ratio $\beta=1$. 
+For this scenario, the experimental signature of a LQ event is quite striking with two 
+high transverse momentum ($p_T$) electrons and two high $p_T$ jets, 
+whose combination yields a peak in the electron-jet invariant mass 
+spectrum that corresponds to the LQ mass. No true missing transverse momentum is expected in LQ events.
 
 This note is organized as follows. 
-The signal and background MC samples used in this study are described in section \ref{sec:MCSamples}.
-The online selection and the trigger efficiency to select LQ events are discussed in section \ref{sec:trig}.
-The LQ signal is reconstructed using mainly data from the
-electromagnetic (ECAL) and hadronic (HCAL) calorimeters for energy measurements, while tracker information 
-is mostly used for electron identification and isolation. 
-The reconstruction and identification of high energy electrons and jets are described respectively 
-in section \ref{sec:electrons} and \ref{sec:jet}.
-Techniques used here to identify the LQ signal include a search for features in the invariant mass
-spectrum of the electron-jet pairs, and data driven techniques to estimate 
-and separate the dominant background processes.
-In section \ref{sec:eventSelection}, the analysis strategy and the efficiencies of the selection criteria 
-are discussed. Data-driven techniques for background estimate are presented in section \ref{sec:bkgStudy}.
-Finally the procedure for signal extraction, and the CMS discovery potential in this channel are described
-respectively in section \ref{sec:signalExtraction} and \ref{CMSpotential}.
+The signal and background MC samples used in this study are described in Section \ref{sec:MCSamples}.
+The online requirements and the trigger efficiency for selecting LQ events are discussed in Section \ref{sec:trig}.
+The LQ signal is reconstructed using mainly energy measurements from the
+electromagnetic (ECAL) and hadronic (HCAL) calorimeters, while tracker information 
+is used primarily to identify and select electrons. 
+The reconstruction and identification of high energy electrons and jets are described, respectively, 
+in Sections \ref{sec:electrons} and \ref{sec:jet}.
+Techniques used to identify the LQ signal include a search for features in the invariant mass
+spectrum of the electron-jet pairs, and data-driven techniques to estimate 
+and separate the signal from dominant background processes.
+In Section \ref{sec:eventSelection}, the analysis strategy and the efficiencies of the chosen selection criteria 
+are discussed. Data-driven techniques for estimating background are presented in Section \ref{sec:bkgStudy}.
+Finally, the procedure for extraction of signal and the CMS discovery potential in this channel are described,
+respectively, in Section \ref{sec:signalExtraction} and \ref{CMSpotential}.
 
 
 %Experiments at the Tevatron have placed the current lower mass limit of the first generation scalar leptoquark at 251 GeV (assuming a branching ratio of 1 into electrons) \cite{d02007}.  This study includes 
@@ -128,30 +127,28 @@ respectively in section \ref{sec:signalExtraction} and \ref{CMSpotential}.
 %  \end{table}
 
 MC signal samples are generated with leptoquark masses ranging from 250 GeV to 1 TeV and $\beta=1$. 
-At the LHC the three main processes by which leptoquark pair production could occur are gluon-gluon fusion, 
-quark-antiquark annihilation, and quark-gluon fusion. In the mass range investigated the dominant process is gluon-gluon fusion. 
+At the LHC, the three main processes that lead to leptoquark pair production are gluon-gluon fusion, 
+quark-antiquark annihilation, and the higher order process of quark-gluon fusion. In the mass range to be investigated gluon-gluon fusion dominates. 
 
-The Full Simulation (FullSim) signal samples are produced using 
-CMSSW\_1\_4\_12 (pythia version 6.227 and GEANT 4) 
-for generation and simulation, and CMSSW\_1\_6\_7  for digitization and reconstruction. 
-These CMSSW versions are chosen in order to produce samples
-compatible with the officially produced background samples described later in this section. 
-These signal samples have been produced with a 100 $\mbox{pb}^{-1}$ mis-calibration and mis-alignment 
-scenario of the detector performances. Table~1
+The "Full Simulation" (FullSim) signal samples are produced using 
+CMSSW\_2\_1\_6 (PYTHIA version 6.227 and GEANT 4) 
+These samples were included in the official "Summer 08" production by the CMS Generators group.
+These signal events were generated for 100 $\mbox{pb}^{-1}$ samples with the accepted mis-calibration and alignment 
+of the detectors. Table~1
 %\ref{tab:NumEvents} 
 shows the number of events and the cross sections at leading order (LO) for samples generated at different LQ mass.
 
-Additionally, samples produced with the Fast Simulation (FastSim) in CMSSW version 1\_6\_9 are 
-studied in order to validate the quality of the FastSim process. The FastSim uses a parameterization 
-of the detector response instead of using the full GEANT-based simulation to determine the detector response.
-The FastSim samples are created with the same mis-calibration and mis-alignment scheme as the FullSim samples. 
-%Table ~\ref{tab:FastVsFullSim} shows the relative time and size advantage of using the FastSim over the FullSim for leptoquark event production.  
-The use of the FastSim would be highly beneficial to this analysis, as the production of events with such large EM showers, and large numbers of particles generated 
-are quite time consuming in the FullSim.  
-%The comparison of the MC events generated with FullSim to the FastSim shows an agreement at few \% level in 
-%the shape of reconstructed quantities, and some discrepancies around 5-10\% in the reconstruction efficiencies. 
-Plots comparing various reconstructed quantities are included in some sub-sections of this note.  
-The main results of this analysis, including selection efficiencies and discovery potential are obtained with FullSim samples.
+%Additionally, samples produced with the Fast Simulation (FastSim) in CMSSW version 1\_6\_9 are 
+%studied in order to validate the quality of the FastSim process. The FastSim uses a parameterization 
+%of the detector response instead of using the full GEANT-based simulation to determine the detector response.
+%The FastSim samples are created with the same mis-calibration and mis-alignment scheme as the FullSim samples. 
+%%Table ~\ref{tab:FastVsFullSim} shows the relative time and size advantage of using the FastSim over the FullSim for leptoquark event production.  
+%The use of the FastSim would be highly beneficial to this analysis, as the production of events with such large EM showers, and large numbers of particles generated 
+%are quite time consuming in the FullSim.  
+%%The comparison of the MC events generated with FullSim to the FastSim shows an agreement at few \% level in 
+%%the shape of reconstructed quantities, and some discrepancies around 5-10\% in the reconstruction efficiencies. 
+%Plots comparing various reconstructed quantities are included in some sub-sections of this note.  
+%The main results of this analysis, including selection efficiencies and discovery potential are obtained with FullSim samples.
 
 %\begin{table}[htb]
 %  \label{tab:NumEvents}
@@ -173,17 +170,15 @@ The main results of this analysis, including selection efficiencies and discover
 \begin{table}[htb]
   \label{tab:NumEvents}
   \begin{center}
-    \begin{tabular}{|l|ccc|} \hline
+    \begin{tabular}{|l|cc|} \hline
 %      & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\ 
-      LQ mass (GeV) & FullSim & FastSim & $\sigma_{LO}$ (pb) \\ \hline
-      250  & 1k  &  20k & 14 \\
-      400  & 1k  &  20k & 1.2 \\
-      650  & 2.5k &  20k & 0.076 \\
-      1000 & 1k  &  20k & 0.0047 \\
-      \hline
+      LQ mass (GeV) & FullSim &  $\sigma_{LO}$ (pb) \\ \hline
+      250  & 50k  & 14 \\
+      400  & 50k  & 1.2 \\
+       \hline
     \end{tabular}
     \caption{\small \sl Number of generated events and cross sections at LO, for LQ MC samples with various masses.  
-      FullSim samples made with CMSSW\_1\_4\_12 + CMSSW\_1\_6\_7, FastSim samples made with CMSSW\_1\_6\_9.}
+      FullSim samples made with CMSSW\_2\_1\_6 }
   \end{center}
 \end{table}
 
@@ -209,21 +204,21 @@ The main results of this analysis, including selection efficiencies and discover
 %twiki.cern.ch/twiki/bin/view/CMS/FastSimPhysicsValidationInfo
 %twiki.cern.ch/twiki/bin/view/CMS/SWGuideFastSimulation
 
-The SM background samples are taken from the CSA07 official production,
+The SM background is taken from the Summer08 official production samples,
 which consists of more than 150M events of various SM processes roughly representing the first 100 pb$^{-1}$ of LHC data.
-All events are generated and simulated with CMSSW\_1\_4\_12 and reconstructed with CMSSW\_1\_6\_7. 
-The CSA07 samples used for this analysis are listed below:
+All events are generated and simulated with CMSSW\_2\_1\_6. 
+The Summer08 samples used for this analysis are listed below:
 \begin{itemize}
 %
-\item $t\bar{t}$+Njet events (where N=0,1,..,4), generated with ALPGEN \cite{Mangano:2002ea} inclusive production (all decays), 
-LO-NLO K factor of 1.85 applied 
-in the cross section;\footnote{The K factor of 1.85 applied to ttbar events is a default in the software provided by CMS to 
-use these data samples.  It comes from a MCFM NLO vs LO study.}
+\item $t\bar{t}$+jet events (for N<5), generated using MADGRAPH \cite{Mangano:2002ea} with a 
+LO-NLO K correction factor of 1.85 applied 
+to the LQ cross section;\footnote{The K factor of 1.85 applied to ttbar events is a default in the software provided by CMS for 
+ these data samples.  It is from a MCFM NLO vs LO study.}
 %
-\item $Z/\gamma$+Njet events (where N=0,1,..,5), generated with ALPGEN, $ 0 < P_{T}^{Z/\gamma} < 300 $ GeV and $40<M_{Z/\gamma}<200$ GeV, 
-$Z/\gamma*$ decaying into charged leptons;  
+\item $Z/\gamma*$+jet events (for N<6), generated using MADGRAPH
+;  
 %
-\item $W$+Njet events (where N=0,1,..,5), generated with ALPGEN, $ 0 < P_{T}^{W} < 300 $ GeV, $W$ decaying into leptons;  
+\item $W$+Njet events (for N<6), generated using MADGRAPH, $ 0 < P_{T}^{W} < 300 $ GeV, $W$ decaying into leptons;  
 %
 \item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
 %

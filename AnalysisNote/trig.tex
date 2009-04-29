@@ -6,57 +6,68 @@
 %Quality of selection
 %eff before and after analysis cuts, justification
 
-The presence in the final state of two high energy electrons is exploited for the online selection 
+The presence of two high energy electrons in the final state is exploited for the online selection 
 of candidate leptoquark-antileptoquark events. 
-Three electromagnetic High Level Trigger (HLT) paths have been investigated
- \footnote{In the most recent HLT trigger table these names have been changed to $HLT\_EM80$, $HLT\_EM200$, 
-and $HLT\_IsoEle18\_L1R$.}
+Four electromagnetic High Level Trigger (HLT) paths are investigated
+% \footnote{In the most recent HLT trigger table these names have been changed to $HLT\_EM80$, $HLT\_EM200$, 
+%and $HLT\_IsoEle18\_L1R$.}
 %In the most recent HLT trigger table these names have been chaged to HLT_EM80, HLT_EM200, and HLT_IsoEle18_L1R}
 :
 \begin{itemize}
-\item the EMHighEt trigger 
-\item the EMVeryHighEt  trigger
-\item the SingleElectronRelaxed trigger.
+\item the EM80 trigger 
+\item the EM200 trigger 
+\item the Photon15 trigger 
+\item the Photon25 trigger .
 \end{itemize}
 
-The EMHighEt and EMVeryHighEt triggers have been specifically designed in order to have a high 
-efficiency for electrons and photons with high transverse energy. 
-Their input is the Level-1 relaxed single electromagnetic trigger.
-EMHighEt triggers on a high transverse energy electromagnetic deposit (supercluster) with
-$E_t>80~$GeV and loose isolation requirements (less than 5 GeV deposited in a 
-cone of $\Delta R<0.3$ \footnote{$\Delta R=\sqrt{\Delta\eta^2 + \Delta\phi ^2}$} surrounding the 
-primary supercluster in ECAL, less than 
-8 GeV in cone of $0.15<\Delta R<0.3$ in HCAL and less than 4 tracks in a cone $\Delta R<0.3$ of the tracker).
-EMVeryHighEt triggers on a very high transverse energy supercluster with $E_t>200~$GeV and no isolation 
-requirements. SingleElectronRelaxed selects an electron with $E_t>18~$GeV, an HCAL over ECAL energy ratio less than 5\%, 
-and $(1/E-1/p)<0.03$. More details on these triggers can be found in \cite{HeepHlt}.
+The EM80 and EM200 triggers have been designed specifically to have high 
+efficiency for electrons and photons of high transverse energy. 
+They trigger on deposits of large electromagnetic transverse energy (supercluster) with
+$E_T>80~$GeV and $E_T>200~$GeV respectively.
+
+A combination of the EM80 or the EM200 trigger does result in a higher efficiency than the EM80 trigger 
+alone due to the similar (identical?) isolation requirements of the two triggers.  Previous studies have shown
+ this analysis may benefit from a trigger at higher transverse energy but looser isolation requirements.
+ 
+ 
+The Photon 15 and Photon 25 triggers will be present in the early start up trigger menu, 
+unlike the EM80 and EM200 triggers.  These trigger on any supercluster with 
+$E_T>15~$GeV and $E_T>25~$GeV respectively with no requirements of track 
+association nor isolation.  The higher level of background events passing this trigger is compensated 
+for with the offline selection criteria.
+%EMHighEt triggers on a high transverse energy electromagnetic deposit (supercluster) with
+%$E_t>80~$GeV and loose isolation requirements (less than 5 GeV deposited in a 
+%cone of $\Delta R<0.3$ \footnote{$\Delta R=\sqrt{\Delta\eta^2 + \Delta\phi ^2}$} surrounding the 
+%primary supercluster in ECAL, less than 
+%8 GeV in cone of $0.15<\Delta R<0.3$ in HCAL and less than 4 tracks in a cone $\Delta R<0.3$ of the tracker).
+%EMVeryHighEt triggers on a very high transverse energy supercluster with $E_t>200~$GeV and no isolation 
+%requirements. SingleElectronRelaxed selects an electron with $E_t>18~$GeV, an HCAL over ECAL energy ratio less than 5\%, 
+%and $(1/E-1/p)<0.03$. More details on these triggers can be found in \cite{HeepHlt}.
 % see https://twiki.cern.ch/twiki/bin/view/CMS/HEEPOnline
 % https://twiki.cern.ch/twiki/bin/view/CMS/HighLevelTrigger06ExerciseDocumentation
 % CMS AN 2007/009 and CMS Note 2006/078
 
-The efficiencies for leptoquark events of the considered triggers have been studied with the FullSim 
-samples of section~\ref{sec:MCSamples} at four leptoquark mass points and are reported in Table~\ref{tab:HLTeffic} and 
+The efficiencies for leptoquarks for these triggers have been studied with the FullSim 
+samples of Section~\ref{sec:MCSamples} at two leptoquark mass points, and are summarized in Table~\ref{tab:HLTeffic} and 
 Fig.~\ref{fig:HLTeffic}.
-% The efficiency of the OR of the 2 high energy triggers is high in the mass range ...
-At a luminosity of $10^{32}~cm^{-1}s^{-1}$ the estimated rates of the EMHighEt, EMVeryHighEt and SingleElectronRelaxed triggers 
-are 0.5, 0.1 and 10 Hz, respectively.
-In order to guarantee a high efficiency and at the same time contain the data sample size, the current decision is to perform 
-the analysis on the OR of the EMHighEt and EMVeryHighEt triggers.
+
+%At a luminosity of $10^{32}~cm^{-1}s^{-1}$ the estimated rates of the EMHighEt, EMVeryHighEt and SingleElectronRelaxed triggers 
+%are 0.5, 0.1 and 10 Hz, respectively.
+%In order to guarantee a high efficiency and at the same time contain the data sample size, the current decision is to perform 
+%the analysis on the OR of the EMHighEt and EMVeryHighEt triggers.
 
 
   \begin{table}[htbp]
-    \caption{\small \sl High Level Trigger efficiencies for LQ events at different mass. 
-      Single triggers and their $OR$ are shown.}
+    \caption{\small \sl HLT efficiencies for LQ production at two mass values.}
     \label{tab:HLTeffic}
     \begin{center}
-      \begin{tabular}{|l|cccc|} \hline
-               & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\
-                                                     & 250 & 400 & 650 & 1000 \\ \hline
-        EMHighEt                                     & 0.838$\pm$.012 & 0.933$\pm$.008 & 0.938$\pm$.005 & 0.944$\pm$.007   \\
-        EMVeryHighEt                                 & 0.230$\pm$.013 & 0.648$\pm$.015 & 0.937$\pm$.005 & 0.990$\pm$.003   \\ 
-        SingleElectronRelaxed                        & 0.805$\pm$.012 & 0.808$\pm$.013 & 0.765$\pm$.009 & 0.667$\pm$.015   \\ \hline
-        EMHighEt OR EMVeryHighEt                     & 0.850$\pm$.011 & 0.963$\pm$.006 & 0.985$\pm$.002 & 0.994$\pm$.002   \\
-        The above OR SingleElectronRelaxed           & 0.950$\pm$.007 & 0.979$\pm$.005 & 0.989$\pm$.002 & 0.995$\pm$.002   \\ \hline
+      \begin{tabular}{|llcc|} \hline
+%               & \multicolumn{3}{c|}{Leptoquark Mass (GeV)} & 250 & 400 \\ \hline
+        Leptoquark Mass (GeV)    & 250 & 400 \\ \hline
+        EM80                                     & XXX$\pm$.012 & XXX$\pm$.008 \\
+        EM200                                 & XXX$\pm$.013 & XXX$\pm$.015   \\ 
+        PHOTON15                        & XXX$\pm$.012 & XXX$\pm$.013 &  \\ 
+        PHOTON25                     & XXX$\pm$.011 & XXX$\pm$.006   \\ \hline
       \end{tabular}
     \end{center}
   \end{table}
@@ -64,10 +75,9 @@ the analysis on the OR of the EMHighEt and EMVeryHighEt triggers.
 \begin{figure}[htbp]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{12cm}{!}{\includegraphics{plots/triggerEffic.eps}} 
+  \resizebox{12cm}{!}{\includegraphics{plots/UMD.eps}} 
   \end{tabular}
-    \caption{\small \sl High Level Trigger efficiencies for LQ events at different mass. 
-      Single triggers and their $OR$ are shown.}
+    \caption{\small \sl HLT efficiencies for LQ production at two mass values.}
     \label{fig:HLTeffic}
   \end{center}
 \end{figure}
