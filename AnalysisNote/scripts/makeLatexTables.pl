@@ -5,11 +5,16 @@ use Shell;
 
 my $numArgs = $#ARGV + 1;
 if ( $numArgs != 1 ) {
-    die(" USAGE: " . "./makeLatexTables.pl  filename\n Example: ./makeLatexTables.pl data/output/analysisClass_tables.dat\n");
-
+    print "\n USAGE: " . "./makeLatexTables.pl  filename\n Example: ./makeLatexTables.pl data/output/analysisClass_tables.dat\n";
+    print "\n Note: the name of the cut variables that have to be used for generating the efficiency tables\n";
+    print "       should be inserted in the array \@cutVariables in the script, so please edit the script.\n\n";
+    exit -1;
 }
 
-my $file = "/home/prumerio/cms/phys/lq/rootNtupleAnalyzer_QCDBkgStudies/data/output_eejj_std/analysisClass_eejjSample_tables.dat";
+#my $file = "/home/prumerio/cms/phys/lq/rootNtupleAnalyzer_QCDBkgStudies/data/output_eejj_std/analysisClass_eejjSample_tables.dat";
+my $file = $ARGV[0];
+
+# Please insert in @cutVariables the names of the variables that you want to appear in the tables
 my @cutVariables = ("nocut ", "skim ", "nEle_PtPreCut_ID "); # please KEEP A SPACE at the end of each cut variable name
 
 sub texFileHeader {
@@ -110,9 +115,9 @@ foreach my $tableLine (@tableLines){
 
 #print &tableTrailer;
 print OUTFILE &texFileTrailer;
-
 close (OUTFILE); 
 
+print "Efficiency tables have been written to file tmp.tex in current directory.\n";
 
 
 
