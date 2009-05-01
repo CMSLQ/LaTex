@@ -68,15 +68,34 @@ shows the number of events and the cross sections at leading order (LO) for samp
 \begin{table}[htb]
   \label{tab:NumEvents}
   \begin{center}
-    \begin{tabular}{|l|cc|} \hline
+    \begin{tabular}{|l|ccccc|} \hline\hline
 %      & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\ 
-      LQ mass (GeV) & FullSim &  $\sigma_{LO}$ (pb) \\ \hline
-      250  & 50k  & 14 \\
-      400  & 50k  & 1.2 \\
-       \hline
+      MC Sample                 & Full/FastSim & N. Events & $\sigma_{NLO}$ (pb) & $\sigma_{LO}$ (pb) & K-factor \\ \hline\hline
+      $M_{LQ}=250~$GeV          & FullSim      & 50k       & 10.1                & 6.53               & 1.547\\
+      $M_{LQ}=400~$GeV          & FullSim      & 50k       &  0.75               & 0.462              & 1.628\\ \hline
+      $M_{LQ}=250~$GeV          & FastSim      &           & 10.1                & 6.53               & 1.547\\
+      $M_{LQ}=300~$GeV          & FastSim      &           &  3.8                & 2.42               & 1.57\\
+      $M_{LQ}=400~$GeV          & FastSim      &           &  0.75               & 0.462              & 1.628\\
+      $M_{LQ}=500~$GeV          & FastSim      &           &  0.197              & 0.118              & 1.669\\
+      $M_{LQ}=600~$GeV          & FastSim      &           &  0.0617             & 0.0617             & 1.723\\
+      $M_{LQ}=650~$GeV          & FastSim      &           &  0.0362             & 0.0208             & 1.740\\
+      $M_{LQ}=700~$GeV          & FastSim      &           &  0.0218             & 0.0124             & 1.758\\
+      $M_{LQ}=800~$GeV          & FastSim      &           &  0.0085             & 0.00466            & 1.815\\
+      $M_{LQ}=900~$GeV          & FastSim      &           &  0.00351            & 0.00188            & 1.867\\
+      $M_{LQ}=1000~$GeV         & FastSim      &           &  0.00153            & 0.000794           & 1.927\\
+      $M_{LQ}=1200~$GeV         & FastSim      &           &  0.000329           & 0.000158           & 2.082\\
+      $M_{LQ}=1500~$GeV         & FastSim      &           &  0.0000393          & 0.0000165          & 2.382\\ \hline
+      $t\bar{t}$ + N jets       & FullSim      &  1M       & 414                 &                    & \\
+      $Z/\gamma$ + N jets       & FullSim      &  1M       & 4218                &                    & 1.4 (@14 TeV)\\
+      $W$ + N jets              & FullSim      & 10M       & 45600               &                    & 1.4 (@14 TeV)\\
+      $VV$ + N jets             & FullSim      & 100k      &                     & 11.8               & \\
+      QCD                       & FullSim      & 26M       &                     & $15.4 \times 10^6$ & \\
+       \hline\hline
     \end{tabular}
-    \caption{\small \sl Number of generated events and cross sections at LO, for LQ MC samples with various masses.  
-      FullSim samples made with CMSSW\_2\_1\_6 }
+    \caption{\small \sl Signal and background MC samples used in this analysis. For each sample, it is indicated 
+      if it is generated with the full or fast simulation, the generated number events, and the cross sections at NLO and LO. 
+      The k-factor is also reported for convenience.
+      FullSim samples were made with CMSSW\_2\_1\_6 and FastSim samples were made with FIXME.}
   \end{center}
 \end{table}
 
@@ -108,21 +127,23 @@ All events are generated and simulated with CMSSW\_2\_1\_6.
 The Summer08 samples used for this analysis are listed below:
 \begin{itemize}
 %
-\item $t\bar{t}$+jet events (for N<5), generated using MADGRAPH \cite{Mangano:2002ea} with a 
+\item $t\bar{t}$+jet events (for N$<$5), generated using MADGRAPH \cite{Mangano:2002ea} with a 
 LO-NLO K correction factor of 1.85 applied 
 to the LQ cross section;\footnote{The K factor of 1.85 applied to ttbar events is a default in the software provided by CMS for 
  these data samples.  It is from a MCFM NLO vs LO study.}
 %
-\item $Z/\gamma*$+jet events (for N<6), generated using MADGRAPH
+\item $Z/\gamma*$ + N jet events (for N$<$6), generated using MADGRAPH
 ;  
 %
-\item $W$+Njet events (for N<6), generated using MADGRAPH, $ 0 < P_{T}^{W} < 300 $ GeV, $W$ decaying into leptons;  
+\item $W$ + N jet events (for N$<$6), generated using MADGRAPH, $ 0 < P_{T}^{W} < 300 $ GeV (FIXME), $W$ decaying into leptons;  
 %
-\item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
+%\item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
+\item QCD multi-jet events, generated with MADGRAPH, inclusive production in $H_{T}^{jet}$ bins from 100~GeV to 1~TeV;  
 %
-\item $\gamma$+jet events, generated with PYTHIA, $ 0 < P_{T}^{jet} < 7000 $ GeV;  
+%\item $\gamma$+jet events, generated with PYTHIA, $ 0 < P_{T}^{jet} < 7000 $ GeV;  
 %
-\item $WW$, $WZ$, $ZZ$ events, generated with PYTHIA, inclusive production (all decays).
+%\item $WW$, $WZ$, $ZZ$ events, generated with PYTHIA, inclusive production (all decays).
+\item $WW$, $WZ$, $ZZ$ + jet events, generated with MADGRAPH, inclusive production (all decays).
 \end{itemize} 
 
 %In the CSA07 production there were three flavors of Standard Model event combinations, two of which were used in this analysis: 
