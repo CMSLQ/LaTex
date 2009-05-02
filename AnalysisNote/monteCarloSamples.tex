@@ -28,13 +28,50 @@ MC signal samples are generated with leptoquark masses ranging from 250 GeV to 1
 At the LHC, the three main processes that lead to leptoquark pair production are gluon-gluon fusion, 
 quark-antiquark annihilation, and the higher order process of quark-gluon fusion. In the mass range to be investigated gluon-gluon fusion dominates. 
 
-The "Full Simulation" (FullSim) signal samples are produced using 
-CMSSW\_2\_1\_6 (PYTHIA version 6.227 and GEANT 4) 
-These samples were included in the official "Summer 08" production by the CMS Generators group.
-These signal events were generated for 100 $\mbox{pb}^{-1}$ samples with the accepted mis-calibration and alignment 
-of the detectors. Table~1
+``Full simulation'' (FullSim) signal samples are produced using 
+CMSSW version 2\_1\_6 (PYTHIA version 6.227 and GEANT 4). 
+These samples were included in the official ``Summer 08'' production by the CMS Generators group.
+These signal events were generated for 100 $\mbox{pb}^{-1}$ samples with the corresponding mis-calibration and alignment 
+of the detectors. 
+
+``Fast simulation'' (FastSim) signal samples are produced using CMSSW version 2\_2\_X (FIXME). The FastSim uses a parameterization
+of the detector response instead of using the full GEANT-based simulation.
+The FastSim samples were created during the ``Winter 09'' production campaign with the same mis-calibration 
+and mis-alignment scheme as the FullSim samples.
+
+The SM background is taken from the Summer08 official production samples,
+which consists of more than 150M events of various SM processes roughly representing the first 100 pb$^{-1}$ of LHC data.
+All events are generated and simulated with CMSSW\_2\_1\_6. 
+The Summer08 samples used for this analysis are listed below:
+\begin{itemize}
+%
+\item $t\bar{t}$+jet events (for N$<$5), generated using MADGRAPH \cite{Mangano:2002ea} with a 
+LO-NLO K correction factor of 1.85 applied 
+to the LQ cross section;\footnote{The K factor of 1.85 applied to ttbar events is a default in the software provided by CMS for 
+ these data samples.  It is from a MCFM NLO vs LO study.}
+%
+\item $Z/\gamma*$ + N jet events (for N$<$6), generated using MADGRAPH;  
+%
+\item $W$ + N jet events (for N$<$6), generated using MADGRAPH, $ 0 < P_{T}^{W} < 300 $ GeV (FIXME), $W$ decaying into leptons;  
+%
+%\item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
+\item QCD multi-jet events, generated with MADGRAPH, inclusive production in $H_{T}^{jet}$ bins from 100~GeV to 1~TeV;  
+%
+%\item $\gamma$+jet events, generated with PYTHIA, $ 0 < P_{T}^{jet} < 7000 $ GeV;  
+%
+%\item $WW$, $WZ$, $ZZ$ events, generated with PYTHIA, inclusive production (all decays).
+\item $WW$, $WZ$, $ZZ$ + jet events, generated with MADGRAPH, inclusive production (all decays).
+\end{itemize} 
+
+%In the CSA07 production there were three flavors of Standard Model event combinations, two of which were used in this analysis: 
+%the {\sl Chowder} contains ALPGEN W+jet, Z+jet and tt+jet samples, and the {\sl Gumbo} which contains QCD, Photon+jets, MinBias.  
+%The event samples for each process within the soups were produced with numbers of events corresponding to a variety of integrated luminosities. 
+%In order to scale the sample sizes correctly a central module that calculates the event weights has been used ({\sl CSA07EventWeightProducer.cc}) . 
+
+Table~1
 %\ref{tab:NumEvents} 
-shows the number of events and the cross sections at leading order (LO) for samples generated at different LQ mass.
+lists the signal and background MC samples used in this analysis with their number of events and cross sections.
+%shows the number of events and the cross sections at leading order (LO) for samples generated at different LQ mass.
 
 %Additionally, samples produced with the Fast Simulation (FastSim) in CMSSW version 1\_6\_9 are 
 %studied in order to validate the quality of the FastSim process. The FastSim uses a parameterization 
@@ -121,34 +158,5 @@ shows the number of events and the cross sections at leading order (LO) for samp
 %twiki.cern.ch/twiki/bin/view/CMS/FastSimPhysicsValidationInfo
 %twiki.cern.ch/twiki/bin/view/CMS/SWGuideFastSimulation
 
-The SM background is taken from the Summer08 official production samples,
-which consists of more than 150M events of various SM processes roughly representing the first 100 pb$^{-1}$ of LHC data.
-All events are generated and simulated with CMSSW\_2\_1\_6. 
-The Summer08 samples used for this analysis are listed below:
-\begin{itemize}
-%
-\item $t\bar{t}$+jet events (for N$<$5), generated using MADGRAPH \cite{Mangano:2002ea} with a 
-LO-NLO K correction factor of 1.85 applied 
-to the LQ cross section;\footnote{The K factor of 1.85 applied to ttbar events is a default in the software provided by CMS for 
- these data samples.  It is from a MCFM NLO vs LO study.}
-%
-\item $Z/\gamma*$ + N jet events (for N$<$6), generated using MADGRAPH
-;  
-%
-\item $W$ + N jet events (for N$<$6), generated using MADGRAPH, $ 0 < P_{T}^{W} < 300 $ GeV (FIXME), $W$ decaying into leptons;  
-%
-%\item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
-\item QCD multi-jet events, generated with MADGRAPH, inclusive production in $H_{T}^{jet}$ bins from 100~GeV to 1~TeV;  
-%
-%\item $\gamma$+jet events, generated with PYTHIA, $ 0 < P_{T}^{jet} < 7000 $ GeV;  
-%
-%\item $WW$, $WZ$, $ZZ$ events, generated with PYTHIA, inclusive production (all decays).
-\item $WW$, $WZ$, $ZZ$ + jet events, generated with MADGRAPH, inclusive production (all decays).
-\end{itemize} 
-
-%In the CSA07 production there were three flavors of Standard Model event combinations, two of which were used in this analysis: 
-%the {\sl Chowder} contains ALPGEN W+jet, Z+jet and tt+jet samples, and the {\sl Gumbo} which contains QCD, Photon+jets, MinBias.  
-%The event samples for each process within the soups were produced with numbers of events corresponding to a variety of integrated luminosities. 
-%In order to scale the sample sizes correctly a central module that calculates the event weights has been used ({\sl CSA07EventWeightProducer.cc}) . 
 
 %\end{document}
