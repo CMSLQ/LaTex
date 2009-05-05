@@ -2,21 +2,22 @@
 %\begin{document} 
 
 \section{Data-driven techniques for background estimate} \label{sec:bkgStudy}
-After the event selection the dominant number of SM background events in the two electron and two jet sample come from $t\bar{t}$ and 
-$Z/\gamma$+jet processes, as summarized in table \ref{tab:EventSelSummary}. 
-This section describes data-driven techniques used to estimate the shape of $M_{ej}$ distribution for these two backgrounds using 
-control samples. These shapes are used in a fit to the data to extract the number of signal events, as described 
-in section \ref{sec:signalExtraction}. The methods for background estimation described here will not rely on the Monte Carlo 
-once real data is available. They are
-therefore particularly suited for first data taking when confidence that the MC describes
+After the event selection the dominant number of SM background events in the two electron and two jet sample (eejj sample) 
+come from $t\bar{t}$ and $Z/\gamma$+jet processes, as summarized in table \ref{tab:EventSelSummary}. 
+This section describes data-driven techniques used to estimate the shape of $M_{ej}$ and $S_{T}$ distributions, and the absolute 
+normalization for these two backgrounds using control samples. 
+%These shapes are used in a fit to the data to extract the number of signal events, as described 
+%in section \ref{sec:signalExtraction}. 
+The methods for background estimation described here will only partially rely on the Monte Carlo once real data is available. 
+They are therefore particularly suited for first data taking when confidence that the MC describes
 the data well is expected to be limited.
 
 The main properties of a control sample to estimate a background $X$ are:
 \begin{itemize}
 %
-\item to have similar topology of the $X$ events in the signal sample concerning a given reconstructed quantity 
-under investigation (in this case the signal samples is the eejj sample of selected events, 
-and the reconstructed quantity investigated is lepton-jet invariant mass);  
+\item to have similar topology of the $X$ events in the signal sample concerning a given set of 
+reconstructed quantities under investigation (in this case the signal samples is the eejj sample of selected events, 
+and the reconstructed quantities investigated are lepton-jet invariant mass and $S_{T}$ variable);  
 %
 \item to be independent from the signal sample;
 %
@@ -31,24 +32,29 @@ The control samples for the $t\bar{t}$ and $Z/\gamma$+jet backgrounds discussed 
 
 %The four main source of background events that pass the High Level Trigger are ttbar, Z+jets, QCD and W+jets.  The application of the electron isolation criteria sufficiently limits the number of fake electrons in the offline selection that the QCD and W+jets background are negligible.  The small contribution of the events with fake electrons from the QCD and W+jet channels can be seen in figure~\ref{fig:Mej_allComb}.
 
-\subsection{$t\bar{t}$ background shape}
+\subsection{$t\bar{t}$ background control sample}
 
-The shape of the $M_{ej}$ distribution for $t\bar{t}$ events can be estimated directly from data using a control sample. 
-The basic idea is to select events that are independent from the eejj sample, but have $M_{ej}$ shape and resolution 
+The normalization and the shape of the main selection variable distributions for 
+$t\bar{t}$ events can be estimated directly from data using a control sample. 
+The basic idea is to select events that are independent from the eejj sample, but have $M_{ej}$ and $S_{T}$ shape and resolution 
 similar to the $t\bar{t}$ component in the eejj sample.
 
 A good control sample can be obtained by using the same selection criteria applied for the eejj sample, but 
 requiring at least one electron and one muon (e$\mu$jj sample) instead of 2 electrons 
 in the final state in addition to the two jets. 
-For $t\bar{t}$ events, the $M_{lj}$ distributions of the e$\mu$jj and the eejj samples
+For $t\bar{t}$ events, the $M_{lj}$ and $S_{T}$distributions of the e$\mu$jj and the eejj samples
 are expected to be very similar in shape since the kinematics of the process does not depend 
 on the nature of the lepton. Figure~\ref{fig:ttbar} shows a good agreement between 
 the shape of the two distributions with the current MC statistics available. 
-With 100 pb$^{-1}$ of data the e$\mu$jj sample is expected to have about 30 events 
-($\approx 60$ entries in the $M_{lj}$ distribution).
-%which is roughtly two times the number of $t\bar{t}$ events in the eejj sample. 
-The e$\mu$jj sample is enriched in $t\bar{t}$ events with a small contamination of about 
-2\%, dominated by $WW$ and $Z/\gamma$+jet events. 
+The e$\mu$jj sample is enriched in $t\bar{t}$ events, as shown in Figure~\ref{fig:emujjContamination} 
+with a small contamination (estimated from MC) of less than 5\%, dominated by di-boson events 
+(for $W$+jets and $Z/\gamma$+jets contributions, uncertainties are large, around 100\%, due to limited MC statistics). 
+The QCD background contamination in the e$\mu$jj sample is not evaluated here, although it's expected to be small. 
+The MC statistics of QCD sample is not sufficient to perform a reasonable estimate at this stage;
+the plans of using data driven methods to estimate such background will be discussed later in Section XXX. 
+With 100 pb$^{-1}$ of data the e$\mu$jj sample is expected to have about 68, 11, and 2 events, 
+respectively, for an $S_{T}$ cut of 300, 520, and 740 GeV.
+
 
 For a sample of $t\bar{t}$ events at generator level, the number of e$\mu$jj events is expected to be exactly two times the number of 
 eejj events, considering all the possible combinations of the $W$ decays. The trigger filter, the offline selection, 
@@ -59,19 +65,37 @@ the size of the e$\mu$jj control sample. In this way the control sample can be u
 of the $t\bar{t}$ background. In this analysis only the shape of the e$\mu$jj sample is used in the signal extraction, but
 the possibility to get also the normalization from the control sample will be investigated in future upgrades of this analysis.
 
-%The number and shape of events from ttbar with two electrons in our sample can be estimated by examining the number and shape of events from ttbar events that contain one muon and one electron.  One would expect this number to be double the number of events with two muons.  However, due to the online selection of events with one high pT electron a number of events with one high pT muon and a lower pT electron will be excluded.  This will cause a reduction in the ration of $e\mu$ events to $ee$ events, but the shape will not be effected.  If the change in the size of the $e\mu$ sample is well understood this method can still be used to estimate the total number and shape of the background events in our sample that come from ttbar events with two electrons.  Figure~\ref{fig:ttbar} compares the distribution of the invariant mass of the lepton+jet in $e\mu$ ttbar events to that of $ee$ ttbar events using Monte Carlo truth.
-
 %{\sl Discussion of how clearly this plot shows similar shape and how this will be used}
 
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
+  \resizebox{8cm}{!}{\includegraphics{plots/ttbarStudies/Mlj_eejj_VS_emujj_ttbar_STcut300.eps}} &
+  \resizebox{8cm}{!}{\includegraphics{plots/ttbarStudies/ST_eejj_VS_emujj_ttbar_STcut300.eps}} \\
   \end{tabular}
-  \caption{\small \sl Distributions of the lepton-jet invariant mass for the eejj and the e$\mu$ samples, for $t\bar{t}$ events}
+  \caption{\small \sl Distributions of the lepton-jet invariant mass (left) and $S_{T}$ for the eejj and the e$\mu$ samples, for $t\bar{t}$ events.
+  Baseline selection criteria described in Section~\ref{sec:eventSelection} are applied, but the $S_{T}$ cut has been released to 300 GeV.}
   \label{fig:ttbar}
   \end{center}
 \end{figure}
+
+\begin{figure}[htb]
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{10cm}{!}{\includegraphics{plots/ttbarStudies/ST_emujj_100pb-1_STcut300.eps}} 
+  \end{tabular}
+  \caption{\small \sl Distribution of the $S_{T}$ variable for e$\mu$jj sample
+    for different background components. 
+    Histogram of signal events (at 400~GeV LQ mass) is also added. 
+    Baseline selection criteria described in Section~\ref{sec:eventSelection} 
+    are applied, but the $S_{T}$ cut has been released to 300 GeV.
+    The background histograms are summed on top of each other.
+    Black dots indicate pseudo data randomly generated accordingly with 
+    the total background distribution, and assuming 100 $pb^{-1}$ of data.}
+  \label{fig:emujjContamination}
+  \end{center}
+\end{figure}
+
 
 \subsection{$Z/\gamma$+jet background shape} 
 
