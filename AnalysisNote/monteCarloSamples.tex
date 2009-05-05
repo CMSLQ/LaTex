@@ -107,30 +107,31 @@ lists the signal and background MC samples used in this analysis with their numb
   \begin{center}
     \begin{tabular}{|l|cccccc|} \hline\hline
 %      & \multicolumn{4}{c|}{Leptoquark Mass (GeV)} \\ 
-      MC Sample                   & Full/FastSim & N. Events & Equivalent             & $\sigma_{NLO}$ (pb) & $\sigma_{LO}$ (pb) & K-factor \\
-                                  &              & Analyzed  & Luminosity (pb)        & $\sigma_{NLO}$ (pb) & $\sigma_{LO}$ (pb) & K-factor \\ \hline\hline
-      $M_{LQ}=250~$GeV            & FullSim      & 50k??FIXME&       FIXME            & 10.1                & 6.53               & 1.547\\
-      $M_{LQ}=400~$GeV            & FullSim      & 63k       &      84$\times 10^3$   &  0.75		    & 0.462		 & 1.628\\ \hline
-      $M_{LQ}=250~$GeV            & FastSim      & 125k      &    12.4$\times 10^3$   & 10.1		    & 6.53		 & 1.547\\
-      $M_{LQ}=300~$GeV            & FastSim      & 127k      &    33.4$\times 10^3$   &  3.8		    & 2.42		 & 1.57\\
-      $M_{LQ}=400~$GeV            & FastSim      & 150k      &     200$\times 10^3$   &  0.75		    & 0.462		 & 1.628\\
-      $M_{LQ}=500~$GeV            & FastSim      & 125k      &     635$\times 10^3$   &  0.197  	    & 0.118		 & 1.669\\
-      $M_{LQ}=600~$GeV            & FastSim      & 131k      &    2.12$\times 10^6$   &  0.0617             & 0.0617             & 1.723\\
-      $M_{LQ}=650~$GeV            & FastSim      & 133k      &    3.67$\times 10^6$   &  0.0362 	    & 0.0208		 & 1.740\\
-      $M_{LQ}=700~$GeV            & FastSim      & 146k      &    6.70$\times 10^6$   &  0.0218 	    & 0.0124		 & 1.758\\
-      $M_{LQ}=800~$GeV            & FastSim      & 146k      &    17.2$\times 10^6$   &  0.0085 	    & 0.00466		 & 1.815\\
-      $M_{LQ}=900~$GeV            & FastSim      & 146k      &    41.6$\times 10^6$   &  0.00351	    & 0.00188		 & 1.867\\
-      $M_{LQ}=1000~$GeV           & FastSim      & 146k      &    95.4$\times 10^6$   &  0.00153            & 0.000794           & 1.927\\ \hline
-%      $M_{LQ}=1200~$GeV           & FastSim      & $>$100k   &                    &  0.000329           & 0.000158           & 2.082\\
-%      $M_{LQ}=1500~$GeV           & FastSim      & $>$100k   &                    &  0.0000393          & 0.0000165          & 2.382\\ \hline
-      $t\bar{t}$ + N jets         & FullSim      & 0.905M    &    2.19$\times 10^3$   & 414                 &                    & \\
-      $Z/\gamma$ + N jets         & FullSim      & 1.159M    &     275	              & 4218                &                    & 1.14 (@14 TeV)\\
-      $W$ + N jets                & FullSim      & 6.107M    &     134	              & 45600               &                    & 1.14 (@14 TeV)\\
-      $VV$ + N jets               & FullSim      & 101.8k    &    8.63$\times 10^3$   &                     & 11.8               & \\ \hline
-      QCD ($H_T\in[100,250]$~GeV) & FullSim      & 13.721M   &    0.915	              &                     & $15.0 \times 10^6$ & \\
-      QCD ($H_T\in[250,500]$~GeV) & FullSim      & 3.698M    &       9.25	      &                     & $400 \times 10^3$  & \\
-      QCD ($H_T\in[500,1000]$~GeV)& FullSim      & 3.807M    &     272	              &                     &  $14 \times 10^3$  & \\
-      QCD ($H_T>1000$~GeV)        & FullSim      & 0.654M    &    1.77$\times 10^3$   &                     & $370$              & \\
+      MC Sample                   & Full/Fast & N. Events & Equivalent             & $\sigma_{NLO}$ (pb) & $\sigma_{LO}$ (pb) & K-factor \\
+                                  & Simulation& Analyzed  & Luminosity (pb)        &                     &                    &    \\ \hline\hline
+      $M_{LQ}=250~$GeV            & Full      & 52k       &    5.15$\times 10^3$   & 10.1                & 6.53               & 1.547\\
+      $M_{LQ}=400~$GeV            & Full      & 63k       &      84$\times 10^3$   &  0.75		 & 0.462	      & 1.628\\ \hline
+      $M_{LQ}=250~$GeV            & Fast      & 125k      &    12.4$\times 10^3$   & 10.1		 & 6.53		      & 1.547\\
+      $M_{LQ}=300~$GeV            & Fast      & 127k      &    33.4$\times 10^3$   &  3.8	         & 2.42		      & 1.57\\
+      $M_{LQ}=400~$GeV            & Fast      & 150k      &     200$\times 10^3$   &  0.75	         & 0.462	      & 1.628\\
+      $M_{LQ}=500~$GeV            & Fast      & 125k      &     635$\times 10^3$   &  0.197  	         & 0.118	      & 1.669\\
+      $M_{LQ}=600~$GeV            & Fast      & 131k      &    2.12$\times 10^6$   &  0.0617             & 0.0617             & 1.723\\
+      $M_{LQ}=650~$GeV            & Fast      & 133k      &    3.67$\times 10^6$   &  0.0362 	         & 0.0208	      & 1.740\\
+      $M_{LQ}=700~$GeV            & Fast      & 146k      &    6.70$\times 10^6$   &  0.0218 	         & 0.0124	      & 1.758\\
+      $M_{LQ}=800~$GeV            & Fast      & 146k      &    17.2$\times 10^6$   &  0.0085 	         & 0.00466	      & 1.815\\
+      $M_{LQ}=900~$GeV            & Fast      & 146k      &    41.6$\times 10^6$   &  0.00351	         & 0.00188	      & 1.867\\
+      $M_{LQ}=1000~$GeV           & Fast      & 146k      &    95.4$\times 10^6$   &  0.00153            & 0.000794           & 1.927\\ \hline
+%      $M_{LQ}=1200~$GeV           & Fast      & $>$100k   &                    &  0.000329           & 0.000158           & 2.082\\
+%      $M_{LQ}=1500~$GeV           & Fast      & $>$100k   &                    &  0.0000393          & 0.0000165          & 2.382\\ \hline
+      $t\bar{t}$ + N jets         & Full      & 0.905M    &    2.19$\times 10^3$   & 414                 &                    & \\
+      $Z/\gamma$ + N jets         & Full      & 1.159M    &     275	              & 4218                &                 & 1.14 (@14 TeV)\\
+      $Z/\gamma$ + N jets         & Fast      & 8.46M ??? &     FIXME???	      & 4218                &                 & 1.14 (@14 TeV)\\
+      $W$ + N jets                & Full      & 6.107M    &     134	              & 45600               &                 & 1.14 (@14 TeV)\\
+      $VV$ + N jets               & Full      & 101.8k    &    8.63$\times 10^3$   &                     & 11.8               & \\ \hline
+      QCD ($H_T\in[100,250]$~GeV) & Full      & 13.721M   &    0.915	              &                     & $15.0 \times 10^6$ & \\
+      QCD ($H_T\in[250,500]$~GeV) & Full      & 3.698M    &       9.25	      &                     & $400 \times 10^3$  & \\
+      QCD ($H_T\in[500,1000]$~GeV)& Full      & 3.807M    &     272	              &                     &  $14 \times 10^3$  & \\
+      QCD ($H_T>1000$~GeV)        & Full      & 0.654M    &    1.77$\times 10^3$   &                     & $370$              & \\
        \hline\hline
     \end{tabular}
     \caption{\small \sl Signal and background MC samples used in this analysis. For each sample, it is indicated 
