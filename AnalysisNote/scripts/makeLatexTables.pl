@@ -14,8 +14,9 @@ if ( $numArgs != 1 ) {
 #my $file = "/home/prumerio/cms/phys/lq/rootNtupleAnalyzer_QCDBkgStudies/data/output_eejj_std/analysisClass_eejjSample_tables.dat";
 my $file = $ARGV[0];
 
-# Please insert in @cutVariables the names of the variables that you want to appear in the tables
-my @cutVariables = ("nocut ", "skim ", "nEle_PtPreCut_ID "); # please KEEP A SPACE at the end of each cut variable name
+# Please insert in @cutVariables the names of the variables that you want to appear in the tables, and KEEP A SPACE at the end of each cut variable name
+my @cutVariables = ("nocut ", "skim ","nEle_PtPreCut ", "nEle_PtPreCut_ID ", "nEle_PtPreCut_IDISO ", "Pt2ndEleIDISO ", "nJet_PtPreCut_DIS ", "Eta2ndJet_DIS ", "invMass_ee ", "sT "); 
+my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>20\~\$GeV", "2 ele \$P_T>20\~\$GeV", "tttttttttttttt ", "Pt2ndEleIDISO ", "nJetPtPreCutDIS ", "Eta2ndJetDIS ", "invMassee ", "sT "); 
 
 sub texFileHeader {
     my $tmp=("\\documentclass{cmspaper} \n\\begin{document} \n\n");
@@ -66,13 +67,36 @@ foreach my $line (@lines){
 }
 #print @selectedLines;
 
+my $firstVar = trim(@cutVariables[0]);
+my $lastVar = trim(@cutVariables[@cutVariables-1]);
+$firstVar =~ s/_//g; #remove underscores from names as latex interpretes them
+$lastVar =~ s/_//g; #remove underscores from names as latex interpretes them
+
 my @tableLines;
 my $sizeOfTableLine;
+my $Den=-1;
+my $DenErr=-1;
+my $Num=-1;
+my $NumErr=-1;
+my $effRel=-1;
+my $effRelErr=-1;
 foreach my $selectedLine (@selectedLines){
     my @tableLine=();
     my @t= split(/\s/, $selectedLine);
     $t[1] =~ s/_//g; #remove underscores from names as latex interpretes them 
-    my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\\pm\$",@t[7]," \& ", @t[8],"\$\\pm\$",@t[9], " \& ", @t[10],"\$\\pm\$",@t[11], "\\\\");
+    $Num=@t[6];
+    $NumErr=@t[7];
+    if ( ( $selectedLine =~ /$firstVar/) ) {
+	$effRel=1;
+	$effRelErr=0;
+    } else {
+	$effRel=$Num/$Den;
+	$effRelErr=sqrt(($NumErr/$Num)**2+($DenErr/$Den)**2);
+    }
+    $Den=@t[6];
+    $DenErr=@t[7];
+    #my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\~\\pm\~\$",@t[7]," \& ", @t[8],"\$\~\\pm\~\$",@t[9], " \& ", @t[10],"\$\~\\pm\~\$",@t[11], "\\\\");
+    my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\~\\pm\~\$",@t[7]," \& ", sprintf("%.5f", $effRel),"\$\~\\pm\~\$",sprintf("%.5f",$effRelErr), " \& ", sprintf("%.5f",@t[10]),"\$\~\\pm\~\$",sprintf("%.5f",@t[11]), "\\\\");
     $sizeOfTableLine = @tableLineEntries;
     foreach my $tableLineEntry (@tableLineEntries){
 	push(@tableLine, $tableLineEntry);
@@ -88,11 +112,6 @@ open (OUTFILE, '> tmp.tex');
 
 print OUTFILE &texFileHeader;
 
-my $firstVar = trim(@cutVariables[0]);
-my $lastVar = trim(@cutVariables[@cutVariables-1]);
-$firstVar =~ s/_//g; #remove underscores from names as latex interpretes them
-$lastVar =~ s/_//g; #remove underscores from names as latex interpretes them
-
 
 my $posLastTableElement;
 my $count=0;
@@ -102,11 +121,24 @@ foreach my $tableLine (@tableLines){
     if ( ( $tableLine =~ /$firstVar/) ) {
 	print OUTFILE &tableHeader;
     }
-    print OUTFILE $tableLine;
     if ( ( $tableLine =~ /$lastVar/) ) {
 	$posLastTableElement = $count+$sizeOfTableLine;
 	$metLastVar=1;
     }
+
+#     my $cv;
+#     my $cd;
+#     my $nc=0;
+#     foreach my $cutVar (@cutVariables){
+# 	my $cv=trim($cutVar);
+# 	$cv =~ s/_//g; #remove underscores 
+# 	my $cd=@cutDescriptions[$nc];
+# 	$nc++;
+# 	$tableLine =~ s/$cv/$cd/g; # replace @cutVariables with proper descriptions from @cutDescriptions 
+#     }
+
+    print OUTFILE $tableLine;
+
     if ( ( $tableLine =~ /.*\n/) && ( $metLastVar == 1 ) ) {
 	print OUTFILE &tableTrailer;
 	$metLastVar=0; #set to false
