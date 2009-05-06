@@ -4,24 +4,24 @@
 \section{Data-driven techniques for background estimate} \label{sec:bkgStudy}
 After the event selection the dominant number of SM background events in the two electron and two jet sample (eejj sample) 
 come from $t\bar{t}$ and $Z/\gamma$+jet processes, as summarized in table \ref{tab:EventSelSummary}. 
-This section describes data-driven techniques used to estimate the shape of $M_{ej}$ and $S_{T}$ distributions, and the absolute 
-normalization for these two backgrounds using control samples. 
+This section describes data-driven techniques used to estimate the absolute 
+normalization for these two backgrounds, and the shape of selection variable 
+distributions for $t\bar{t}$ background using control samples. 
 %These shapes are used in a fit to the data to extract the number of signal events, as described 
 %in section \ref{sec:signalExtraction}. 
-The methods for background estimation described here are based on data and complemented(FIXME) by some Monte Carlo information. 
+The methods for background estimation described here are based on data and complemented by some Monte Carlo information. 
 They are therefore particularly suited for first data taking when confidence that the MC describes
 the data well is expected to be limited.
 
-The main properties of a control sample to estimate a background $X$ are:
+For our analysis, the main properties of a control sample to estimate a background $X$ are:
 \begin{itemize}
 %
-\item to have similar topology of the $X$ events in the signal sample concerning a given set of 
-reconstructed quantities under investigation (in this case the signal samples is the eejj sample of selected events, 
-and the reconstructed quantities investigated are lepton-jet invariant mass and $S_{T}$ variable);  
+\item to be enriched in $X$ events.
 %
 \item to be independent from the signal sample;
 %
-\item to be enriched in $X$ events.
+\item to have similar topology of the $X$ events in the signal sample (i.e. eejj sample) 
+concerning a given set of reconstructed quantities under investigation (i.e. $M_{ej}$ or $S_{T}$);  
 %
 \end{itemize}
 %
@@ -36,19 +36,22 @@ The control samples for the $t\bar{t}$ and $Z/\gamma$+jet backgrounds discussed 
 
 The normalization and the shape of the main selection variable distributions for 
 $t\bar{t}$ events can be estimated directly from data using a control sample. 
-The basic idea is to select events that are independent from the eejj sample, but have $M_{ej}$ and $S_{T}$ shape and resolution 
-similar to the $t\bar{t}$ component in the eejj sample.
+The basic idea is to select events that are independent from the eejj sample, and have, for the main selection variables, 
+shape and resolution similar to the $t\bar{t}$ component in the eejj sample.
 
 A good control sample can be obtained by using the same selection criteria applied for the eejj sample, but 
 requiring at least one electron and one muon (e$\mu$jj sample) instead of at least 2 electrons 
 in the final state in addition to the two jets. 
-For $t\bar{t}$ events, the $M_{lj}$ and $S_{T}$distributions of the e$\mu$jj and the eejj samples
+For $t\bar{t}$ events, the selection variable distributions of the e$\mu$jj and the eejj samples
 are expected to be very similar in shape since the kinematics of the process does not depend 
 on the nature of the lepton. Figure~\ref{fig:ttbar} shows a good agreement between 
-the shape of the two distributions with the current MC statistics available. 
+the shape of $M_{lj}$ and $S_{T}$ distributions with the current MC statistics available. Similar agreement 
+is found also for the other reconstructed kinematic variables used in the selection. 
+
 The e$\mu$jj sample is dominated by $t\bar{t}$ events, as shown in Figure~\ref{fig:emujjContamination} 
-with a small contamination (estimated from MC) of less than 5\%, mainly from di-boson events 
-(for $W$+jets and $Z/\gamma$+jets contributions, uncertainties are large, around 100\%, due to limited MC statistics). 
+with a small contamination estimated from MC of less than 5\% (with $S_{T}$ cut of 300 GeV), 
+mainly from di-boson events (for $W$+jets and $Z/\gamma$+jets contributions, uncertainties are large, 
+around 100\%, due to limited MC statistics). 
 The QCD background contamination in the e$\mu$jj sample is not evaluated here, and it's expected to be small. 
 The MC statistics of QCD sample is not sufficient to perform a reasonable estimate at this stage, althought 
 it seems to confirm the expectation; the plans of using data driven methods to estimate such background will be discussed later in Section XXX. 
@@ -72,14 +75,14 @@ N_{eejj}^{est.} = \frac{1}{2}\sum_{P_{T}^{\mu}} N_{e\mu jj}(P_{T}^{\mu}) \times 
 where $N_{e\mu jj}(P_{T}^{\mu})$ is the $P_{T}$ distribution for e$\mu$jj events of the muon  
 with largest transverse momentum, and $R(P_{T})$ is the ratio between electron 
 and muon reconstruction efficiencies as a function of lepton $P_{T}$. The ratio $R(P_{T})$ has been obtained 
-using a MC sample of Z+jets events with an equivalent integrated luminosity of about 250 $pb^{-1}$ 
-(FIXME, add the value of R in a range of pT); 
-once real data becomes available this ratio could be obtained with $tag\&probe$ method using $Z \rightarrow ee$ and 
+using a MC FullSim sample of Z+jets events with an equivalent integrated luminosity of about 300 $pb^{-1}$.
+The value of $R(P_{T})$ is found to be between 0.85-0.95 for $30 GeV < P_{T} < 500 GeV$.
+Once real data becomes available this ratio could be obtained with $tag\&probe$ method using $Z \rightarrow ee$ and 
 $Z \rightarrow \mu\mu$ events (see Section \ref{sec:electronEfficiency}).
 A closure test of the method is performed using a MC sample of $t\bar{t}$ events. 
 Table~\ref{tab:emujjClosureTest} shows the good agreement within statistical uncertainties between 
 the $N_{eejj}^{est.}$, calculated from Equation~\ref{formula:NeejFromNemujj}, 
-and the actual prevision from MC, $N_{eejj}$, for samples selected with a loose $S_{T}$ cut of 300 GeV.   
+and the prevision from MC, $N_{eejj}$, for samples selected with a loose $S_{T}$ cut of 300 GeV.   
 
 %{\sl Discussion of how clearly this plot shows similar shape and how this will be used}
 
@@ -133,79 +136,91 @@ and the actual prevision from MC, $N_{eejj}$, for samples selected with a loose 
 \end{table}
 
 
-\subsection{$Z/\gamma$+jet background shape} 
+\subsection{$Z/\gamma$+jet background control sample} 
 
 A control sample for $Z/\gamma$+jet background estimation (eejjAtZ sample) 
 can be obtained by using the same selection criteria applied for the eejj sample except 
 the $M_{ee}$ cut, which is modified to select events with a real $Z$ boson reconstructed 
 ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$). This control sample is an almost pure sample of  
-$Z/\gamma$+jet events, as shown in Figure~\ref{fig:eejjMZContamination} 
-(about XXX\% contamination dominated by $t\bar{t}$ and di-bosons events), 
-since the cross section of the process is resonant at the Z mass, and is 
-independent from the eejj signal sample by construction. 
+$Z/\gamma$+jet events as shown in Figure~\ref{fig:eejjAtZContamination}   
+( less than 4\% contamination dominated by $t\bar{t}$ events, for $S_{T}$ cut of 300 GeV), 
+since the cross section of the process is resonant at the Z mass. 
+%the eejjAtZ sample is independent from the eejj signal sample by construction. 
 For $Z/\gamma$+jet events, the eejjAtZ sample with 100 pb$^{-1}$ of data 
-is expected to have about XX, YY, and ZZ events, respectively for an $S_{T}$ cut of 300, 520, and 620 GeV.
-%In addition the control sample has about XX times the number of $Z/\gamma$+jet events in 
-%the signal sample (about 50 events expected in the control sample for 100 pb$-1$ of data), which 
-%is important to reduce the statistical errors in the determination of the background shape of selection variables.
-
-Figure~\ref{fig:zjet} shows the good agreement between eejjAtZ and eejj samples for both the shapes of $M_{ej}$ 
-and $S_{T}$ distributions, using a large FastSim MC sample of $Z/\gamma$+jet events. 
-The agreement observed can be interpreted as the consequence of the 
-weak correlation between the two reconstructed quantities $M_{ej}$ ($S_{T}$) and $M_{ee}$ for selected events, as shown in 
-Figure~\ref{MejVsMeeCorrelation} (Figure~\ref{STVsMeeCorrelation}).
+is expected to have about 129, 22, and 12 events, respectively for an $S_{T}$ cut of 300, 520, and 620 GeV.
 
 The normalization of the control sample can be obtained with an hybrid method which combines the eejjAtZ data with 
-MC information. Once real data is available the eejjAtZ sample can be created. 
-The number of $Z/\gamma$+jet events in the eejj signal ($M_{ee}>100$ GeV) sample can be estimated as
+MC information. Once real data is available the eejjAtZ sample can be selected. 
+The number of $Z/\gamma$+jet events in the eejj signal sample ($M_{ee}>100$ GeV) can be estimated as
 
 \begin{equation} \label{formula:NeejFromNemujj}
 N_{eejj}^{Z} = N_{eejjAtZ} \times R_{OffZ/AtZ} \quad , 
 \end{equation}
 
-where $N_{eejjAtZ}$ is the number of events in the control sample, and 
+where $N_{eejjAtZ}$ is the number of events in the eejjAtZ control sample, and 
 $R_{OffZ/AtZ}$ is the ratio between the number of $Z/\gamma$+jet events 
-with $M_{ee} > 100\mbox{ GeV}$ and $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$ 
-that have passed all the other selection criteria.
+with $M_{ee} > 100\mbox{ GeV}$ (OffZ events) and $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$ 
+(AtZ events) that have passed all the other selection criteria.
 The value of $R_{OffZ/AtZ}$ can be determined with reasonable confidence directly from MC, 
 since it's expected that the major theoretical uncertainties on the process generation 
-get canceled in the ratio. 
+get canceled in the ratio. Detailed generator level studies will be performed 
+in future upgrades of the analysis to quantify the theoretical uncertainties 
+on the value of $R_{OffZ/AtZ}$ by exploiting different sets of PDFs 
+and various MC generators.
 
-%The selected events pass the cut $S_{t}>400~$GeV, which requires the presence of high $P_{T}$ electrons in the final state. 
-%The two most probable ways to produce high $P_{T}$ electrons in the $Z/\gamma$+jet process are 1) via the decay of a high mass (real or virtual) boson, 
-%or 2) because of the substantial boost of the electrons, coming from the decay of a high $P_{T}$ boson (even with low $M_{ee}$) 
-%which recoils from a high $P_{T}$ parton (jet). 
-%If the selected events were dominated by the case 1) then a strong correlation between $M_{ej}$ and $M_{ee}$ would be expected, but this is not observed.
-%On the contrary the selected events are dominated by the case 2), as confirmed by Figure \ref{fig:pTeePair}, which shows the $P_{T}$
-%distribution at generator level of the $ee$ pair (the $P_{T}$ boson distribution) for events in the control sample (low $M_{ee}$ region) 
-%and in the signal sample (high $M_{ee}$ region).
-%For this reason a strong correlation between $M_{ej}$ and $M_{ee}$ is not found, and this allows the use of events within the 
-%Z mass window as a control sample for the signal region.
-
-\begin{figure}[htb]
-  \begin{center}
-  \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
-  \end{tabular}
-  \caption{\small \sl Distributions of the electron-jet invariant mass for the signal eejj sample 
-    (cut 1,2,3,4)
-    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
-  \label{fig:zjet}
-  \end{center}
-\end{figure}
+%Figure~\ref{fig:zjet} shows the good agreement between eejjAtZ and eejj samples for both the shapes of $M_{ej}$ 
+%and $S_{T}$ distributions, using a large FastSim MC sample of $Z/\gamma$+jet events. 
+%The agreement observed can be interpreted as the consequence of the 
+%weak correlation between the two reconstructed quantities $M_{ej}$ ($S_{T}$) and $M_{ee}$ for selected events, as shown in 
+%Figure~\ref{MejVsMeeCorrelation} (Figure~\ref{STVsMeeCorrelation}).
 
 \begin{figure}
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
+  \resizebox{10cm}{!}{\includegraphics{plots/ZjetStudies/ST_100InVpb_eejjAtZ_looseSTcut_MeeInverted_WithLQ400.eps}} \\ 
   \end{tabular}
-  \caption{\small \sl Distribution of the $P_{T}$ at generator level of the electron pair ($P_{T}$ of the boson) 
-    for $Z/\gamma$+jet events in the signal eejj sample 
-    (cut 1,2,3,4)
-    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
-  \label{fig:pTeePair}
+%  \caption{\small \sl Distribution of the $P_{T}$ at generator level of the electron pair ($P_{T}$ of the boson) 
+%    for $Z/\gamma$+jet events in the signal eejj sample 
+%    (cut 1,2,3,4)
+%    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
+  \caption{\small \sl Distribution of the $S_{T}$ variable for eejjAtZ sample
+    for different background components. 
+    Histogram of signal events (at 400~GeV LQ mass) is also added. 
+    Baseline selection criteria described in Section~\ref{sec:eventSelection} 
+    are applied, $S_{T}$ cut has been released to 300 GeV, 
+    inverted cut on $M_{ee}$ is applied ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$).
+    The background histograms are summed on top of each other.
+    Black dots indicate pseudo data randomly generated accordingly with 
+    the total background distribution, and assuming 100 $pb^{-1}$ of data.}
+  \label{fig:eejjAtZContamination}
   \end{center}
 \end{figure}
+
+
+%\begin{figure}[htb]
+%  \begin{center}
+%  \begin{tabular}{cc}
+%  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
+%  \end{tabular}
+%  \caption{\small \sl Distributions of the electron-jet invariant mass for the signal eejj sample 
+%    (cut 1,2,3,4)
+%    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
+%  \label{fig:zjet}
+%  \end{center}
+%\end{figure}
+
+%\begin{figure}
+%  \begin{center}
+%  \begin{tabular}{cc}
+%  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
+%  \end{tabular}
+%  \caption{\small \sl Distribution of the $P_{T}$ at generator level of the electron pair ($P_{T}$ of the boson) 
+%    for $Z/\gamma$+jet events in the signal eejj sample 
+%    (cut 1,2,3,4)
+%    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
+%  \label{fig:pTeePair}
+%  \end{center}
+%\end{figure}
 
 
 %http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/Configuration/CSA07Production/data/CSA07_zjet_ptjgt20_Rmatch0.7_excl.cfg?revision=1.2&view=markup

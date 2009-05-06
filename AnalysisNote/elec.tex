@@ -119,7 +119,7 @@ future upgrades of this analysis.
   \end{tabular} 
   \caption{\small \sl Distribution of electron-ID variables for true electrons from the decay of 400 GeV mass LQ, and false electrons from 
  QCD multi jets MC events. Electrons from LQ decay with generated $p_{T}>30$ GeV and $|\eta|<2.5$ are matched with reconstructed electrons with 
- $p_{T}>30$ GeV and $|\eta|<2.5$ if $\Delta$R between them is < 0.02. Reconstructed electrons are associated to the 
+ $p_{T}>30$ GeV and $|\eta|<2.5$ if $\Delta$R between them is < 0.07. Reconstructed electrons are associated to the 
  barrel (endcaps) if $|\eta|<1.442$ ($1.560<|\eta|<2.5$).}
  \label{fig:elecID}
   \end{center}
@@ -139,7 +139,7 @@ future upgrades of this analysis.
   \end{tabular}
   \caption{\small \sl Distribution of electron-isolation variables for true electrons from the decay of 400 GeV mass LQ, and false electrons from 
     QCD multi jets MC events. Electrons from LQ decay with generated $p_{T}>30$ GeV and $|\eta|<2.5$ are matched with reconstructed electrons with 
-    $p_{T}>30$ GeV and $|\eta|<2.5$ if $\Delta$R between them is < 0.02. Reconstructed electrons are associated to the 
+    $p_{T}>30$ GeV and $|\eta|<2.5$ if $\Delta$R between them is < 0.07. Reconstructed electrons are associated to the 
     barrel (endcaps) if $|\eta|<1.442$ ($1.560<|\eta|<2.5$).}
     \label{fig:elecIso}
   \end{center}
@@ -168,61 +168,66 @@ Electrons from LQ decays, being usually isolated from jets and having a $p_{T}$ 
 hundreds of GeV, can be reconstructed with high efficiency. 
 Table~4
 %\ref{tab:ElecEffAcc} 
-shows the electron acceptance $A$ for generated $P_{T}$> 30 GeV and $|\eta|<2.5$, the 
-reconstruction efficiency within the acceptance region ($\varepsilon^{reco}$), and the overall reconstruction efficiency 
-($A \times \varepsilon^{reco}$) for single electrons from LQ decays for a 400 GeV LQ mass.
-The overall reconstruction efficiency on a single electron, including acceptance, is $= approx XX\%$.
-Fig \ref{fig:elecEffFV} shows the reconstruction efficiency of electrons
-for LQ mass of 400 GeV as a function of $\eta$. 
+shows the electron acceptance $A_{gen}$ ($P_{T}^{gen}>$ 30 GeV and $|\eta^{gen}|<2.5$), the 
+reconstruction efficiency within the acceptance region $\varepsilon_{reco}$, 
+and the overall reconstruction efficiency ($A_{gen} \times \varepsilon_{reco}$) 
+for single electrons from LQ decays for a 400 GeV LQ mass (FullSim sample used).
+The overall reconstruction efficiency on a single electron, including acceptance, is $\approx 80\%\%$.
+Fig~\ref{fig:elecEffFV} shows the reconstruction/ID/Isolation efficiencies
+(with respect to the acceptance cuts) of electrons for LQ mass of 400 GeV as a function of $\eta$. 
 A significant loss of efficiency is seen in the region $|\eta| \approx 1.5$, 
 and is due to the lack of calorimeter coverage between the ECAL barrel and the endcaps. 
 The inefficiency at high $\eta$ is a border effect related to the 
-geometrical acceptance of the inner traking system, which ends at $|\eta| = 2.5$.
+geometrical acceptance of the inner traking system, that ends at $|\eta| = 2.5$.
+Once real data is available, electron efficiencies will be measured 
+with $tag\&probe$ method using $Z \rightarrow ee$ events 
+following the approach discussed at~\cite{TagAndProbe}. \\
 
+%
 \begin{table}[htb]
   \label{tab:ElecEffAcc}
   \begin{center}
     \begin{tabular}{|l|c|c|c|} \hline
-      LQ mass (GeV) & $A_{FR}$ & $\varepsilon_{FR}^{reco}$ & $A_{FR} \times \varepsilon_{FR}^{reco}$\\ \hline
-      250 & 0.xx & 0.xx & 0.xx \\ \hline
-      400 & 0.xx & 0.xx & 0.xx \\ \hline
+      LQ mass (GeV) & $A_{gen}$ & $\varepsilon_{reco}$ & $A_{gen} \times \varepsilon_{reco}$\\ \hline
+      400 & 96.4\% & 83.4\% & 80.4\% \\ \hline
     \end{tabular}
-    \caption{\small \sl Electron acceptance in the fiducial region ($A_{FR}$), the 
-      reconstruction efficiency within the fiducial region ($\varepsilon_{FR}^{reco}$), and the overall reconstruction efficiency 
-      ($A_{FR} \times \varepsilon_{FR}^{reco}$) for single electrons from LQ decays.   Relative statistical uncertainties on overall 
-      efficiency are less than 0.2\%.  % Is this 0.75 +- 0.02 or +- 0.015????  
+    \caption{\small \sl Electron acceptance ($A_{gen}$), 
+      reconstruction efficiency after ID/Isolation cuts ($\varepsilon_{reco}$), and overall reconstruction efficiency 
+      ($A_{gen} \times \varepsilon_{reco}$) for single electrons from decays of LQ with mass of 400 GeV (FullSim sample used).   
+      Relative statistical uncertainties on efficiencies are less than 0.2\%.  
       } 
   \end{center}
 \end{table}
-
+%
 \begin{figure}
   \begin{center}
     \resizebox{10cm}{!}{\includegraphics{plots/electronStudies/Eff_vs_Eta_recoIDIsoEle_pT30_eta2.5_LQ400.eps}}
-    \caption{\small \sl Electron reconstruction efficiency as a function of $\eta$. The shaded region represents the  
-      ECAL regions excluded from the fiducial volume defined at \ref{sec:IdAndIso}. The plot is for LQ mass of 400 GeV.}
+    \caption{\small \sl Electron reconstruction/ID/Isolation efficiency as a function of $\eta^{gen}$. 
+      A FullSim sample of LQ with mass of 400 GeV is used.}
     \label{fig:elecEffFV}
   \end{center}
 \end{figure}
+%
 
 % indico.cern.ch/getFile.py/access?contribId=3&resId=0&materialId=slides&confId=32048
 
 
-\begin{figure}
-  \begin{center}
-  \begin{tabular}{c}
-    %\resizebox{9cm}{!}{\includegraphics{plots/Ele_eff_M650GeV.eps}}
-    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\
-    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
-%  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
-%  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
-  \end{tabular}
-  \caption{\small \sl Distributions of some reconstructed quantities for electrons from LQ decay, 
-    obtained with FastSim (blue filled histogram) and FullSim (black dots) 
-    samples with $M_{LQ}=650$ GeV.
-    From the top-left to the bottom-right: $P_{T}$, $\eta$, $\Delta\phi_{in}$, $\Delta\eta_{in}$.}
-  \label{fig:elecVariables}
-  \end{center}
-\end{figure}
+%\begin{figure}
+%  \begin{center}
+%  \begin{tabular}{c}
+%    %\resizebox{9cm}{!}{\includegraphics{plots/Ele_eff_M650GeV.eps}}
+%    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\
+%    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
+%%  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} &
+%%  \resizebox{5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+%  \end{tabular}
+%  \caption{\small \sl Distributions of some reconstructed quantities for electrons from LQ decay, 
+%    obtained with FastSim (blue filled histogram) and FullSim (black dots) 
+%    samples with $M_{LQ}=650$ GeV.
+%    From the top-left to the bottom-right: $P_{T}$, $\eta$, $\Delta\phi_{in}$, $\Delta\eta_{in}$.}
+%  \label{fig:elecVariables}
+%  \end{center}
+%\end{figure}
 
 %efficiency (pT, eta) (no deltaR from genJet since already showed distance OK above)
 %pT, eta dist
