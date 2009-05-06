@@ -17,27 +17,35 @@ Thus, a peak at the mass of the leptoquark would be the only resonance in this d
 The electron-jet combinations of the background events have a different shape than that 
 of the leptoquark resonance. 
 Nonetheless, the number of background events could dominate over the number of signal events.  
-The following selections have been made in order to minimize the number of background events 
-selected while retaining a high signal efficiency.
+The cut-based selection described in this section has been made in order to minimize the number 
+of background events selected while retaining a high signal efficiency.
 
-The decay of a leptoquark and an anti-leptoquark produces two high energy jets and two high energy 
-electrons.  
-The online selection of candidate events is made by the HLT triggers EMHighEt and EMVeryHighEt 
-described in section~\ref{sec:trig} while the offline identification of electrons and jets 
+The decay of a leptoquark and an anti-leptoquark produces two high energy electrons and 
+two high energy jets.
+The online selection of candidate events is made by either the HLT trigger ``HLT\_Photon15\_L1R'' 
+or ``HLT\_Photon25\_L1R'' described in section~\ref{sec:trig}, depending on the luminosity scenario, 
+while the offline identification of electrons and jets 
 proceeds as described in sections~\ref{sec:electrons} and \ref{sec:jet}, respectively.
-The offline selection of the eejj sample continues with the following cuts:
+
+%FIXME add skim
+
+The offline selection of the eejj sample continues with the following kinematical cuts:
 %
 \begin{enumerate}
-\item at least 2 isolated electrons, one required to have $P_T>85$~GeV, 
-and the other $P_T>30$~GeV 
-\item at least 2 jets, both required to have $P_T>50$~GeV
+\item at least 2 isolated electrons, both of them required $P_T>30$~GeV 
+\item at least 2 jets, both of them required to have $P_T>50$~GeV
 \item $M_{ee}>100$~GeV
-\item $S_T\equiv P_T(e_1)+P_T(e_2)+P_T(j_1)+P_T(j_2)>400$~GeV
+\item $S_T\equiv P_T(e_1)+P_T(e_2)+P_T(j_1)+P_T(j_2)>f(M_{LQ})$, where $f(M_{LQ})$ is a function 
+of the hypothesized LQ mass.
 \end{enumerate}
 %
-The $P_T$ threshold for one electron in cut 1 is set to 5~GeV above the threshold of the $EMHighEt$ trigger 
-in order to increase the confidence that the trigger was actually fired by a real electron in all events.
-The other electron will have a $P_T>30$~GeV, as it is implicit in the definition of electron. 
+
+%FIXME add optimization (made to optimize the analysis potential for LQ signal exclusion)
+The specific values of the kinematical cuts has been determined using a cut-optimization procedure meant to
+reach the maximum potential of the analysis for excluding the existence of a LQ signal. 
+Such a procedure is described in section~\ref{sec:optimization}.
+
+Cut 2 and 3 set a minimum value on the transverse momentum of electrons and jets.
 Cut 3, where $M_{ee}$ is the invariant mass of the electron pair, removes background events from 
 $Z/\gamma$+jets events as shown in figure~\ref{fig:Mee_St_distributions}-left.
 Cut 4, where the variable $S_T$ is defined as the scalar sum of the transverse momenta of the 
@@ -47,7 +55,7 @@ the combinations of several kinematic variables has shown that $S_T$ is the most
 and little is gained by adding cuts on other variables. The distribution of $S_T$ for the present
 analysis is shown in figure~\ref{fig:Mee_St_distributions}-right.
 
-Once the eejj sample is built, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
+Once the eejj sample is selected, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
 For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
 of the two electron-jet pairs is chosen. 
 The resulting $M_{ej}$ distribution is shown in figure~\ref{fig:Mej_allComb} for the signal and remaining backgrounds. 
