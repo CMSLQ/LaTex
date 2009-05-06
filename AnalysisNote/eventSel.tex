@@ -40,7 +40,6 @@ of the hypothesized LQ mass.
 \end{enumerate}
 %
 
-%FIXME add optimization (made to optimize the analysis potential for LQ signal exclusion)
 The specific values of the kinematical cuts has been determined using a cut-optimization procedure meant to
 reach the maximum potential of the analysis for excluding the existence of a LQ signal. 
 Such a procedure is described in section~\ref{sec:optimization}.
@@ -114,343 +113,126 @@ After the described event selection, the dominant background contributions
 are $t\bar{t}$ and $Z/\gamma$+jets. Data-driven techniques to estimate these backgrounds
 are discussed in the next section.
 
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           75.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
+          Skim          &           68.04          $~\pm~$          0.09           &           0.90720          $~\pm~$          0.00132           &           0.91000          $~\pm~$          0.00120          \\          
+          2 ele $P_T>20~$GeV          &           67.69          $~\pm~$          0.09           &           0.99486          $~\pm~$          0.00188           &           0.90000          $~\pm~$          0.00120          \\          
+          2 ele (ID) $P_T>20~$GeV          &           58.26          $~\pm~$          0.12           &           0.86069          $~\pm~$          0.00245           &           0.78000          $~\pm~$          0.00170          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           50.65          $~\pm~$          0.14           &           0.86938          $~\pm~$          0.00345           &           0.68000          $~\pm~$          0.00190          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           50.09          $~\pm~$          0.14           &           0.98894          $~\pm~$          0.00393           &           0.67000          $~\pm~$          0.00190          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           49.68          $~\pm~$          0.14           &           0.99181          $~\pm~$          0.00397           &           0.66000          $~\pm~$          0.00190          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           46.62          $~\pm~$          0.14           &           0.93841          $~\pm~$          0.00412           &           0.62000          $~\pm~$          0.00190          \\          
+          $M_{ee}>100~$GeV          &           44.60          $~\pm~$          0.15           &           0.95667          $~\pm~$          0.00451           &           0.59000          $~\pm~$          0.00200          \\          
+          $ S_T>620~$GeV           &           38.80          $~\pm~$          0.15           &           0.86996          $~\pm~$          0.00512           &           0.52000          $~\pm~$          0.00200          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of MLQ=400 GeV: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:} 
+\end{table} 
 
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-\hline
-\hline
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           1180.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
+          Skim          &           63.12          $~\pm~$          0.83           &           0.05349          $~\pm~$          0.01315           &           0.05300          $~\pm~$          0.00071          \\          
+          2 ele $P_T>20~$GeV          &           23.21          $~\pm~$          0.51           &           0.36771          $~\pm~$          0.02561           &           0.02000          $~\pm~$          0.00044          \\          
+          2 ele (ID) $P_T>20~$GeV          &           15.00          $~\pm~$          0.41           &           0.64627          $~\pm~$          0.03507           &           0.01300          $~\pm~$          0.00035          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           13.77          $~\pm~$          0.40           &           0.91800          $~\pm~$          0.03989           &           0.01200          $~\pm~$          0.00034          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           9.49          $~\pm~$          0.33           &           0.68918          $~\pm~$          0.04531           &           0.00800          $~\pm~$          0.00028          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           6.97          $~\pm~$          0.28           &           0.73446          $~\pm~$          0.05313           &           0.00590          $~\pm~$          0.00024          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           1.58          $~\pm~$          0.14           &           0.22669          $~\pm~$          0.09729           &           0.00130          $~\pm~$          0.00011          \\          
+          $M_{ee}>100~$GeV          &           0.78          $~\pm~$          0.10           &           0.49367          $~\pm~$          0.15585           &           0.00066          $~\pm~$          0.00008          \\          
+          $ S_T>620~$GeV           &           0.09          $~\pm~$          0.03           &           0.11538          $~\pm~$          0.35714           &           0.00008          $~\pm~$          0.00003          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of VV: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:} 
+\end{table} 
 
-no cut &1400 $\pm$ 44& 1000 & - \\
-+ hlt (HE or VHE) &1121 $\pm$ 40 & 801 & 8.01e-01 $\pm$ 1.2e-02\\
-+ 2 ele (ID) $P_{T} >30$ GeV &644 $\pm$ 30 & 460 & 5.74e-01 $\pm$ 3.3e-02\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &592 $\pm$ 29 & 423 & 9.20e-01 $\pm$ 6.1e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &508 $\pm$ 27& 363 & 8.58e-01 $\pm$ 6.1e-02\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &506 $\pm$ 27& 362 & 9.97e-01 $\pm$ 7.4e-02\\
-+ $M_{ee} >100$ GeV& 455 $\pm$ 25& 325 & 8.98e-01 $\pm$ 6.8e-02\\
-+ $S_{T} >400$ GeV &425 $\pm$ 24& 304 & 9.35e-01 $\pm$ 7.4e-02\\
-\hline
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           1541437000.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
+          Skim          &           1294418.04          $~\pm~$          7931.62           &           0.00084          $~\pm~$          0.00613           &           0.00084          $~\pm~$          0.00001          \\          
+          2 ele $P_T>20~$GeV          &           994652.00          $~\pm~$          6685.86           &           0.76842          $~\pm~$          0.00910           &           0.00065          $~\pm~$          0.00000          \\          
+          2 ele (ID) $P_T>20~$GeV          &           5933.28          $~\pm~$          583.37           &           0.00597          $~\pm~$          0.09855           &           0.00000          $~\pm~$          0.00000          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           176.85          $~\pm~$          112.49           &           0.02981          $~\pm~$          0.64363           &           0.00000          $~\pm~$          0.00000          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           120.87          $~\pm~$          109.86           &           0.68346          $~\pm~$          1.10937           &           0.00000          $~\pm~$          0.00000          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           120.87          $~\pm~$          109.86           &           1.00000          $~\pm~$          1.28539           &           0.00000          $~\pm~$          0.00000          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           11.55          $~\pm~$          10.83           &           0.09556          $~\pm~$          1.30588           &           0.00000          $~\pm~$          0.00000          \\          
+          $M_{ee}>100~$GeV          &           0.74          $~\pm~$          0.52           &           0.06407          $~\pm~$          1.17175           &           0.00000          $~\pm~$          0.00000          \\          
+          $ S_T>620~$GeV           &           0.37          $~\pm~$          0.37           &           0.50000          $~\pm~$          1.22221           &           0.00000          $~\pm~$          0.00000          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of QCD: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:} 
+\end{table} 
 
-full selection efficiency& &  & 3.04e-01 $\pm$ 1.4e-02\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl LQ sample with $M_{LQ}=250$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
-\label{tab:selection_effic_250}
-\end{table}
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           421800.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
+          Skim          &           9014.72          $~\pm~$          56.67           &           0.02137          $~\pm~$          0.00629           &           0.02100          $~\pm~$          0.00013          \\          
+          2 ele $P_T>20~$GeV          &           4168.26          $~\pm~$          38.76           &           0.46238          $~\pm~$          0.01122           &           0.00990          $~\pm~$          0.00009          \\          
+          2 ele (ID) $P_T>20~$GeV          &           3300.39          $~\pm~$          34.53           &           0.79179          $~\pm~$          0.01400           &           0.00780          $~\pm~$          0.00008          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           3092.16          $~\pm~$          33.43           &           0.93691          $~\pm~$          0.01504           &           0.00730          $~\pm~$          0.00008          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           2015.33          $~\pm~$          27.02           &           0.65175          $~\pm~$          0.01722           &           0.00480          $~\pm~$          0.00006          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           1581.75          $~\pm~$          23.95           &           0.78486          $~\pm~$          0.02022           &           0.00380          $~\pm~$          0.00006          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           324.36          $~\pm~$          10.86           &           0.20506          $~\pm~$          0.03675           &           0.00077          $~\pm~$          0.00003          \\          
+          $M_{ee}>100~$GeV          &           22.93          $~\pm~$          2.89           &           0.07069          $~\pm~$          0.13041           &           0.00005          $~\pm~$          0.00001          \\          
+          $ S_T>620~$GeV           &           0.73          $~\pm~$          0.52           &           0.03184          $~\pm~$          0.72339           &           0.00000          $~\pm~$          0.00000          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of Z+jets: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:} 
+\end{table} 
 
-%old
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
-%no cut &1400.0 $\pm$ 44.3& 1000.0 & - \\
-%+ hlt (HE or VHE) &1124.2 $\pm$ 39.7& 803.0 & 8.0e-01 $\pm$ 1.3e-02\\
-%%+  &1121.4 $\pm$ 39.6& 801.0 & 1.0e+00 $\pm$ 5.0e-02\\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &644.0 $\pm$ 30.0& 460.0 & 5.7e-01 $\pm$ 3.4e-02\\
-%+ 2 ele (Iso) pT $>30.0$ GeV &596.4 $\pm$ 28.9& 426.0 & 9.3e-01 $\pm$ 6.2e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &512.4 $\pm$ 26.8& 366.0 & 8.6e-01 $\pm$ 6.1e-02\\
-%+ pT 1st ele $>$ 85.0 GeV &511.0 $\pm$ 26.7& 365.0 & 1.0e+00 $\pm$ 7.4e-02\\
-%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&499.8 $\pm$ 26.5& 357.0 & 9.8e-01 $\pm$ 7.3e-02\\
-%+ St $>400.0$ GeV &462.0 $\pm$ 25.4& 330.0 & 9.2e-01 $\pm$ 7.1e-02\\
-%\hline
-%full selection efficiency& &  & 4.1e-01 $\pm$ 2.7e-02\\
-%\hline
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl LQ sample with $M_{LQ}=250$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
-%The overall selection efficiency is shown in the last line.}
-%\label{tab:selection_effic_250}
-%\end{table}
-
-
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-\hline
-\hline
-
-no cut &120.0 $\pm$ 3.8 & 1000 & - \\
-+ hlt (HE or VHE) &111.1 $\pm$ 3.6& 926 & 9.26e-01 $\pm$ 0.8e-02\\
-+ 2 ele (ID) $P_{T} >30$ GeV &67.1 $\pm$ 2.8& 559 & 6.04e-01 $\pm$ 3.2e-02\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &59.5 $\pm$ 2.7& 496 & 8.87e-01 $\pm$ 5.5e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &55.4 $\pm$ 2.6& 462 & 9.31e-01 $\pm$ 6.0e-02\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &55.4 $\pm$ 2.6& 462 & 1.00e+00 $\pm$ 6.6e-02\\
-+ $M_{ee} >100$ GeV&52.7 $\pm$ 2.5& 439 & 9.50e-01 $\pm$ 6.3e-02\\
-+ $S_{T} >400$ GeV &52.4 $\pm$ 2.5& 437 & 9.95e-01 $\pm$ 6.7e-02\\
-\hline
-
-full selection efficiency& &  & 4.37e-01 $\pm$ 1.57e-02\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl LQ sample with $M_{LQ}=400$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
-\label{tab:selection_effic_400}
-\end{table}
-
-%old
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
-
-%no cut &120.0 $\pm$ 3.8& 1000.0 & - \\
-%+ hlt (HE or VHE) &111.1 $\pm$ 3.7& 926.0 & 9.3e-01 $\pm$ 8.3e-03\\
-%%+  &111.1 $\pm$ 3.7& 926.0 & 1.0e+00 $\pm$ 4.6e-02\\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &67.1 $\pm$ 2.8& 559.0 & 6.0e-01 $\pm$ 3.2e-02\\
-%+ 2 ele (Iso) pT $>30.0$ GeV &61.1 $\pm$ 2.7& 509.0 & 9.1e-01 $\pm$ 5.6e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &56.8 $\pm$ 2.6& 473.0 & 9.3e-01 $\pm$ 5.9e-02\\
-%+ pT 1st ele $>$ 85.0 GeV &56.8 $\pm$ 2.6& 473.0 & 1.0e+00 $\pm$ 6.5e-02\\
-%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&55.4 $\pm$ 2.6& 462.0 & 9.8e-01 $\pm$ 6.4e-02\\
-%+ St $>400.0$ GeV &55.2 $\pm$ 2.6& 460.0 & 1.0e+00 $\pm$ 6.6e-02\\
-%\hline
-
-%full selection efficiency& &  & 5.0e-01 $\pm$ 2.8e-02\\
-%\hline
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl LQ sample with $M_{LQ}=400$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
-%The overall selection efficiency is shown in the last line.}
-%\label{tab:selection_effic_400}
-%\end{table}
-
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-\hline
-\hline
-
-no cut &7.20 $\pm$ 0.14& 2500 & - \\
-+ hlt (HE or VHE) &6.94 $\pm$ 0.14& 2408 & 9.63e-01 $\pm$ 3.7e-02\\
-+ 2 ele (ID) $P_{T} >30$ GeV &4.15 $\pm$ 0.11& 1440 & 5.98e-01 $\pm$ 1.9e-02\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &3.58 $\pm$ 0.10 & 1243 & 8.63e-01 $\pm$ 3.3e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &3.45 $\pm$ 0.10& 1198 & 9.64e-01 $\pm$ 3.9e-02\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &3.45 $\pm$ 0.10& 1198 & 1.00 $\pm$ 0.4e-01\\
-+ $M_{ee} >100$ GeV&3.41 $\pm$ 0.10& 1184 & 9.88e-01 $\pm$ 4.0e-02\\
-+ $S_{T} >400$ GeV &3.41 $\pm$ 0.10& 1184 & 1.00 $\pm$ 0.4e-01\\
-\hline
-
-full selection efficiency& &  & 4.74e-01 $\pm$ 9.99e-03\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl LQ sample with $M_{LQ}=650$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
-\label{tab:selection_effic_650}
-\end{table}
-
-
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
-
-%no cut &7.2 $\pm$ 0.1& 2500.0 & - \\
-%+ hlt (HE or VHE) &6.9 $\pm$ 0.1& 2408.0 & 9.6e-01 $\pm$ 3.8e-03\\
-%%+  &6.9 $\pm$ 0.1& 2408.0 & 1.0e+00 $\pm$ 2.9e-02\\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &4.2 $\pm$ 0.1& 1441.0 & 6.0e-01 $\pm$ 2.0e-02\\
-%+ 2 ele (Iso) pT $>30.0$ GeV &3.7 $\pm$ 0.1& 1292.0 & 9.0e-01 $\pm$ 3.4e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &3.6 $\pm$ 0.1& 1247.0 & 9.7e-01 $\pm$ 3.8e-02\\
-%+ pT 1st ele $>$ 85.0 GeV &3.6 $\pm$ 0.1& 1247.0 & 1.0e+00 $\pm$ 4.0e-02\\
-%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&3.6 $\pm$ 0.1& 1241.0 & 1.0e+00 $\pm$ 4.0e-02\\
-%+ St $>400.0$ GeV &3.6 $\pm$ 0.1& 1241.0 & 1.0e+00 $\pm$ 4.0e-02\\
-%\hline
-
-%full selection efficiency& &  & 5.2e-01 $\pm$ 1.8e-02\\
-%\hline
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl LQ sample with $M_{LQ}=650$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
-%The overall selection efficiency is shown in the last line.}
-%\label{tab:selection_effic_650}
-%\end{table}
-
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-\hline
-\hline
-
-no cut &0.47 $\pm$ 0.01& 1000 & - \\
-+ hlt (HE or VHE) &0.45 $\pm$ 0.01& 967 & 9.67e-01 $\pm$ 0.5e-02\\
-+ 2 ele (ID) $P_{T} >30$ GeV &0.27 $\pm$ 0.01& 583 & 6.03e-01 $\pm$ 3.1e-02\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &0.21 $\pm$ 0.01& 455 & 7.80e-01 $\pm$ 4.8e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &0.21 $\pm$ 0.01& 443 & 9.74e-01 $\pm$ 6.5e-02\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &0.21 $\pm$ 0.01& 443 & 1.00 $\pm$ 0.6e-01\\
-+ $M_{ee} >100$ GeV&0.21 $\pm$ 0.01& 443 & 1.00 $\pm$ 0.6e-01\\
-+ $S_{T} >400$ GeV &0.21 $\pm$ 0.01& 443 & 1.00 $\pm$ 0.6e-01\\
-\hline
-
-full selection efficiency& &  & 4.43e-01 $\pm$ 1.5e-02\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl LQ sample with $M_{LQ}=1000$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
-\label{tab:selection_effic_1000}
-\end{table}
-
-
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
-
-%no cut &0.50 $\pm$ 0.01& 1000.0 & - \\
-%+ hlt (HE or VHE) &0.50 $\pm$ 0.01& 967.0 & 9.7e-01 $\pm$ 5.6e-03\\
-%%+ hlt (HE or VHE) &0.5 $\pm$ 0.0& 967.0 & 1.0e+00 $\pm$ 4.5e-02\\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &0.30 $\pm$ 0.01& 583.0 & 6.0e-01 $\pm$ 3.2e-02\\
-%+ 2 ele (Iso) pT $>30.0$ GeV &0.20 $\pm$ 0.01& 491.0 & 8.4e-01 $\pm$ 5.2e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &0.20 $\pm$ 0.01& 478.0 & 9.7e-01 $\pm$ 6.3e-02\\
-%+ pT 1st ele $>$ 85.0 GeV &0.20 $\pm$ 0.01& 478.0 & 1.0e+00 $\pm$ 6.5e-02\\
-%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&0.20 $\pm$ 0.01& 478.0 & 1.0e+00 $\pm$ 6.5e-02\\
-%+ St $>400.0$ GeV &0.20 $\pm$ 0.01& 478.0 & 1.0e+00 $\pm$ 6.5e-02\\
-%\hline
-
-%full selection efficiency& &  & 4.9e-01 $\pm$ 2.8e-02\\
-%\hline
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl LQ sample with $M_{LQ}=1000$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
-%The overall selection efficiency is shown in the last line.}
-%\label{tab:selection_effic_1000}
-%\end{table}
-
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-\hline
-\hline
-
-+ hlt (HE or VHE) &2115.9 $\pm$ 9.7 & 48359 & - \\
-+ 2 ele (ID) $P_{T} >30$ GeV &137.4 $\pm$ 2.5& 3139 & 6.49e-02 $\pm$ 1.2e-03\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &105.4 $\pm$ 2.1 & 2408 & 7.67e-01 $\pm$ 2.0e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &49.6 $\pm$ 1.5& 1117 & 4.71e-01 $\pm$ 1.7e-02\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &47.2 $\pm$ 1.4& 1063 & 9.52e-01 $\pm$ 4.1e-02\\
-+ $M_{ee} >100$ GeV&40.2 $\pm$ 1.3& 905 & 8.52e-01 $\pm$ 3.9e-02\\
-+ $S_{T} >400$ GeV &21.26 $\pm$ 0.98 & 476 & 5.29e-01 $\pm$ 3.0e-02\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl $t\bar{t}$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut.}
-\label{tab:selection_effic_ttbar}
-\end{table}
-
-
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
-
-
-%%no cut &0.0 $\pm$ 0.0& 0.0 & - \\
-%%+ LQ skim &2391.5 $\pm$ 10.3& 54697.0 & inf $\pm$ 0.0e+00\\
-%hlt (HE or VHE) &2115.9 $\pm$ 9.6& 48359.0 & 8.8e-01 $\pm$ 5.5e-03\\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &138.5 $\pm$ 2.5& 3164.0 & 6.5e-02 $\pm$ 1.2e-03\\
-%+ 2 ele (Iso) pT $>30.0$ GeV &106.4 $\pm$ 2.2& 2432.0 & 7.7e-01 $\pm$ 2.1e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &50.2 $\pm$ 1.5& 1131.0 & 4.7e-01 $\pm$ 1.7e-02\\
-%+ pT 1st ele $>$ 85.0 GeV &47.8 $\pm$ 1.5& 1076.0 & 9.5e-01 $\pm$ 4.1e-02\\
-%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&45.0 $\pm$ 1.4& 1013.0 & 9.4e-01 $\pm$ 4.1e-02\\
-%+ St $>400.0$ GeV &23.3 $\pm$ 1.0& 523.0 & 5.2e-01 $\pm$ 2.8e-02\\
-%\hline
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl $t\bar{t}$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut.}
-%\label{tab:selection_effic_ttbar}
-%\end{table}
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           41400.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
+          Skim          &           6745.46          $~\pm~$          16.07           &           0.16293          $~\pm~$          0.00238           &           0.16000          $~\pm~$          0.00039          \\          
+          2 ele $P_T>20~$GeV          &           3637.01          $~\pm~$          12.32           &           0.53918          $~\pm~$          0.00414           &           0.08800          $~\pm~$          0.00030          \\          
+          2 ele (ID) $P_T>20~$GeV          &           462.15          $~\pm~$          4.57           &           0.12707          $~\pm~$          0.01045           &           0.01100          $~\pm~$          0.00011          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           257.82          $~\pm~$          3.42           &           0.55787          $~\pm~$          0.01655           &           0.00620          $~\pm~$          0.00008          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           154.95          $~\pm~$          2.66           &           0.60100          $~\pm~$          0.02169           &           0.00370          $~\pm~$          0.00006          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           147.35          $~\pm~$          2.59           &           0.95095          $~\pm~$          0.02457           &           0.00360          $~\pm~$          0.00006          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           76.19          $~\pm~$          1.87           &           0.51707          $~\pm~$          0.03019           &           0.00180          $~\pm~$          0.00005          \\          
+          $M_{ee}>100~$GeV          &           45.62          $~\pm~$          1.44           &           0.59877          $~\pm~$          0.03998           &           0.00110          $~\pm~$          0.00004          \\          
+          $ S_T>620~$GeV           &           1.46          $~\pm~$          0.26           &           0.03200          $~\pm~$          0.18086           &           0.00004          $~\pm~$          0.00001          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of TTBAR: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:} 
+\end{table} 
 
 
 
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-\hline
-\hline
 
-+ hlt (HE or VHE) &2466 $\pm$ 14& 30413 & - \\
-+ 2 ele (ID) $P_{T} >30$ GeV &1356 $\pm$ 12& 13136 & 5.50e-01 $\pm$ 0.6e-02\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &1329 $\pm$ 12& 12830 & 9.80e-01 $\pm$ 1.2e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &124.7 $\pm$ 3.0 & 1807 & 9.38e-02 $\pm$ 2.4e-03\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &115.7 $\pm$ 2.9& 1694 & 9.28e-01 $\pm$ 3.2e-02\\
-+ $M_{ee} >100$ GeV&10.82 $\pm$ 0.89& 157 & 9.35e-02 $\pm$ 8.0e-03\\
-+ $S_{T} >400$ GeV &5.10 $\pm$ 0.60& 76 & 4.71e-01 $\pm$ 6.7e-02\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl $Z/\gamma$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut.}
-\label{tab:selection_effic_zjet}
-\end{table}
 
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
 
-%hlt (HE or VHE) &2466.4 $\pm$ 14.4& 30413.0 & 4.1e-01 $\pm$ 3.0e-03\\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &1357.5 $\pm$ 12.3& 13151.0 & 5.5e-01 $\pm$ 5.9e-03\\
-%+ 2 ele (Iso) pT $>30.0$ GeV &1330.8 $\pm$ 12.2& 12851.0 & 9.8e-01 $\pm$ 1.3e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &124.9 $\pm$ 3.0& 1810.0 & 9.4e-02 $\pm$ 2.4e-03\\
-%+ pT 1st ele $>$ 85.0 GeV &115.9 $\pm$ 2.9& 1697.0 & 9.3e-01 $\pm$ 3.2e-02\\
-%+ Mee $<80.0$ GeV or Mee $>100.0$ GeV&16.2 $\pm$ 1.1& 235.0 & 1.4e-01 $\pm$ 1.0e-02\\
-%+ St $>400.0$ GeV &8.2 $\pm$ 0.8& 120.0 & 5.0e-01 $\pm$ 5.8e-02\\
-%\hline
-
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl $Z/\gamma$ sample: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut. 
-%The overall selection efficiency is shown in the last line.}
-%\label{tab:selection_effic_zjet}
-%\end{table}
 
 \begin{table}[htbp]
 \begin{center}
@@ -473,40 +255,5 @@ With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass 
 \label{tab:EventSelSummary}
 \end{table}
 
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|}
-%\hline
-%\hline
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ & $\varepsilon$ \\
-%\hline
-%\hline
-
-%+ LQ skim &1400.1 $\pm$ 14.0& 10000.0 & 1.0e+00 $\pm$ 1.4e-02\\
-%+ 2 ele (no Iso) pT $>20.0$ GeV &793.3 $\pm$ 10.5& 5666.0 & 5.7e-01 $\pm$ 9.4e-03\\
-%+ 2 ele (Iso) pT $>20.0$ GeV &689.4 $\pm$ 9.8& 4924.0 & 8.7e-01 $\pm$ 1.7e-02\\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$20.0(20.0) GeV &675.7 $\pm$ 9.7& 4826.0 & 9.8e-01 $\pm$ 2.0e-02\\
-%+ ele, jet kinematics cuts &593.9 $\pm$ 9.1& 4242.0 & 8.8e-01 $\pm$ 1.8e-02\\
-%+ Mee $<80.0$ GeV OR Mee $>100.0$ GeV&568.0 $\pm$ 8.9& 4057.0 & 9.6e-01 $\pm$ 2.1e-02\\
-%+ St $>400.0$ GeV &562.4 $\pm$ 8.9& 4017.0 & 9.9e-01 $\pm$ 2.2e-02\\
-%\hline
-
-%full selection efficiency& &  & 4.0e-01 $\pm$ 7.5e-03\\
-%\hline
-%\end{tabular}
-%\end{center}
-% \caption{\small \sl $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected event (unweighted for the cross section), $\varepsilon$ is the relative selection efficiency with respect to the previous cut}
-%\caption{\small \sl $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number of selected event (unweighted for the cross section), $\varepsilon$ is the selection efficiency of each cut relatively to the sample selected by all the cuts above it.}
-%\label{tab:selection_effic}
-%\end{table}
-
-% This is where I put figure~\ref{fig:Mej_allComb}.  I'm not sure if it's the correct place.
-%INSERT SUMMARY TABLE WITH NUMBER OF BACKGROUND EVENTS. 
-
-
-
-
-%Efficiencies (table of diff masses, bkgd, cut by cut)
-%Number of selected events (for luminosity)
 
 %\end{document}
