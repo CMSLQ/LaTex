@@ -16,7 +16,10 @@ my $file = $ARGV[0];
 
 # Please insert in @cutVariables the names of the variables that you want to appear in the tables, and KEEP A SPACE at the end of each cut variable name
 my @cutVariables = ("nocut ", "skim ","nEle_PtPreCut ", "nEle_PtPreCut_ID ", "nEle_PtPreCut_IDISO ", "Pt2ndEleIDISO ", "nJet_PtPreCut_DIS ", "Eta2ndJet_DIS ", "invMass_ee ", "sT "); 
-my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>20\~\$GeV", "2 ele \$P_T>20\~\$GeV", "tttttttttttttt ", "Pt2ndEleIDISO ", "nJetPtPreCutDIS ", "Eta2ndJetDIS ", "invMassee ", "sT "); 
+my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>20\~\$GeV", "2 ele (ID) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>30\~\$GeV", "2 jets (Cleaned) \$P_T>20\~\$GeV", "2 jets (Cleaned), \$P_T>50\~\$GeV, \$ \| \\eta \|<3\$", "\$M_\{ee\}>100\~\$GeV", "\$ S_T>620\~\$GeV "); 
+
+my $caption="Sample of FIXME: Sequence of selection cuts with number of events selected in 100\$\~pb\^{-1}\$, efficiency relative to the preceeding cut and absolute efficiency.";
+
 
 sub texFileHeader {
     my $tmp=("\\documentclass{cmspaper} \n\\begin{document} \n\n");
@@ -30,7 +33,7 @@ sub tableHeader {
 }
 
 sub tableTrailer {
-    my $tmp=("\\hline\\hline \n\\end{tabular} \n\\end{center} \n\\caption{} \n\\label{tab:} \n\\end{table} \n\n");
+    my $tmp=("\\hline\\hline \n\\end{tabular} \n\\end{center} \n\\caption{$caption} \n\\label{tab:} \n\\end{table} \n\n");
     return $tmp;
 }
 
@@ -126,16 +129,17 @@ foreach my $tableLine (@tableLines){
 	$metLastVar=1;
     }
 
-#     my $cv;
-#     my $cd;
-#     my $nc=0;
-#     foreach my $cutVar (@cutVariables){
-# 	my $cv=trim($cutVar);
-# 	$cv =~ s/_//g; #remove underscores 
-# 	my $cd=@cutDescriptions[$nc];
-# 	$nc++;
-# 	$tableLine =~ s/$cv/$cd/g; # replace @cutVariables with proper descriptions from @cutDescriptions 
-#     }
+    my $cv;
+    my $cd;
+    my $nc=0;
+    foreach my $cutVar (@cutVariables){
+	my $cv=trim($cutVar);
+	$cv =~ s/_//g; #remove underscores 
+	my $cd=@cutDescriptions[$nc];
+	$nc++;
+	$tableLine = $tableLine . " ";
+	$tableLine =~ s/$cv /$cd/g; # replace @cutVariables with proper descriptions from @cutDescriptions 
+    }
 
     print OUTFILE $tableLine;
 
