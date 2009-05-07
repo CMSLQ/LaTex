@@ -93,13 +93,22 @@ foreach my $selectedLine (@selectedLines){
 	$effRel=1;
 	$effRelErr=0;
     } else {
-	$effRel=$Num/$Den;
-	$effRelErr=sqrt(($NumErr/$Num)**2+($DenErr/$Den)**2);
+	if ( $Den == 0 ){
+	    $effRel=0;
+	    $effRelErr=0;	    
+	} else {
+	    $effRel=$Num/$Den;
+	    if ( $Num == 0 ){
+		$effRelErr=sqrt(($DenErr/$Den)**2);		
+	    } else {
+		$effRelErr=sqrt(($NumErr/$Num)**2+($DenErr/$Den)**2);
+	    }
+	}
     }
     $Den=@t[6];
     $DenErr=@t[7];
     #my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\~\\pm\~\$",@t[7]," \& ", @t[8],"\$\~\\pm\~\$",@t[9], " \& ", @t[10],"\$\~\\pm\~\$",@t[11], "\\\\");
-    my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\~\\pm\~\$",@t[7]," \& ", sprintf("%.5f", $effRel),"\$\~\\pm\~\$",sprintf("%.5f",$effRelErr), " \& ", sprintf("%.5f",@t[10]),"\$\~\\pm\~\$",sprintf("%.5f",@t[11]), "\\\\");
+    my @tableLineEntries=(@t[1]," \& ", sprintf("%.3e",@t[6]),"\$\~\\pm\~\$",sprintf("%.3e",@t[7])," \& ", sprintf("%.3e", $effRel),"\$\~\\pm\~\$",sprintf("%.3e",$effRelErr), " \& ", sprintf("%.3e",@t[10]),"\$\~\\pm\~\$",sprintf("%.3e",@t[11]), "\\\\");
     $sizeOfTableLine = @tableLineEntries;
     foreach my $tableLineEntry (@tableLineEntries){
 	push(@tableLine, $tableLineEntry);
