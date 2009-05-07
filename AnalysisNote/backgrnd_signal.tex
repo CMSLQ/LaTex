@@ -21,7 +21,8 @@ For our analysis, the main properties of a control sample to estimate a backgrou
 \item to be independent from the signal sample;
 %
 \item to have similar topology of the $X$ events in the signal sample (i.e. eejj sample) 
-concerning a given set of reconstructed quantities under investigation (i.e. $M_{ej}$ or $S_{T}$);  
+concerning a given set of reconstructed selection variables under investigation;  
+%concerning a given set of reconstructed quantities under investigation;  
 %
 \end{itemize}
 %
@@ -149,9 +150,9 @@ since the cross section of the process is resonant at the Z mass.
 For $Z/\gamma$+jet events, the eejjAtZ sample with 100 pb$^{-1}$ of data 
 is expected to have about 129, 22, and 12 events, respectively for an $S_{T}$ cut of 300, 520, and 620 GeV.
 
-The normalization of the control sample can be obtained with an hybrid method which combines the eejjAtZ data with 
+The rescaling of the control sample can be obtained with an hybrid method which combines the eejjAtZ data with 
 MC information. Once real data is available the eejjAtZ sample can be selected. 
-The number of $Z/\gamma$+jet events in the eejj signal sample ($M_{ee}>100$ GeV) can be estimated as
+The number of $Z/\gamma$+jet events in the eejj signal sample ($M_{ee}>100$ GeV) can be estimated by
 
 \begin{equation} \label{formula:NeejFromNemujj}
 N_{eejj}^{Z} = N_{eejjAtZ} \times R_{OffZ/AtZ} \quad , 
@@ -161,12 +162,49 @@ where $N_{eejjAtZ}$ is the number of events in the eejjAtZ control sample, and
 $R_{OffZ/AtZ}$ is the ratio between the number of $Z/\gamma$+jet events 
 with $M_{ee} > 100\mbox{ GeV}$ (OffZ events) and $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$ 
 (AtZ events) that have passed all the other selection criteria.
-The value of $R_{OffZ/AtZ}$ can be determined with reasonable confidence directly from MC, 
-since it's expected that the major theoretical uncertainties on the process generation 
-get canceled in the ratio. Detailed generator level studies will be performed 
-in future upgrades of the analysis to quantify the theoretical uncertainties 
-on the value of $R_{OffZ/AtZ}$ by exploiting different sets of PDFs 
-and various MC generators.
+In this analysis the value of $R_{OffZ/AtZ}$ is determined directly from MC.
+The motivations that justify this approach are discussed below:
+%
+\begin{itemize}
+%
+\item those theoretical uncertainties that are independent 
+on the value of two electron invariant mass cancel in the ratio.
+In addition, generator level studies will be performed 
+in future upgrades of the analysis to quantify the
+remaining uncertainties on the value of $R_{OffZ/AtZ}$, 
+by using different sets of PDFs and various MC generators.
+%
+%and eejjAtZ data is used to rescale the $Z/\gamma$ MC sample, 
+%thus setting the correct background normalization;
+%
+\item for inclusive Drell-Yan production ($Z/\gamma \rightarrow ee$ with no jets), 
+the MC is expected to predict the value of this ratio with small 
+uncertainty (dominated by PDF uncertainties). 
+The data-MC comparison will be checked with real data by calculating 
+the ratio $R_{OffZ/AtZ}$ using a control sample with only two electrons 
+(which is expected to be dominated by Drell-Yan events 
+up to values of $M_{ee}$ of several TeV~\ref{HEEPNOTE});%FIXME ADD REFERENCE% 
+%
+\item the next step will be to compare the distributions of reconstructed selection 
+variables between eejjAtZ data and MC to check the agreement in the control region.
+It's expected to have more confidence in the MC extrapolation 
+from the control region to the signal region (i.e. the estimation of the ratio $R_{OffZ/AtZ}$), 
+if the event kinematics in the two regions is not drammatically different.
+Figure~\ref{fig:STEleJetceejjAtZvsOffZ}
+show the distributions of the scalar sum of $P_{T}$ of the two leading electrons ($S_{T}^{ele}$) 
+and the two leading jets ($S_{T}^{jets}$) for $Z/\gamma$+jet events, 
+in both signal region (eejj sample) and control region (eejjAtZ control sample). 
+A significant discrepancy is observed 
+in the $S_{T}^{ele}$ distribution, but this should not represent 
+a problem for the MC extrapolation, since the Electro-Weak part of the process 
+is well predicted, and this expected agreement could be directly checked with ee data 
+(as described in the previous bullet).
+It's also comforting that the $S_{T}^{jet}$ distributions are not drammatically different, 
+which is an indication that the hadronic part of the $Z/\gamma$+jet process 
+(the one with largest uncertainties) is similar between 
+signal and control region.  
+%
+\end{itemize}
 
 %Figure~\ref{fig:zjet} shows the good agreement between eejjAtZ and eejj samples for both the shapes of $M_{ej}$ 
 %and $S_{T}$ distributions, using a large FastSim MC sample of $Z/\gamma$+jet events. 
@@ -174,7 +212,7 @@ and various MC generators.
 %weak correlation between the two reconstructed quantities $M_{ej}$ ($S_{T}$) and $M_{ee}$ for selected events, as shown in 
 %Figure~\ref{MejVsMeeCorrelation} (Figure~\ref{STVsMeeCorrelation}).
 
-\begin{figure}
+\begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
   \resizebox{10cm}{!}{\includegraphics{plots/ZjetStudies/ST_100InVpb_eejjAtZ_looseSTcut_MeeInverted_WithLQ400.eps}} \\ 
@@ -195,19 +233,22 @@ and various MC generators.
   \label{fig:eejjAtZContamination}
   \end{center}
 \end{figure}
-
-
-%\begin{figure}[htb]
-%  \begin{center}
-%  \begin{tabular}{cc}
-%  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
-%  \end{tabular}
-%  \caption{\small \sl Distributions of the electron-jet invariant mass for the signal eejj sample 
-%    (cut 1,2,3,4)
-%    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
-%  \label{fig:zjet}
-%  \end{center}
-%\end{figure}
+%
+\begin{figure}[htb]
+  \begin{center}
+  \begin{tabular}{cc}
+    a.
+    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST_Elecs_inside.eps}} &
+    b.
+    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST_Jets_inside.eps}} \\
+  \end{tabular}
+  \caption{\small \sl Distributions of (a) $S_{T}^{ele}$ (b) $S_{T}^{jet}$ 
+    for the signal eejj sample ($M_{ee} > 100\mbox{ GeV}$) 
+    and the eejjAtZ control sample ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), 
+    using a large FastSim sample of $Z/\gamma$+jet events.}
+  \label{fig:STEleJetceejjAtZvsOffZ}
+  \end{center}
+\end{figure}
 
 %\begin{figure}
 %  \begin{center}
