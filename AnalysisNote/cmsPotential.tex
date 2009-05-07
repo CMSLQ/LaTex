@@ -3,8 +3,6 @@
 
 \section{CMS Potential} \label{CMSpotential}
 
-%Discovery luminosity
-
 In order to estimate the potential of the CMS detector to discover the first generation leptoquarks
 in the electron channel, a simple counting experiment approach is used. To quantify the significance of the
 leptoquark signal, $S_\text{cP}$ significance estimator~\cite{ref:scp} is used. $S_\text{cP}$ assumes a Poisson distribution
@@ -18,23 +16,26 @@ converted into an equivalent number of standard deviations using the one-sided G
 P = \frac{1}{\sqrt{2\pi}}\int_{S_\text{cP}}^{+\infty} e^{-\frac{x^2}{2}}\mathrm{d}x,
 \end{equation}
 which gives the numerical value of the $S_\text{cP}$ significance. Figure~\ref{fig:discovery} shows the required integrated luminosity
-for a $5\sigma$ discovery of different leptoquark mass hypotheses. Figure~\ref{fig:discovery_beta} shows the minimum $\beta^2$ for
+for a $5\sigma$ discovery for different leptoquark mass hypotheses. Figure~\ref{fig:discovery_beta} shows the minimum $\beta^2$ for
 a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity.
-For both plots, Table~\ref{} with the number of signal and background events expected for an integrated luminosity
-of $100\text{ pb}^{-1}$ is used.
+Table~\ref{} with the number of signal and background events expected for an integrated luminosity
+of $100\text{ pb}^{-1}$ and the systematic uncertainties described in Section~\ref{sec:Systematics} are used to produce the plots.
 
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L5sigma_vs_m_log.eps}
  \caption{Integrated luminosity
-for a $5\sigma$ discovery of different leptoquark mass hypotheses.\label{fig:discovery}}
+for a $5\sigma$ discovery for different leptoquark mass hypotheses. Red line includes the systematic uncertainties described in 
+Section~\ref{sec:Systematics}.\label{fig:discovery}}
 \end{figure}
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{plots/cmsPotential/beta2_vs_m.eps}
  \caption{Minimum $\beta^2$ for
-a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity.\label{fig:discovery_beta}}
+a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity. Red line includes the systematic
+uncertainties described in Section~\ref{sec:Systematics}.\label{fig:discovery_beta}}
 \end{figure}
+
 
 For setting upper limits in the absence of the leptoquark signal, the Bayesian approach~\cite{ref:bayes} is used. In this approach, the
 posterior probability density function for the signal mean $s$, given $n$ observed events,
@@ -57,7 +58,7 @@ where one often uses
           1&  s\geq 0,
 \end{cases}
 \end{equation}
-which effectively sets the lower limit of integration to zero. Since there is no actual observation, the mean expected 
+which effectively sets the lower limit of integration to zero. Since there is no actual observation, the expected 
 upper limit $\mathrm{<}s_\text{up}\mathrm{>}$ in the background-only hypothesis is calculated as follows
 \begin{equation}
 \mathrm{<}s_\text{up}\mathrm{>}=\sum_{n=0}^{+\infty} s_\text{up}(n)L(n|s=0).
@@ -69,9 +70,9 @@ L'(n|s)=\int L(n|s)\pi(\bm{\nu})\mathrm{d}\bm{\nu}
 \end{equation}
 is used instead of $L(n|s)$ to incorporate systematic uncertainties into the final result for an upper limit. Figure~\ref{fig:exclusion}
 shows the required integrated luminosity for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Figure~\ref{fig:exclusion_xs}
-shows $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
-of integrated luminosity. For both plots, Table~\ref{} with the number of signal and background events expected for an integrated luminosity
-of $100\text{ pb}^{-1}$ is used.
+shows the expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
+of integrated luminosity. Table~\ref{} with the number of signal and background events expected for an integrated luminosity
+of $100\text{ pb}^{-1}$ and the systematic uncertainties described in Section~\ref{sec:Systematics} are used to produce the plots.
 
 \begin{figure}[h!]
  \centering
@@ -82,11 +83,10 @@ for $95\%$ C.L. exclusion of different leptoquark mass hypotheses.\label{fig:exc
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{plots/cmsPotential/xs95CL_vs_m_log.eps}
- \caption{$95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
+ \caption{Expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
 of integrated luminosity.\label{fig:exclusion_xs}}
 \end{figure}
 
-%Upper limits in absence of signal
 
 %\subsection{Discovery Luminosity}
 
