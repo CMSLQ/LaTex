@@ -8,8 +8,8 @@ In order to be fully efficient to high energy electrons even with initial detect
 and calibration, triggers that require an high $E_T$ electromagnetic deposit without any isolation 
 requirement and track-matching are considered.
 
-Two trigger menus, named ``8E29'' and ``1E31'', have been studied and designed as candidates 
-for the CMS start-up.
+Two trigger menus, named ``8E29'' and ``1E31'', have been studied and designed as candidates for 
+the two possible luminosity scenario of the CMS start-up.
 % More, if needed, at https://twiki.cern.ch/twiki/bin/view/CMS/TSG_18_II_09
 In case that the ``8E29'' menu is used, the chosen trigger would be the ``HLT\_Photon15\_L1R''.
 The corresponding Level-1 trigger seed is ``L1\_SingleEG8'', which requires an electromagnetic object with 
@@ -20,16 +20,31 @@ If the ``1E31'' menu is used, the above trigger will be prescaled, so the choice
 threshold is $E_T>25~$GeV with no isolation or track-matching.
 
 The efficiencies for leptoquarks for these triggers have been studied with the FullSim 
-samples of Section~\ref{sec:MCSamples} at two leptoquark mass points, and have an inefficiency
-of a fraction of a percent.
+samples of Section~\ref{sec:MCSamples} at two leptoquark mass points, and have efficiencies approaching
+100\% as shown in Table~\ref{tab:HLTEffic}.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline\hline
+ $M_{LQ}$ (GeV)     &   ``HLT\_Photon15\_L1R''   &   ``HLT\_Photon25\_L1R'' \\
+\hline\hline
+250                 & 0.99571  $\pm$ 0.00029     & 0.99343  $\pm$ 0.00035   \\
+400                 & 0.99716  $\pm$ 0.00021     & 0.99630  $\pm$ 0.00024   \\
+\hline\hline
 %% - trigger = HLT_Photon15_L1R
 %% eff_LQ250 = 0.99571565802 +/- 0.00028628551
 %% eff_LQ400 = 0.99715873016 +/- 0.00021206457
 %% - trigger = HLT_Photon25_L1R
 %% eff_LQ250 = 0.99342939481 +/- 0.00035412845
 %% eff_LQ400 = 0.99630158730 +/- 0.00024184261
+\end{tabular}
+\end{center}
+\caption{Efficiencies of the chosen HLT triggers for LQ masses of 250 and 400~GeV.}
+\label{tab:HLTEffic}
+\end{table}
 
-
+% FIXME add trigger rates - but could not find them in the twiki https://twiki.cern.ch/twiki/bin/view/CMS/TSG_18_II_09
 
 
 
