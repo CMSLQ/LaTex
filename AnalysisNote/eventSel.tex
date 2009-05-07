@@ -28,6 +28,29 @@ while the offline identification of electrons and jets
 proceeds as described in sections~\ref{sec:electrons} and \ref{sec:jet}, respectively.
 
 %FIXME add skim
+In order to reduce the size of the of the data samples and the time to analyze them, a skim of the 
+data has been defined.
+The requirements that the skim has to satisfy have been defined considering that this skim may be needed
+for the analysis of both first and second generation leptoquark pair production. Such requirements are:
+\begin{itemize}
+\item having a high efficiency for first (events with 2 electrons and 2 jets) and second (events with 
+2 muons and 2 jets) generation leptoquark pair production;
+\item keeping events needed for the control samples: the control sample for the Z+jets background is $Z\rightarrow l l$+ 2 jets,
+where $l$ is is either an electron or a muon; the control sample for the the $t\bar{t}$+jets background is a sample 
+with an electron, a muon and 2 jets;
+\item suppress all other backgrounds
+\end{itemize}
+The definition of the skim has been chosen as:
+\begin{itemize}
+\item $N_l \equiv N_e + N_{\mu} \ge 2$, where $N_e (N_{\mu})$ is the number of reconstructed electrons (muons)
+with $P_T>20~$GeV and no extra ID or isolation requirements applied.
+\item 
+\item 
+\item 
+\end{itemize}
+
+
+
 
 The offline selection of the eejj sample continues with the following kinematical cuts:
 %
@@ -58,27 +81,22 @@ Once the eejj sample is selected, there are two ways to combine two electrons an
 For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
 of the two electron-jet pairs is chosen. 
 The resulting $M_{ej}$ distribution is shown in figure~\ref{fig:Mej_allComb} for the signal and remaining backgrounds. 
-A detailed study of the optimization of the selection criteria, and of alternative algorithms to identify the best candidate 
+FIXME   A detailed study of the optimization of the selection criteria, and of alternative algorithms to identify the best candidate 
 electron-jet combinations, will be performed in future upgrades of this analysis.
 
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{\includegraphics{plots/UMD.eps}} &
-      \resizebox{7.5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mee_eejj_LQ400_100pb.eps}} &
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/ST_eejj_LQ400_100pb.eps}} \\
     \end{tabular}
     \caption{\small \sl Left: invariant mass of the electron pair, $M_{ee}$. 
              Right: scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
 	     In each histogram, the distributions for the signal (for leptoquark mass 250 and 650~GeV) and the 
 	     relevant backgrounds are shown after applying all cuts except the one involving the 
 	     plotted variable. 
-	     The background histograms are summed on top of each other.
-	     The histogram labeled with ``Others'' contains: 1) for $M_{ee}$, $W$+jets (33\%), 
-	     $WW$ (11\%), $ZZ$ (20\%), and $WZ$ (36\%) events; 2) for $S_{T}$, $W$+jets (57\%), 
-	     $WW$ (19\%), $ZZ$ (8\%), $WZ$ (14\%), and $\gamma$+jet (2\%) events.
-	     With the available MC statistics, no QCD multi-jet events pass 
-	     the selection.}
-	     %Arrows indicate the cut subsequently applied.
+	     All histograms are summed on top of each other.
+	     FIXME - comment on QCD not included.}
     \label{fig:Mee_St_distributions}
   \end{center}
 \end{figure}
@@ -86,174 +104,219 @@ electron-jet combinations, will be performed in future upgrades of this analysis
 
 \begin{figure}[htbp]
   \begin{center}
-    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}}
+    \begin{tabular}{cc}
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb_LinScale.eps}} & 
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb.eps}} \\
+    \end{tabular}
     \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, 
       of the electron-jet pairs 
       with smaller $\Delta M_{ej}$
-      for signal (at 250~GeV and 650~GeV LQ mass) and backgrounds. 
+      for signal at 400~GeV and backgrounds (in linear and log scale on the left- and right-hand-side, respectively). 
       The complete event selection has been applied.
-      The background histograms are summed on top of each other.
-      The histogram labeled with ``Others'' contains $W$+jets (65\%), 
-      $WW$ (20\%), $ZZ$ (8\%), and $WZ$ (7\%) events. 
-      With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass 
-      the selection.}
+      All histograms are summed on top of each other.
+      FIXME- comment on QCD not included}
     \label{fig:Mej_allComb}
   \end{center}
 \end{figure}
 
 
-Tables from \ref{tab:selection_effic_250} to \ref{tab:selection_effic_1000} show the efficiency 
-of each selection cut for signal events, using FullSim samples at different LQ masses (from 250 GeV to 1 TeV).
-Tables \ref{tab:selection_effic_ttbar} and \ref{tab:selection_effic_zjet} show the efficiency of each selection cut 
-for $t\bar{t}$ and $Z/\gamma$+jet events, which are the dominant backgrounds in the eejj sample. 
+Tables  
+\ref{tab:effic-MLQ400}, 
+\ref{tab:effic-ttbar}, 
+\ref{tab:effic-Z}, 
+\ref{tab:effic-QCD},
+\ref{tab:effic-VV} and
+\ref{tab:effic-W}
+show the efficiency of the selection cuts for signal events at $M_{LQ}=400~$GeV and the main background samples.
+In all these tables, the $S_T$ cut is set to the value (620~GeV) optimized for this LQ mass.  
+
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           7.500e+01          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00          \\          
+          Skim          &           6.804e+01          $~\pm~$          9.000e-02           &           9.072e-01          $~\pm~$          1.323e-03           &           9.100e-01          $~\pm~$          1.200e-03          \\          
+          2 ele $P_T>20~$GeV          &           6.769e+01          $~\pm~$          9.000e-02           &           9.949e-01          $~\pm~$          1.875e-03           &           9.000e-01          $~\pm~$          1.200e-03          \\          
+          2 ele (ID) $P_T>20~$GeV          &           5.826e+01          $~\pm~$          1.200e-01           &           8.607e-01          $~\pm~$          2.452e-03           &           7.800e-01          $~\pm~$          1.700e-03          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           5.065e+01          $~\pm~$          1.400e-01           &           8.694e-01          $~\pm~$          3.447e-03           &           6.800e-01          $~\pm~$          1.900e-03          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           5.009e+01          $~\pm~$          1.400e-01           &           9.889e-01          $~\pm~$          3.931e-03           &           6.700e-01          $~\pm~$          1.900e-03          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           4.968e+01          $~\pm~$          1.400e-01           &           9.918e-01          $~\pm~$          3.969e-03           &           6.600e-01          $~\pm~$          1.900e-03          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           4.662e+01          $~\pm~$          1.400e-01           &           9.384e-01          $~\pm~$          4.118e-03           &           6.200e-01          $~\pm~$          1.900e-03          \\          
+          $M_{ee}>100~$GeV          &           4.460e+01          $~\pm~$          1.500e-01           &           9.567e-01          $~\pm~$          4.509e-03           &           5.900e-01          $~\pm~$          2.000e-03          \\          
+          $ S_T>620~$GeV           &           3.880e+01          $~\pm~$          1.500e-01           &           8.700e-01          $~\pm~$          5.124e-03           &           5.200e-01          $~\pm~$          2.000e-03          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of $M_{LQ}=400~$GeV (FullSim): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:effic-MLQ400} 
+\end{table} 
+
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           4.140e+04          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00          \\          
+          Skim          &           6.745e+03          $~\pm~$          1.607e+01           &           1.629e-01          $~\pm~$          2.382e-03           &           1.600e-01          $~\pm~$          3.900e-04          \\          
+          2 ele $P_T>20~$GeV          &           3.637e+03          $~\pm~$          1.232e+01           &           5.392e-01          $~\pm~$          4.141e-03           &           8.800e-02          $~\pm~$          3.000e-04          \\          
+          2 ele (ID) $P_T>20~$GeV          &           4.621e+02          $~\pm~$          4.570e+00           &           1.271e-01          $~\pm~$          1.045e-02           &           1.100e-02          $~\pm~$          1.100e-04          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           2.578e+02          $~\pm~$          3.420e+00           &           5.579e-01          $~\pm~$          1.655e-02           &           6.200e-03          $~\pm~$          8.300e-05          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           1.549e+02          $~\pm~$          2.660e+00           &           6.010e-01          $~\pm~$          2.169e-02           &           3.700e-03          $~\pm~$          6.400e-05          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           1.473e+02          $~\pm~$          2.590e+00           &           9.510e-01          $~\pm~$          2.457e-02           &           3.600e-03          $~\pm~$          6.300e-05          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           7.619e+01          $~\pm~$          1.870e+00           &           5.171e-01          $~\pm~$          3.019e-02           &           1.800e-03          $~\pm~$          4.500e-05          \\          
+          $M_{ee}>100~$GeV          &           4.562e+01          $~\pm~$          1.440e+00           &           5.988e-01          $~\pm~$          3.998e-02           &           1.100e-03          $~\pm~$          3.500e-05          \\          
+          $ S_T>620~$GeV           &           1.460e+00          $~\pm~$          2.600e-01           &           3.200e-02          $~\pm~$          1.809e-01           &           3.500e-05          $~\pm~$          6.300e-06          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of $t\bar{t}$ + N jets: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:effic-ttbar} 
+\end{table} 
+
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           4.218e+05          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00          \\          
+          Skim          &           9.015e+03          $~\pm~$          5.667e+01           &           2.137e-02          $~\pm~$          6.286e-03           &           2.100e-02          $~\pm~$          1.300e-04          \\          
+          2 ele $P_T>20~$GeV          &           4.168e+03          $~\pm~$          3.876e+01           &           4.624e-01          $~\pm~$          1.122e-02           &           9.900e-03          $~\pm~$          9.200e-05          \\          
+          2 ele (ID) $P_T>20~$GeV          &           3.300e+03          $~\pm~$          3.453e+01           &           7.918e-01          $~\pm~$          1.400e-02           &           7.800e-03          $~\pm~$          8.200e-05          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           3.092e+03          $~\pm~$          3.343e+01           &           9.369e-01          $~\pm~$          1.504e-02           &           7.300e-03          $~\pm~$          7.900e-05          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           2.015e+03          $~\pm~$          2.702e+01           &           6.518e-01          $~\pm~$          1.722e-02           &           4.800e-03          $~\pm~$          6.400e-05          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           1.582e+03          $~\pm~$          2.395e+01           &           7.849e-01          $~\pm~$          2.022e-02           &           3.800e-03          $~\pm~$          5.700e-05          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           3.244e+02          $~\pm~$          1.086e+01           &           2.051e-01          $~\pm~$          3.675e-02           &           7.700e-04          $~\pm~$          2.600e-05          \\          
+          $M_{ee}>100~$GeV          &           2.293e+01          $~\pm~$          2.890e+00           &           7.069e-02          $~\pm~$          1.304e-01           &           5.400e-05          $~\pm~$          6.800e-06          \\          
+          $ S_T>620~$GeV           &           7.300e-01          $~\pm~$          5.200e-01           &           3.184e-02          $~\pm~$          7.234e-01           &           1.700e-06          $~\pm~$          1.200e-06          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of $Z/\gamma$ + N jets: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:effic-Z} 
+\end{table} 
+
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           1.541e+09          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00          \\          
+          Skim          &           1.294e+06          $~\pm~$          7.932e+03           &           8.397e-04          $~\pm~$          6.128e-03           &           8.400e-04          $~\pm~$          5.100e-06          \\          
+          2 ele $P_T>20~$GeV          &           9.947e+05          $~\pm~$          6.686e+03           &           7.684e-01          $~\pm~$          9.096e-03           &           6.500e-04          $~\pm~$          4.300e-06          \\          
+          2 ele (ID) $P_T>20~$GeV          &           5.933e+03          $~\pm~$          5.834e+02           &           5.965e-03          $~\pm~$          9.855e-02           &           3.800e-06          $~\pm~$          3.800e-07          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           1.768e+02          $~\pm~$          1.125e+02           &           2.981e-02          $~\pm~$          6.436e-01           &           1.100e-07          $~\pm~$          7.300e-08          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           1.209e+02          $~\pm~$          1.099e+02           &           6.835e-01          $~\pm~$          1.109e+00           &           7.800e-08          $~\pm~$          7.100e-08          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           1.209e+02          $~\pm~$          1.099e+02           &           1.000e+00          $~\pm~$          1.285e+00           &           7.800e-08          $~\pm~$          7.100e-08          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           1.155e+01          $~\pm~$          1.083e+01           &           9.556e-02          $~\pm~$          1.306e+00           &           7.500e-09          $~\pm~$          7.000e-09          \\          
+          $M_{ee}>100~$GeV          &           7.400e-01          $~\pm~$          5.200e-01           &           6.407e-02          $~\pm~$          1.172e+00           &           4.800e-10          $~\pm~$          3.400e-10          \\          
+          $ S_T>620~$GeV           &           3.700e-01          $~\pm~$          3.700e-01           &           5.000e-01          $~\pm~$          1.222e+00           &           2.400e-10          $~\pm~$          2.400e-10          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of QCD ($H_T \in [100,1000]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:effic-QCD} 
+\end{table} 
+
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None          &           1.180e+03          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00          \\          
+          Skim          &           6.312e+01          $~\pm~$          8.300e-01           &           5.349e-02          $~\pm~$          1.315e-02           &           5.300e-02          $~\pm~$          7.100e-04          \\          
+          2 ele $P_T>20~$GeV          &           2.321e+01          $~\pm~$          5.100e-01           &           3.677e-01          $~\pm~$          2.561e-02           &           2.000e-02          $~\pm~$          4.400e-04          \\          
+          2 ele (ID) $P_T>20~$GeV          &           1.500e+01          $~\pm~$          4.100e-01           &           6.463e-01          $~\pm~$          3.507e-02           &           1.300e-02          $~\pm~$          3.500e-04          \\          
+          2 ele (ID+Iso) $P_T>20~$GeV          &           1.377e+01          $~\pm~$          4.000e-01           &           9.180e-01          $~\pm~$          3.989e-02           &           1.200e-02          $~\pm~$          3.400e-04          \\          
+          2 ele (ID+Iso) $P_T>30~$GeV          &           9.490e+00          $~\pm~$          3.300e-01           &           6.892e-01          $~\pm~$          4.531e-02           &           8.000e-03          $~\pm~$          2.800e-04          \\          
+          2 jets (Cleaned) $P_T>20~$GeV          &           6.970e+00          $~\pm~$          2.800e-01           &           7.345e-01          $~\pm~$          5.313e-02           &           5.900e-03          $~\pm~$          2.400e-04          \\          
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           1.580e+00          $~\pm~$          1.400e-01           &           2.267e-01          $~\pm~$          9.729e-02           &           1.300e-03          $~\pm~$          1.100e-04          \\          
+          $M_{ee}>100~$GeV          &           7.800e-01          $~\pm~$          1.000e-01           &           4.937e-01          $~\pm~$          1.558e-01           &           6.600e-04          $~\pm~$          8.100e-05          \\          
+          $ S_T>620~$GeV           &           9.000e-02          $~\pm~$          3.000e-02           &           1.154e-01          $~\pm~$          3.571e-01           &           7.900e-05          $~\pm~$          2.800e-05          \\          
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of $VV$ + N jets: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
+\label{tab:effic-VV} 
+\end{table} 
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline\hline
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\
+\hline\hline
+None          &           4.560e+06          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$          0.000e+00           &           1.000e+00          $~\pm~$
+    0.000e+00          \\
+          Skim          &           4.699e+03          $~\pm~$          5.920e+01           &           1.031e-03          $~\pm~$          1.260e-02           &           1.000e-03          $~\
+pm~$          1.300e-05          \\
+          2 ele $P_T>20~$GeV          &           2.344e+03          $~\pm~$          4.183e+01           &           4.989e-01          $~\pm~$          2.184e-02           &           5.100e-0
+4          $~\pm~$          9.200e-06          \\
+          2 ele (ID) $P_T>20~$GeV          &           1.284e+02          $~\pm~$          9.790e+00           &           5.478e-02          $~\pm~$          7.829e-02           &           2.8
+00e-05          $~\pm~$          2.100e-06          \\
+          2 ele (ID+Iso) $P_T>20~$GeV          &           2.240e+01          $~\pm~$          4.090e+00           &           1.744e-01          $~\pm~$          1.979e-01           &
+ 4.900e-06          $~\pm~$          9.000e-07          \\
+          2 ele (ID+Iso) $P_T>30~$GeV          &           8.210e+00          $~\pm~$          2.480e+00           &           3.665e-01          $~\pm~$          3.530e-01           &
+ 1.800e-06          $~\pm~$          5.400e-07          \\
+          2 jets (Cleaned) $P_T>20~$GeV          &           6.720e+00          $~\pm~$          2.240e+00           &           8.185e-01          $~\pm~$          4.498e-01           &
+   1.500e-06          $~\pm~$          4.900e-07          \\
+          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           1.490e+00          $~\pm~$          1.060e+00           &           2.217e-01          $~\pm~$          7.856e-01
+       &           3.300e-07          $~\pm~$          2.300e-07          \\
+          $M_{ee}>100~$GeV          &           0.000e+00          $~\pm~$          0.000e+00           &           0.000e+00          $~\pm~$          7.114e-01           &           0.000e+00
+         $~\pm~$          0.000e+00          \\
+          $ S_T>620~$GeV           &           0.000e+00          $~\pm~$          0.000e+00           &           0.000e+00          $~\pm~$          0.000e+00           &           0.000e+00
+        $~\pm~$          0.000e+00          \\
+          \hline\hline
+\end{tabular}
+\end{center}
+\caption{Sample of W + N jets: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.}
+\label{tab:effic-W}
+\end{table}
+
+
+
 A summary of the number of selected signal and background events expected in 100 pb$^{-1}$ of data 
 is reported in Table \ref{tab:EventSelSummary}. 
 The overall signal selection efficiencies are around 30-50\% for the LQ masses investigated. 
 After the described event selection, the dominant background contributions 
 are $t\bar{t}$ and $Z/\gamma$+jets. Data-driven techniques to estimate these backgrounds
-are discussed in the next section.
-
-\begin{table}[htbp] 
-\begin{center} 
-\begin{tabular}{|c|c|c|c|} 
-\hline\hline 
- Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
-\hline\hline 
-None          &           75.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
-          Skim          &           68.04          $~\pm~$          0.09           &           0.90720          $~\pm~$          0.00132           &           0.91000          $~\pm~$          0.00120          \\          
-          2 ele $P_T>20~$GeV          &           67.69          $~\pm~$          0.09           &           0.99486          $~\pm~$          0.00188           &           0.90000          $~\pm~$          0.00120          \\          
-          2 ele (ID) $P_T>20~$GeV          &           58.26          $~\pm~$          0.12           &           0.86069          $~\pm~$          0.00245           &           0.78000          $~\pm~$          0.00170          \\          
-          2 ele (ID+Iso) $P_T>20~$GeV          &           50.65          $~\pm~$          0.14           &           0.86938          $~\pm~$          0.00345           &           0.68000          $~\pm~$          0.00190          \\          
-          2 ele (ID+Iso) $P_T>30~$GeV          &           50.09          $~\pm~$          0.14           &           0.98894          $~\pm~$          0.00393           &           0.67000          $~\pm~$          0.00190          \\          
-          2 jets (Cleaned) $P_T>20~$GeV          &           49.68          $~\pm~$          0.14           &           0.99181          $~\pm~$          0.00397           &           0.66000          $~\pm~$          0.00190          \\          
-          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           46.62          $~\pm~$          0.14           &           0.93841          $~\pm~$          0.00412           &           0.62000          $~\pm~$          0.00190          \\          
-          $M_{ee}>100~$GeV          &           44.60          $~\pm~$          0.15           &           0.95667          $~\pm~$          0.00451           &           0.59000          $~\pm~$          0.00200          \\          
-          $ S_T>620~$GeV           &           38.80          $~\pm~$          0.15           &           0.86996          $~\pm~$          0.00512           &           0.52000          $~\pm~$          0.00200          \\          
-          \hline\hline 
-\end{tabular} 
-\end{center} 
-\caption{Sample of MLQ=400 GeV: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
-\label{tab:} 
-\end{table} 
-
-\begin{table}[htbp] 
-\begin{center} 
-\begin{tabular}{|c|c|c|c|} 
-\hline\hline 
- Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
-\hline\hline 
-None          &           1180.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
-          Skim          &           63.12          $~\pm~$          0.83           &           0.05349          $~\pm~$          0.01315           &           0.05300          $~\pm~$          0.00071          \\          
-          2 ele $P_T>20~$GeV          &           23.21          $~\pm~$          0.51           &           0.36771          $~\pm~$          0.02561           &           0.02000          $~\pm~$          0.00044          \\          
-          2 ele (ID) $P_T>20~$GeV          &           15.00          $~\pm~$          0.41           &           0.64627          $~\pm~$          0.03507           &           0.01300          $~\pm~$          0.00035          \\          
-          2 ele (ID+Iso) $P_T>20~$GeV          &           13.77          $~\pm~$          0.40           &           0.91800          $~\pm~$          0.03989           &           0.01200          $~\pm~$          0.00034          \\          
-          2 ele (ID+Iso) $P_T>30~$GeV          &           9.49          $~\pm~$          0.33           &           0.68918          $~\pm~$          0.04531           &           0.00800          $~\pm~$          0.00028          \\          
-          2 jets (Cleaned) $P_T>20~$GeV          &           6.97          $~\pm~$          0.28           &           0.73446          $~\pm~$          0.05313           &           0.00590          $~\pm~$          0.00024          \\          
-          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           1.58          $~\pm~$          0.14           &           0.22669          $~\pm~$          0.09729           &           0.00130          $~\pm~$          0.00011          \\          
-          $M_{ee}>100~$GeV          &           0.78          $~\pm~$          0.10           &           0.49367          $~\pm~$          0.15585           &           0.00066          $~\pm~$          0.00008          \\          
-          $ S_T>620~$GeV           &           0.09          $~\pm~$          0.03           &           0.11538          $~\pm~$          0.35714           &           0.00008          $~\pm~$          0.00003          \\          
-          \hline\hline 
-\end{tabular} 
-\end{center} 
-\caption{Sample of VV: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
-\label{tab:} 
-\end{table} 
-
-\begin{table}[htbp] 
-\begin{center} 
-\begin{tabular}{|c|c|c|c|} 
-\hline\hline 
- Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
-\hline\hline 
-None          &           1541437000.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
-          Skim          &           1294418.04          $~\pm~$          7931.62           &           0.00084          $~\pm~$          0.00613           &           0.00084          $~\pm~$          0.00001          \\          
-          2 ele $P_T>20~$GeV          &           994652.00          $~\pm~$          6685.86           &           0.76842          $~\pm~$          0.00910           &           0.00065          $~\pm~$          0.00000          \\          
-          2 ele (ID) $P_T>20~$GeV          &           5933.28          $~\pm~$          583.37           &           0.00597          $~\pm~$          0.09855           &           0.00000          $~\pm~$          0.00000          \\          
-          2 ele (ID+Iso) $P_T>20~$GeV          &           176.85          $~\pm~$          112.49           &           0.02981          $~\pm~$          0.64363           &           0.00000          $~\pm~$          0.00000          \\          
-          2 ele (ID+Iso) $P_T>30~$GeV          &           120.87          $~\pm~$          109.86           &           0.68346          $~\pm~$          1.10937           &           0.00000          $~\pm~$          0.00000          \\          
-          2 jets (Cleaned) $P_T>20~$GeV          &           120.87          $~\pm~$          109.86           &           1.00000          $~\pm~$          1.28539           &           0.00000          $~\pm~$          0.00000          \\          
-          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           11.55          $~\pm~$          10.83           &           0.09556          $~\pm~$          1.30588           &           0.00000          $~\pm~$          0.00000          \\          
-          $M_{ee}>100~$GeV          &           0.74          $~\pm~$          0.52           &           0.06407          $~\pm~$          1.17175           &           0.00000          $~\pm~$          0.00000          \\          
-          $ S_T>620~$GeV           &           0.37          $~\pm~$          0.37           &           0.50000          $~\pm~$          1.22221           &           0.00000          $~\pm~$          0.00000          \\          
-          \hline\hline 
-\end{tabular} 
-\end{center} 
-\caption{Sample of QCD: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
-\label{tab:} 
-\end{table} 
-
-\begin{table}[htbp] 
-\begin{center} 
-\begin{tabular}{|c|c|c|c|} 
-\hline\hline 
- Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
-\hline\hline 
-None          &           421800.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
-          Skim          &           9014.72          $~\pm~$          56.67           &           0.02137          $~\pm~$          0.00629           &           0.02100          $~\pm~$          0.00013          \\          
-          2 ele $P_T>20~$GeV          &           4168.26          $~\pm~$          38.76           &           0.46238          $~\pm~$          0.01122           &           0.00990          $~\pm~$          0.00009          \\          
-          2 ele (ID) $P_T>20~$GeV          &           3300.39          $~\pm~$          34.53           &           0.79179          $~\pm~$          0.01400           &           0.00780          $~\pm~$          0.00008          \\          
-          2 ele (ID+Iso) $P_T>20~$GeV          &           3092.16          $~\pm~$          33.43           &           0.93691          $~\pm~$          0.01504           &           0.00730          $~\pm~$          0.00008          \\          
-          2 ele (ID+Iso) $P_T>30~$GeV          &           2015.33          $~\pm~$          27.02           &           0.65175          $~\pm~$          0.01722           &           0.00480          $~\pm~$          0.00006          \\          
-          2 jets (Cleaned) $P_T>20~$GeV          &           1581.75          $~\pm~$          23.95           &           0.78486          $~\pm~$          0.02022           &           0.00380          $~\pm~$          0.00006          \\          
-          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           324.36          $~\pm~$          10.86           &           0.20506          $~\pm~$          0.03675           &           0.00077          $~\pm~$          0.00003          \\          
-          $M_{ee}>100~$GeV          &           22.93          $~\pm~$          2.89           &           0.07069          $~\pm~$          0.13041           &           0.00005          $~\pm~$          0.00001          \\          
-          $ S_T>620~$GeV           &           0.73          $~\pm~$          0.52           &           0.03184          $~\pm~$          0.72339           &           0.00000          $~\pm~$          0.00000          \\          
-          \hline\hline 
-\end{tabular} 
-\end{center} 
-\caption{Sample of Z+jets: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
-\label{tab:} 
-\end{table} 
-
-\begin{table}[htbp] 
-\begin{center} 
-\begin{tabular}{|c|c|c|c|} 
-\hline\hline 
- Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
-\hline\hline 
-None          &           41400.00          $~\pm~$          0.00           &           1.00000          $~\pm~$          0.00000           &           1.00000          $~\pm~$          0.00000          \\          
-          Skim          &           6745.46          $~\pm~$          16.07           &           0.16293          $~\pm~$          0.00238           &           0.16000          $~\pm~$          0.00039          \\          
-          2 ele $P_T>20~$GeV          &           3637.01          $~\pm~$          12.32           &           0.53918          $~\pm~$          0.00414           &           0.08800          $~\pm~$          0.00030          \\          
-          2 ele (ID) $P_T>20~$GeV          &           462.15          $~\pm~$          4.57           &           0.12707          $~\pm~$          0.01045           &           0.01100          $~\pm~$          0.00011          \\          
-          2 ele (ID+Iso) $P_T>20~$GeV          &           257.82          $~\pm~$          3.42           &           0.55787          $~\pm~$          0.01655           &           0.00620          $~\pm~$          0.00008          \\          
-          2 ele (ID+Iso) $P_T>30~$GeV          &           154.95          $~\pm~$          2.66           &           0.60100          $~\pm~$          0.02169           &           0.00370          $~\pm~$          0.00006          \\          
-          2 jets (Cleaned) $P_T>20~$GeV          &           147.35          $~\pm~$          2.59           &           0.95095          $~\pm~$          0.02457           &           0.00360          $~\pm~$          0.00006          \\          
-          2 jets (Cleaned), $P_T>50~$GeV, $ | \eta |<3$          &           76.19          $~\pm~$          1.87           &           0.51707          $~\pm~$          0.03019           &           0.00180          $~\pm~$          0.00005          \\          
-          $M_{ee}>100~$GeV          &           45.62          $~\pm~$          1.44           &           0.59877          $~\pm~$          0.03998           &           0.00110          $~\pm~$          0.00004          \\          
-          $ S_T>620~$GeV           &           1.46          $~\pm~$          0.26           &           0.03200          $~\pm~$          0.18086           &           0.00004          $~\pm~$          0.00001          \\          
-          \hline\hline 
-\end{tabular} 
-\end{center} 
-\caption{Sample of TTBAR: Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceeding cut and absolute efficiency.} 
-\label{tab:} 
-\end{table} 
-
-
-
-
-
-
+are discussed in section~\ref{sec:bkgStudy}.
 
 \begin{table}[htbp]
 \begin{center}
-\begin{tabular}{|cccc||ccc|}
+\begin{tabular}{|ccc||cccc|}
+\hline\hline
+Signal Samples       & $S_T$ cut       & Number of Events     & Number              & of Events           & in Background    & Samples     \\
+                     & (GeV)           & in Signal Samples     & $t\bar{t}$ + N jets & $Z/\gamma$ + N jets & QCD              & VV + N jets \\ 
 \hline
-                 &   Signal&         &          & & Background & \\
-$M_{LQ}$=250 GeV & 400 GeV & 650 GeV & 1000 GeV & $t\bar{t}$  & $Z/\gamma$+jet & Others \\
-\hline
-425 $\pm$ 24 & 52.4 $\pm$ 2.5 & 3.4 $\pm$ 0.1 & 0.21 $\pm$ 0.01 & 21.3 $\pm$ 1.0 & 5.1 $\pm$ 0.6 & 1.1 $\pm$ 0.3 \\
-\hline
+$M_{LQ}=250~$GeV     & 460             & 342.06 $\pm$ 2.10    & 7.18  $\pm$ 0.57    & 2.55  $\pm$ 0.96    & 0.37 $\pm$ 0.37  & 0.21 $\pm$ 0.05 \\ 
+$M_{LQ}=250~$GeV (*) & 460             & 359.39 $\pm$ 1.36    & as above            & as above            & as above         & as above        \\
+$M_{LQ}=300~$GeV (*) & 520             & 163.37 $\pm$ 0.53    & 3.89  $\pm$ 0.42    & 1.09  $\pm$ 0.63    & 0.37 $\pm$ 0.37  & 0.15 $\pm$ 0.04 \\ 
+$M_{LQ}=400~$GeV     & 620             &  38.80 $\pm$ 0.15    & 1.46  $\pm$ 0.26    & 0.73  $\pm$ 0.52    & 0.37 $\pm$ 0.37  & 0.09 $\pm$ 0.03 \\ 
+$M_{LQ}=400~$GeV (*) & 620             &  40.41 $\pm$ 0.10    & as above            & as above            & as above         & as above        \\
+$M_{LQ}=500~$GeV (*) & 740             &  11.56 $\pm$ 0.03    & 0.69  $\pm$ 0.18    & 0.36  $\pm$ 0.36    & 0.00 $\pm$ 0.00  & 0.05 $\pm$ 0.02 \\ 
+$M_{LQ}=600~$GeV (*) & 740             &   4.04 $\pm$ 0.01    & as above            & as above            & as above         & as above        \\
+$M_{LQ}=650~$GeV (*) & 740             &   2.43 $\pm$ 0.01    & as above            & as above            & as above         & as above        \\
+$M_{LQ}=700~$GeV (*) & 740             &   1.49 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=800~$GeV (*) & 740             &   0.59 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=900~$GeV (*) & 740             &   0.25 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=1000~$GeV (*)& 740             &   0.11 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+\hline\hline
 \end{tabular}
 \end{center}
-\caption{\small \sl Number of selected events in the eejj sample expected in 100 pb$^{-1}$ of data for signal events at different LQ masses 
-and for background events. 
-The LQ cross section rapidly falls at high LQ mass, thus 
-producing a relative decrease in the number of selected events. 
-In the background part, ``Others'' includes $W$+jet, and 
-di-boson ($WW$,$WZ$,$ZZ$) events. 
-With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass the final selection.}
+\caption{\small \sl Number events expected from LQ signal and background samples after the analysis selection for 100 pb$^{-1}$ of data.
+The value cut on the kinematic variable $S_T$ depends on the LQ mass, and it is indicated in the second column.
+Data samples from FullSim Monte Carlo are used for all backgrounds and for LQ massed of 250 and 400 GeV. Signal samples marked by (*) are
+made with the FastSim Monte Carlo.
+The LQ cross section rapidly falls at high LQ mass, thus producing a relative decrease in the number of selected events. } 
 \label{tab:EventSelSummary}
 \end{table}
 
+%FIXME explain here or elsewhere why we stop increasing sT cut?
 
 %\end{document}
