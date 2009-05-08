@@ -336,43 +336,56 @@ The LQ cross section rapidly falls at high LQ mass, thus producing a relative de
 
 %FIXME explain here or elsewhere why we stop increasing sT cut?
 
+\clearpage
 
 \subsection{Cut Optimization} \label{sec:cutOptimization}
 
-FIXME - to be included
+Eight reconstructed variables are studied to optimize the selection of the events.
+These are the $p_T^{1,2}$ of the two leading electrons and two leading jets, $\eta$
+of the electrons, $\eta$ of the jets, the invariant mass $M_{ee}$ of the two leading electrons 
+and the $S_T$ variable, the sum of the $p_T$ of the two leading electrons and jets.
+The optimization proceed in two steps. 
 
+A first scan of the 8-dimensional parameter space is performed using a fast procedure in terms of CPU timing, 
+aimed to find the approximate optimized region for the baseline selection cuts.
+A range of cut values for each variable is chosen, and the number of signal ($N_S$) 
+and background ($N_B$) events passing the selection is calculated from MC for each combination 
+of possible cut values. The combination with the highest signal significance, 
+defined as $S = N_S/\sqrt{N_S+N_B}$, is taken as the optimized set of cut values. %which is the usual name of this S?%
+The result of the optimization, performed under different LQ mass hyphothesis, 
+indicates that $|\eta^{ele}|<2.5$, that coincides with the tracker acceptance,
+and $|\eta^{jets}|<3$. The cut on invariant mass of the two electrons is found to be $M_{ee}>100$ GeV. The 
+optimal cut values for electron and jet $p_T$ are consistently the lower value in the scanned range 
+(20 GeV). However, the $p_{T}$ cut on electrons is moved to 30 GeV to match the one of the HEEP 
+selection~\cite{HEEPNOTE}; %FIXME%
+the $p_{T}$ cut on jets is moved to 50 GeV in order to reduce the effect 
+of uncertainties in the initial and final state radiation, and the uncertainties 
+on calorimeter response at the start-up. It is verified that such changes have only a small effect 
+on the signal significance. This fast multi-dimensional optimization indicate also an $S_T$ cut 
+that increases with LQ mass. 
+
+The final optimization of the $S_T$ cut, which is the most discriminating variable between signal and background, 
+is performed by minimizing the upper limit on leptoquark cross section in absence of signal observed, 
+using a Bayesian approach (described in Section~\ref{CMSpotential}). 
+This method is well suited for counting experiments in Poissonian regime but it's CPU time consuming. 
+For this reason only the $S_T$ cut is optimized in this way, while the other cuts are fixed as indicated from 
+the output of the previous fast optimization.
+
+Figure \ref{fig:optimization} shows the variation on the upper limit of the cross section as a function of 
+the $S_T$ cut on a 400 GeV leptoquark sample with standard model background estimates for $100 pb^{-1}$.  
+The optimal cut (620 GeV) is found to be independent from the addition 
+of systematic uncertainties in number of signal and background events.
+The optimized values of $S_{T}$ cuts for different mass hyphotheses are shown in Table~\ref{tab:EventSelSummary}. 
 %
-%Eight criteria are used to select events, as described in section \ref{sec:eventSelection}.  These are the $p_T$ of the two leading jets and two leading electrons, the $\eta$
-% of the electrons and $\eta$ of the jets, the invariant mass of the two leading electrons and the $S_T$, the sum of the $p_T$ of the two leading electron
-%s and jets.
-
-%The optimal cut values for the selection criteria are chosen in order to maximize the significance of the signal, calculated as (number of signal events)
-% / (number of signal plus background events).
-%A range of cut values to be tested for each variable is chosen and the number of events passing the selection is calculated for each combination of possi
-%ble values for each variable.  The combination with the
-%highest significance value is taken as the optimized values.
-
-%The Bayesian method to estimate the upper limit on the cross section of the signal is a more appropriate measure of the quality of a cut value in analysi
-%s such as this, as is described in section~\ref{CMSpotential}.
-%This calculation, however, is much more time consuming and is not a feasible method of optimization for all 8 variables.  A hard cut on the $S_T$ of the event shows the strongest discriminating power of the selection criteria.
-%Therefore this variable alone was optimized to minimize the estimate of the upper limit on the signal cross section based on the Bayesian approach described in section~\ref{CMSpotential}.
-
-%Figure \ref{fig:optimization} shows the variation on the upper limit of the cross section as a function of varying $S_T$ cut on a 400 GeV leptoquark sample with standard model background estimates for $100 pb^{-1}$.  The optimization was done first using only the statistical uncertainties from the number of signal and background events, and then adding an estimate of 10\% and 20\% to the uncertainty in the number of events due to systematic effects.  The cross section limit changes, naturally, but the optimized cut on $S_T$ does not change.
-
-%The results for the optimal cut values for the electron and jet $p_T$ are consistently the lowest value in the scanned range.  However, an increase in th
-%e cut value of the object $p_T$ is seen to have only a small effect on the significance of the signal.  Higher than optimal cut values for the $p_T$ of t
-%he jets are chosen in order to reduce the effect of initial and final state radiation and the effects of calorimeter noise.  The electron $p_T$ cut value
-%s are chosen to agree with those used in the HEEP analysis.
-
-%The values chosen for each of the selection criteria are listed in Section~\ref{sec:eventSelection}.
-
-%\begin{figure}[htbp]
-%  \begin{center}
-%      \resizebox{11cm}{!}{\includegraphics{plots/xSecLimit_M400.eps}} \\
-%    \caption{\small \sl Upper limit on the signal cross section for a range of $S_T$ cuts }
-%    \label{fig:optimization}
-%  \end{center}
-%\end{figure}
-
+\begin{figure}[htbp]
+  \begin{center}
+      \resizebox{11cm}{!}{\includegraphics{plots/xSecLimit_M400.eps}} \\
+    \caption{\small \sl Upper limit on the signal cross section for a range of $S_T$ cuts for LQ mass of 400 GeV. 
+      The optimal cut (620 GeV) is found to be independent from the addition of systematic uncertainties in the 
+      number of signal and background events.}
+    \label{fig:optimization}
+  \end{center}
+\end{figure}
+%
 
 %\end{document}
