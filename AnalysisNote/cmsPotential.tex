@@ -14,26 +14,31 @@ where $s$ and $b$ are the expected numbers of signal and background events, resp
 converted into an equivalent number of standard deviations using the one-sided Gaussian probability
 \begin{equation}
 P = \frac{1}{\sqrt{2\pi}}\int_{S_\text{cP}}^{+\infty} e^{-\frac{x^2}{2}}\mathrm{d}x,
+\label{eq:ScP}
 \end{equation}
-which gives the numerical value of the $S_\text{cP}$ significance. Figure~\ref{fig:discovery} shows the required integrated luminosity
+which gives the numerical value of the $S_\text{cP}$ significance. If the background has uncertainties, which we can express in terms of
+a probablility density function $f(b)$, the probability to observe $n=s+b$ events or greater becomes
+\begin{equation}
+P = \int_0^{+\infty} p(n\geq s+b|b)f(b)\mathrm{d}x,
+\end{equation}
+and the final $S_\text{cP}$ significance is again obtained using Eq.~\ref{eq:ScP}. Figure~\ref{fig:discovery} shows the required integrated luminosity
 for a $5\sigma$ discovery for different leptoquark mass hypotheses. Figure~\ref{fig:discovery_beta} shows the minimum $\beta^2$ for
 a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity.
-Table~\ref{} with the number of signal and background events expected for an integrated luminosity
-of $100\text{ pb}^{-1}$ and the systematic uncertainties described in Section~\ref{sec:Systematics} are used to produce the plots.
+The number of signal and background events expected for an integrated luminosity of
+$100\text{ pb}^{-1}$ listed in Table~\ref{tab:EventSelSummary} and the systematic uncertainties described in Section~\ref{sec:Systematics} are used to produce the plots.
 
 \begin{figure}[h!]
  \centering
- %FIXME 
- \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L5sigma_vs_m_log.eps}
- \caption{Integrated luminosity
-for a $5\sigma$ discovery for different leptoquark mass hypotheses. Red line includes the systematic uncertainties described in 
+  \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L5sigma_vs_m_log.eps}
+ \caption{\small \sl Integrated luminosity
+for a $5\sigma$ discovery for different leptoquark mass hypotheses. Solid red line includes the systematic uncertainties described in 
 Section~\ref{sec:Systematics}.\label{fig:discovery}}
 \end{figure}
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{plots/cmsPotential/beta2_vs_m.eps}
- \caption{Minimum $\beta^2$ for
-a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity. Red line includes the systematic
+ \caption{\small \sl Minimum $\beta^2$ for
+a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity. Solid red line includes the systematic
 uncertainties described in Section~\ref{sec:Systematics}.\label{fig:discovery_beta}}
 \end{figure}
 
@@ -72,22 +77,23 @@ L'(n|s)=\int L(n|s)\pi(\bm{\nu})\mathrm{d}\bm{\nu}
 is used instead of $L(n|s)$ to incorporate systematic uncertainties into the final result for an upper limit. Figure~\ref{fig:exclusion}
 shows the required integrated luminosity for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Figure~\ref{fig:exclusion_xs}
 shows the expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
-of integrated luminosity. Table~\ref{} with the number of signal and background events expected for an integrated luminosity
-of $100\text{ pb}^{-1}$ and the systematic uncertainties described in Section~\ref{sec:Systematics} are used to produce the plots.
+of integrated luminosity. The number of signal and background events expected for an integrated luminosity of
+$100\text{ pb}^{-1}$ listed in Table~\ref{tab:EventSelSummary} and the systematic uncertainties described in Section~\ref{sec:Systematics} are used to produce the plots.
 
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L95CL_vs_m_log.eps}
- \caption{Integrated luminosity
-for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Red line includes the systematic
+ \caption{\small \sl Integrated luminosity
+for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Solid red line includes the systematic
 uncertainties described in Section~\ref{sec:Systematics}.\label{fig:exclusion}}
 \end{figure}
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{plots/cmsPotential/xs95CL_vs_m_log.eps}
- \caption{Expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
-of integrated luminosity. Red line includes the systematic
-uncertainties described in Section~\ref{sec:Systematics}.\label{fig:exclusion_xs}}
+ \caption{\small \sl Expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
+of integrated luminosity. Solid red line includes the systematic uncertainties described in Section~\ref{sec:Systematics}.
+Vertical arrow marks the current Tevatron exclusion limit of $290\text{ GeV}/c^2$.
+\label{fig:exclusion_xs}}
 \end{figure}
 
 
