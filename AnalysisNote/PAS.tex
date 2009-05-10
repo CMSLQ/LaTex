@@ -5,7 +5,7 @@
 
 \begin{titlepage}
 
-\cmspas{EXO-08-010}
+\cmspas{EXO-09-0XX}
 %  \internalnote{2005/000}
 %  \conferencereport{2005/000}
 
@@ -15,7 +15,7 @@
 
 \date{\today}
 
-\title{Search for First Generation Scalar Leptoquarks at the CMS Experiment}
+\title{Search for Pair Production of First Generation Scalar Leptoquarks at the CMS Experiment}
 
 
   \begin{Authlist}
@@ -26,17 +26,18 @@
 
 
   \begin{abstract}
-    The discovery potential for pair production of first generation scalar leptoquarks 
-    decaying to an electron and quark is investigated 
-    at the CMS experiment using Monte Carlo samples produced with a full simulation of the detector response.  
-    The analysis strategy is defined assuming an available integrated luminosity of 100 pb$^{-1}$.
-    Event selection, and reconstruction and identification of high energy electrons and jets are discussed.
+    The discovery potential for pair production of first generation scalar leptoquarks that 
+    decay to an electron and quark is investigated 
+    at the CMS experiment using Monte Carlo samples produced with a full simulation of detector response.  
+    The analysis strategy assumes an integrated luminosity of 100 pb$^{-1}$ and $pp$ collisions 
+    at $\sqrt{s}=10$ TeV.
+    Reconstruction and identification of high energy electrons and jets, 
+    and optimized selection of events are discussed.
     The electron-jet invariant mass distribution is reconstructed
     and used to identify the possible presence of a leptoquark signal.
-    Data-driven techiques are discussed to determine the main Standard Model backgrounds using 
-    control samples. The signal yield is extracted using a maximum likelihood fit to the 
-    electron-jet invariant mass distribution, and the significance of the measurement is estimated.
-    Finally the CMS discovery potential is quantified for different leptoquark mass hyphotheses.
+    Data-driven techiques are discussed to determine the main standard model backgrounds through use of 
+    control samples. The CMS discovery and exclusion potentials using a counting experiment approach 
+    are quantified for different leptoquark mass hyphotheses.
 
 %The leptoquarks are assumed to decay exclusively to electrons and quarks.  Detailed explanations of the discovery techniques and data driven methods to extract the signal from background events are given.  
 %Both exclusion limits and discovery potential are discussed for masses of the leptoquark ranging from around the current limit of 251 GeV to 1 TeV.
@@ -50,11 +51,11 @@
 \section{Introduction}
  
 This note describes the analysis techniques that will be used to search for evidence of first generation scalar leptoquarks 
-at the CMS experiment~\cite{CMSTDR1},\cite{CMSTDR2}. The methods described are evaluated using Monte Carlo (MC) simulations assuming an availability of 
-100 pb$^{-1}$ of integrated luminosity and 7 TeV proton beams.
+at the CMS experiment. The methods described are evaluated using Monte Carlo (MC) simulations assuming a start-up LHC scenario
+with about 100 pb$^{-1}$ of integrated luminosity and 5 TeV proton beams.
 
-Leptoquarks (LQ) are conjectured exotic particles with both baryon and lepton number, allowing their decay into a lepton and quark.  
-Several models of new physics beyond the Standard Model (SM) predict the existence of leptoquarks, including General Unified Theories, 
+Leptoquarks (LQ) are new exotic particles conjectured to have both baryon and lepton number and primary decays into leptons and quarks.    
+Several models of physics beyond the standard model (SM) predict the existence of leptoquarks, including General Unified Theories, 
 technicolor and composite models \cite{theories}.  
 
 The model parameters are 1) $M_{LQ}$, the LQ mass, 2) $\beta$, the branching ratio of the decay 
@@ -152,7 +153,7 @@ In order to guarantee a high efficiency and at the same time contain the data sa
 \begin{figure}[htbp]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{12cm}{!}{\includegraphics{plots/triggerEffic.eps}} 
+  \resizebox{12cm}{!}{\includegraphics{plots/UMD.eps}} 
   \end{tabular}
   \caption{\small \sl High Level Trigger efficiencies for LQ events at different mass. 
     Single triggers and their $OR$ are shown.}
@@ -320,8 +321,8 @@ electron-jet combinations will be performed in future upgrades of this analysis.
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{\includegraphics{plots/Mee_distribution.eps}} &
-      \resizebox{7.5cm}{!}{\includegraphics{plots/St_distribution.eps}} \\
+      \resizebox{7.5cm}{!}{\includegraphics{plots/UMD.eps}} &
+      \resizebox{7.5cm}{!}{\includegraphics{plots/UMD.eps}} \\
     \end{tabular}
     \caption{\small \sl Left: invariant mass of the electron pair, $M_{ee}$. 
              Right: scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
@@ -342,7 +343,7 @@ electron-jet combinations will be performed in future upgrades of this analysis.
 
 \begin{figure}[htbp]
   \begin{center}
-    \resizebox{10cm}{!}{\includegraphics{plots/Mej_best_Meecut_Stcut.eps}}
+    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}}
     \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, of the electron-jet pairs 
       with smaller $\Delta M_{ej}$
       for signal (at 250~GeV and 650~GeV LQ mass) and backgrounds. 
@@ -503,7 +504,7 @@ The e$\mu$jj sample is enriched in $t\bar{t}$ events with a small contamination 
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/Mlj_eejj_emujj_ttbarControlSample.eps}} \\ 
+  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
   \end{tabular}
   \caption{Distributions of the lepton-jet invariant mass for the eejj and the e$\mu$ samples, for $t\bar{t}$ events}
   \label{fig:ttbar}
@@ -528,7 +529,7 @@ the substantial boost, rather than a high mass, of the $Z/\gamma$ bosons.
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/Mej_eejjIN_eejjOUT_zjetControlSample.eps}} \\ 
+  \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}} \\ 
   \end{tabular}
   \caption{Distributions of the electron-jet invariant mass for the signal eejj sample 
     (cut 1,2,3,4)
@@ -581,7 +582,7 @@ to determine the CMS potential for discovering a leptoquark signal.
 
  \begin{figure}[htb]
    \begin{center}
-     \resizebox{10cm}{!}{\includegraphics{plots/Mej_fit.eps}}
+     \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}}
      \caption{\small \sl A MC experiment (dots with error bars) generated for a leptoquark mass of 
        400~GeV (blue-filled histogram), a sum of the $t\bar{t}$ and $Z/\gamma$+jets 
        backgrounds (gray-filled histogram) with a relative ratio R=4.2 determined from 
@@ -694,7 +695,7 @@ systematics involved is not yet included in this version of the analysis.
 
  \begin{figure}
    \begin{center}
-     \resizebox{13cm}{!}{\includegraphics{plots/sign_vs_Lint_sysR.eps}}
+     \resizebox{13cm}{!}{\includegraphics{plots/UMD.eps}}
      \caption{Significance of the discovery as a function of the integrated luminosity.
        For each LQ mass, the fit to extract the significance is repeated varying the value of $R$
        (the ratio between the number of $t\bar{t}$ and $Z/\gamma$+jets events in the final sample)
