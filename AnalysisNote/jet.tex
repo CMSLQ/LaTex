@@ -7,7 +7,7 @@
 %monicava.web.cern.ch/monicava/Talks/JetTutorial130.pdf
 %http://64.233.169.104/search?q=cache:ON_R5d7inNQJ:arxiv.org/pdf/0705.2696+iterative+cone+algorithm&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a
 
-The jet reconstruction algorithm used in this analysis is an interative cone algorithm using a radius of $\Delta R=0.5$ \cite{JetAlg}.  
+The jet reconstruction algorithm used in this analysis is an interactive cone algorithm using a radius of $\Delta R=0.5$ \cite{JetAlg}.  
 The algorithm starts with seeds in calorimeter towers (combining ECAL and HCAL) with energies greater than 
 1 GeV. It then considers the weighted average of all energy in a cone of radius 0.5 around this seed to form a proto-jet.  
 A cone of $\Delta R = 0.5$ is then constructed around the momentum vector of each new proto-jet,  
@@ -51,7 +51,7 @@ The Level 3 corrections are the ``absolute jet corrections'', that aim to correc
 region of $\eta < 1.3$ back to the particle level energy, to assure agreement in energy with the generated MC samples. 
 Figure~\ref{fig:CorrRatios}(a) shows the ratio of distributions in jet energies after and before implementing  
 the combination of absolute and relative corrections.  
-The relative and absolute corrections are the standard CMS Software corrections recommended for all jet analysies,
+The relative and absolute corrections are the standard CMS Software corrections recommended for all jet analyzes,
 and on average change the energies by 20\%.
 
 In addition, Level 5 corrections are applied to take account of the flavor of the originating parton.
@@ -65,7 +65,7 @@ from quarks. This is the reason why the level 5 corrections for light quarks dec
 as shown in Figure~\ref{fig:CorrRatios}-right. 
 
 The optional Level-4 corrections aim to correct the fraction of energy deposited in the EM section of the calorimeter, 
-a quantity not used in this analsysis, and therefore not applied.
+a quantity not used in this analysis, and therefore not applied.
 %Level 7 corrections correct the energy of a jet back to the energy of its parton.
 %This is based on specific production processes, such as light quark jets from dijet production or charm quarks from ttbar decays.  
 %There is no general correction function of this kind available for a LQ analysis.
