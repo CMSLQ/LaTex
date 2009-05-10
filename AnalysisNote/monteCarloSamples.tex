@@ -24,33 +24,35 @@
 %    \end{center}
 %  \end{table}
 
-MC signal samples are generated with leptoquark masses ranging from 250 GeV to 1 TeV and $\beta=1$. 
+MC signal samples are generated with leptoquark masses ranging from 250 to 600 GeV and $\beta=1$. 
 At the LHC, the three main processes that lead to leptoquark pair production are gluon-gluon fusion, 
 quark-antiquark annihilation, and the higher order process of quark-gluon fusion. In the mass range to be investigated gluon-gluon fusion dominates. 
 
 ``Full simulation'' (FullSim) signal samples are produced using 
 CMSSW version 2\_1\_6 (PYTHIA version 6.227 and GEANT 4). 
 These samples were included in the official ``Summer 08'' production by the CMS Generators group.
-These signal events were generated for 100 $\mbox{pb}^{-1}$ samples with the corresponding mis-calibration and alignment 
-of the detectors. 
+%These signal events were generated for 100 $\mbox{pb}^{-1}$ samples with the corresponding mis-calibration 
+%and alignment of the detectors. 
 
-``Fast simulation'' (FastSim) signal samples are produced using CMSSW version 2\_2\_X (FIXME). The FastSim uses a parameterization
-of the detector response instead of using the full GEANT-based simulation.
+``Fast simulation'' (FastSim) signal samples are produced using CMSSW version 2\_2\_6.
+The FastSim uses a parameterization of the detector response instead of using the full GEANT-based simulation.
 The FastSim samples were created during the ``Winter 09'' production campaign with the same mis-calibration 
 and mis-alignment scheme as the FullSim samples.
 
 The SM background is taken from the Summer08 official production samples,
-which consists of more than 150M events of various SM processes roughly representing the first 100 pb$^{-1}$ of LHC data.
-All events are generated and simulated with CMSSW\_2\_1\_6. 
+which consists of more than 200M events of various SM processes roughly representing 
+the first 100 pb$^{-1}$ of LHC data. All events are generated and simulated with CMSSW\_2\_1\_6. 
 The Summer08 samples used for this analysis are listed below:
 \begin{itemize}
 %
-\item $t\bar{t}$+jet events (for N$<$5), generated using MADGRAPH~\cite{MADGRAPH} 
-%with a LO-NLO K correction factor of 1.85 applied to the LQ cross section;\footnote{The K factor of 1.85 applied to ttbar events is a default in the software provided by CMS for these data samples.  It is from a MCFM NLO vs LO study.}
+\item $t\bar{t}$+jet events (for N$<$5), generated using MADGRAPH~\cite{MADGRAPH}, inclusive production (all decays); 
+%with a LO-NLO K correction factor of 1.85 applied to the LQ cross section;\footnote{The K factor of 1.85 applied 
+%to ttbar events is a default in the software provided by CMS for these data samples.  It is from a MCFM NLO vs LO study.}
 %
-\item $Z/\gamma*$ + N jet events (for N$<$6), generated using MADGRAPH;  
+\item $Z/\gamma*$ + N jet events (for N$<$6), generated using MADGRAPH, $Z$ decaying into charged leptons;  
 %
-\item $W$ + N jet events (for N$<$6), generated using MADGRAPH with $W$ decaying into leptons; % $0< P_{T}^{W} < 300 $ GeV (FIXME)
+\item $W$ + N jet events (for N$<$6), generated using MADGRAPH, $W$ decaying into leptons; 
+% $0< P_{T}^{W} < 300 $ GeV (FIXME)
 %
 %\item QCD multi-jet events, generated with PYTHIA, inclusive production in $P_{T}^{jet}$ bins from 0 to $\infty$;  
 \item QCD multi-jet events, generated with MADGRAPH, inclusive production in 
@@ -59,7 +61,8 @@ $H_{T}^{jet}$~\footnote{$H_{T}^{jet}=\sum_{jets} p_T^{jet}$} bins from 100~GeV t
 %\item $\gamma$+jet events, generated with PYTHIA, $ 0 < P_{T}^{jet} < 7000 $ GeV;  
 %
 %\item $WW$, $WZ$, $ZZ$ events, generated with PYTHIA, inclusive production (all decays).
-\item $VV$ + jet events (where $VV$ can be $WW$, $WZ$ or $ZZ$), generated with MADGRAPH, inclusive production (all decays).
+\item $VV$ + jet events (where $VV$ can be $WW$, $WZ$ or $ZZ$), generated with MADGRAPH, $W$ and $Z$ 
+decaying into leptons.
 \end{itemize} 
 
 %In the CSA07 production there were three flavors of Standard Model event combinations, two of which were used in this analysis: 
@@ -137,9 +140,11 @@ lists the signal and background MC samples used in this analysis with their numb
 \hline\hline
     \end{tabular}
     \caption{\small \sl Signal and background MC samples used in this analysis. For each sample, it is indicated 
-      if it is generated with the full or fast simulation, the generated number events, and the cross sections at NLO and LO. 
-      The k-factor is also reported for convenience.
-      FullSim samples were made with CMSSW\_2\_1\_6 and FastSim samples were made with FIXME.}
+      if it is generated with the full or fast simulation, the generated number events, 
+      and the cross sections at NLO and LO for $\sqrt{s}=10$ TeV. 
+      The k-factor is also reported for convenience. Leptoquark cross sections at NLO and LO
+      are given based on the calculation discussed at~\cite{Kramer} (thanks to Micheal Kramer 
+      for providing the updated numbers for $\sqrt{s}=10$ TeV).}
   \end{center}
 \end{table}
 
