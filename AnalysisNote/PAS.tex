@@ -1,5 +1,8 @@
 \documentclass{cmspaper}
 \usepackage{lineno}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage[dvips]{graphicx}
+\usepackage{bm}
 \begin{document}
 \begin{linenumbers}
 
@@ -361,15 +364,11 @@ any electron with $P_T > 20~$GeV within a cone of $\Delta R=0.1$; this cut suppr
 $Z \rightarrow ll$+~1~jet while preserving $Z \rightarrow ll$+~2~(or more)~jets.
 \end{itemize}
 
-Number of events in the skimmed sample with 100 $pb^{-1}$ of data, and 
-efficiency of the skim for signal and background are shown in the second line (``Skim'') 
+The number of events in the skimmed sample with 100 $pb^{-1}$ of data, and 
+efficiency of the skim for signal and the dominant background are shown in the second line (``Skim'') 
 of Tables
-\ref{tab:effic-MLQ400}, 
-\ref{tab:effic-ttbar}, 
-\ref{tab:effic-Z}, 
-\ref{tab:effic-QCD},
-\ref{tab:effic-VV} and
-\ref{tab:effic-W}.
+\ref{tab:effic-MLQ400} and 
+\ref{tab:selection_effic_ttbar}.
 
 The offline selection of the eejj sample continues with the following kinematic cuts:
 %
@@ -760,174 +759,127 @@ This value is in agreement with the estimate of $0.37 \pm 0.37$ events
 selection on the QCD MC sample. An uncertainty of 200\% on the value of $P(e|f)$ is estimated 
 from closure tests performed with relaxed ID and Isolation cuts. 
 
+\section{Systematic Uncertainties} \label{sec:Systematics}
 
-\section{Signal Extraction} \label{sec:signalExtraction}
+The main sources of systematic uncertainties for this analysis are discussed below.
+The effects of these systematic uncertainties are taken into account in Section~\ref{CMSpotential} 
+by summing them in quadrature when calculating discovery and exclusion potential, unless otherwise noted.
+%
+\begin{enumerate}
+\item Uncertainty in the jet and electron energy scale
 
-This section describes the procedure and verifies the ability to extract the 
-number of signal events from a distribution of the invariant mass, $M_{ej}$, of the 
-electron-jet pairs with the characteristics expected from the studies 
-of the previous sections.
+To quantify the effect of the uncertainty on the reconstructed energy of the electron and jets
+the analysis is repeated with a multiplicative factor introduced to the energy 
+of jets and electrons within the event. 
+A variation of the jet energy of $\pm$10\% leads to a maximum change of approximately 
+7\% in the signal efficiency and 33\% in the number of background events, 
+%(from $2.29 \pm 0.58$ to $3.04 \pm 0.61$ when the jet energy is {\sl increased} 10\%)
+while a $\pm$5\% variation in the electron energy yields approximately a 3.5\% maximum 
+change in signal efficiency and 35\% in the number of background events. 
+%(from $2.29 \pm 0.58$ to $3.08 \pm 0.70$
+%when the electron energy is {\sl increased} 10\%).  
+%FIXME - rerun this for all mass points%
+%
+\item Uncertainty in the integrated luminosity of the data
 
-MC experiments are generated to produce $M_{ej}$ distributions that are the sum
-of a leptoquark signal and the only relevant backgrounds: $t\bar{t}$ and $Z/\gamma$+jets.
-The average leptoquark signal distribution, $h_s$, is taken from the FullSim MC 
-sample at the leptoquark mass under consideration after applying the selection
-described in Section~\ref{sec:eventSelection}.
-The average distributions, $h_{t\bar{t}}$ and $h_{Z/\gamma\mathrm{+jets}}$ 
-of the $t\bar{t}$ and $Z/\gamma$+jets backgrounds are determined from the control samples
-and procedures described in Section~\ref{sec:bkgStudy}.
+This uncertainty is estimated at 10\% for the first several months of LHC running~\cite{PTDR}. 
+%
+\item Statistical uncertainty on the MC data
 
-A log-likelihood fit is performed on the histogram of each generated MC experiment
-using a function
-\begin{displaymath}
-  h_{s+b} = N_s \cdot \tilde{h}_s + N_b \cdot \tilde{h}_b
-\end{displaymath}
-where $N_s$ and $N_b$ are the free parameters of the fit for the number of signal and background events,
-\begin{displaymath}
-  \tilde{h}_b = \frac{R}{1+R} \tilde{h}_{t\bar{t}} + \frac{1}{1+R} \cdot \tilde{h}_{Z/\gamma\mathrm{+jets}}~\mathrm{,}
-\end{displaymath}
-and $\tilde{h}_x$ represents a general distribution $h_x$ normalized to unity. 
+The uncertainty on the final number of selected events for the FullSim sample with a leptoquark mass of 400 GeV is 
+approximately 0.4\%.  The number of events produced in the background samples, however, correspond to a much
+smaller equivalent integrated luminosity than the signal samples.  
+The statistical uncertainty in the number of MC events is summarized for signal and background samples 
+in table~\ref{tab:EventSelSummary} of Section~\ref{sec:eventSelection}.  
+%
+\item Uncertainties on FastSim selection efficiencies with respect to FullSim
 
-The ratio
-\begin{displaymath}
-  R \equiv N_{t\bar{t}} / N_{Z/\gamma\mathrm{+jets}}~\mathrm{,}
-\end{displaymath}
-between the number of $t\bar{t}$ and $Z/\gamma$+jets events is currently determined from 
-MC and has a value $R_{MC}=4.2$.
-Figure~\ref{fig:Mej_fit} shows a MC experiment and the result of the fit.
-%A tendency of the fit to underestimate the number of signal events is observed. 
-%Such an effect amounts to about 10\% with a moderate dependency on the leptoquark mass and the 
-%integrated luminosity. This effect may bias the results towards an overestimation of the integrate%d luminosity needed for discovery.
+The signal samples produced with FastSim show a slightly higher selection efficiency than FullSim, 
+mostly due to the higher reconstruction efficiency of the electrons in the FastSim. 
+This leads to a higher final selection efficiency in FastSim compared to FullSim by approximately 5\% 
+for leptoquark samples with a mass of 250 and 400 GeV. FullSim samples at higher mass are not available 
+to perform the comparison. A conservative uncertainty of 10\% on the selection efficiency 
+for FastSim samples is used in the whole mass range investigated. 
+%
+\item Uncertainty from the data driven background estimates
 
-The fitting procedure described in this section is used in the following section
-to determine the CMS potential for discovering a leptoquark signal. 
+Estimates of the background by data driven techniques are affected by the statistical
+uncertainties on the size of the control samples.
+The number of events expected in each control sample varies with the $S_T$ cut used, as 
+described in section~\ref{sec:bkgStudy}. These uncertainties can be correctly estimated 
+only when data is available, and they are not included in the discovery and exclusion potential
+for this analysis.
+%
+\item Theoretical uncertainties 
 
-
- \begin{figure}[htb]
-   \begin{center}
-     \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}}
-     \caption{\small \sl A MC experiment (dots with error bars) generated for a leptoquark mass of 
-       400~GeV (blue-filled histogram), a sum of the $t\bar{t}$ and $Z/\gamma$+jets 
-       backgrounds (gray-filled histogram) with a relative ratio R=4.2 determined from 
-       full simulation MC, and a number of signal events $N_s=50$ corresponding
-       to an integrated luminosity of 95~$pb^{-1}$.
-       The blue-line open histogram is the result of the fit and the estimate of signal 
-       events is 48.5$\pm$ 3.8.}
-     \label{fig:Mej_fit}
-   \end{center}
- \end{figure}
-
-
-
-\section{CMS Potential} \label{CMSpotential}
-
-In order to estimate the integrated luminosity needed by CMS to claim 
-a discovery in the electron channel of the first generation leptoquark, 
-several MC experiments with signal and background events are produced
-as described in Section~\ref{sec:signalExtraction}.
-
-The significance of each experiment is extracted using the log-likelihood estimator 
-\begin{displaymath}
-S_L \equiv \sqrt{2\cdot ln{(L_{s+b}/L_{b})}}~\mathrm{,}
-\end{displaymath}
-where $L_{s+b}$ and $L_b$ are the maximum likelihood values for the fit to
-the signal plus background and background only hypothesis, respectively.
-
-A set of MC experiments is generated for a leptoquark mass and a value of 
-the integrated luminosity.
-The distribution of $S_L$ of the set of experiments is approximately gaussian 
-and its median is used as the estimate of the significance.
-The procedure is repeated for leptoquark masses of 250, 400 and 650~GeV and
-different values of the integrated luminosity. 
- The results are shown in
-Figure~\ref{fig:sign_vs_Lint_sysR}, which includes also the effect of the systematic 
-uncertainties discussed in the next section. 
-
-\subsection{Systematic uncertainties}
-
-%The impact of systematic effects on the discovery potential and the determination 
-%of the experiment sensitivity are not yet included in this study.
-
-%A study for determining the sensitivity of the experiment will be performed.
-%It will be used to set upper limits in case a signal is not observed. 
-%It will be used an approach similar to the one used in \ref{highmassToMuons}.
-%The same tools to generate MC experiments and perform log-likelihood fits will be used.
-
-%Systematics: Luminosity(+_10\%), JES (+_10\%), ratio ttbar/Zgammajets, etc.
-
-Once real data is available, and given the procedure used to extract the signal described in 
-Section~\ref{sec:signalExtraction},
-only the uncertainties that affect the knowledge of the shape of the distributions of 
-the total background and the signal will have an impact on the significance, and have to be 
-accounted for as systematic uncertainties.
-
-The value of $R$, defined in Section~\ref{sec:signalExtraction}, 
-directly affects the shape of the total background distribution used in the fit by changing the
-mixture of the two backgrounds. 
-The current knowledge, $R_{MC}$, of $R$ comes from the Monte Carlo
-study and may introduce a deviation $\delta \equiv R/R_{MC}$ from the true value of $R$
-due, for example, to imperfect knowledge of the relative magnitude of the two background 
-cross sections and respective selection efficiencies.
-
-$\tilde{R}$ is defined as the ratio between the number of $t\bar{t}$ and $Z/\gamma$+jets events in the
-control samples described in Section~\ref{sec:bkgStudy}, and $\tilde{R}_{MC}$ is its
-estimate from Monte Carlo. It is expected that the main reasons that
-make $\delta$ deviate from unity affect $\tilde{R}/\tilde{R}_{MC}$ in the same way, assuming that the MC uncertainties are
-dominated by the limited knowledge of the cross sections.
-Therefore, once real data is available to calculate $\tilde{R}$ from the control samples of $t\bar{t}$ and $Z/\gamma$+jets, 
-the estimate $\delta \simeq \tilde{R}/\tilde{R}_{MC}$ 
-will be used to improve the knowledge of $R$ from the current value, $R_{MC}$, to $R_{data+MC} \equiv \delta \cdot R_{MC}$.
-
-The uncertainty on the estimate of $\delta$ given by $\tilde{R}/\tilde{R}_{MC}$ will be 
-dominated by the statistical error of $\tilde{R}$ from the number of events in the control samples, and will propagate to $R_{data+MC}$. 
-To estimate the systematic effect on the significance, the fit is repeated by varying the 
-value of $R$ by one standard deviation from its central value 
-$R_{MC}$ \footnote{Not having real data yet, 
-exact correctness of the MC is currently assumed by setting $\delta=1$, 
-making effectively $R_{data+MC}=R_{MC}$.}, as shown in 
-Figure~\ref{fig:sign_vs_Lint_sysR}.
-%The systematic uncertainty due to $R$ is larger, for the same integrated luminosity, for a
-%LQ mass of 250~GeV. This is due to the topology of the $M_{ej}$ distribution 
-%of the signal that, at small LQ masses, peaks where the background does.
-%For higher values of the LQ mass, the significance determination seems to be little 
-%sensible to variations of $R$. This may be understood by considering the increased separation
-%between the main features of the signal and backgound distributions, and the relative similarity 
-%between the two backgound shapes: 
-%the mixture between $t\bar{t}$ and $Z/\gamma$+jets events may vary, but
-%the mixture between total background and signal does little.
-As an example, for the point at $M_{LQ}=400$~GeV, integrated luminosity=100~$pb^{-1}$ and significance=12.7, 
-the uncertainty on $R_{data+MC}$ is about 15\%, but this determines a change of 
-significance of only 1\%.
-
-The uncertainty 
-of $R$ tends to be ``absorbed'' in the fitting procedure and have a limited impact on the 
-significance determination.
-In addition, this reassures that once the real data is available and the value of the correction 
-factor $\delta$ can be estimated as described above,
-even a significant departure from unity will not require a drastic re-assessment of
-the current estimate of the luminosity needed for discovery.
-The uncertainty on the knowledge of the signal shape used in the fit may also produce a systematic
-uncertainty on the significance. A study of this effect will have to be performed.
-
-In the case of setting an upper limit in the case of absence of signal, a larger number of systematic
-uncertainties will have to be considered (on the integrated luminosity, the detector efficiency and resolution, the jet energy scale, and theoretical uncertainties) 
-as they do have a direct impact on it. 
-The procedure for setting an upper limit and the study of the 
-systematics involved is not yet included in this version of the analysis.
+At the LHC the PDF uncertainties are expected to give the largest contribution to the theoretical uncertainties. 
+The effect of this can be estimated by re-weighting 
+the events based on the momentum fraction of each incoming parton.
+The relative uncertainties on the differential cross sections 
+typically range from 2-5\% for Standard Model processes, 
+but may rise to 10\% or larger for parton processes at the TeV-scale 
+(like the leptoquark pair production).
+These uncertainties will be evaluated and included in future upgrades of this analysis.
+\end{enumerate}
 
 
- \begin{figure}
-   \begin{center}
-     \resizebox{13cm}{!}{\includegraphics{plots/UMD.eps}}
-     \caption{Significance of the discovery as a function of the integrated luminosity.
-       For each LQ mass, the fit to extract the significance is repeated varying the value of $R$
-       (the ratio between the number of $t\bar{t}$ and $Z/\gamma$+jets events in the final sample)
-       of one standard deviation from its central value. 
-       The horizontal line represents a 5 sigma discovery.}
-     \label{fig:sign_vs_Lint_sysR}
-   \end{center}
- \end{figure}
 
+\section{CMS Discovery and Exclusion Potential} \label{CMSpotential}
+
+In order to estimate the potential of the CMS detector to discover the first generation leptoquarks
+in the electron channel, a simple counting experiment approach is used. 
+The number of signal and background events expected for an integrated luminosity of
+100~$pb^{-1}$ listed in Table~\ref{tab:EventSelSummary} and the systematic uncertainties described 
+in Section~\ref{sec:Systematics} are used to produce the following plots. 
+The QCD background estimates from Table~\ref{tab:EventSelSummary} 
+are not included due to lack of MC statistics. The QCD background is expected to be 
+small compared to the other main background contributions (see Section~\ref{sec:QCDBackground}).
+
+To quantify the significance of the
+leptoquark signal, $S_\text{cP}$ significance estimator~\cite{ref:scp} is used. $S_\text{cP}$ assumes a Poisson distribution
+with mean $b$ and gives the probability to observe $n=s+b$ events or greater
+\begin{equation}
+P = p(n\geq s+b|b) = \sum_{n=s+b}^{+\infty} \frac{b^n}{n!}e^{-b},
+\end{equation}
+where $s$ and $b$ are the expected numbers of signal and background events, respectively. This probability is 
+converted into an equivalent number of standard deviations using the one-sided Gaussian probability
+\begin{equation}
+P = \frac{1}{\sqrt{2\pi}}\int_{S_\text{cP}}^{+\infty} e^{-\frac{x^2}{2}}\mathrm{d}x,
+\label{eq:ScP}
+\end{equation}
+which gives the numerical value of the $S_\text{cP}$ significance.
+Figure~\ref{fig:discovery} shows the required integrated luminosity
+for a $5\sigma$ discovery for different leptoquark mass hypotheses. 
+
+\begin{figure}[h!]
+ \centering
+  \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L5sigma_vs_m_log.eps}
+ \caption{\small \sl Integrated luminosity
+for a $5\sigma$ discovery for different leptoquark mass hypotheses assuming $\beta=1$. Solid red line includes the systematic uncertainties described in 
+Section~\ref{sec:Systematics}. Shaded region is excluded by the current Tevatron limits.\label{fig:discovery}}
+\end{figure}
+
+For setting upper limits in the absence of the leptoquark signal, the Bayesian approach~\cite{ref:bayes} is used. 
+Figure~\ref{fig:exclusion}
+shows the required integrated luminosity for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Figure~\ref{fig:exclusion_xs}
+shows the expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
+of integrated luminosity. 
+
+\begin{figure}[h!]
+ \centering
+  \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L95CL_vs_m_log.eps}
+ \caption{\small \sl Integrated luminosity
+for $95\%$ C.L. exclusion of different leptoquark mass hypotheses assuming $\beta=1$. Solid red line includes the systematic
+uncertainties described in Section~\ref{sec:Systematics}. Shaded region is excluded by the current Tevatron limits.\label{fig:exclusion}}
+\end{figure}
+\begin{figure}[h!]
+ \centering
+  \includegraphics[width=0.5\textwidth]{plots/cmsPotential/xs95CL_vs_m_log.eps}
+ \caption{\small \sl Expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
+of integrated luminosity assuming $\beta=1$. Solid red line includes the systematic uncertainties described in Section~\ref{sec:Systematics}.
+Shaded region is excluded by the current Tevatron limits.
+\label{fig:exclusion_xs}}
+\end{figure}
 
 \section{Conclusion}
 
