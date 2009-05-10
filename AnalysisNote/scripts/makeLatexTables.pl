@@ -15,8 +15,12 @@ if ( $numArgs != 1 ) {
 my $file = $ARGV[0];
 
 # Please insert in @cutVariables the names of the variables that you want to appear in the tables, and KEEP A SPACE at the end of each cut variable name
-my @cutVariables = ("nocut ", "skim ","nEle_PtPreCut ", "nEle_PtPreCut_ID ", "nEle_PtPreCut_IDISO ", "Pt2ndEleIDISO ", "nJet_PtPreCut_DIS ", "Eta2ndJet_DIS ", "invMass_ee ", "sT "); 
-my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>20\~\$GeV", "2 ele (ID) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>30\~\$GeV", "2 jets (Cleaned) \$P_T>20\~\$GeV", "2 jets (Cleaned), \$P_T>50\~\$GeV, \$ \| \\eta \|<3\$", "\$M_\{ee\}>100\~\$GeV", "\$ S_T>620\~\$GeV "); 
+my @cutVariables = ("nocut ", "skim ","nEle_PtPreCut ", "nEle_PtPreCut_IDISO ", "nJet_PtEtaPreCut_DIS ", "invMass_ee ", "sT "); 
+my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>30\~\$GeV", "2 ele (ID+Iso) \$P_T>30\~\$GeV", "2 jets (Cleaned),\$P_T\>\$50\~GeV,\$\|\\eta\|\<\$3", "\$M_\{ee\}\>\$100\~GeV", "\$S_T\>\$620\~GeV"); 
+
+
+# my @cutVariables = ("nocut ", "skim ","nEle_PtPreCut ", "nEle_PtPreCut_ID ", "nEle_PtPreCut_IDISO ", "Pt2ndEleIDISO ", "nJet_PtPreCut_DIS ", "Eta2ndJet_DIS ", "invMass_ee ", "sT "); 
+# my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>20\~\$GeV", "2 ele (ID) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>30\~\$GeV", "2 jets (Cleaned) \$P_T>20\~\$GeV", "2 jets (Cleaned), \$P_T>50\~\$GeV, \$ \| \\eta \|<3\$", "\$M_\{ee\}>100\~\$GeV", "\$ S_T>620\~\$GeV "); 
 
 my $caption="Sample of FIXME: Sequence of selection cuts with number of events selected in 100\$\~pb\^{-1}\$, efficiency relative to the preceeding cut and absolute efficiency.";
 
@@ -108,7 +112,7 @@ foreach my $selectedLine (@selectedLines){
     $Den=@t[6];
     $DenErr=@t[7];
     #my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\~\\pm\~\$",@t[7]," \& ", @t[8],"\$\~\\pm\~\$",@t[9], " \& ", @t[10],"\$\~\\pm\~\$",@t[11], "\\\\");
-    my @tableLineEntries=(@t[1]," \& ", sprintf("%.3e",@t[6]),"\$\~\\pm\~\$",sprintf("%.3e",@t[7])," \& ", sprintf("%.3e", $effRel),"\$\~\\pm\~\$",sprintf("%.3e",$effRelErr), " \& ", sprintf("%.3e",@t[10]),"\$\~\\pm\~\$",sprintf("%.3e",@t[11]), "\\\\");
+    my @tableLineEntries=(@t[1]," \& ", sprintf("%.2e",@t[6]),"\$\~\\pm\~\$",sprintf("%.2e",@t[7])," \& ", sprintf("%.1e", $effRel),"\$\~\\pm\~\$",sprintf("%.1e",$effRelErr), " \& ", sprintf("%.1e",@t[10]),"\$\~\\pm\~\$",sprintf("%.1e",@t[11]), "\\\\");
     $sizeOfTableLine = @tableLineEntries;
     foreach my $tableLineEntry (@tableLineEntries){
 	push(@tableLine, $tableLineEntry);
