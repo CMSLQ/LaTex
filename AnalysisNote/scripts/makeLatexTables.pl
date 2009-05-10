@@ -22,7 +22,7 @@ my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>30\~\$GeV", "2 ele (ID+Iso) 
 # my @cutVariables = ("nocut ", "skim ","nEle_PtPreCut ", "nEle_PtPreCut_ID ", "nEle_PtPreCut_IDISO ", "Pt2ndEleIDISO ", "nJet_PtPreCut_DIS ", "Eta2ndJet_DIS ", "invMass_ee ", "sT "); 
 # my @cutDescriptions = ("None", "Skim", "2 ele \$P_T>20\~\$GeV", "2 ele (ID) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>20\~\$GeV", "2 ele (ID+Iso) \$P_T>30\~\$GeV", "2 jets (Cleaned) \$P_T>20\~\$GeV", "2 jets (Cleaned), \$P_T>50\~\$GeV, \$ \| \\eta \|<3\$", "\$M_\{ee\}>100\~\$GeV", "\$ S_T>620\~\$GeV "); 
 
-my $caption="Sample of FIXME: Sequence of selection cuts with number of events selected in 100\$\~pb\^{-1}\$, efficiency relative to the preceeding cut and absolute efficiency.";
+my $caption="Sample of FIXME: Sequence of selection cuts with number of events selected in 100\$\~pb\^{-1}\$, efficiency relative to the preceeding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.";
 
 
 sub texFileHeader {
