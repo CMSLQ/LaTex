@@ -94,8 +94,8 @@ At the LHC, the three main processes that lead to leptoquark pair production are
 quark-antiquark annihilation, and the higher order process of quark-gluon fusion. In the mass range to be investigated gluon-gluon fusion dominates. 
 
 The ``Full Simulation'' (FullSim) signal samples are produced using 
-the official CMS software for generation (using PYTHIA~\cite{PYTHIA}), 
-simulation (based on GEANT4~\cite{GEANT4}), digitization and reconstruction. 
+the official CMS software for generation (using PYTHIA version 6.227), 
+simulation (based on GEANT4), digitization and reconstruction. 
 %The above lines are taken from the previous version of the PAS, instead of from the note.
 These samples were included in the official ``Summer 08'' production by the CMS Generators group.
 
@@ -333,58 +333,93 @@ The signal of a leptoquark would appear as a bump in the distribution of this in
 The following selections have been made in order to minimize the number of background events 
 selected while retaining a high signal efficiency.
 
-The online selection of candidate events is made by the HLT triggers EMHighEt and EMVeryHighEt 
-described in Section~\ref{sec:trig} while the offline identification of electrons and jets 
-proceeds as described in Sections~\ref{sec:electrons} and \ref{sec:jet}, respectively.
-The offline selection of the eejj sample continues with the following cuts:
+The online selection of candidate events is made by either the HLT trigger ``HLT\_Photon15\_L1R'' 
+or ``HLT\_Photon25\_L1R'' described in section~\ref{sec:trig}, depending on the luminosity scenario, 
+while the offline identification of electrons and jets 
+proceeds as described in sections~\ref{sec:electrons} and \ref{sec:jet}, respectively.
 
+In order to reduce the size of the of the data samples and the time to analyze them, a skim of the 
+data has been defined.
+The requirements that the skim has to satisfy have been defined considering that this skim may be needed
+for the analysis of both first and second generation leptoquark pair production. Such requirements are:
+\begin{itemize}
+\item having a high efficiency for first (events with 2 electrons and 2 jets) and second (events with 
+2 muons and 2 jets) generation leptoquark pair production; 
+\item keeping events needed for the control samples: the control sample for the Z+jets background is $Z\rightarrow l l$+ 2 jets,
+where $l$ is is either an electron or a muon; the control sample for the the $t\bar{t}$+jets background is a sample 
+with an electron, a muon and 2 jets;
+\item suppressing all other backgrounds
+\end{itemize}
+The cuts that define the skim have been chosen as:
+\begin{itemize}
+\item $N_l \equiv N_e + N_{\mu} \ge 2$, where $N_e (N_{\mu})$ is the number of reconstructed electrons (muons)
+with $P_T>20~$GeV and without ID or isolation requirements applied; this cut suppresses events with low 
+lepton multiplicity and low lepton $P_T$, such as QCD, W+jets and $t\bar{t}$ fully hadronic decays;
+\item $N_{\mathrm{obj}} \ge 4$, where $N_{\mathrm{obj}} \equiv N_l + N_{\mathrm{jet}}$; $N_l$ is defined as above, and
+$N_{\mathrm{jet}}$ is the number of the jets with a raw (i.e. without jet energy corrections) $P_T > 10~$GeV and without 
+any electron with $P_T > 20~$GeV within a cone of $\Delta R=0.1$; this cut suppresses $Z \rightarrow ll$ and 
+$Z \rightarrow ll$+~1~jet while preserving $Z \rightarrow ll$+~2~(or more)~jets.
+\end{itemize}
+
+Number of events in the skimmed sample with 100 $pb^{-1}$ of data, and 
+efficiency of the skim for signal and background are shown in the second line (``Skim'') 
+of Tables
+\ref{tab:effic-MLQ400}, 
+\ref{tab:effic-ttbar}, 
+\ref{tab:effic-Z}, 
+\ref{tab:effic-QCD},
+\ref{tab:effic-VV} and
+\ref{tab:effic-W}.
+
+The offline selection of the eejj sample continues with the following kinematic cuts:
+%
 \begin{enumerate}
-\item at least 2 isolated electrons, one required to have $P_T>85$~GeV, 
-and the other $P_T>30$~GeV 
-\item at least 2 jets, both required to have $P_T>50$~GeV
+\item at least 2 isolated electrons, both of them required $P_T>30$~GeV 
+\item at least 2 jets, both of them required to have $P_T>50$~GeV and $|\eta|<3$
 \item $M_{ee}>100$~GeV
-\item $S_T\equiv P_T(e_1)+P_T(e_2)+P_T(j_1)+P_T(j_2)>400$~GeV
+\item $S_T\equiv P_T(e_1)+P_T(e_2)+P_T(j_1)+P_T(j_2)>f(M_{LQ})$, where $f(M_{LQ})$ is a function 
+of the hypothesized LQ mass.
 \end{enumerate}
+%
 
-The $P_T$ threshold for one electron in cut 1 is set to 5~GeV above the threshold of the EMHighEt trigger 
-in order to increase the confidence that the trigger was actually fired by a real electron in all events.
-The other electron will have a $P_T>30$~GeV as it is implicit in the definition of electron. 
+The specific values of the kinematic cuts has been determined using a cut-optimization procedure meant to
+reach the maximum potential of the analysis for excluding the existence of a LQ signal. 
+Such a procedure is described in section~\ref{sec:cutOptimization}.
+
+Cut 1 and 2 set a minimum value on the transverse momentum of electrons and jets. 
+The 2 leading electrons and 2 leading jets are used to continue the selection.
 Cut 3, where $M_{ee}$ is the invariant mass of the electron pair, removes background events from 
-$Z/\gamma$+jets events as shown in Figure~\ref{fig:Mee_St_distributions}-left.
+$Z/\gamma$+jets events as shown in figure~\ref{fig:Mee_St_distributions}-left.
 Cut 4, where the variable $S_T$ is defined as the scalar sum of the transverse momenta of the 
-2 electrons and 2 jets with highest $P_{T}$ of the event, 
-is applied following the approach of the experiment $D0$ in 
+2 electrons and 2 jets, is applied following the approach of the experiment $D0$ in 
 \cite{Abazov:2001mx}. In that paper, an event selection optimization as a function of
 the combinations of several kinematic variables has shown that $S_T$ is the most powerful one 
 and little is gained by adding cuts on other variables. The distribution of $S_T$ for the present
-analysis is shown in Figure~\ref{fig:Mee_St_distributions}-right.
+analysis is shown in figure~\ref{fig:Mee_St_distributions}-right.
 
+Once the eejj sample is selected, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
+For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
+of the two electron-jet pairs is chosen.
 
 Once the eejj sample is built, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
 For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
 of the two electron-jet pairs is chosen. 
-The resulting $M_{ej}$ distribution is shown in Figure~\ref{fig:Mej_allComb} for the signal and remaining backgrounds. 
-A detailed study of the optimization of the selection criteria, and of alternative algorithms to identify the best candidate 
-electron-jet combinations will be performed in future upgrades of this analysis.
+The resulting $M_{ej}$ distribution after the full selection is shown in figure~\ref{fig:Mej_allComb} for the signal and backgrounds. 
 
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{\includegraphics{plots/UMD.eps}} &
-      \resizebox{7.5cm}{!}{\includegraphics{plots/UMD.eps}} \\
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mee_eejj_LQ400_100pb.eps}} &
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/ST_eejj_LQ400_100pb.eps}} \\
     \end{tabular}
     \caption{\small \sl Left: invariant mass of the electron pair, $M_{ee}$. 
              Right: scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
-	     In each histogram, the distributions for the signal (for leptoquark mass 250 and 650~GeV) and the 
-	     relevant backgrounds are shown after applying all cuts except the one involving the 
-	     plotted variable. 
-	     The background histograms are summed on top of each other.
-	     The histogram labeled with ``Others'' contains: 1) for $M_{ee}$, $W$+jets (33\%), 
-	     $WW$ (11\%), $ZZ$ (20\%), and $WZ$ (36\%) events; 2) for $S_{T}$, $W$+jets (57\%), 
-	     $WW$ (19\%), $ZZ$ (8\%), $WZ$ (14\%), and $\gamma$+jet (2\%) events.
-	     With the available MC statistics, no QCD multi-jet events pass 
-	     the selection.}
-	     %Arrows indicate the cut subsequently applied.
+	     In each histogram, the distributions for the signal with $M_{LQ}=400~$GeV 
+	     and the contributing backgrounds 
+	     (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}) are shown after 
+	     applying all cuts except the one involving the plotted variable. 
+	     All histograms are summed on top of each other.
+	     }
     \label{fig:Mee_St_distributions}
   \end{center}
 \end{figure}
@@ -392,57 +427,57 @@ electron-jet combinations will be performed in future upgrades of this analysis.
 
 \begin{figure}[htbp]
   \begin{center}
-    \resizebox{10cm}{!}{\includegraphics{plots/UMD.eps}}
-    \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, of the electron-jet pairs 
-      with smaller $\Delta M_{ej}$
-      for signal (at 250~GeV and 650~GeV LQ mass) and backgrounds. 
+    \begin{tabular}{cc}
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb_LinScale.eps}} & 
+      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb.eps}} \\
+    \end{tabular}
+    \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, 
+      of the electron-jet pairs with smaller $\Delta M_{ej}$ for the signal with $M_{LQ}=400~$GeV and the contributing backgrounds 
+      (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}). 
       The complete event selection has been applied.
-      The background histograms are summed on top of each other.
-      The histogram labeled with ``Others'' contains $W$+jets (65\%), 
-      $WW$ (20\%), $ZZ$ (8\%), and $WZ$ (7\%) events. 
-      With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass 
-      the selection.}
+      All histograms are summed on top of each other. 
+      The plot is shown in linear and log scale on the left- and right-hand-side, respectively. 
+      }
     \label{fig:Mej_allComb}
   \end{center}
 \end{figure}
 
-The efficiency of each selection cut is shown in Table \ref{tab:selection_effic_250} 
-for a LQ sample with a mass of 250 GeV.  
+
+The efficiency of each selection cut is shown in Table \ref{tab:effic-MLQ400} 
+for a LQ sample with a mass of 400 GeV. 
+
+
+\begin{table}[htbp] 
+\begin{center} 
+\begin{tabular}{|c|c|c|c|} 
+\hline\hline 
+ Cut & $N_{evt}$ passed for $100pb^{-1}$ & $\varepsilon_{rel}$ & $\varepsilon_{abs}$ \\ 
+\hline\hline 
+None       &        7.50e+01       $~\pm~$       0.00e+00        &        1.0e+00       $~\pm~$       0.0e+00        &        1.0e+00       $~\pm~$       0.0e+00       \\       
+       Skim       &        6.80e+01       $~\pm~$       9.00e-02        &        9.1e-01       $~\pm~$       1.3e-03        &        9.1e-01       $~\pm~$       1.2e-03       \\       
+       2 ele $P_T>30~$GeV       &        6.68e+01       $~\pm~$       9.00e-02        &        9.8e-01       $~\pm~$       1.9e-03        &        8.9e-01       $~\pm~$       1.2e-03       \\       
+       2 ele (ID+Iso) $P_T>30~$GeV       &        5.01e+01       $~\pm~$       1.40e-01        &        7.5e-01       $~\pm~$       3.1e-03        &        6.7e-01       $~\pm~$       1.9e-03       \\       
+       2 jets (Cleaned),$P_T>$50~GeV,$|\eta|<$3       &        4.69e+01       $~\pm~$       1.40e-01        &        9.4e-01       $~\pm~$       4.1e-03        &        6.3e-01       $~\pm~$       1.9e-03       \\       
+       $M_{ee}>$100~GeV       &        4.49e+01       $~\pm~$       1.50e-01        &        9.6e-01       $~\pm~$       4.5e-03        &        6.0e-01       $~\pm~$       1.9e-03       \\       
+       $S_T>$620~GeV       &        3.90e+01       $~\pm~$       1.50e-01        &        8.7e-01       $~\pm~$       5.1e-03        &        5.2e-01       $~\pm~$       2.0e-03       \\       
+          \hline\hline 
+\end{tabular} 
+\end{center} 
+\caption{Sample of $M_{LQ}=400~$GeV (FullSim): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
+\label{tab:effic-MLQ400} 
+\end{table} 
+
+
+
+ 
 Table~\ref{tab:selection_effic_ttbar} shows the number of events selected by each cut 
 for $t\bar{t}$ and $Z/\gamma$+jet events, which are the dominant backgrounds in the eejj sample. 
 A summary of the number of selected signal and background events expected in 100 pb$^{-1}$ of data 
 is reported in Table \ref{tab:EventSelSummary}. 
-The overall signal selection efficiencies 
-are around 30-50\% for the LQ masses investigated. 
-After the described event selection, the dominant background 
-contributions are $t\bar{t}$ and $Z/\gamma$+jets. 
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\hline
- & $N_{ev}$ $100pb^{-1}$ & $\varepsilon$ \\
-\hline
-\hline
-
-no cut &1400 $\pm$ 44& - \\
-+ hlt (HE or VHE) &1121 $\pm$ 40 & 8.01e-01 $\pm$ 1.26e-02\\
-+ 2 ele (ID) $P_{T} >30$ GeV &644 $\pm$ 30 & 5.74e-01 $\pm$ 3.36e-02\\
-+ 2 ele (ID+Iso) $P_{T} >30$ GeV &592 $\pm$ 29 & 9.20e-01 $\pm$ 6.19e-02\\
-+ 2e, 2j $P_{T}^{ele}$ ($P_{T}^{jet}$) $>$30(50) GeV &508 $\pm$ 27& 8.58e-01 $\pm$ 6.14e-02\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &506 $\pm$ 27& 9.97e-01 $\pm$ 7.41e-02\\
-+ $M_{ee} >100$ GeV& 455 $\pm$ 25& 8.98e-01 $\pm$ 6.86e-02\\
-+ $S_{T} >400$ GeV &425 $\pm$ 24& 9.35e-01 $\pm$ 7.46e-02\\
-\hline
-
-full selection efficiency& & 3.04e-01 $\pm$ 1.45e-02\\
-\hline
-\end{tabular}
-\end{center}
-\caption{\small \sl LQ sample with $M_{LQ}=250$ GeV: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $\varepsilon$ is the relative selection efficiency with respect to the previous cut. The full selection efficiency is shown in the last line.}
-\label{tab:selection_effic_250}
-\end{table}
+The overall signal selection efficiencies are around 35-65\% for the LQ masses investigated. 
+After the described event selection, the dominant background contributions 
+are $t\bar{t}$ and $Z/\gamma$+jets. Data-driven techniques to estimate these backgrounds
+are discussed in section~\ref{sec:bkgStudy}.
 
 
 
@@ -456,14 +491,13 @@ full selection efficiency& & 3.04e-01 $\pm$ 1.45e-02\\
   
 \hline
 \hline
-
-hlt (HE or VHE) &2115.9 $\pm$ 9.6 & 2466 $\pm$ 14 \\
-+ 2 ele (no Iso) pT $>30.0$ GeV &137.4 $\pm$ 2.5& 1356 $\pm$ 12 \\
-+ 2 ele (Iso) pT $>30.0$ GeV &105.4 $\pm$ 2.1& 1329 $\pm$ 12  \\
-+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &49.6 $\pm$ 1.5& 124.7 $\pm$ 3.0\\
-+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &47.2 $\pm$ 1.4& 115.7 $\pm$ 2.9\\
-+ $Mee >100.0$ GeV&40.2 $\pm$ 1.3& 10.82 $\pm$ 0.89 \\
-+ $St >400.0$ GeV &21.26 $\pm$ 0.98 & 5.10 $\pm$ 0.60 \\
+None       &        4.22e+05       $~\pm~$       0.00e+00        &    4.22e+05       $~\pm~$       0.00e+00          \\       
+Skim       &        9.01e+03       $~\pm~$       5.67e+01        &     9.01e+03       $~\pm~$       5.67e+01   \\       
+2 ele $P_T>30~$GeV&        2.65e+03       $~\pm~$       3.10e+01        & 2.65e+03       $~\pm~$       3.10e+01        &        2.9e-01       $~\pm~$       1.3e-02     \\       
+2 ele (ID+Iso) $P_T>30~$GeV&        2.02e+03       $~\pm~$       2.70e+01        &      \\       
+2 jets (Cleaned),$P_T>$50~GeV,$|\eta|<$3&        3.28e+02       $~\pm~$       1.09e+01        &   1.65e+00       $~\pm~$       1.40e-01        \\       
+$M_{ee}>$100~GeV&        2.29e+01       $~\pm~$       2.89e+00        &   8.00e-01       $~\pm~$       1.00e-01    \\       
+$S_T>$620~GeV&        7.30e-01       $~\pm~$       5.20e-01        &    9.00e-02       $~\pm~$       3.00e-02   \\       
 \hline
 \end{tabular}
 \end{center}
@@ -472,54 +506,55 @@ hlt (HE or VHE) &2115.9 $\pm$ 9.6 & 2466 $\pm$ 14 \\
 \end{table}
 
 
-
-%\begin{table}[htbp]
-%\begin{center}
-%\begin{tabular}{|c| |cc| |cc|}
-%\hline
-%\hline
-% & $t\bar{t}$ sample &              & $Z/\gamma$ sample &\\
-% & $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ &  $N_{ev}$ $100pb^{-1}$ & $N_{ev}$ \\
-%  
-%\hline
-%\hline
-%
-%hlt (HE or VHE) &2115.9 $\pm$ 9.6& 48359.0 & 2466 $\pm$ 14 & 30413 \\
-%+ 2 ele (no Iso) pT $>30.0$ GeV &137.4 $\pm$ 2.5& 3139.0 & 1356 $\pm$ 12 & 13136 \\
-%+ 2 ele (Iso) pT $>30.0$ GeV &105.4 $\pm$ 2.1& 2408.0 & 1329 $\pm$ 12 & 12830 \\
-%+ 2e, 2j pT$_{ele}$(pT$_{jet}$) $>$30.0(50.0) GeV &49.6 $\pm$ 1.5& 1117.0 & 124.7 $\pm$ 3.0& 1807 \\
-%+ $P_{T}$ $1^{st}$ ele $>$ 85 GeV &47.2 $\pm$ 1.4& 1063.0 & 115.7 $\pm$ 2.9& 1694 \\
-%+ $Mee >100.0$ GeV&40.2 $\pm$ 1.3& 1013.0 & 10.82 $\pm$ 0.89 & 157 \\
-%+ $St >400.0$ GeV &21.26 $\pm$ 0.98 & 476 & 5.10 $\pm$ 0.60 & 76 \\
-%\hline
-%\end{tabular}
-%\end{center}
-%\caption{\small \sl $t\bar{t}$ and $Z/\gamma$ samples: the first column lists the selection sequence, $N_{ev}$ $100pb^{-1}$ is the number of selected events in $100pb^{-1}$, $N_{ev}$ is the absolute number 
-%of selected events (unweighted for the cross section).}
-%\label{tab:selection_effic_ttbar}
-%\end{table}
-%
-
 \begin{table}[htbp]
 \begin{center}
-\begin{tabular}{|cccc||ccc|}
+\begin{tabular}{|lcc||cccc|}
+\hline\hline
+Signal Samples       & $S_T$ cut       & Number of Events     & Number              & of Events           & in Background    & Samples     \\
+                     & (GeV)           & in Signal Samples    & $t\bar{t}$ + N jets & $Z/\gamma$ + N jets & QCD              & VV + N jets \\ 
 \hline
-                 &   Signal&         &          & & Background & \\
-$M_{LQ}$=250 GeV & 400 GeV & 650 GeV & 1000 GeV & $t\bar{t}$  & $Z/\gamma$+jet & Others \\
-\hline
-425 $\pm$ 24 & 52.4 $\pm$ 2.5 & 3.4 $\pm$ 0.1 & 0.21 $\pm$ 0.01 & 21.3 $\pm$ 1.0 & 5.1 $\pm$ 0.6 & 1.1 $\pm$ 0.3 \\
-\hline
+$M_{LQ}=250~$GeV     & 460             & 342.06 $\pm$ 2.10    & 7.18  $\pm$ 0.57    & 2.55  $\pm$ 0.96    & 0.37 $\pm$ 0.37  & 0.21 $\pm$ 0.05 \\ 
+$M_{LQ}=250~$GeV (*) & 460             & 359.39 $\pm$ 1.36    & as above            & as above            & as above         & as above        \\
+$M_{LQ}=300~$GeV (*) & 520             & 163.37 $\pm$ 0.53    & 3.89  $\pm$ 0.42    & 1.09  $\pm$ 0.63    & 0.37 $\pm$ 0.37  & 0.15 $\pm$ 0.04 \\ 
+$M_{LQ}=400~$GeV     & 620             &  38.98 $\pm$ 0.15    & 1.46  $\pm$ 0.26    & 0.73  $\pm$ 0.52    & 0.37 $\pm$ 0.37  & 0.09 $\pm$ 0.03 \\ 
+$M_{LQ}=400~$GeV (*) & 620             &  40.41 $\pm$ 0.10    & as above            & as above            & as above         & as above        \\
+$M_{LQ}=500~$GeV (*) & 740             &  11.56 $\pm$ 0.03    & 0.69  $\pm$ 0.18    & 0.36  $\pm$ 0.36    & 0.00 $\pm$ 0.00  & 0.05 $\pm$ 0.02 \\ 
+$M_{LQ}=600~$GeV (*) & 740             &   4.04 $\pm$ 0.01    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=650~$GeV (*) & 740             &   2.43 $\pm$ 0.01    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=700~$GeV (*) & 740             &   1.49 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=800~$GeV (*) & 740             &   0.59 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=900~$GeV (*) & 740             &   0.25 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+%$M_{LQ}=1000~$GeV (*)& 740             &   0.11 $\pm$ 0.00    & as above            & as above            & as above         & as above        \\
+\hline\hline
 \end{tabular}
 \end{center}
-\caption{\small \sl Number of selected events in the eejj sample expected in 100 pb$^{-1}$ of data for signal events at different LQ masses 
-and for background events. 
-The LQ cross section rapidly falls at high LQ mass, thus 
-producing a relative decrease in the number of selected events. 
-In the background part, ``Others'' includes $W$+jet, and 
-di-boson ($WW$,$WZ$,$ZZ$) events. 
-With the available MC statistics, no QCD multi-jet and $\gamma$+jet events pass the final selection.}
+\caption{\small \sl Number events expected from LQ signal and background samples after the analysis selection for 100 pb$^{-1}$ of data.
+The cut value on the kinematic variable $S_T$ depends on the LQ mass, and it is indicated in the second column.
+Data samples from FullSim Monte Carlo are used for all backgrounds and for LQ masses of 250 and 400 GeV. 
+Signal samples marked by (*) are made with the FastSim Monte Carlo.
+The LQ cross section rapidly falls at high LQ mass, thus producing a relative decrease in the number of selected events. } 
 \label{tab:EventSelSummary}
 \end{table}
+
+\subsection{Cut Optimization} \label{sec:cutOptimization}
+
+Eight reconstructed variables are studied to optimize the selection of the events.
+These are the $p_T$ of each of the two leading electrons and two leading jets, $\eta$
+of the electrons, $\eta$ of the jets, the invariant mass $M_{ee}$ of the two leading electrons 
+and the $S_T$ variable, the sum of the $p_T$ of the two leading electrons and jets.
+The result of the optimization, performed under different LQ mass hypothesis, 
+indicates $|\eta^{ele}|<2.5$, which coincides with the tracker acceptance,
+and $|\eta^{jets}|<3$. The cut on invariant mass of the two electrons is found to be $M_{ee}>100$ GeV. The 
+optimal cut values for electron and jet $p_T$ are consistently the lower value in the scanned range 
+(20 GeV). However, the $p_{T}$ cut on electrons is moved to 30 GeV to match the one of the HEEP 
+selection~\cite{HEEPNOTE}; %FIXME%
+the $p_{T}$ cut on jets is moved to 50 GeV in order to reduce the effect 
+of uncertainties in the initial and final state radiation, and the uncertainties 
+on calorimeter response at the start-up. It is verified that such changes, with respect to the original 
+optimization output, have a negligible effect on the signal significance. 
+This optimization indicates also an $S_T$ cut 
+that increases with LQ mass. 
+The optimized values of $S_{T}$ cuts for different mass hypotheses are shown in Table~\ref{tab:EventSelSummary}. 
 
 
 \section{Data-driven techniques for background estimate} \label{sec:bkgStudy}
@@ -757,28 +792,28 @@ systematics involved is not yet included in this version of the analysis.
 
 \section{Conclusion}
 
-A MC-based analysis of the pair production of first generation leptoquarks that decay to
-an electron and a jet has been presented.
-The analysis strategy and detector performance description corresponds to a 100$~pb^{-1}$ scenario.
+The search for pair production of first generation leptoquarks that decay to
+an electron and a jet has been studies using a MC simulation.
+The analysis strategy and detector performance assume an integrated luminosity of 100 pb$^{-1}$ and $pp$ collisions 
+at $\sqrt{s}=10$ TeV.
 Standard CMS techniques are used for electron and jet identification. 
-A cut-based event selection has been applied and its optimization study will come in a future upgrade
-of the analysis.
-Several background sources have been studied and only two of them provide a significant contribution
-after event selection. 
-Data-driven techniques to understand the characteristics of these contributions have been developed 
-and studied.
+%Electron efficiencies will be determined from data using the Tag$\&$Pro [REF] technique. 
+An optimized cut-based event selection has been applied.
+The main expected background sources have been studied and two of them provide 
+a significant contribution after event selection. 
+Data-driven techniques to understand the characteristics of these contributions have been developed.
 
-The signal component is extracted with a log-likelihood fit that does not rely on precise knowledge
-of the level of the background but rather by exploiting the different shapes of the signal and background
-distributions. 
-The discovery potential of this analysis has been determined using a likelihood 
-ratio estimator. This has shown that, for leptoquark masses just above the Tevatron exclusion limit of 290~GeV
-\cite{d02008}, an early discovery is possible with a few $pb^{-1}$.
+The discovery and exclusion potential in the channel with two electrons plus two jets has 
+been determined using two statistical estimators suited for a counting experiment in Poissonian regime.
+Effect of the main systematic uncertainties has been studied and taken into account in the final 
+results. This study has shown that, 
+for leptoquark masses just above the Tevatron exclusion limit of 290~GeV assuming $\beta=1$, 
+an early discovery is possible with a few $pb^{-1}$ of data.
 With an integrated luminosity of 100~$pb^{-1}$, discovery should be possible up
-to LQ mass of about 500 GeV.
-The impact of the systematics on the discovery potential has been discussed.
-The procedure for setting an upper limit in absence of signal will be studied 
-in the next upgrade of the analysis.
+to leptoquark mass of about 500, 400, and 250 GeV assuming, respectively, 
+$\beta=1$, $0.5$, and $0.1$. 
+In absence of evidence of a signal, the existence of a scalar leptoquark 
+with mass lower than 600 GeV and $\beta=1$ can be excluded with 100~$pb^{-1}$ of data.
 
 
 %--------------------------------------
