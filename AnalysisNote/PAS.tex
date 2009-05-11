@@ -128,7 +128,8 @@ the official CMS software for generation (using PYTHIA version 6.227),
 simulation (based on GEANT4), digitization and reconstruction 
 %The above lines are taken from the previous version of the PAS, instead of from the note.
 and were produced as part of the official ``Summer 08'' 
-production.
+production with no misalignment or miscalibration.
+
 These FullSim samples are supplemented with
 ``Fast simulation'' (FastSim) signal samples. 
 The FastSim uses a parameterization of the 
@@ -442,14 +443,14 @@ the discovery or exclusion, as described in section~\ref{sec:cutOptimization}.
 
 The cut on $M_{ee}$, the invariant mass of the electron pair, 
 removes background events from the
-$Z/\gamma$+jets process as shown in figure~\ref{fig:Mee_St_distributions} a).
+$Z/\gamma$+jets process as shown in Figure~\ref{fig:Mee_St_distributions} a).
 The $S_T$ cut was used by the $D0$ collaboration in 
 \cite{Abazov:2001mx}. In that paper, an event 
 selection optimization that considered
 combinations of several kinematic variables 
 showed that, at Tevatron energies,  little is gained by 
 adding cuts on other variables. The distribution of $S_T$ for the present
-analysis is shown in figure~\ref{fig:Mee_St_distributions} b).
+analysis is shown in Figure~\ref{fig:Mee_St_distributions} b).
 
 
 There are two ways to combine two electrons and two jets 
@@ -459,15 +460,15 @@ between the invariant masses of the two electron-jet pairs
 ($\Delta M_{ej}$) 
 is chosen.
 The resulting $M_{ej}$ distribution after the full selection is 
-shown in figure~\ref{fig:Mej_allComb} for the signal and backgrounds. 
+shown in Figure~\ref{fig:Mej_allComb} for the signal and backgrounds. 
 
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{a)\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mee_eejj_LQ400_100pb.eps}} &
-      \resizebox{7.5cm}{!}{b)\includegraphics{plots/LQ400FullSimeejjFinalPlots/ST_eejj_LQ400_100pb.eps}} \\
+      a) \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mee_eejj_LQ400_100pb.eps}} &
+      b) \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/ST_eejj_LQ400_100pb.eps}} \\
     \end{tabular}
-    \caption{\small \sl a) invariant mass of the electron pair, $M_{ee}$. \newline b) Scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
+    \caption{\small \sl a) invariant mass of the electron pair, $M_{ee}$. b) Scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
 	     In each histogram, the distributions for the signal with $M_{LQ}=400~$GeV 
 	     and the contributing backgrounds 
 	     (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}) are shown after 
@@ -482,8 +483,8 @@ shown in figure~\ref{fig:Mej_allComb} for the signal and backgrounds.
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{a) \includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb_LinScale.eps}} & 
-      \resizebox{7.5cm}{!}{b) \includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb.eps}} \\
+      a) \resizebox{7.5cm}{!}{ \includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb_LinScale.eps}} & 
+      b) \resizebox{7.5cm}{!}{ \includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb.eps}} \\
     \end{tabular}
     \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, 
       of the electron-jet pairing with smaller $\Delta M_{ej}$, for signal with $M_{LQ}=400~$GeV and the contributing backgrounds 
@@ -619,7 +620,7 @@ The optimized values of $S_{T}$ cuts for different mass hypotheses are shown in 
 \section{Data-driven techniques for background estimate} \label{sec:bkgStudy}
 After the event selection the dominant number of SM backgrounds 
  come from $t\bar{t}$ and $Z/\gamma$+jet processes, 
-as summarized in table \ref{tab:EventSelSummary}. 
+as summarized in Table \ref{tab:EventSelSummary}. 
 Sections~\ref{sec:ttbarControlSample} and~\ref{sec:ZcontrolSample} 
 describe data-driven techniques that use control samples 
 to estimate the absolute 
@@ -645,8 +646,8 @@ used in the selection.
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{8cm}{!}{a) \includegraphics{plots/ttbarStudies/Mlj_eejj_VS_emujj_ttbar_STcut300.eps}} &
-  \resizebox{8cm}{!}{b) \includegraphics{plots/ttbarStudies/ST_eejj_VS_emujj_ttbar_STcut300.eps}} \\
+  a) \resizebox{8cm}{!}{\includegraphics{plots/ttbarStudies/Mlj_eejj_VS_emujj_ttbar_STcut300.eps}} &
+  b) \resizebox{8cm}{!}{\includegraphics{plots/ttbarStudies/ST_eejj_VS_emujj_ttbar_STcut300.eps}} \\
   \end{tabular}
   \caption{\small \sl Distributions of the lepton-jet invariant mass (a) and $S_{T}$ (b) for the eejj and the e$\mu$jj samples, for $t\bar{t}$ events.
   All baseline selection criteria  
@@ -864,7 +865,7 @@ approximately 0.4\%.  The number of events produced
 for some of the background samples, however, correspond to a much
 smaller equivalent integrated luminosity.  
 The statistical uncertainty on the number of MC events is summarized for signal and background samples 
-in table~\ref{tab:EventSelSummary} of Section~\ref{sec:eventSelection}.  
+in Table~\ref{tab:EventSelSummary} of Section~\ref{sec:eventSelection}.  
 %
 \item Uncertainties on FastSim selection efficiencies with respect to FullSim
 
@@ -934,8 +935,8 @@ for a $5\sigma$ discovery for different leptoquark mass hypotheses.
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{8cm}{!}{a. \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L5sigma_vs_m_log.eps}}
-  \resizebox{8cm}{!}{b. \includegraphics[width=0.5\textwidth]{plots/cmsPotential/L95CL_vs_m_log.eps}}
+  a) \resizebox{8cm}{!}{\includegraphics[width=0.5\textwidth]{plots/cmsPotential/L5sigma_vs_m_log.eps}}
+  b) \resizebox{8cm}{!}{\includegraphics[width=0.5\textwidth]{plots/cmsPotential/L95CL_vs_m_log.eps}}
   \end{tabular}
  \caption{\small \sl a. Integrated luminosity
 for a $5\sigma$ discovery for different leptoquark mass hypotheses assuming $\beta=1$. Solid red line includes the systematic uncertainties described in 
