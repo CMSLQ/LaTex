@@ -697,7 +697,7 @@ A control sample that can be used to
 estimate the $Z/\gamma$+jet background (eejjAtZ sample) 
 can be obtained by using the full selection criteria except reversing 
 the $M_{ee}$ cut to select events consistent with a $Z$ boson
-($80\mbox{GeV/c^2} < M_{ee} < 100\mbox{GeV/c^2}$). 
+($80\; GeV/c^2 < M_{ee} < 100\; GeV/c^2$). 
 This control sample is an almost pure sample of  
 $Z/\gamma$+jet events 
 ( less than 4\% contamination, dominated by $t\bar{t}$ events, 
@@ -741,7 +741,7 @@ N_{eejj}^{Z} = N_{eejjAtZ} \times R_{OffZ/AtZ} \quad ,
 
 where $N_{eejjAtZ}$ is the number of events in the eejjAtZ control sample, and 
 $R_{OffZ/AtZ}$ is the ratio between the number of $Z/\gamma$+jet events 
-with $M_{ee} > 100\mbox{ GeV/c^2}$ (OffZ events) and $80\mbox{ GeV/c^2} < M_{ee} < 100\mbox{ GeV/c^2}$ 
+with $M_{ee} > 100\; GeV/c^2$ (OffZ events) and $80\; GeV/c^2 < M_{ee} < 100\; GeV/c^2$ 
 (AtZ events) that have passed all the other selection criteria.
 In this analysis the value of $R_{OffZ/AtZ}$ is determined directly from MC.
 %The motivations that justify this approach are discussed below:
@@ -798,15 +798,10 @@ In this analysis the value of $R_{OffZ/AtZ}$ is determined directly from MC.
 
 \subsection{QCD Background} \label{sec:QCDBackground}
 
-The MC statistics of the QCD sample is not sufficient to perform a reasonable estimate of the contamination 
-of QCD events in the eejj sample, although it seems to confirm the expectation that it is small compared with 
-the dominant $t\bar{t}$ and $Z/\gamma$+jet backgrounds (see Table~\ref{tab:EventSelSummary}). 
-In addition, large uncertainties are expected on the cross section of QCD production at LHC start-up.
-For this reason different techniques (possibly data-driven) are preferred to estimate the QCD background.
-
-The simple approach used in this analysis is to take a QCD sample with two fake electrons and two jets (ffjj sample)
+We consider a QCD sample with two fake electrons and two jets (ffjj sample)
 that pass all the kinematic selection criteria (see Section~\ref{sec:eventSelection}), and rescale it to estimate 
-the QCD contamination in the eejj sample as
+the QCD contamination in the final sample (eejj) as
+
 %
 \begin{equation} \label{QCDRescaling}
 N_{eejj}^{QCD} = N_{ffjj}^{QCD} \times {P(e|f)}^2 \quad , 
@@ -815,24 +810,53 @@ N_{eejj}^{QCD} = N_{ffjj}^{QCD} \times {P(e|f)}^2 \quad ,
 
 where ``f'' is a reconstructed electron with loose ID requirements (all objects in the initial electron collection 
 before applying HEEP ID and Isolation), 
-``e'' is a reconstructed electron which pass all the HEEP ID and Isolation criteria (see Table~\ref{tab:HEEPselection} 
-of Section~\ref{sec:electrons}), 
+``e'' is a reconstructed electron passing all the HEEP ID and Isolation criteria (see Table~\ref{tab:HEEPselection} 
+of Section~\ref{sec:IdAndIso}), 
 $N_{eejj}^{QCD}$ ($N_{ffjj}^{QCD}$) is the number of QCD events in the eejj (ffjj) sample (control sample), 
 and $P(e|f)$ is the probability of a fake electron (f) to pass the HEEP ID and Isolation requirements (e).
-The probability $P(e|f)$ is obtained from the rate of ``f'' to ``e'' in a ffjj sample of QCD events 
-(QCD ($H_T\in[500,1000]$~$GeV/c$) is used since it's the largest contribution in the control sample) .
-The number of QCD events in the eejj and ffjj sample are calculated using 
-an $S_{T}$ cut of 460 $GeV/c$ (which is the optimized cut for LQ mass of 250 $GeV/c^2$), and assuming 100 $pb^{-1}$ of data.
 
-The probability $P(e|f)$ is found to be $\approx 2 \cdot 10^{-3}$, almost flat in the barrel region ($|\eta|<1.5$), while 
-it is increasing with $\eta$ in the endcap region, up to $\approx 2 \cdot 10^{-2}$ for $|\eta|=2.5$. 
-The average value $P(e|f) = 3.5 \cdot 10^{-3}$ is used.
-The value of $N_{ffjj}^{QCD}$ is found to be $6130 \pm 47$. The number of QCD events in the eejj sample is estimated 
-by rescaling the ffjj sample with Equation~\ref{QCDRescaling}, and it is $N_{eejj}^{QCD}=0.075$ events.
-This value is in agreement with the estimate of $0.37 \pm 0.37$ events 
-(see Table~\ref{tab:EventSelSummary}) obtained by directly applying the full eejj 
-selection on the QCD MC sample. An uncertainty of 200\% on the value of $P(e|f)$ is estimated 
-from closure tests performed with relaxed ID and Isolation cuts. 
+Table~\ref{tab:ffjjSelection} summarizes 
+the number of selected events in the ffjj sample for different QCD samples.
+An $S_{T}$ cut of 460 GeV 
+(the optimized cut for a LQ mass of 250 GeV) is used in the ffjj selection.
+The total number of ffjj events in 100 pb$^{-1}$ of data is $N_{ffjj}^{QCD}=6130 \pm 47$.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline\hline
+ $H_T$ bin (GeV)   & $N_{evt}^{sel}$ & $N_{evt}^{sel}$ for $100pb^{-1}$ & $\sigma_{LO}$ (pb) & Equivalent           \\
+                         &                 &                                  &                    & Luminosity (pb$^{-1}$) \\
+\hline\hline
+$[250,500]$              &  4              & 43.3    $\pm$ 21.6               & $400 \times 10^3$  &  9.25                \\
+$[500,1000]$             &  12431          & 4571.6  $\pm$ 40.9               & $14 \times 10^3$   &  272                 \\
+$>1000$                  &  26786          & 1515.1  $\pm$ 9.1                & $370$              &  1.77$\times 10^3$   \\
+\hline\hline
+\end{tabular}
+\end{center}
+\caption{The absolute number of events passing the ffjj selection, the number 
+of selected events rescaled to 100 $pb^{-1}$ of data, the cross section at LO 
+and the equivalent integrated luminosity of the generated sample, for each $H_T$ 
+bin of the QCD sample.  }
+\label{tab:ffjjSelection}
+\end{table}
+
+
+The probability $P(e|f)$ is obtained from the ratio of ``f'' to ``e'' in the bin  
+$H_T\in[500,1000]$~GeV, as it is the largest contribution in the control sample.
+In the barrel region ($|\eta|<1.5$), the probability $P(e|f)$ is almost flat and $\approx 2 \cdot 10^{-3}$,  
+while in the endcap region it is increasing with $\eta$, up to $\approx 2 \cdot 10^{-2}$ 
+for $|\eta|=2.5$. The average value found is $P(e|f) = 3.5 \cdot 10^{-3}$.
+A closure test performed with relaxed ID and Isolation cuts shows 
+that this method may underestimate the value of $P(e|f)$ by as much as a factor of 2,
+resulting in a $P(e|f)$ within the range
+$[3.5,7] \cdot 10^{-3}$.
+
+The number of QCD events in the final sample is therefore estimated to be 
+$0.075<N_{eejj}^{QCD}<0.3$. 
+The contamination of QCD background in the e$\mu$jj sample 
+is expected to be even smaller than eejj sample, since the probability for jets to fake muons 
+is smaller than for electrons. %FIXME REFERENCE FOR MUON FAKE RATE%
 
 \section{Systematic Uncertainties} \label{sec:Systematics}
 
@@ -1035,7 +1059,7 @@ and $\beta=1$ can be excluded with 100~$pb^{-1}$ of data.
 \bibitem{JES} {R. Harris, K. Kousouris, MC Truth L2 \& L3 Factorized Jet Corrections at CMS}, CMS AN-2008/03,
 \bibitem{PTDR} {CMS Collaboration 2007, CMS Technical Design Report, Volum II: Physics Performance} 
 J. Phys. G.: Nucl. Part. Phys. 34 995-1579, ``Luminosity Uncertainty'' at page 1500
-\bibitem{PDFRescaling} {Parton Distribution Uncertainty Determination within CMSSW - CMS AN-2009/048}, FIXME
+\bibitem{PDFRescaling} {Parton Distribution Uncertainty Determination within CMSSW - CMS AN-2009/048}, %FIXME
 \bibitem{ref:scp} S. Bityukov, N. Krasnikov, S. Erofeeva, and A. Nikitenko, Program for evaluation of significance,
   confidence intervals and limits by direct calculation of probabilities, PhyStat 2005, Oxford, UK 
   [http://cmsdoc.cern.ch/~bityukov]
