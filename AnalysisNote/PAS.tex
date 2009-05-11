@@ -589,31 +589,43 @@ Signal samples marked by (*) are made with the FastSim Monte Carlo. }
 
 \subsection{Cut Optimization} \label{sec:cutOptimization}
 
-Eight variables are studied to optimize the selection of  events,
+Eight variables are studied to optimize the selection of  events:
  the $p_T$'s of the two leading electrons and two leading jets, the 
 restriction 
 on $\eta$ for the electrons, the restriction on 
 $\eta$ for jets, the invariant mass $M_{ee}$ of the two leading electrons, 
 and  $S_T$.
-The result of the optimization for LQ's with mass of 250 $GeV/c^2$ for
-the requirement on $|\eta^{ele}|$ prefers as large a value as possible
-(2.5, the acceptance of the tracker)
-and $|\eta^{jets}|<3$. 
-The cut on the invariant mass of the two electrons 
-is optimal at  $M_{ee}>100$ $GeV/c^2$. The 
-optimal cut values for electron and jet $p_T$ are consistently 
+
+
+A first scan of the 8-dimensional parameter space is performed to find the 
+approximate optimized region for the baseline selection cuts using all background samples
+and a LQ sample with mass 250 $GeV/c^2)$.
+The combination with the highest signal significance, 
+defined as $S = N_S/\sqrt{N_S+N_B}$, is taken as the optimized set of cut values.
+The result of the optimization prefers as large a value as possible for
+the requirement on $|\eta^{ele}|$ (2.5, the acceptance of the tracker)
+and a value of $|\eta^{jets}|<3$. 
+
+The optimal cut values for electron and jet $p_T$ are consistently 
 the lowest considered value in the scanned range 
 (20 $GeV/c$). However, the $p_{T}$ cut on electrons is increased to 
 30 $GeV/c$ since the rate for jets faking electrons will have
-large uncertainties at startup~\cite{HEEPNOTE}; 
+large uncertainties at startup~\cite{HEEPNOTE}. 
 %FIXME%
-the $p_{T}$ cut on jets is increased to 50 $GeV/c$ in order to reduce the effect 
+The $p_{T}$ cut on jets is increased to 50 $GeV/c$ in order to reduce the effect 
 of uncertainties in the initial and final state radiation, and the uncertainties 
 on calorimeter response at the start-up (not considered during the
 optimization procedure).
 These changes have a negligible effect on the signal significance. 
+
+The final optimization of the $S_T$ cut, which is the most discriminating variable between signal and background, 
+is performed by minimizing the upper limit on leptoquark cross section in absence of signal observed, 
+using a Bayesian approach (described in Section~\ref{CMSpotential}). 
 This optimization indicates the $S_T$ cut 
 should increase with LQ mass. 
+The optimized values of $S_{T}$ cuts for different mass hypotheses are shown in Table~\ref{tab:EventSelSummary}. 
+The optimal cut values are found to be independent from the addition 
+of systematic uncertainties in number of signal and background events.
 The optimized values of $S_{T}$ cuts for different mass hypotheses are shown in Table~\ref{tab:EventSelSummary}. 
 
 
