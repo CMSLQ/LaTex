@@ -102,7 +102,7 @@ simulation (based on GEANT4), digitization and reconstruction.
 %The above lines are taken from the previous version of the PAS, instead of from the note.
 These samples were included in the official ``Summer 08'' production by the CMS Generators group.
 
-``Fast simulation'' (FastSim) signal samples are produced with a slightly later version of the CMS Software.
+``Fast simulation'' (FastSim) signal samples are produced with a slightly later version of the CMS software.
 The FastSim uses a parameterization of the detector response instead of using the full GEANT-based simulation.
 The FastSim samples were created during the ``Winter 09'' production campaign by the CMS Generators group.
 
@@ -229,8 +229,9 @@ extrapolated track pointing to it. This study uses the standard ``GsfElectron'' 
 Standard corrections are applied to set correctly the electromagnetic (e.m.) energy scale.
 
 The criteria used for electron identification (ID) at the reconstruction level are very loose, thereby contributing many false electrons 
-to the collection. In this analysis, the HEEP selections for electron ID and isolation~\cite{HEEPNOTE}, which are optimized for 
-electrons with energies of hundreds of GeV, have been applied in an effort to: i) keep the efficiency high for electrons 
+to the collection. In this analysis the selections variables for electron ID and isolation are those used by the High Energy Electron Pair
+ analysis group, ``HEEP'' ~\cite{HEEPNOTE}, which are optimized for 
+electrons with energies of hundreds of GeV.  These have been applied in an effort to: i) keep the efficiency high for electrons 
 from LQ decays that have high $p_{T}$, and ii) reduce the number of jets mimicking electrons.
 The definitions of the variables used in this analysis are given below:
 %
@@ -344,15 +345,8 @@ proceeds as described in sections~\ref{sec:electrons} and \ref{sec:jet}, respect
 In order to reduce the size of the of the data samples and the time to analyze them, a skim of the 
 data has been defined.
 The requirements that the skim has to satisfy have been defined considering that this skim may be needed
-for the analysis of both first and second generation leptoquark pair production. Such requirements are:
-\begin{itemize}
-\item having a high efficiency for first (events with 2 electrons and 2 jets) and second (events with 
-2 muons and 2 jets) generation leptoquark pair production; 
-\item keeping events needed for the control samples: the control sample for the Z+jets background is $Z\rightarrow l l$+ 2 jets,
-where $l$ is is either an electron or a muon; the control sample for the the $t\bar{t}$+jets background is a sample 
-with an electron, a muon and 2 jets;
-\item suppressing all other backgrounds
-\end{itemize}
+for the analysis of both first and second generation leptoquark pair production.
+
 The cuts that define the skim have been chosen as:
 \begin{itemize}
 \item $N_l \equiv N_e + N_{\mu} \ge 2$, where $N_e (N_{\mu})$ is the number of reconstructed electrons (muons)
@@ -388,13 +382,13 @@ Such a procedure is described in section~\ref{sec:cutOptimization}.
 Cut 1 and 2 set a minimum value on the transverse momentum of electrons and jets. 
 The 2 leading electrons and 2 leading jets are used to continue the selection.
 Cut 3, where $M_{ee}$ is the invariant mass of the electron pair, removes background events from 
-$Z/\gamma$+jets events as shown in figure~\ref{fig:Mee_St_distributions}-left.
+$Z/\gamma$+jets events as shown in figure~\ref{fig:Mee_St_distributions} a).
 Cut 4, where the variable $S_T$ is defined as the scalar sum of the transverse momenta of the 
 2 electrons and 2 jets, is applied following the approach of the experiment $D0$ in 
 \cite{Abazov:2001mx}. In that paper, an event selection optimization as a function of
 the combinations of several kinematic variables has shown that $S_T$ is the most powerful one 
 and little is gained by adding cuts on other variables. The distribution of $S_T$ for the present
-analysis is shown in figure~\ref{fig:Mee_St_distributions}-right.
+analysis is shown in figure~\ref{fig:Mee_St_distributions} b).
 
 Once the eejj sample is selected, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
 For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
@@ -408,11 +402,11 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mee_eejj_LQ400_100pb.eps}} &
-      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/ST_eejj_LQ400_100pb.eps}} \\
+      \resizebox{7.5cm}{!}{a)\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mee_eejj_LQ400_100pb.eps}} &
+      \resizebox{7.5cm}{!}{b)\includegraphics{plots/LQ400FullSimeejjFinalPlots/ST_eejj_LQ400_100pb.eps}} \\
     \end{tabular}
-    \caption{\small \sl Left: invariant mass of the electron pair, $M_{ee}$. 
-             Right: scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
+    \caption{\small \sl a) invariant mass of the electron pair, $M_{ee}$. \newline
+             b) Scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
 	     In each histogram, the distributions for the signal with $M_{LQ}=400~$GeV 
 	     and the contributing backgrounds 
 	     (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}) are shown after 
@@ -427,15 +421,15 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
 \begin{figure}[htbp]
   \begin{center}
     \begin{tabular}{cc}
-      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb_LinScale.eps}} & 
-      \resizebox{7.5cm}{!}{\includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb.eps}} \\
+      \resizebox{7.5cm}{!}{a) \includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb_LinScale.eps}} & 
+      \resizebox{7.5cm}{!}{b) \includegraphics{plots/LQ400FullSimeejjFinalPlots/Mej_eejj_LQ400_100pb.eps}} \\
     \end{tabular}
     \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, 
       of the electron-jet pairs with smaller $\Delta M_{ej}$ for the signal with $M_{LQ}=400~$GeV and the contributing backgrounds 
       (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}). 
       The complete event selection has been applied.
       All histograms are summed on top of each other. 
-      The plot is shown in linear and log scale on the left- and right-hand-side, respectively. 
+      The plot is shown in linear and log scale in a) and b) respectively. 
       }
     \label{fig:Mej_allComb}
   \end{center}
@@ -474,10 +468,6 @@ for $t\bar{t}$ and $Z/\gamma$+jet events, which are the dominant backgrounds in 
 A summary of the number of selected signal and background events expected in 100 pb$^{-1}$ of data 
 is reported in Table \ref{tab:EventSelSummary}. 
 The overall signal selection efficiencies are around 35-65\% for the LQ masses investigated. 
-After the described event selection, the dominant background contributions 
-are $t\bar{t}$ and $Z/\gamma$+jets. Data-driven techniques to estimate these backgrounds
-are discussed in section~\ref{sec:bkgStudy}.
-
 
 
 \begin{table}[htbp]
@@ -549,8 +539,7 @@ optimal cut values for electron and jet $p_T$ are consistently the lower value i
 selection~\cite{HEEPNOTE}; %FIXME%
 the $p_{T}$ cut on jets is moved to 50 GeV in order to reduce the effect 
 of uncertainties in the initial and final state radiation, and the uncertainties 
-on calorimeter response at the start-up. It is verified that such changes, with respect to the original 
-optimization output, have a negligible effect on the signal significance. 
+on calorimeter response at the start-up. It is verified that such changes have a negligible effect on the signal significance. 
 This optimization indicates also an $S_T$ cut 
 that increases with LQ mass. 
 The optimized values of $S_{T}$ cuts for different mass hypotheses are shown in Table~\ref{tab:EventSelSummary}. 
@@ -564,9 +553,6 @@ Sections~\ref{sec:ttbarControlSample} and~\ref{sec:ZcontrolSample}
 describe data-driven techniques used to estimate the absolute 
 normalization for these two backgrounds, and the shape of selection variable 
 distributions for $t\bar{t}$ background using control samples. 
-The methods for background estimation described here are based on data and complemented by some Monte Carlo information. 
-They are therefore particularly suited for first data taking when confidence that the MC describes
-the data well is expected to be limited.
 
 \subsection{$t\bar{t}$ background control sample} \label{sec:ttbarControlSample}
 A good control sample can be obtained by using the same selection criteria applied for the eejj sample, but 
@@ -581,10 +567,10 @@ is found also for the other reconstructed kinematic variables used in the select
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
-  \resizebox{8cm}{!}{\includegraphics{plots/ttbarStudies/Mlj_eejj_VS_emujj_ttbar_STcut300.eps}} &
-  \resizebox{8cm}{!}{\includegraphics{plots/ttbarStudies/ST_eejj_VS_emujj_ttbar_STcut300.eps}} \\
+  \resizebox{8cm}{!}{a) \includegraphics{plots/ttbarStudies/Mlj_eejj_VS_emujj_ttbar_STcut300.eps}} &
+  \resizebox{8cm}{!}{b) \includegraphics{plots/ttbarStudies/ST_eejj_VS_emujj_ttbar_STcut300.eps}} \\
   \end{tabular}
-  \caption{\small \sl Distributions of the lepton-jet invariant mass (left) and $S_{T}$ for the eejj and the e$\mu$ samples, for $t\bar{t}$ events.
+  \caption{\small \sl Distributions of the lepton-jet invariant mass (a) and $S_{T}$ (b) for the eejj and the e$\mu$ samples, for $t\bar{t}$ events.
   Baseline selection criteria (cut 1,2,3) 
   described in Section~\ref{sec:eventSelection} are applied, but the $S_{T}$ cut has been set to 300 GeV.}
   \label{fig:ttbar}
@@ -619,7 +605,7 @@ and muon reconstruction efficiencies as a function of lepton $P_{T}$. The ratio 
 using a MC FullSim sample of Z+jets events with an equivalent integrated luminosity of about 275 $pb^{-1}$.
 The value of $R(P_{T})$ is found to be between 0.85-0.95 for $30 < P_{T} < 500$ GeV.
 Once real data becomes available this ratio could be obtained with $tag\&probe$ method using $Z \rightarrow ee$ and 
-$Z \rightarrow \mu\mu$ events (see Section \ref{sec:electronEfficiency}).
+$Z \rightarrow \mu\mu$ events.
 
 \subsection{$Z/\gamma$+jet background control sample} \label{sec:ZcontrolSample}
 
@@ -627,40 +613,40 @@ A control sample for $Z/\gamma$+jet background estimation (eejjAtZ sample)
 can be obtained by using the same selection criteria applied for the eejj sample except 
 the $M_{ee}$ cut, which is modified to select events with a real $Z$ boson reconstructed 
 ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$). This control sample is an almost pure sample of  
-$Z/\gamma$+jet events as shown in Figure~\ref{fig:eejjAtZContamination} 
+$Z/\gamma$+jet events 
 ( less than 4\% contamination dominated by $t\bar{t}$ events, for $S_{T}$ cut of 300 GeV), 
 since the cross section of the process is resonant at the Z mass. 
 %the eejjAtZ sample is independent from the eejj signal sample by construction. 
 For $Z/\gamma$+jet events, the eejjAtZ sample with 100 pb$^{-1}$ of data 
 is expected to have about 129, 22, and 12 events, respectively for an $S_{T}$ cut of 300, 520, and 620 GeV.
 
-\begin{figure}[htb]
-  \begin{center}
-  \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/ZjetStudies/ST_100InVpb_eejjAtZ_looseSTcut_MeeInverted_WithLQ400.eps}} \\ 
-  \end{tabular}
-%  \caption{\small \sl Distribution of the $P_{T}$ at generator level of the electron pair ($P_{T}$ of the boson) 
-%    for $Z/\gamma$+jet events in the signal eejj sample 
-%    (cut 1,2,3,4)
-%    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
-  \caption{\small \sl Distribution of the $S_{T}$ variable for eejjAtZ sample
-    for different background components. 
-    Histogram of signal events (at 400~GeV LQ mass) is also added. 
-    Baseline selection criteria (cut 1,2) described in Section~\ref{sec:eventSelection} 
-    are applied, $S_{T}$ cut has been set to 300 GeV, 
-    cut on $M_{ee}$ is modified to select real Z bosons ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$).
-    The background histograms are summed on top of each other.
-    Black dots indicate pseudo data randomly generated accordingly with 
-    the total background distribution, and assuming 100 $pb^{-1}$ of data.}
-  \label{fig:eejjAtZContamination}
-  \end{center}
-\end{figure}
-
+%\begin{figure}[htb]
+%  \begin{center}
+%  \begin{tabular}{cc}
+%  \resizebox{10cm}{!}{\includegraphics{plots/ZjetStudies/ST_100InVpb_eejjAtZ_looseSTcut_MeeInverted_WithLQ400.eps}} \\ 
+%  \end{tabular}
+%%  \caption{\small \sl Distribution of the $P_{T}$ at generator level of the electron pair ($P_{T}$ of the boson) 
+%%    for $Z/\gamma$+jet events in the signal eejj sample 
+%%    (cut 1,2,3,4)
+%%    and the control sample (cut 1,2,4 + $80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), for $Z/\gamma$+jet events.}
+%  \caption{\small \sl Distribution of the $S_{T}$ variable for eejjAtZ sample
+%    for different background components. 
+%    Histogram of signal events (at 400~GeV LQ mass) is also added. 
+%    Baseline selection criteria (cut 1,2) described in Section~\ref{sec:eventSelection} 
+%    are applied, $S_{T}$ cut has been set to 300 GeV, 
+%    cut on $M_{ee}$ is modified to select real Z bosons ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$).
+%    The background histograms are summed on top of each other.
+%    Black dots indicate pseudo data randomly generated accordingly with 
+%    the total background distribution, and assuming 100 $pb^{-1}$ of data.}
+%  \label{fig:eejjAtZContamination}
+%  \end{center}
+%\end{figure}
+%
 The rescaling of the control sample can be obtained with a hybrid method which combines the eejjAtZ data with 
 MC information. Once real data is available the eejjAtZ sample can be selected. 
 The number of $Z/\gamma$+jet events in the eejj signal sample ($M_{ee}>100$ GeV) can be estimated by
 
-\begin{equation} \label{formula:NeejFromNemujj}
+\begin{equation} \label{formula:NeejFromRoffZatZ}
 N_{eejj}^{Z} = N_{eejjAtZ} \times R_{OffZ/AtZ} \quad , 
 \end{equation}
 
@@ -741,7 +727,7 @@ N_{eejj}^{QCD} = N_{ffjj}^{QCD} \times {P(e|f)}^2 \quad ,
 where ``f'' is a reconstructed electron with loose ID requirements (all objects in the initial electron collection 
 before applying HEEP ID and Isolation), 
 ``e'' is a reconstructed electron which pass all the HEEP ID and Isolation criteria (see Table~\ref{tab:HEEPselection} 
-of Section~\ref{sec:IdAndIso}), 
+of Section~\ref{sec:electrons}), 
 $N_{eejj}^{QCD}$ ($N_{ffjj}^{QCD}$) is the number of QCD events in the eejj (ffjj) sample (control sample), 
 and $P(e|f)$ is the probability of a fake electron (f) to pass the HEEP ID and Isolation requirements (e).
 The probability $P(e|f)$ is obtained from the rate of ``f'' to ``e'' in a ffjj sample of QCD events 
@@ -870,9 +856,7 @@ uncertainties described in Section~\ref{sec:Systematics}. Shaded region is exclu
 
 For setting upper limits in the absence of the leptoquark signal, the Bayesian approach~\cite{ref:bayes} is used. 
 Figure~\ref{fig:discovery} b. 
-shows the required integrated luminosity for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Figure~\ref{fig:exclusion_xs}
-shows the expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
-of integrated luminosity. 
+shows the required integrated luminosity for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. 
 
 
 \section{Conclusion}
