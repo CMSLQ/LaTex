@@ -9,17 +9,30 @@
 % (optimization of selection criteria)
 % List of selection criteria (Mee, St, etc.)
 
-The basic strategy to identify the existence of a particle that decays to a jet and an electron 
-is to study the invariant mass of the electron-jet pairs in the events. 
-The signal of a leptoquark would appear as a bump in the distribution of this invariant mass.
-The decay of a particle to a jet and a lepton is forbidden in the standard model.  
-Thus, a peak at the mass of the leptoquark would be the only resonance in this distribution. 
-The electron-jet combinations of the background events have a different shape than that 
-of the leptoquark resonance. 
-Nonetheless, the number of background events could dominate over the number of signal events.  
-The cut-based selection described in this section has been made in order to minimize the number 
-of background events selected while retaining a high signal efficiency.
+%Sarah's re-write - the method is no longer to look for a bump in Mej, but to look for excess events.
+The basic strategy for discovering a 
+particle that decays to a light quark jet and an electron 
+is to look for events with large $S_T$, defined as
+$S_T\equiv P_T(e_1)+P_T(e_2)+P_T(j_1)+P_T(j_2)$.
+We can use
+the invariant mass of the electron-jet pairs in the events to help
+confirm the source of these events, as a leptoquark would produce 
+a bump in the distribution of this invariant mass.
+The following criteria are used to select candidate signal events
+with high efficiency
+while minimizing backgrounds.
 
+%The basic strategy to identify the existence of a particle that decays to a jet and an electron 
+%is to study the invariant mass of the electron-jet pairs in the events. 
+%The signal of a leptoquark would appear as a bump in the distribution of this invariant mass.
+%The decay of a particle to a jet and a lepton is forbidden in the standard model.  
+%Thus, a peak at the mass of the leptoquark would be the only resonance in this distribution. 
+%The electron-jet combinations of the background events have a different shape than that 
+%of the leptoquark resonance. 
+%Nonetheless, the number of background events could dominate over the number of signal events.  
+%The cut-based selection described in this section has been made in order to minimize the number 
+%of background events selected while retaining a high signal efficiency.
+%
 The decay of a leptoquark and an anti-leptoquark produces two high energy electrons and 
 two high energy jets.
 The online selection of candidate events is made by either the HLT trigger ``HLT\_Photon15\_L1R'' 
@@ -76,17 +89,29 @@ The specific values of the kinematic cuts has been determined using a cut-optimi
 reach the maximum potential of the analysis for excluding the existence of a LQ signal. 
 Such a procedure is described in section~\ref{sec:cutOptimization}.
 
-Cut 1 and 2 set a minimum value on the transverse momentum of electrons and jets. 
-The 2 leading electrons and 2 leading jets are used to continue the selection.
-Cut 3, where $M_{ee}$ is the invariant mass of the electron pair, removes background events from 
-$Z/\gamma$+jets events as shown in figure~\ref{fig:Mee_St_distributions}-left.
-Cut 4, where the variable $S_T$ is defined as the scalar sum of the transverse momenta of the 
-2 electrons and 2 jets, is applied following the approach of the experiment $D0$ in 
-\cite{Abazov:2001mx}. In that paper, an event selection optimization as a function of
-the combinations of several kinematic variables has shown that $S_T$ is the most powerful one 
-and little is gained by adding cuts on other variables. The distribution of $S_T$ for the present
-analysis is shown in figure~\ref{fig:Mee_St_distributions}-right.
+%Sarah's re-writes
+The cut on $M_{ee}$, the invariant mass of the electron pair, 
+removes background events from the
+$Z/\gamma$+jets process as shown in Figure~\ref{fig:Mee_St_distributions} a).
+The $S_T$ cut was used by the $D0$ collaboration in 
+\cite{Abazov:2001mx}. In that paper, an event 
+selection optimization that considered
+combinations of several kinematic variables 
+showed that, at Tevatron energies,  little is gained by 
+adding cuts on other variables. The distribution of $S_T$ for the present
+analysis is shown in Figure~\ref{fig:Mee_St_distributions} b).
 
+%Cut 1 and 2 set a minimum value on the transverse momentum of electrons and jets. 
+%The 2 leading electrons and 2 leading jets are used to continue the selection.
+%Cut 3, where $M_{ee}$ is the invariant mass of the electron pair, removes background events from 
+%$Z/\gamma$+jets events as shown in figure~\ref{fig:Mee_St_distributions}-left.
+%Cut 4, where the variable $S_T$ is defined as the scalar sum of the transverse momenta of the 
+%2 electrons and 2 jets, is applied following the approach of the experiment $D0$ in 
+%\cite{Abazov:2001mx}. In that paper, an event selection optimization as a function of
+%the combinations of several kinematic variables has shown that $S_T$ is the most powerful one 
+%and little is gained by adding cuts on other variables. The distribution of $S_T$ for the present
+%analysis is shown in figure~\ref{fig:Mee_St_distributions}-right.
+%
 Once the eejj sample is selected, there are two ways to combine two electrons and two jets to make two electron-jet pairs. 
 For each event, the combination with the minimum difference, $\Delta M_{ej}$, between the invariant masses, $M_{ej}$, 
 of the two electron-jet pairs is chosen\footnote{
