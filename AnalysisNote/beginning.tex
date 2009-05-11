@@ -21,19 +21,35 @@
 
 
   \begin{abstract}
-    The discovery potential for pair production of first generation scalar leptoquarks that 
-    decay to an electron and quark is investigated 
-    at the CMS experiment using Monte Carlo samples produced with a full simulation of detector response.  
-    The analysis strategy assumes an integrated luminosity of 100 pb$^{-1}$ and $pp$ collisions 
+%Sarah's re-write
+    We investigate the discovery potential of the CMS experiment
+for pair production of first generation scalar leptoquarks that 
+    decay to an electron and quark, assuming 
+an integrated luminosity of 100 pb$^{-1}$ and $pp$ collisions 
     at $\sqrt{s}=10$ TeV.
-    Reconstruction and identification of high energy electrons and jets, 
-    and optimized selection of events are discussed.
-    The electron-jet invariant mass distribution is reconstructed
-    and used to identify the possible presence of a leptoquark signal.
-    Data-driven techniques are discussed to determine the main standard model backgrounds through use of 
-    control samples. The CMS discovery and exclusion potentials using a counting experiment approach 
-    are quantified for different leptoquark mass hypotheses.
+    We discuss 
+   reconstruction and identification of high energy electrons and jets, 
+    and optimization of the event selection.
+    Data-driven techiques are used to determine 
+the main standard model backgrounds. 
+The CMS discovery and exclusion potentials for different leptoquark 
+mass hyphotheses are presented.
 
+
+
+%    The discovery potential for pair production of first generation scalar leptoquarks that 
+%    decay to an electron and quark is investigated 
+%    at the CMS experiment using Monte Carlo samples produced with a full simulation of detector response.  
+%    The analysis strategy assumes an integrated luminosity of 100 pb$^{-1}$ and $pp$ collisions 
+%    at $\sqrt{s}=10$ TeV.
+%    Reconstruction and identification of high energy electrons and jets, 
+%    and optimized selection of events are discussed.
+%    The electron-jet invariant mass distribution is reconstructed
+%    and used to identify the possible presence of a leptoquark signal.
+%    Data-driven techniques are discussed to determine the main standard model backgrounds through use of 
+%    control samples. The CMS discovery and exclusion potentials using a counting experiment approach 
+%    are quantified for different leptoquark mass hypotheses.
+%
 %The leptoquarks are assumed to decay exclusively to electrons and quarks.  Detailed explanations of the discovery techniques and data driven methods to extract the signal from background events are given.  
 %Both exclusion limits and discovery potential are discussed for masses of the leptoquark ranging from around the current limit of 251 GeV to 1 TeV.
   \end{abstract} 
@@ -43,13 +59,21 @@
 \setcounter{page}{2}%JPP
 
 \section{Introduction}
+%Sarah's re-write
+This note describes analysis techniques 
+appropriate for the
+search for first generation scalar leptoquarks 
+using data from the CMS experiment taken with 5 TeV proton beams and 
+corresponding to 100 pb$^{-1}$ of integrated luminosity.
+The methods described are evaluated using 
+Monte Carlo (MC) simulations.
 
-This note describes the analysis techniques that will be used to search for evidence of 
-first generation scalar leptoquarks 
-at the CMS experiment. 
-The methods described are evaluated using Monte Carlo (MC) simulations assuming a start-up scenario of LHC
-with about 100 pb$^{-1}$ of integrated luminosity and 5 TeV proton beams.
-
+%This note describes the analysis techniques that will be used to search for evidence of 
+%first generation scalar leptoquarks 
+%at the CMS experiment. 
+%The methods described are evaluated using Monte Carlo (MC) simulations assuming a start-up scenario of LHC
+%with about 100 pb$^{-1}$ of integrated luminosity and 5 TeV proton beams.
+%
 Leptoquarks (LQ) are new exotic particles conjectured to have both baryon and lepton number 
 and primary decays into leptons and quarks. 
 Several models of physics beyond the standard model (SM) predict the existence of leptoquarks,
@@ -62,35 +86,93 @@ correspond to the families of quarks and leptons in the SM.  Intergenerational c
 leptoquarks is highly constrained by the experimental limits on flavor-changing neutral currents. 
 %FIXME% \cite{ADDREFERENCE}. 
 
-The parameters of the model are i) $M_{LQ}$, the LQ mass, ii) $\beta$, the branching fraction for the decay 
-$\mbox{LQ} \rightarrow l + q$, where $l$ is a charged lepton and $q$ is a quark, and
-iii) $\lambda_{\mbox{LQ}lq}$, the coupling between LQ, lepton and quark ($\mbox{LQ}-l-q$ vertex). 
-The complementary decay of a branching ratio 1-$\beta$ describes the decay $\mbox{LQ} \rightarrow \nu + q$, 
-where $\nu$ is a weak-isospin partner of the lepton.
-Results from HERA on upper limits for LQ production restrict  
-$\lambda_{\mbox{LQ}lq}$ to relatively weak coupling\cite{hera}. For example, fixing the parameter 
-$\lambda_{\mbox{LQ}lq} = \lambda_{EM} \approx 0.3$, leads to 
-a theoretical relative width for the LQ of ($\Gamma_{LQ}/M_{LQ}$) around 0.2\%. 
-Consequently, $\Gamma_{LQ}/M_{LQ}$ will not be able to be measured at the LHC, since 
-the width of any peak on the mass distribution of the LQ will be dominated by detector resolution.  
+%Sarah's re-write
+The parameters of the model are i) $M_{LQ}$, the LQ mass, ii) $\beta$, 
+the branching fraction 
+$\mbox{LQ} \rightarrow l + q$
+where $l$ is a charged lepton and $q$ is a quark, and
+iii) $\lambda_{\mbox{LQ}lq}$, the coupling between the LQ, lepton and 
+quark ($\mbox{LQ}-l-q$ vertex). 
+The complementary decay $\mbox{LQ} \rightarrow \nu + q$, 
+where $\nu$ is a weak-isospin partner of the lepton,
+has branching ratio 1-$\beta$.
+Results from the experiments at the HERA accelerator
+give upper limits on the LQ production cross section that restrict  
+$\lambda_{\mbox{LQ}lq}$ to be small\cite{hera}. 
+For example, fixing the parameter 
+$\lambda_{\mbox{LQ}lq} = \lambda_{EM} \approx 0.3$ leads to 
+$\Gamma_{LQ}/M_{LQ}$ of around 0.2\%. 
+Consequently, $\Gamma_{LQ}/M_{LQ}$ can not be measured at the LHC, 
+since 
+the width the LQ mass distribution will be 
+dominated by detector resolution.  
 
-Experiments at the Tevatron have placed the most stringent lower limit on the mass of first-generation scalar 
-leptoquarks of approximately 290 GeV (assuming $\beta=1$ for the electron channel) \cite{d02008},\cite{cdf2005}.
-At the LHC, the pair production of leptoquarks will take place mainly through gluon-gluon fusion and 
-quark-antiquark annihilation, yielding $LQ + \overline{LQ}$. 
-The cross sections for the two sub-processes are almost independent on the value of 
-$\lambda_{\mbox{LQ}lq}$, since there is no $\mbox{LQ}-l-q$ vertex in the Feynman diagram for LQ pair production 
-at leading order. At lower rate, the production of single leptoquark in association with a lepton is also possible via quark-gluon 
-fusion, yielding $LQ+ l$ or $LQ+ \nu$ (and relative final states with antiparticles). The cross section of single leptoquark production
-becomes comparable to the one of pair production only for $M_{LQ}\approx 1$ TeV \cite{LQSingleAndPairProd}, 
-which is well above the experimental reach of this start-up analysis (focused on the first 100 pb$^{-1}$ of data at $\sqrt{s}=10$ TeV).  
-This note examines the signal for pair production of first-generation scalar leptoquarks that decay into electrons and 
+
+%The parameters of the model are i) $M_{LQ}$, the LQ mass, ii) $\beta$, the branching fraction for the decay 
+%$\mbox{LQ} \rightarrow l + q$, where $l$ is a charged lepton and $q$ is a quark, and
+%iii) $\lambda_{\mbox{LQ}lq}$, the coupling between LQ, lepton and quark ($\mbox{LQ}-l-q$ vertex). 
+%The complementary decay of a branching ratio 1-$\beta$ describes the decay $\mbox{LQ} \rightarrow \nu + q$, 
+%where $\nu$ is a weak-isospin partner of the lepton.
+%Results from HERA on upper limits for LQ production restrict  
+%$\lambda_{\mbox{LQ}lq}$ to relatively weak coupling\cite{hera}. For example, fixing the parameter 
+%$\lambda_{\mbox{LQ}lq} = \lambda_{EM} \approx 0.3$, leads to 
+%a theoretical relative width for the LQ of ($\Gamma_{LQ}/M_{LQ}$) around 0.2\%. 
+%Consequently, $\Gamma_{LQ}/M_{LQ}$ will not be able to be measured at the LHC, since 
+%the width of any peak on the mass distribution of the LQ will be dominated by detector resolution.  
+%
+
+%Sarah's re-write
+Experiments at the Tevatron have placed the most stringent lower 
+limit of approximately 290 $GeV/c^2$ (assuming $\beta=1$ for the electron channel) 
+on the mass of first-generation scalar leptoquarks \cite{d02008},\cite{cdf2005}.
+At the LHC, pair production of leptoquarks takes place 
+mainly through gluon-gluon fusion and 
+quark-antiquark annihilation. 
+The cross sections for both these sub-processes are almost 
+independent of the value of 
+$\lambda_{\mbox{LQ}lq}$, since there is 
+no $\mbox{LQ}-l-q$ vertex in the Feynman diagram for LQ pair production 
+at leading order. 
+The production of a single leptoquark in association with a lepton 
+is also possible via quark-gluon 
+fusion at a lower rate. 
+The cross section for single leptoquark production
+becomes comparable to the one for pair production only 
+for $M_{LQ}\approx 1$ TeV \cite{LQSingleAndPairProd}, 
+which is well above the experimental reach of this start-up analysis.  
+
+%Experiments at the Tevatron have placed the most stringent lower limit on the mass of first-generation scalar 
+%leptoquarks of approximately 290 GeV (assuming $\beta=1$ for the electron channel) \cite{d02008},\cite{cdf2005}.
+%At the LHC, the pair production of leptoquarks will take place mainly through gluon-gluon fusion and 
+%quark-antiquark annihilation, yielding $LQ + \overline{LQ}$. 
+%The cross sections for the two sub-processes are almost independent on the value of 
+%$\lambda_{\mbox{LQ}lq}$, since there is no $\mbox{LQ}-l-q$ vertex in the Feynman diagram for LQ pair production 
+%at leading order. At lower rate, the production of single leptoquark in association with a lepton is also possible via quark-gluon 
+%fusion, yielding $LQ+ l$ or $LQ+ \nu$ (and relative final states with antiparticles). The cross section of single leptoquark production
+%becomes comparable to the one of pair production only for $M_{LQ}\approx 1$ TeV \cite{LQSingleAndPairProd}, 
+%which is well above the experimental reach of this start-up analysis (focused on the first 100 pb$^{-1}$ of data at $\sqrt{s}=10$ TeV).  
+%
+
+%Sarah's re-writes
+This note examines the potential reach of a search for
+pair production of first-generation 
+scalar leptoquarks that decay into electrons and 
 (light) quarks with a branching ratio $\beta=1$. 
-For this scenario, the experimental signature of a LQ event is quite striking with two 
-high transverse momentum ($p_T$) electrons and two high $p_T$ jets (eejj channel), 
-whose combination yields a peak in the electron-jet invariant mass 
-spectrum that corresponds to the LQ mass. No true missing transverse momentum is expected in LQ events.
+This process yields an experimental signature that
+is quite striking, with two 
+high transverse momentum ($p_T$) electrons 
+and two high $p_T$ jets (eejj channel), and
+a peak in the electron-jet invariant mass 
+spectrum that corresponds to the LQ mass. 
+No true missing transverse momentum is expected in LQ events.
 
+%This note examines the signal for pair production of first-generation scalar leptoquarks that decay into electrons and 
+%(light) quarks with a branching ratio $\beta=1$. 
+%For this scenario, the experimental signature of a LQ event is quite striking with two 
+%high transverse momentum ($p_T$) electrons and two high $p_T$ jets (eejj channel), 
+%whose combination yields a peak in the electron-jet invariant mass 
+%spectrum that corresponds to the LQ mass. No true missing transverse momentum is expected in LQ events.
+%
 This note is organized as follows. 
 The signal and background MC samples used in this study are described in Section \ref{sec:MCSamples}.
 The online requirements and the trigger efficiency for selecting LQ events are discussed in Section \ref{sec:trig}.
