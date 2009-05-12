@@ -50,20 +50,20 @@ The Level 2 jet energy corrections comprise the
 The Level 3 corrections are the ``absolute jet corrections'', that aim to correct  the jet energies 
 %in the region of $\eta < 1.3$ 
 back to the particle level energy, to assure agreement in energy with the generated MC samples. 
-Figure~\ref{fig:CorrRatios}(a) shows the ratio of distributions in jet energies after and before implementing  
-the combination of absolute and relative corrections.  
-The relative and absolute corrections are the standard CMS Software corrections recommended for all jet analyzes,
-and on average change the energies by 20\%.
-
-In addition, Level 5 corrections are applied to take account of the flavor of the originating parton.
-Figure~\ref{fig:CorrRatios}(b) shows the mean additional correction factor (beyond the relative and absolute corrections) 
-for the jets based on the corrections of light quarks, which change the overall energy of jets by only a few percent.
+%Figure~\ref{fig:CorrRatios}(a) shows the ratio of distributions in jet energies after and before implementing  
+%the combination of absolute and relative corrections.  
+The relative and absolute corrections are the standard CMS Software corrections recommended for all jet analyzes.
+%and on average change the energies by 20\%.
 
 The relative and absolute corrections are based on samples enriched in gluon jets (as in QCD multi jet events) but jets from 
-first-generation LQ decays arise from light quarks.  Since the gluon-jets have
-a softer fragmentation function, the level 2 and 3 corrections tend to overcompensate the loss of energy when applied to jets originated 
-from quarks. This is the reason why the level 5 corrections for light quarks decrease the average energy of the jet, 
-as shown in Figure~\ref{fig:CorrRatios}-right. 
+first-generation LQ decays arise from light quarks. 
+For this reason, Level 5 corrections are applied to take account of the flavor of the originating parton.
+%Figure~\ref{fig:CorrRatios}(b) shows the mean additional correction factor (beyond the relative and absolute corrections) 
+%for the jets based on the corrections of light quarks, which change the overall energy of jets by only a few percent.
+%Since the gluon-jets have a softer fragmentation function, the level 2 and 3 corrections tend to overcompensate the loss 
+%of energy when applied to jets originated from quarks. 
+%This is the reason why the level 5 corrections for light quarks decrease the average energy of the jet, 
+%as shown in Figure~\ref{fig:CorrRatios}-right. 
 
 The optional Level-4 corrections aim to correct the fraction of energy deposited in the EM section of the calorimeter, 
 a quantity not used in this analysis, and therefore not applied.
@@ -89,20 +89,20 @@ a quantity not used in this analysis, and therefore not applied.
 
 %FIXME % put new plots of JES corrections (Ellie)
 
-\begin{figure}
-  \begin{center}
-  \begin{tabular}{cc}
-    a.
-  \resizebox{8cm}{!}{\includegraphics{plots/JetPlots/L23oRaw.eps}}                  &
-   b.
-  \resizebox{8cm}{!}{\includegraphics{plots/JetPlots/L5oL23.eps}} \\
-  \end{tabular}
-  \caption{\small \sl a - Mean ratio of jet energy after the level 2 and 3 corrections to that with no correction as a function of $P_T$. b 
-    - Ratio of jet energy after the level 2,3, and 5 corrections to that with only level 2 and 3 corrections as a function of $P_T$.  
-    Plots show the average correction for all jets in each $P_T$ bin.  These jets are taken from a LQ sample with a mass of 400 GeV.}
-    \label{fig:CorrRatios}
-  \end{center}
-\end{figure}
+%% \begin{figure}
+%%   \begin{center}
+%%   \begin{tabular}{cc}
+%%     a.
+%%   \resizebox{8cm}{!}{\includegraphics{plots/JetPlots/L23oRaw.eps}}                  &
+%%    b.
+%%   \resizebox{8cm}{!}{\includegraphics{plots/JetPlots/L5oL23.eps}} \\
+%%   \end{tabular}
+%%   \caption{\small \sl a - Mean ratio of jet energy after the level 2 and 3 corrections to that with no correction as a function of $P_T$. b 
+%%     - Ratio of jet energy after the level 2,3, and 5 corrections to that with only level 2 and 3 corrections as a function of $P_T$.  
+%%     Plots show the average correction for all jets in each $P_T$ bin.  These jets are taken from a LQ sample with a mass of 400 GeV.}
+%%     \label{fig:CorrRatios}
+%%   \end{center}
+%% \end{figure}
 
 %\subsection{Efficiencies}
 
