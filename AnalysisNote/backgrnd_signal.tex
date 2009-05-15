@@ -197,22 +197,28 @@ up to values of $M_{ee}$ of several TeV~\cite{HEEPNOTE});
 variables between eejjAtZ data and MC to check the agreement in the control region.
 It's expected to have more confidence in the MC extrapolation 
 from the control region to the signal region (i.e. the estimation of the ratio $R_{OffZ/AtZ}$), 
-if the event kinematics in the two regions is not dramatically different.
-Figure~\ref{fig:STEleJetceejjAtZvsOffZ}
-show the distributions of the scalar sum of $P_{T}$ of the two leading electrons ($S_{T}^{ele}$) 
-and the two leading jets ($S_{T}^{jets}$) for $Z/\gamma$+jet events, 
-in both signal region (eejj sample) and control region (eejjAtZ control sample). 
-A significant discrepancy is observed 
-in the $S_{T}^{ele}$ distribution; this should not represent 
-a problem for the MC extrapolation, since the Electro-Weak part of the process 
-is well predicted, and the expected agreement could be directly checked with a control sample 
-of two electrons (as described in the previous bullet).
-It's also comforting that the $S_{T}^{jet}$ distributions are not dramatically different, 
+if the event kinematics in the two regions is not dramatically different, in particular for the 
+hadronic part of the process.
+Figure~\ref{fig:BjjSTJetseejjAtZvsOffZ}
+show the distributions of the scalar sum of $P_{T}$ of the two leading jets ($S_{T}^{jets}$) 
+and the distribution of the velocity of the jet-jet system ($\beta_{jj} = v_{jj}/c$) 
+for $Z/\gamma$+jet events, 
+%show the distributions of the scalar sum of $P_{T}$ of the two leading electron ($S_{T}^{ele}$) 
+%and the two leading jets ($S_{T}^{jets}$) for $Z/\gamma$+jet events, 
+in both the signal region (eejjOffZ sample) and the control region (eejjAtZ control sample). 
+%A significant discrepancy is observed 
+%in the $S_{T}^{ele}$ distribution; this should not represent 
+%a problem for the MC extrapolation, since the Electro-Weak part of the process 
+%is well predicted, and the expected agreement could be directly checked with a control sample 
+%of two electrons (as described in the previous bullet).
+It's comforting that the two distributions are in agreement, 
 which is an indication that the hadronic part of the $Z/\gamma$+jet process 
-(the one with largest uncertainties) is similar between 
-signal and control region.  
+(the one with largest theoretical uncertainties) is similar between 
+the signal and the control region.  
 %
 \end{itemize}
+
+FIXME ADD HERE DISCUSSION ON APPLICATION OF THE METHOD FOR 100/pb
 
 %Figure~\ref{fig:zjet} shows the good agreement between eejjAtZ and eejj samples for both the shapes of $M_{ej}$ 
 %and $S_{T}$ distributions, using a large FastSim MC sample of $Z/\gamma$+jet events. 
@@ -242,21 +248,90 @@ signal and control region.
   \end{center}
 \end{figure}
 %
+
+
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
     a.
-    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST_Elecs_inside.eps}} &
+    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST2jets_OffZvsAtZ_STcut300.eps}} &
     b.
-    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST_Jets_inside.eps}} \\
+    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/betajj_OffZvsAtZ_STcut300.eps}} \\
   \end{tabular}
-  \caption{\small \sl Distributions of (a) $S_{T}^{ele}$ (b) $S_{T}^{jet}$ 
-    for the signal eejj sample ($M_{ee} > 100\mbox{ GeV}$) 
+  \caption{\small \sl Distributions of (a) $S_{T}^{jet}$ (b) $\beta_{jj}$ 
+    for the eejjOffZ sample ($M_{ee} > 100\mbox{ GeV}$) 
     and the eejjAtZ control sample ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), 
-    using a large FastSim sample of $Z/\gamma$+jet events.}
-  \label{fig:STEleJetceejjAtZvsOffZ}
+    using a large FastSim sample of $Z/\gamma$+jet events. 
+    The baseline selection of electrons and jets is applied in the first plot; 
+    in addition, an $S_{T}$ cut of 300 GeV is applied in the second plot.}
+  \label{fig:BjjSTJetseejjAtZvsOffZ}
   \end{center}
 \end{figure}
+
+
+%\begin{figure}[htb]
+%  \begin{center}
+%  \begin{tabular}{cc}
+%    a.
+%    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST_Elecs_inside.eps}} &
+%    b.
+%    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ST_Jets_inside.eps}} \\
+%  \end{tabular}
+%  \caption{\small \sl Distributions of (a) $S_{T}^{ele}$ (b) $S_{T}^{jet}$ 
+%    for the signal eejj sample ($M_{ee} > 100\mbox{ GeV}$) 
+%    and the eejjAtZ control sample ($80\mbox{ GeV} < M_{ee} < 100\mbox{ GeV}$), 
+%    using a large FastSim sample of $Z/\gamma$+jet events.}
+%  \label{fig:BjjSTJetseejjAtZvsOffZ}
+%  \end{center}
+%\end{figure}
+
+
+%%%%%%% CLOSURE TEST TABLE  %%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{||c||c|c|c||c||}
+\hline\hline
+$S_{T}$ cut  &  $N_{eejjAtZ}$  &   $R_{OffZ/AtZ}^{-1}$  &     $N_{eejj}^{Z}$  &   $N_{eejjOffZ}$  \\ 
+ (GeV)       &     (``data'')  &        (MC - FastSim)  &   (``data'' \& MC)  &   (MC - FullSim)  \\ 
+\hline\hline
+   200  &     278  $\pm$   16.67  &   13.31  $\pm$    0.17  &   20.88  $\pm$    1.28  &   22.21  $\pm$    2.84  \\ 
+   220  &     252  $\pm$   15.87  &   12.52  $\pm$    0.17  &   20.12  $\pm$    1.30  &   22.21  $\pm$    2.84  \\ 
+   240  &     221  $\pm$   14.87  &   11.87  $\pm$    0.18  &   18.62  $\pm$    1.28  &   21.11  $\pm$    2.77  \\ 
+   260  &     187  $\pm$   13.67  &   11.26  $\pm$    0.18  &   16.60  $\pm$    1.24  &   19.29  $\pm$    2.65  \\ 
+   300  &     129  $\pm$   11.36  &   10.43  $\pm$    0.21  &   12.37  $\pm$    1.12  &   13.47  $\pm$    2.21  \\ 
+   350  &      87  $\pm$    9.33  &    9.73  $\pm$    0.24  &    8.94  $\pm$    0.98  &    8.37  $\pm$    1.75  \\ 
+   400  &      52  $\pm$    7.21  &    9.51  $\pm$    0.30  &    5.47  $\pm$    0.78  &    5.46  $\pm$    1.41  \\ 
+%   440  &      36  $\pm$    6.00  &   10.15  $\pm$    0.38  &    3.55  $\pm$    0.61  &    3.64  $\pm$    1.15  \\ 
+   460  &      30  $\pm$    5.48  &   10.14  $\pm$    0.42  &    2.96  $\pm$    0.55  &    2.55  $\pm$    0.96  \\ 
+%   480  &      27  $\pm$    5.20  &   10.32  $\pm$    0.46  &    2.62  $\pm$    0.52  &    2.18  $\pm$    0.89  \\ 
+   520  &      21  $\pm$    4.58  &    9.01  $\pm$    0.47  &    2.33  $\pm$    0.52  &    1.09  $\pm$    0.63  \\ 
+   560  &      16  $\pm$    4.00  &    7.85  $\pm$    0.49  &    2.04  $\pm$    0.53  &    0.73  $\pm$    0.52  \\ 
+   620  &      11  $\pm$    3.32  &    8.63  $\pm$    0.67  &    1.28  $\pm$    0.40  &    0.73  $\pm$    0.52  \\ 
+   690  &       6  $\pm$    2.45  &    7.79  $\pm$    0.78  &    0.77  $\pm$    0.32  &    0.73  $\pm$    0.52  \\ 
+   740  &       4  $\pm$    2.00  &    7.52  $\pm$    0.85  &    0.53  $\pm$    0.27  &    0.36  $\pm$    0.36  \\ 
+\hline\hline
+\end{tabular}
+\end{center}
+\caption{\small \sl ADD TEXT IN THE CAPTION}
+\label{tab:XXXX}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%% RATIO PLOT  %%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[htb]
+  \begin{center}
+  \begin{tabular}{cc}
+  \resizebox{10cm}{!}{\includegraphics{plots/ZjetStudies/ratioInverseOffZAtZ.eps}} \\ 
+  \end{tabular}
+  \caption{\small \sl ADD TEXT IN THE CAPTION}
+  \label{tab:XXXX}
+  \end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %\begin{figure}
 %  \begin{center}
