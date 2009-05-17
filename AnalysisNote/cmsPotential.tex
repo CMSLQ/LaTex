@@ -27,11 +27,13 @@ P = \frac{1}{\sqrt{2\pi}}\int_{S_\text{cP}}^{+\infty} e^{-\frac{x^2}{2}}\mathrm{
 which gives the numerical value of the $S_\text{cP}$ significance. If the background has uncertainties, which we can express in terms of
 a probability density function $f(b)$, the probability to observe $n=s+b$ events or greater becomes
 \begin{equation}
-P = \int_0^{+\infty} p(n\geq s+b|b)f(b)\mathrm{d}x,
+P = \int_0^{+\infty} p(n\geq s+b|b')f(b')\mathrm{d}b',
 \end{equation}
-and the final $S_\text{cP}$ significance is again obtained using Eq.~\ref{eq:ScP}. Figure~\ref{fig:discovery} shows the required integrated luminosity
-for a $5\sigma$ discovery for different leptoquark mass hypotheses. Figure~\ref{fig:discovery_beta} shows the minimum $\beta^2$ for
-a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ of integrated luminosity.
+and the final $S_\text{cP}$ significance is again obtained using Eq.~\ref{eq:ScP}. For $f(b')$, a Gaussian probability density function
+centered at $b$ with a standard deviation $\sigma_b$ given by the uncertainty on $b$ was used. 
+Figure~\ref{fig:discovery} shows the required integrated luminosity for a $5\sigma$ discovery for different leptoquark mass hypotheses. 
+Figure~\ref{fig:discovery_beta} shows the minimum $\beta^2$ for a $5\sigma$ discovery as a function of leptoquark mass for $100\text{ pb}^{-1}$ 
+of integrated luminosity.
 
 \begin{figure}[h!]
  \centering
@@ -50,37 +52,41 @@ uncertainties described in Section~\ref{sec:Systematics}.\label{fig:discovery_be
 
 
 For setting upper limits in the absence of the leptoquark signal, the Bayesian approach~\cite{ref:bayes} is used. In this approach, the
-posterior probability density function for the signal mean $s$, given $n$ observed events,
+posterior probability density function for the signal cross section $\sigma$, given $n$ observed events, is used to set up an upper limit 
+on the leptoquark pair production cross section. This probability density function is defined as 
 \begin{equation}
-p(s|n)=\frac{L(n|s)\pi(s)}{\int_0^{+\infty}L(n|s)\pi(s)\mathrm{d}s},
+p(\sigma|n,A,\mathcal{L},b)=\frac{L(n|\sigma,A,\mathcal{L},b)\pi(\sigma)}{\int_{-\infty}^{+\infty}L(n|\sigma,A,\mathcal{L},b)\pi(\sigma)\mathrm{d}\sigma},
 \end{equation}
-where $L(n|s)$ is a Poisson distribution
+where $\pi(\sigma)$ is the prior for the signal cross section, and $L(n|\sigma,A,\mathcal{L},b)$ is a Poisson distribution given by
 \begin{equation}
-L(n|s)=\frac{(s+b)^n}{n!}e^{-(s+b)},
+L(n|\sigma,A,\mathcal{L},b)=\frac{(\sigma A\mathcal{L}+b)^n}{n!}e^{-(\sigma A\mathcal{L}+b)},
 \end{equation}
-and $\pi(s)$ is the prior for the signal mean $s$, is used to set up an upper limit on the leptoquark pair production cross section.
-An upper limit $s_\text{up}$ at $95\%$ C.L. is obtained by requiring
+where $A$ is the signal acceptance, $\mathcal{L}$ is the integrated luminosity, and $b$ is the expected number of background events.
+An upper limit $\sigma_\text{up}(n)$ at $95\%$ C.L. is obtained by requiring
 \begin{equation}
-\int_{-\infty}^{s_\text{up}}p(s|n)\mathrm{d}s=\frac{\int_{-\infty}^{s_\text{up}}L(n|s)\pi(s)\mathrm{d}s}{\int_{-\infty}^{+\infty}L(n|s)\pi(s)\mathrm{d}s}=0.95, 
+\int_{-\infty}^{\sigma_\text{up}(n)}p(\sigma|n,A,\mathcal{L},b)\mathrm{d}\sigma=\frac{\int_{-\infty}^{\sigma_\text{up}(n)}L(n|\sigma,A,\mathcal{L},b)\pi(\sigma)\mathrm{d}\sigma}{\int_{-\infty}^{+\infty}L(n|\sigma,A,\mathcal{L},b)\pi(\sigma)\mathrm{d}\sigma}=0.95, 
+\label{eq:xs_up}
 \end{equation}
-where one often uses
+where
 \begin{equation}
-\pi(s)=\begin{cases}
-          0&  s<0,\\
-          1&  s\geq 0,
+\pi(\sigma)=\begin{cases}
+          0&  \sigma<0,\\
+          1&  \sigma\geq 0,
 \end{cases}
 \end{equation}
 which effectively sets the lower limit of integration to zero. Since there is no actual observation, the expected 
-upper limit $\mathrm{<}s_\text{up}\mathrm{>}$ in the background-only hypothesis is calculated as follows
+upper limit $\mathrm{<}\sigma_\text{up}\mathrm{>}$ in the background-only hypothesis is calculated as follows
 \begin{equation}
-\mathrm{<}s_\text{up}\mathrm{>}=\sum_{n=0}^{+\infty} s_\text{up}(n)L(n|s=0).
+\mathrm{<}\sigma_\text{up}\mathrm{>}=\sum_{n=0}^{+\infty} \sigma_\text{up}(n)L(n|0,A,\mathcal{L},b).
 \end{equation}
-This approach also allows for inclusion of systematic uncertainties which are treated as \emph{nuisance parameters} $\bm{\nu}$.
-A modified posterior probability density function obtained by integrating over the nuisance parameters
+This approach also allows for inclusion of systematic uncertainties. In order to incorporate systematic uncertainties into the final
+result for the expected upper limit on the signal cross section, a modified Poisson distribution $L'(n|\sigma,A,\mathcal{L},b)$ is used instead of
+$L(n|\sigma,A,\mathcal{L},b)$ in Eq.~\ref{eq:xs_up}. This modified Poisson distribution is defined as
 \begin{equation}
-L'(n|s)=\int L(n|s)\pi(\bm{\nu})\mathrm{d}\bm{\nu}
+L'(n|\sigma,A,\mathcal{L},b)=\int_0^{+\infty}\int_0^{+\infty}\int_0^{+\infty} L(n|\sigma,A',\mathcal{L}',b')g(A')h(\mathcal{L}')f(b')(\mathcal{L})\mathrm{d}A'\mathrm{d}\mathcal{L}'\mathrm{d}b',
 \end{equation}
-is used instead of $L(n|s)$ to incorporate systematic uncertainties into the final result for an upper limit. Figure~\ref{fig:exclusion}
+where $g(A')$, $h(\mathcal{L}')$, and $f(b')$ are the Gaussian probability density functions centered at $A$, $\mathcal{L}$, and $b$, respectively,
+with the standard deviations given by the uncertainties in the corresponding parameters. Figure~\ref{fig:exclusion}
 shows the required integrated luminosity for $95\%$ C.L. exclusion of different leptoquark mass hypotheses. Figure~\ref{fig:exclusion_xs}
 shows the expected $95\%$ C.L. upper limit on the leptoquark pair production cross section as a function of leptoquark mass for $100\text{ pb}^{-1}$
 of integrated luminosity. 
