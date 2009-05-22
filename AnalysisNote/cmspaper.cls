@@ -194,6 +194,12 @@
 \hfill\Large\bf CMS AN #1} 
 \begin{center}\includegraphics{cms_an.eps}\end{center}}
 
+% CMS PAS header \cmspas
+\def\cmspas#1{{Available on CMS information server
+\hfill\Large\bf CMS PAS #1} 
+%\begin{center}\includegraphics{cms_an.eps}\end{center}\vspace*{0mm}}
+\begin{center}\includegraphics{cms_pas.eps}\end{center}\vspace*{0mm}}
+
 % CMS CONFERENCE REPORT header \conferencereport
 \def\conferencereport#1{{Available on CMS information server
 \hfill\Large\bf CMS CR #1} 
