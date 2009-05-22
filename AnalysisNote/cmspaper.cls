@@ -11,6 +11,7 @@
 %                                                                 %
 %  Last mod : 25.11.1996                                          %
 %  Updated for new CMS logo May 97 / JPP                          %
+%  Updated for smaller page size Vov 00 / Lucas                   %
 %                                                                 %
 %  Grzegorz Wrochna, CERN/PPE                                     %
 %                                                                 %
@@ -33,7 +34,8 @@
 %%%%%%%% page size to be printable on both A4 and US Letter %%%%%%%
 
 \setlength{\hoffset}{-1in}
-\setlength{\voffset}{-1in}
+\setlength{\voffset}{-0.5in}
+ %     \setlength{\voffset}{-1in}
 \setlength{\oddsidemargin}{25mm}
 \setlength{\evensidemargin}{25mm}
 \setlength{\marginparwidth}{25mm}
@@ -42,6 +44,7 @@
 \setlength{\headheight}{0mm}
 \setlength{\headsep}{0mm}
 \setlength{\footskip}{6mm}
+%      \setlength{\footskip}{9mm}
 \setlength{\textwidth}{16cm}
 \ifcase \@ptsize
 %JPP-\setlength{\textheight}{58\baselineskip}
@@ -181,22 +184,15 @@
 \hfill\Large\bf CMS NOTE #1} 
 \begin{center}\includegraphics{cms_note.eps}\end{center}\vspace*{0mm}}
 
-% CMS ANALYSIS NOTE header \cmsan
-\def\cmsan#1{{Available on CMS information server
-\hfill\Large\bf CMS AN-#1} 
-\begin{center}\includegraphics{cms_an.eps}\end{center}\vspace*{0mm}}
-%\begin{center}\includegraphics{cms_pas.eps}\end{center}\vspace*{0mm}}
-
-% CMS PAS header \cmspas
-\def\cmspas#1{{Available on CMS information server
-\hfill\Large\bf CMS PAS #1} 
-%\begin{center}\includegraphics{cms_an.eps}\end{center}\vspace*{0mm}}
-\begin{center}\includegraphics{cms_pas.eps}\end{center}\vspace*{0mm}}
-
 % CMS INTERNAL NOTE header \internalnote
 \def\internalnote#1{{Available on CMS information server
 \hfill\Large\bf CMS IN #1} 
 \begin{center}\includegraphics{cms_in.eps}\end{center}}
+
+% CMS ANALYSIS NOTE header \analysisnote
+\def\analysisnote#1{{Available on CMS information server
+\hfill\Large\bf CMS AN #1} 
+\begin{center}\includegraphics{cms_an.eps}\end{center}}
 
 % CMS CONFERENCE REPORT header \conferencereport
 \def\conferencereport#1{{Available on CMS information server
@@ -320,3 +316,5 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
