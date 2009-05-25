@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OUTFILE=CMS_AN_2009_XXX
+OUTFILE=CMS_AN_2008_070
 TEXFILES="beginning.tex monteCarloSamples.tex trig.tex elec.tex jet.tex eventSel.tex backgrnd_signal.tex Systematics.tex cmsPotential.tex end.tex bib.tex"
 
 echo "Merging files: $TEXFILES"
