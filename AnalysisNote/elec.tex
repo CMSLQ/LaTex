@@ -13,7 +13,7 @@ The pixel hits are then used to seed a track.  Finally, a track is fitted to all
 despite the possible presence of kinks from electron bremsstrahlung.  
 The $p_{T}$ and $\eta$ of the electrons are calculated using both calorimeter and tracker information, 
 taking account of detector resolutions and its dependence on $p_{T}$.
-Standard CMS Software corrections are applied to set correctly the electromagnetic (EM) energy scale.
+Standard CMS corrections are applied to set correctly the electromagnetic (EM) energy scale.
 
 %#######Ref for CMSSW electron energy scale #############
 
@@ -27,10 +27,10 @@ The definitions of the variables used in this analysis are given below:
 %
 \begin{itemize}
 %
-\item $H/E$: the ratio of the energy of the closest HCAL Rec Hit to the electromagnetic energy of 
+\item $H/E$: the ratio of the energy of the closest HCAL RecHit to the electromagnetic energy of 
 the supercluster associated with the electron; a H/E cut of $<0.1$ is applied at pre-selection level.
 %
-\item $\sigma_{\eta\eta}$: a variable reflecting the longitudinal distribution of the electron shower (along $\eta$):
+\item $\sigma_{\eta\eta}$: a variable reflecting the distribution along $\eta$ of the electron shower:
 \begin{displaymath}
 \sigma_{\eta\eta} = \sum( \eta_i - \eta_s )^2 \frac{E_i}{E_{\mbox{s}}} \quad ,
 \end{displaymath}
@@ -176,7 +176,7 @@ and $|\eta^{gen}|<2.5$), the reconstruction efficiency $\varepsilon_{reco}$ with
 region, and the overall reconstruction efficiency $A_{gen} \times \varepsilon_{reco}$ 
 for single electrons from LQ decays for a 400 GeV LQ mass.
 The overall reconstruction efficiency on a single electron, including acceptance, is $\approx 80\%$.
-Fig~\ref{fig:elecEffFV} shows the reconstruction/ID/Isolation efficiencies
+Figure~\ref{fig:elecEffFV} shows the reconstruction/ID/Isolation efficiencies
 (with respect to the acceptance cuts) of electrons for LQ mass of 400 GeV as a function of electron $\eta$ and $p_{T}$. 
 A significant loss of efficiency is seen in the region $|\eta| \approx 1.5$, 
 and is due to the lack of calorimeter coverage between the ECAL barrel and the endcaps. 
