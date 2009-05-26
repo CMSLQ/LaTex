@@ -477,7 +477,7 @@ A range of cut values for each variable is chosen, and the number of signal ($N_
 and background ($N_B$) events passing the selection is calculated from MC for each combination 
 of possible cut values. The combination with the highest signal significance, 
 defined as $S = N_S/\sqrt{N_S+N_B}$, is taken as the optimized set of cut values. %which is the usual name of this S?%
-The result of the optimization, performed under different LQ mass hypothesis, 
+The result of the optimization, performed under the hypothesis of a LQ mass of 250 GeV, 
 indicates $|\eta^{ele}|<2.5$, which coincides with the tracker acceptance,
 and $|\eta^{jets}|<3$. The cut on invariant mass of the two electrons is found to be $M_{ee}>100$ GeV. The 
 optimal cut values for electron and jet $p_T$ are consistently the lower value in the scanned range 
@@ -487,11 +487,13 @@ the $p_{T}$ cut on jets is moved to 50 GeV in order to reduce the effect
 of uncertainties in the initial and final state radiation, and the uncertainties 
 on calorimeter response at the start-up. It is verified that such changes, with respect to the original 
 optimization output, have a negligible effect on the signal significance. 
-This fast multi-dimensional optimization indicate also an $S_T$ cut 
-that increases with LQ mass. 
+No major differences in the baseline cuts (id est excluding the $S_T$ cut) have been found by optimizating 
+at different LQ masses; hence, the cuts numbered 1, 2 and 3 in Section~\ref{sec:eventSelection} 
+are used at all masses.
+This fast multi-dimensional optimization indicates also an $S_T$ cut that increases with LQ mass. 
 
 The final optimization of the $S_T$ cut, which is the most discriminating variable between signal and background, 
-is performed by minimizing the upper limit on leptoquark cross section in absence of signal observed, 
+is performed by minimizing the upper limit on leptoquark cross section in absence of an observed signal, 
 using a Bayesian approach (described in Section~\ref{CMSpotential}). 
 This method is well suited for counting experiments in Poissonian regime but it's CPU time consuming. 
 For this reason only the $S_T$ cut is optimized in this way, while the other cuts are fixed as indicated from 
