@@ -177,7 +177,7 @@ region, and the overall reconstruction efficiency $A_{gen} \times \varepsilon_{r
 for single electrons from LQ decays for a 400 GeV LQ mass.
 The overall reconstruction efficiency on a single electron, including acceptance, is $\approx 80\%$.
 Fig~\ref{fig:elecEffFV} shows the reconstruction/ID/Isolation efficiencies
-(with respect to the acceptance cuts) of electrons for LQ mass of 400 GeV as a function of electron $\eta$. 
+(with respect to the acceptance cuts) of electrons for LQ mass of 400 GeV as a function of electron $\eta$ and $p_{T}$. 
 A significant loss of efficiency is seen in the region $|\eta| \approx 1.5$, 
 and is due to the lack of calorimeter coverage between the ECAL barrel and the endcaps. 
 The inefficiency at high $|\eta|$ is a border effect related to the 
@@ -204,8 +204,11 @@ following the approach discussed at~\cite{TagAndProbe}. \\
 %
 \begin{figure}
   \begin{center}
-    \resizebox{10cm}{!}{\includegraphics{plots/electronStudies/Eff_vs_Eta_recoIDIsoEle_pT30_eta2.5_LQ400.eps}}
-    \caption{\small \sl Electron reconstruction/ID/Isolation efficiency as a function of electron $\eta^{gen}$. 
+  \begin{tabular}{cc}
+    \resizebox{8.2cm}{!}{\includegraphics{plots/electronStudies/Eff_vs_Eta_recoIDIsoEle_pT30_eta2.5_LQ400.eps}} &
+    \resizebox{8.2cm}{!}{\includegraphics{plots/electronStudies/Eff_vs_pT_recoIDIsoEle_pT30_eta2.5_LQ400.eps}} \\
+    \end{tabular}
+    \caption{\small \sl Electron reconstruction/ID/Isolation efficiency as a function of electron $\eta^{gen}$ and $p_{T}^{gen}$. 
       A FullSim sample of LQ with mass of 400 GeV is used.}
     \label{fig:elecEffFV}
   \end{center}
