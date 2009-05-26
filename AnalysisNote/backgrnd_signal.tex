@@ -30,7 +30,7 @@ concerning a given set of reconstructed selection variables under investigation;
 %
 The control samples for the $t\bar{t}$ and $Z/\gamma$+jet backgrounds discussed below both satisfy 
 these three conditions.
-Different considerations are applied to estimate the QCD background as described in 
+Different considerations are applied to estimate the QCD Multi-jet background as described in 
 Section~\ref{sec:QCDBackground}.
 
 % NOTE: the more detailed discussion on different amount of background should be discussed in the section Event Selection 
@@ -93,7 +93,7 @@ the $N_{eejj}^{est.}$, calculated from Equation~\ref{formula:NeejFromNemujj},
 and the prevision from MC, $N_{eejj}$, for samples selected with a loose $S_{T}$ cut of 300 GeV.   
 
 %{\sl Discussion of how clearly this plot shows similar shape and how this will be used}
-
+%
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
@@ -106,7 +106,7 @@ and the prevision from MC, $N_{eejj}$, for samples selected with a loose $S_{T}$
   \label{fig:ttbar}
   \end{center}
 \end{figure}
-
+%
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
@@ -123,15 +123,15 @@ and the prevision from MC, $N_{eejj}$, for samples selected with a loose $S_{T}$
   \label{fig:emujjContamination}
   \end{center}
 \end{figure}
-
-
-\begin{table}[htb]
+%
+\begin{table}[htbp]
   \label{tab:emujjClosureTest}
   \begin{center}
-    \begin{tabular}{|l|c|} \hline
-      $N_{eejj}$ & 29.4 $\pm$ 1.2 \\ \hline
-      $N_{e\mu jj}$ & 65.9 $\pm$ 1.8 \\ \hline \hline
-      $N_{eejj}^{est.}$ &  29.5 $\pm$ 0.8 \\ \hline
+    \begin{tabular}{|c|c||c|} \hline
+      $N_{eejj}$      & $N_{e\mu jj}$   & $N_{eejj}^{est.}$ \\ 
+      \hline
+      29.4 $\pm$ 1.2  & 65.9 $\pm$ 1.8  & 29.5 $\pm$ 0.8    \\
+      \hline
     \end{tabular}
     \caption{\small \sl $N_{eejj}$ ($N_{e\mu jj}$) is the 
       MC prediction on the number of 
@@ -143,7 +143,27 @@ and the prevision from MC, $N_{eejj}$, for samples selected with a loose $S_{T}$
     } 
   \end{center}
 \end{table}
+%
+%\begin{table}[htbp]
+%  \label{tab:emujjClosureTest}
+%  \begin{center}
+%    \begin{tabular}{|l|c|} \hline
+%      $N_{eejj}$ & 29.4 $\pm$ 1.2 \\ \hline
+%      $N_{e\mu jj}$ & 65.9 $\pm$ 1.8 \\ \hline \hline
+%      $N_{eejj}^{est.}$ &  29.5 $\pm$ 0.8 \\ \hline
+%    \end{tabular}
+%    \caption{\small \sl $N_{eejj}$ ($N_{e\mu jj}$) is the 
+%      MC prediction on the number of 
+%      $t\bar{t}$ events in the eejj 
+%      (e$\mu$jj) sample with $S_{T}$ cut of 300 GeV, 
+%      $N_{eejj}^{est.}$ is the number of eejj $t\bar{t}$ events 
+%      estimated from the e$\mu$jj sample by using 
+%      Equation~\ref{formula:NeejFromNemujj}. 
+%    } 
+%  \end{center}
+%\end{table}
 
+\clearpage
 
 \subsection{$Z/\gamma$+jet background control sample} \label{sec:ZcontrolSample}
 
@@ -156,7 +176,7 @@ $Z/\gamma$+jet events as shown in Figure~\ref{fig:eejjAtZContamination}
 since the cross section of the process is resonant at the Z mass. 
 %the eejjAtZ sample is independent from the eejj signal sample by construction. 
 For $Z/\gamma$+jet events, the eejjAtZ sample with 100 pb$^{-1}$ of data 
-is expected to have about 129, 22, and 12 events, respectively for an $S_{T}$ cut of 300, 520, and 620 GeV.
+is expected to have about 129, 21, and 11 events, respectively for an $S_{T}$ cut of 300, 520, and 620 GeV.
 
 The rescaling of the control sample can be obtained with an hybrid method which combines the eejjAtZ data with 
 MC information. Once real data is available the eejjAtZ sample can be selected. 
@@ -177,7 +197,7 @@ The motivations that justify this approach are discussed below:
 %
 \item those theoretical uncertainties that are independent 
 on the value of two electron invariant mass cancel in the ratio.
-In addition, generator level studies will be performed 
+Generator level studies will be performed 
 in future upgrades of the analysis to quantify the
 remaining uncertainties on the value of $R_{OffZ/AtZ}$, 
 by using different sets of PDFs and various MC generators;
@@ -185,13 +205,13 @@ by using different sets of PDFs and various MC generators;
 %and eejjAtZ data is used to rescale the $Z/\gamma$ MC sample, 
 %thus setting the correct background normalization;
 %
-\item for inclusive Drell-Yan production ($Z/\gamma \rightarrow ee$ with no jets), 
+\item for inclusive $Z/\gamma \rightarrow ee$ production (with no jets), 
 the MC is expected to predict the value of this ratio with small 
 uncertainty (dominated by PDF uncertainties). 
 The data-MC comparison will be done with real data by calculating 
 the ratio $R_{OffZ/AtZ}$ using a control sample with only two electrons 
 (which is expected to be dominated by Drell-Yan events 
-up to values of $M_{ee}$ of several TeV~\cite{HEEPNOTE});
+up to values of $M_{ee}$ of about one TeV~\cite{HEEPNOTE});
 %
 \item the next step will be to compare the distributions of reconstructed selection 
 variables between eejjAtZ data and MC to check the agreement in the control region.
@@ -218,7 +238,20 @@ the signal and the control region.
 %
 \end{itemize}
 
-FIXME ADD HERE DISCUSSION ON APPLICATION OF THE METHOD FOR 100/pb
+The method described by Equation~\ref{formula:NeejFromNemujj} is applied assuming 100 pb$^{-1}$ 
+of data. In this MC exercise, the number of events expected in the eejjAtZ control sample, $N_{eejj}^{Z}$, 
+is obtained from the FullSim MC sample of $Z/\gamma$+jet (although this will come directly from data).
+The statistical uncertainty on this number is assumed $\sqrt{N_{eejj}^{Z}}$, which is 
+the counting error on the data.
+The ratio $R_{OffZ/AtZ}$ is extracted from the FastSim MC sample of $Z/\gamma$+jet events.
+Figure~\ref{fig:ZJetRatioAndMeeFastVSFull} shows the agreement of the 
+$M_{ee}$ distribution between FastSim and FullSim, and the value of the inverse of $R_{OffZ/AtZ}$ 
+as a function of different $S_{T}$ cuts, obtained from FastSim. 
+The results of the application of the method are shown in Table~\ref{tab:ZjetClosureTest}.
+The number of $Z/\gamma$+jet in the eejj sample estimated using the data driven method 
+($N_{eejj}^{Z}$ from Equation~\ref{formula:NeejFromNemujj}) 
+is in agreement with the number of $Z/\gamma$+jet events in the eejj sample directly 
+obtained by applying the eejj selection on the FullSim MC sample ($N_{eejjOffZ}$).
 
 %Figure~\ref{fig:zjet} shows the good agreement between eejjAtZ and eejj samples for both the shapes of $M_{ej}$ 
 %and $S_{T}$ distributions, using a large FastSim MC sample of $Z/\gamma$+jet events. 
@@ -248,8 +281,8 @@ FIXME ADD HERE DISCUSSION ON APPLICATION OF THE METHOD FOR 100/pb
   \end{center}
 \end{figure}
 %
-
-
+%
+%
 \begin{figure}[htb]
   \begin{center}
   \begin{tabular}{cc}
@@ -267,8 +300,8 @@ FIXME ADD HERE DISCUSSION ON APPLICATION OF THE METHOD FOR 100/pb
   \label{fig:BjjSTJetseejjAtZvsOffZ}
   \end{center}
 \end{figure}
-
-
+%
+%
 %\begin{figure}[htb]
 %  \begin{center}
 %  \begin{tabular}{cc}
@@ -284,8 +317,28 @@ FIXME ADD HERE DISCUSSION ON APPLICATION OF THE METHOD FOR 100/pb
 %  \label{fig:BjjSTJetseejjAtZvsOffZ}
 %  \end{center}
 %\end{figure}
+%
+%
+%%%%%%%%%%%%%%%%%%% RATIO PLOT  %%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}[htb]
+  \begin{center}
+  \begin{tabular}{cc}
+    a.
+    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/Mee_FastSimvsFullSim_pTjet50_pTele30_etaJet3.eps}} & 
+    b.
+    \resizebox{8cm}{!}{\includegraphics{plots/ZjetStudies/ratioInverseOffZAtZ.eps}} \\ 
+  \end{tabular}
+  \caption{\small \sl (a) the $M_{ee}$ distribution for FastSim and FullSim MC events after the baseline selection 
+    on electrons and jets described in Section~\ref{sec:eventSelection}, (b) the value of the inverse of $R_{OffZ/AtZ}$ 
+    as a function of different $S_{T}$ cuts, obtained from the FastSim MC sample.}
+  \label{fig:ZJetRatioAndMeeFastVSFull}
+  \end{center}
+\end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
 %%%%%%% CLOSURE TEST TABLE  %%%%%%%%%%%%%%%%
 
 \begin{table}[htbp]
@@ -313,24 +366,17 @@ $S_{T}$ cut  &  $N_{eejjAtZ}$  &   $R_{OffZ/AtZ}^{-1}$  &     $N_{eejj}^{Z}$  & 
 \hline\hline
 \end{tabular}
 \end{center}
-\caption{\small \sl ADD TEXT IN THE CAPTION}
-\label{tab:XXXX}
+\caption{\small \sl The results of the data driven method for $Z/\gamma$+jet background 
+estimate assuming 100 pb$^{-1}$ of data. $N_{eejjAtZ}$ is the number of events in the eejjAtZ control sample 
+(here obtained from the FullSim MC sample of $Z/\gamma$+jet events), the statistical uncertainty 
+on this number is $\sqrt{N_{eejj}^{Z}}$; $R_{OffZ/AtZ}^{-1}$ is the inverse of the 
+ratio between number of ``OffZ'' divided by ``AtZ'' $Z/\gamma$+jet events obtained from the FastSim MC sample; 
+$N_{eejj}^{Z}$ is the estimate of $Z/\gamma$+jet events in the eejj sample obtained from the data driven method by 
+Equation~\ref{formula:NeejFromNemujj}; $N_{eejjOffZ}$ is the number of 
+events passing the full eejj selection directly obtained from the FullSim MC sample of $Z/\gamma$+jet events. 
+The quantities described above are given for different values of the $S_T$ cut.}
+\label{tab:ZjetClosureTest}
 \end{table}
-
-
-%%%%%%%%%%%%%%%%%%% RATIO PLOT  %%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[htb]
-  \begin{center}
-  \begin{tabular}{cc}
-  \resizebox{10cm}{!}{\includegraphics{plots/ZjetStudies/ratioInverseOffZAtZ.eps}} \\ 
-  \end{tabular}
-  \caption{\small \sl ADD TEXT IN THE CAPTION}
-  \label{tab:XXXXX}
-  \end{center}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\begin{figure}
@@ -345,7 +391,6 @@ $S_{T}$ cut  &  $N_{eejjAtZ}$  &   $R_{OffZ/AtZ}^{-1}$  &     $N_{eejj}^{Z}$  & 
 %  \label{fig:pTeePair}
 %  \end{center}
 %\end{figure}
-
 
 %http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/Configuration/CSA07Production/data/CSA07_zjet_ptjgt20_Rmatch0.7_excl.cfg?revision=1.2&view=markup
 
@@ -364,8 +409,7 @@ $S_{T}$ cut  &  $N_{eejjAtZ}$  &   $R_{OffZ/AtZ}^{-1}$  &     $N_{eejj}^{Z}$  & 
 
 %Fit method (histogram, unbinned, function, combination...)
 
-
-
+\clearpage
 
 \subsection{QCD Multi-jet Background} \label{sec:QCDBackground}
 
