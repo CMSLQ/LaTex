@@ -57,7 +57,7 @@ The cuts that define the skim have been chosen as:
 \begin{itemize}
 \item $N_l \equiv N_e + N_{\mu} \ge 2$, where $N_e (N_{\mu})$ is the number of reconstructed electrons (muons)
 with $P_T>20~$GeV and without ID or isolation requirements applied; this cut suppresses events with low 
-lepton multiplicity and low lepton $P_T$, such as QCD, W+jets and $t\bar{t}$ fully hadronic decays;
+lepton multiplicity and low lepton $P_T$, such as QCD multi-jet, W+jets and $t\bar{t}$ fully hadronic decays;
 \item $N_{\mathrm{obj}} \ge 4$, where $N_{\mathrm{obj}} \equiv N_l + N_{\mathrm{jet}}$; $N_l$ is defined as above, and
 $N_{\mathrm{jet}}$ is the number of the jets with a raw (i.e. without jet energy corrections) $P_T > 10~$GeV and without 
 any electron with $P_T > 20~$GeV within a cone of $\Delta R=0.1$; this cut suppresses $Z \rightarrow ll$ and 
@@ -145,7 +145,7 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
              Right: scalar sum of the $P_T$ of the 2 leading electrons and 2 leading jets. 
 	     In each histogram, the distributions for the signal with $M_{LQ}=400~$GeV 
 	     and the contributing backgrounds 
-	     (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}) are shown after 
+	     (with the exception of the QCD multi-jet background, see Section~\ref{sec:QCDBackground}) are shown after 
 	     applying all cuts except the one involving the plotted variable. 
 	     All histograms are summed on top of each other.
 	     Black dots indicate pseudo data randomly generated accordingly with 
@@ -164,7 +164,7 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
     \end{tabular}
     \caption{\small \sl Distribution of the invariant mass, $M_{ej}$, 
       of the electron-jet pairs with smaller $\Delta M_{ej}$ for the signal with $M_{LQ}=400~$GeV and the contributing backgrounds 
-      (with the exception of the QCD background, see Section~\ref{sec:QCDBackground}). 
+      (with the exception of the QCD multi-jet background, see Section~\ref{sec:QCDBackground}). 
       The complete event selection has been applied.
       All histograms are summed on top of each other. 
       Black dots indicate pseudo data randomly generated accordingly with 
@@ -306,7 +306,7 @@ None       &        1.50e+09       $~\pm~$       0.00e+00        &        1.0e+0
        \hline\hline 
 \end{tabular} 
 \end{center} 
-\caption{Sample of QCD ($H_T \in [100,250]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
+\caption{Sample of QCD multi-jet ($H_T \in [100,250]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
 \label{tab:effic-QCD-100-250} 
 \end{table} 
 
@@ -326,7 +326,7 @@ None       &        4.00e+07       $~\pm~$       0.00e+00        &        1.0e+0
        \hline\hline 
 \end{tabular} 
 \end{center} 
-\caption{Sample of QCD ($H_T \in [250,500]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
+\caption{Sample of QCD multi-jet ($H_T \in [250,500]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
 \label{tab:effic-QCD-250-500} 
 \end{table} 
 
@@ -346,7 +346,7 @@ None       &        1.40e+06       $~\pm~$       0.00e+00        &        1.0e+0
        \hline\hline 
 \end{tabular} 
 \end{center} 
-\caption{Sample of QCD ($H_T \in [500,1000]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
+\caption{Sample of QCD multi-jet ($H_T \in [500,1000]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
 \label{tab:effic-QCD-500-1000} 
 \end{table} 
 
@@ -366,11 +366,9 @@ None       &        3.70e+04       $~\pm~$       0.00e+00        &        1.0e+0
        \hline\hline 
 \end{tabular} 
 \end{center} 
-\caption{Sample of QCD ($H_T \in [1000,+\inf]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
+\caption{Sample of QCD multi-jet ($H_T \in [1000,+\inf]~$GeV): Sequence of selection cuts with number of events selected in 100$~pb^{-1}$, efficiency relative to the preceding cut and absolute efficiency. The reported uncertainties on the number of events and efficiencies are statistical, due to the number of analyzed MC events.} 
 \label{tab:effic-QCD-1000-inf} 
 \end{table} 
-
-
 
 %% \begin{table}[htbp] 
 %% \begin{center} 
@@ -392,19 +390,13 @@ None       &        3.70e+04       $~\pm~$       0.00e+00        &        1.0e+0
 %% \label{tab:effic-QCD} 
 %% \end{table} 
 
-
-
-
-
-
 A summary of the number of selected signal and background events expected in 100 pb$^{-1}$ of data 
 is reported in Table \ref{tab:EventSelSummary}. 
 The overall signal selection efficiencies are around 35-65\% for the LQ masses investigated. 
 After the described event selection, the dominant background contributions 
 are $t\bar{t}$ and $Z/\gamma$+jets. Data-driven techniques to estimate these backgrounds
-are discussed in section~\ref{sec:bkgStudy} \footnote{The currently Monte Carlo statistics of the QCD background sample
-is not sufficient to perform a reliable estimate. Techniques for estimating the QCD background will be discussed in 
-Section~\ref{sec:QCDBackground}.}.
+are discussed in section~\ref{sec:bkgStudy} \footnote{Techniques for estimating the QCD multi-jet background using 
+a factorized approach based on MC will be discussed in Section~\ref{sec:QCDBackground}.}.
 
 \begin{table}[htbp]
 \begin{center}
