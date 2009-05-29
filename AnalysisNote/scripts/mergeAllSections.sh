@@ -25,4 +25,7 @@ cat >> ${OUTFILE}.tex <<EOF
 EOF
 
 latex ${OUTFILE}.tex
+bibtex ${OUTFILE}.aux
+latex ${OUTFILE}.tex
+latex ${OUTFILE}.tex
 dvipdf ${OUTFILE}.dvi ${OUTFILE}.pdf
