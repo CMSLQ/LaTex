@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OUTFILE=CMS_AN_2008_070
-TEXFILES="beginning.tex monteCarloSamples.tex trig.tex elec.tex jet.tex eventSel.tex backgrnd_signal.tex Systematics.tex cmsPotential.tex end.tex bib.tex"
+TEXFILES="beginning.tex monteCarloSamples.tex trig.tex elec.tex jet.tex eventSel.tex backgrnd_signal.tex Systematics.tex cmsPotential.tex end.tex acknow.tex bib.tex"
 
 echo "Merging files: $TEXFILES"
 echo "               into the output file $OUTFILE"
