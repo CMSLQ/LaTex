@@ -427,14 +427,15 @@ For each bin, the selection efficiencies and the number of events in 100 pb$^{-1
 \ref{tab:effic-QCD-250-500},
 \ref{tab:effic-QCD-500-1000} and
 \ref{tab:effic-QCD-1000-inf}. 
-The eejj selection optimized for the lower LQ mass point investigated (250 GeV) already requires 
-$S_{T}$ ($\approx H_T$) larger than 460 GeV. This kinematically excludes any 
-QCD contribution from the sample generated in the lowest $H_T$ bin of $[100,250]$~GeV. 
-Only the three remaining bins will be used in the following considerations.
+The number of surviving QCD multi-jet events goes to zero rapidly as the selection is applied. 
+Only in the sample with $H_T\in[500,1000]$~GeV one single event survives the full selection, corresponding
+to $0.37\pm 0.37$ events in 100 pb$^{-1}$.
+In order to estimate this background with an increased statistical precision, a factorized 
+method based on Monte Carlo is used.
 
-The approach used is to take a QCD multi-jet sample with two fake electrons and two jets (ffjj sample)
-that pass all the kinematic selection criteria (see Section~\ref{sec:eventSelection}), and rescale it to estimate 
-the QCD multi-jet contamination in the eejj sample as
+A QCD multi-jet sample with two fake electrons and two jets (ffjj sample)
+that pass all the kinematic selection criteria (see Section~\ref{sec:eventSelection}) is selected and 
+rescaled to estimate the QCD multi-jet contamination in the eejj sample as
 
 %
 \begin{equation} \label{QCDRescaling}
@@ -456,9 +457,13 @@ Table~\ref{tab:ffjjSelection} summarizes
 the absolute number of events passing the ffjj selection, the number 
 of selected events rescaled to 100 pb$^{-1}$ of data, the cross section at LO 
 and the equivalent integrated luminosity of each $H_T$ 
-bin of the QCD multi-jet sample. An $S_{T}$ cut of 460 GeV 
-(which is the optimized cut value for LQ mass of 250 GeV) is used in the ffjj selection.
+bin of the QCD multi-jet sample. 
 The total number of ffjj events in 100 pb$^{-1}$ of data is $N_{ffjj}^{QCD}=6130 \pm 47$.
+An $S_{T}$ cut of 460 GeV (which is the optimized cut value for LQ mass of 250 GeV) is used in 
+the ffjj selection.
+Since $S_{T} \approx H_T$, this kinematically excludes any 
+QCD contribution from the sample generated in the lowest $H_T$ bin of $[100,250]$~GeV. 
+Therefore, only the three remaining $H_T$ bins are used.
 
 \begin{table}[htbp]
 \begin{center}
@@ -479,7 +484,7 @@ $>1000$                  &  26786          & 1515.1  $\pm$ 9.1                & 
 
 
 The probability $P(e|f)$ is obtained from the rate of ``f'' to ``e'' in a ffjj sample obtained
-from all $H_T$ bins of the QCD multi-jet samples after applying $S_T>460~$GeV.
+from the QCD multi-jet samples after applying $S_T>460~$GeV.
 %(QCD ($H_T\in[500,1000]$~GeV) is used since it's the largest contribution in the control sample).
 In the barrel region ($|\eta|<1.5$), the probability $P(e|f)$ is almost flat and $\approx 2.5 \cdot 10^{-3}$,  
 while in the endcap region it is increasing with $\eta$ and has an average value of $\approx 1.3 \cdot 10^{-2}$.
@@ -500,7 +505,8 @@ with Equation~\ref{QCDRescaling} and using the above range for $P(e|f)$.
 %(see Table~\ref{tab:EventSelSummary}) obtained by directly applying the full eejj 
 %selection on the QCD MC sample. 
 Therefore, QCD multi-jet background is expected to be small compared to 
-the dominant $t\bar{t}$ and $Z/\gamma$+jet backgrounds shown in Table~\ref{tab:EventSelSummary}. 
+the $t\bar{t}$ and $Z/\gamma$+jet backgrounds for the same $S_T$ cut, 
+as shown in Table~\ref{tab:EventSelSummary}. 
 It has been verified that this statement remains true even when a harder $S_T$ cut is applied.
 For example, the number of QCD multi-jet background events estimated with the described technique
 becomes $0.012<N_{eejj}^{QCD}<0.05$ with $S_T>740$~GeV.
