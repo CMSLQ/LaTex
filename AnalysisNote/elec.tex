@@ -6,8 +6,10 @@
 \subsection{Identification and Isolation} \label{sec:IdAndIso}
 
 A reconstructed electron object is formed from deposition of energy in ECAL (called a ``supercluster'') that has an 
-extrapolated track pointing to it. This study uses the standard ``GsfElectron'' collection of MC events~\cite{Baffioni:934070}.
-The reconstruction algorithm of Ref \cite{Baffioni:934070} first matches the supercluster to hits in the pixel detector.
+extrapolated track pointing to it. This study uses the standard ``GsfElectron'' 
+collection of MC events~\cite{Baffioni:934070}.
+The reconstruction algorithm of Ref \cite{Baffioni:934070} first matches the 
+supercluster to hits in the pixel detector.
 The pixel hits are then used to seed a track.  Finally, a track is fitted to all hits using the Gaussian Sum Filter 
 (GSF) algorithm, which reconstructs the track to the ECAL surface
 despite the possible presence of kinks from electron bremsstrahlung.  
@@ -36,7 +38,7 @@ the supercluster associated with the electron; a H/E cut of $<0.1$ is applied at
 \end{displaymath}
 where $E_i$ is the energy in the $i^{th}$ crystal, and $E_s$ is the the energy in the seed cluster of the supercluster associated to the electron.
 %
-\item $\Delta\eta_{in}^{trk-SC}$ and $\Delta\phi_{in}^{trk-SC}$: the difference in $\eta$ and $\phi$ between the track position extrapolated from 
+\item $\Delta\eta^{trk-SC}$ and $\Delta\phi^{trk-SC}$: the difference in $\eta$ and $\phi$ between the track position extrapolated from 
 the inner layer tracker to the ECAL surface and the $\eta$ and $\phi$ of the supercluster.
 %
 \item Number of Tracks ($N_T$): with $p_{T}>1.5$ GeV in an annulus $0.02 < \Delta\mbox{R} < 0.2 $ around the direction of the electron;
@@ -55,7 +57,7 @@ $0.15 < \Delta\mbox{R} < 0.3$, centered on the electron's position in the calori
 %
 \end{itemize}
 
-Figures~\ref{fig:elecID} and ~\ref{fig:elecIso} show, respectively, distributions of ID and Isolation variables, 
+Figures~\ref{fig:elecID} and~\ref{fig:elecIso} show, respectively, distributions of ID and Isolation variables, 
 for both true electrons from LQ decays and fake electrons from a sample of QCD multi jet events. 
 Table~3 
 %\ref{tab:HEEPselection} 
@@ -156,8 +158,8 @@ future upgrades of this analysis.
       Variable & Barrel & Endcap & Variable & Barrel & Endcap  \\ \hline
       $H/E$  & $<0.05$ & $<0.1$ & $N_T$  & $<4$ & $<4$ \\ \hline
       $\sigma_{\eta\eta}$  & $<0.011$ & $<0.0275$ & Track Iso (GeV) & $<7.5$ & $<15$ \\ \hline
-      $|\Delta\eta_{in}^{trk-SC}|$ & $<0.005$ & $<0.007$ & EM Iso (GeV) & $<6+0.01*E_{t}$ & $<6+0.01*E_{t}$ \\ \hline
-      $|\Delta\phi_{in}^{trk-SC}|$ & $<0.09$ & $<0.09$ & HAD Iso (GeV) & $<4+0.005*E_{t}$ & $<4+0.005*E_{t}$ \\ \hline
+      $|\Delta\eta^{trk-SC}|$ & $<0.005$ & $<0.007$ & EM Iso (GeV) & $<6+0.01*E_{t}$ & $<6+0.01*E_{t}$ \\ \hline
+      $|\Delta\phi^{trk-SC}|$ & $<0.09$ & $<0.09$ & HAD Iso (GeV) & $<4+0.005*E_{t}$ & $<4+0.005*E_{t}$ \\ \hline
     \end{tabular}
   \caption{\small \sl HEEP electron ID and isolation criteria. Reconstructed electrons are associated to the 
     barrel (endcaps) if $|\eta|<1.442$ ($1.560<|\eta|<2.5$).}
