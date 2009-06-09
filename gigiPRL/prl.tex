@@ -1,0 +1,56 @@
+%% ****** Start of file template.aps ****** %
+%%
+%%   This file is part of the APS files in the REVTeX 4 distribution.
+%%   Version 4.0 of REVTeX, August 2001
+%%
+%%   Copyright (c) 2001 The American Physical Society.
+%%
+%%   See the REVTeX 4 README file for restrictions and more information.
+%%
+% This is a template for producing manuscripts for use with REVTEX 4.0
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+%
+% Group addresses by affiliation; use superscriptaddress for long
+% author lists, or if there are many overlapping affiliations.
+% For Phys. Rev. appearance, change preprint to twocolumn.
+% Choose pra, prb, prc, prd, pre, prl, prstab, or rmp for journal
+%  Add 'draft' option to mark overfull boxes with black boxes
+%  Add 'showpacs' option to make PACS codes appear
+
+\RequirePackage{lineno} 
+%\documentclass[prd,amsmath,amssymb]{revtex4}
+% use this for PRL/PRD, add "preprint" to get double space
+\documentclass[prd,showpcs,amsmath,amssymb,preprint]{revtex4}
+%\documentclass[prd,showpcs,amsmath,amssymb,twocolumn]{revtex4}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{amssymb}   % for math
+\usepackage{draftcopy} 
+
+\input{definitions}
+
+\begin{document}
+\setpagewiselinenumbers
+\modulolinenumbers[1]
+\linenumbers
+%\Pagenumbering{arabic}
+
+
+
+% the following information is for internal review, please remove them for submission
+\leftline{Version 1.0 as of \today} 
+\leftline{Primary authors: The $1^{st}$ generation LQ group} 
+\leftline{Comment to {\tt eno@umd.edu, rumerio@mail.cern.ch}}
+\rightline{Reply to EXO-008-013 by ****, 2009.}
+% the following line is for submission 
+%\hspace{5.2in} \mbox{}
+%\hspace{5.2in} \mbox{CERN-PH-EP/2009-XX}
+
+\input{lq.tex}
+
+\end{document}
+%
+% ****** End of file template.aps ******
