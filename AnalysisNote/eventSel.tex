@@ -53,8 +53,10 @@ with an electron, a muon and 2 jets;
 \end{itemize}
 The cuts that define the skim have been chosen as:
 \begin{itemize}
-\item $N_l \equiv N_e + N_{\mu} \ge 2$, where $N_e (N_{\mu})$ is the number of reconstructed electrons (muons)
-with $p_T>20~$GeV and without ID or isolation requirements applied; this cut suppresses events with low 
+\item $N_l \equiv N_e + N_{\mu} \ge 2$, where $N_e (N_{\mu})$ 
+is the number of reconstructed ``GsfElectrons'' (``GlobalMuons'')
+with $p_T>20~$GeV and without additional ID 
+or isolation requirements applied; this cut suppresses events with low 
 lepton multiplicity and low lepton $p_T$, such as QCD multi-jet, W+jets and $t\bar{t}$ fully hadronic decays;
 \item $N_{\mathrm{obj}} \ge 4$, where $N_{\mathrm{obj}} \equiv N_l + N_{\mathrm{jet}}$; $N_l$ is defined as above, and
 $N_{\mathrm{jet}}$ is the number of the jets with a raw (i.e. without jet energy corrections) $p_T > 10~$GeV and without 
@@ -164,7 +166,7 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
       of the electron-jet pairs with smaller $\Delta M_{ej}$ for the signal with $M_{LQ}=400~$GeV and the contributing backgrounds 
       (with the exception of the QCD multi-jet background, see Section~\ref{sec:QCDBackground}). 
       The complete event selection has been applied.
-      All histograms are summed on top of each other. 
+      All histograms (two entries per event) are summed on top of each other. 
       Black dots indicate pseudo data randomly generated accordingly with 
       the total signal + background distribution, and assuming 100 pb$^{-1}$ of data.
       The plot is shown in linear and log scale on the left- and right-hand-side, respectively. 
