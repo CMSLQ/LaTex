@@ -61,7 +61,7 @@ lepton multiplicity and low lepton $p_T$, such as QCD multi-jet, W+jets and $t\b
 \item $N_{\mathrm{obj}} \ge 4$, where $N_{\mathrm{obj}} \equiv N_l + N_{\mathrm{jet}}$; $N_l$ is defined as above, and
 $N_{\mathrm{jet}}$ is the number of the jets with a raw (i.e. without jet energy corrections) $p_T > 10~$GeV and without 
 any electron with $p_T > 20~$GeV within a cone of $\Delta R=0.1$; this cut suppresses $Z \rightarrow ll$ and 
-$Z \rightarrow ll$+~1~jet while preserving $Z \rightarrow ll$+~2~(or more)~jets.
+$Z \rightarrow ll$+~1~jet while preserving $Z \rightarrow ll$+~2~(or more)~jets events.
 \end{itemize}
 
 Number of events in the skimmed sample with 100 pb$^{-1}$ of data, and 
@@ -148,7 +148,7 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
 	     (with the exception of the QCD multi-jet background, see Section~\ref{sec:QCDBackground}) are shown after 
 	     applying all cuts except the one involving the plotted variable. 
 	     All histograms are summed on top of each other.
-	     Black dots indicate pseudo data randomly generated accordingly with 
+	     Black dots indicate pseudo data randomly generated accordingly to 
 	     the total signal + background distribution, and assuming 100 pb$^{-1}$ of data.
 	     }
     \label{fig:Mee_St_distributions}
@@ -167,7 +167,7 @@ The resulting $M_{ej}$ distribution after the full selection is shown in figure~
       (with the exception of the QCD multi-jet background, see Section~\ref{sec:QCDBackground}). 
       The complete event selection has been applied.
       All histograms (two entries per event) are summed on top of each other. 
-      Black dots indicate pseudo data randomly generated accordingly with 
+      Black dots indicate pseudo data randomly generated accordingly to 
       the total signal + background distribution, and assuming 100 pb$^{-1}$ of data.
       The plot is shown in linear and log scale on the left- and right-hand-side, respectively. 
       }
@@ -471,7 +471,7 @@ the invariant mass $M_{ee}$ of the two leading electrons
 and the $S_T$ variable, the sum of the $p_T$ of the two leading electrons and jets.
 The optimization proceed in two steps. 
 
-A first scan of the 8-dimensional parameter space is performed using a fast procedure in terms of CPU timing, 
+A scan of the 8-dimensional parameter space is performed using a fast procedure in terms of CPU timing, 
 aimed to find the approximate optimized region for the baseline selection cuts.
 A range of cut values for each variable is chosen, and the number of signal ($N_S$) 
 and background ($N_B$) events passing the selection is calculated from MC for each combination 
@@ -492,8 +492,9 @@ at different LQ masses; hence, the cuts numbered 1, 2 and 3 in Section~\ref{sec:
 are used at all masses.
 This fast multi-dimensional optimization indicates also an $S_T$ cut that increases with LQ mass. 
 
-The final optimization of the $S_T$ cut, which is the most discriminating variable between signal and background, 
-is performed by minimizing the upper limit on leptoquark cross section in absence of an observed signal, 
+The final optimization of the $S_T$ cut, which is the most discriminating variable between 
+signal and background, is performed by minimizing the upper limit on 
+leptoquark cross section in absence of an observed signal, 
 using a Bayesian approach (described in Section~\ref{CMSpotential}). 
 This method is well suited for counting experiments in Poisson regime but it's CPU time consuming. 
 For this reason only the $S_T$ cut is optimized in this way, while the other cuts are fixed as indicated from 
