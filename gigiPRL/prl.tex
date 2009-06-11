@@ -18,7 +18,7 @@
 %  Add 'draft' option to mark overfull boxes with black boxes
 %  Add 'showpacs' option to make PACS codes appear
 
-\RequirePackage{lineno} 
+%\RequirePackage{lineno} 
 %\documentclass[prd,amsmath,amssymb]{revtex4}
 % use this for PRL/PRD, add "preprint" to get double space
 \documentclass[prd,showpcs,amsmath,amssymb,preprint]{revtex4}
@@ -33,12 +33,11 @@
 \input{definitions}
 
 \begin{document}
-\setpagewiselinenumbers
-\modulolinenumbers[1]
-\linenumbers
-%\Pagenumbering{arabic}
+%\setpagewiselinenumbers
+%\modulolinenumbers[1]
+%\linenumbers
 
-
+\begin{titlepage}
 
 % the following information is for internal review, please remove them for submission
 \leftline{Version 1.0 as of \today} 
@@ -48,6 +47,32 @@
 % the following line is for submission 
 %\hspace{5.2in} \mbox{}
 %\hspace{5.2in} \mbox{CERN-PH-EP/2009-XX}
+
+\title{                                                                          
+A search for leptoquarks decaying to an electron and a quark                     
+in \pp~ collisions at \sqrts = 10 \tev                                           
+}
+\date{\today}
+
+\begin{abstract}
+We present a search for pair production of first generation leptoquarks (LQ)
+in events containing two electrons and
+two jets using 50 \ipb~ of data collected with
+the CMS detector at the CERN LHC \pp~ collider operating at \sqrts = 10 \tev.
+The number of observed events is in good agreement with
+the predictions for standard model background processes,
+and we consequently
+set a limit on the cross section times branching fraction
+$pp \rightarrow LQ\bar{LQ}+X \rightarrow e^+e^-qq+X$
+ as a function of LQ mass. For LQ's with a branching fraction to
+an electron and a quark of 1,
+we obtain a 95\% confidence level limit on the mass of a scalar
+LQ of M(LQ) $>$ 535 \gev.
+\end{abstract}
+
+\pacs{13.85.Rm, 12.60.-i, 14.80.-j}
+%\maketitle
+\end{titlepage}
 
 \input{lq.tex}
 
