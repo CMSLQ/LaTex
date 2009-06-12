@@ -489,24 +489,30 @@ $>1000$                  &  26786          & 1515.1  $\pm$ 9.1                & 
 \end{table}
 
 
-The probability $P(e|f)$ is obtained from the rate of ``f'' to ``e'' in a ffjj sample obtained
-from the QCD multi-jet samples after applying $S_T>460~$GeV.
+The probability $P(e|f)$ is estimated from the rate of ``f'' to ``e'' in a ffjj sample obtained
+from the QCD multi-jet samples after applying all of the selection cuts described in 
+Section~\ref{sec:eventSelection} with the $S_T$ cut set to 460~GeV.
 %(QCD ($H_T\in[500,1000]$~GeV) is used since it's the largest contribution in the control sample).
 In the barrel region ($|\eta|<1.5$), the probability $P(e|f)$ is almost flat and $\approx 2.5 \cdot 10^{-3}$,  
 while in the endcap region it is increasing with $\eta$ and has an average value of $\approx 1.3 \cdot 10^{-2}$.
 %up to $\approx 3 \cdot 10^{-2}$ for $|\eta|=2.5$. 
-The overall average value in barrel and endcaps is $P(e|f) = 4.5 \cdot 10^{-3}$.
-A closure test performed with relaxed ID and Isolation cuts shows 
-that this method might underestimate the value of $P(e|f)$ by a factor of 2.
-Keeping this into account we can state that $P(e|f)$ is within the range
-$[4.5,9] \cdot 10^{-3}$.
+The overall average value in barrel and endcaps is $P(e|f) = 5.3 \cdot 10^{-3}$.
+A closure test performed with relaxed Isolation cuts shows 
+that this method might underestimate the 
+%value of $P(e|f)$ by about 20\%.
+QCD multi-jet background by a factor of approximately 40\%.
+A possible reason for this discrepancy is that, by applying Equation~\ref{QCDRescaling}
+with a constant value of $P(e|f)$, we are not taking into account $\eta$ and $p_T$ dependencies.
+%Keeping this into account we can state that $P(e|f)$ is within the range $[5.3, 6.5] \cdot 10^{-3}$.
 
 %An uncertainty of 200\% on the value of $P(e|f)$ is estimated 
 %from closure tests performed with relaxed ID and Isolation cuts.
 
 With the cut $S_T>460$~GeV, the number of QCD multi-jet events in the eejj sample is estimated as 
-$0.12<N_{eejj}^{QCD}<0.5$ events by rescaling the ffjj sample 
-with Equation~\ref{QCDRescaling} and using the above range for $P(e|f)$. 
+$0.17<N_{eejj}^{QCD}<0.26$ events by rescaling the ffjj sample 
+with Equation~\ref{QCDRescaling} and 
+%using the above range for $P(e|f)$. 
+taking into account the underestimation suggested by the closure test.
 %this value is in agreement with the estimate of $0.37 \pm 0.37$ events 
 %(see Table~\ref{tab:EventSelSummary}) obtained by directly applying the full eejj 
 %selection on the QCD MC sample. 
@@ -515,7 +521,7 @@ the $t\bar{t}$ and $Z/\gamma$+jet backgrounds for the same $S_T$ cut,
 as shown in Table~\ref{tab:EventSelSummary}. 
 It has been verified that this statement remains true even when a harder $S_T$ cut is applied.
 For example, the number of QCD multi-jet background events estimated with the described technique
-becomes $0.012<N_{eejj}^{QCD}<0.05$ with $S_T>740$~GeV.
+becomes $0.026<N_{eejj}^{QCD}<0.039$ with $S_T>740$~GeV.
 
 The contamination of QCD multi-jet background in the e$\mu$jj sample 
 is expected to be even smaller than eejj sample, since the probability for jets to fake muons 
