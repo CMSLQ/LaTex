@@ -82,8 +82,14 @@ contribution to the theoretical uncertainties.
 %At LHC the PDF uncertainties are expected to give the largest contribution. 
 The effect of this systematic uncertainty can be estimated 
 using the method developed by the CTEQ collaboration~\cite{PDFRescaling,Martin:2003sk}.
-%by re-weighting 
-%the events based on the momentum fraction of each incoming parton~\cite{PDFRescaling}.
+
+Each PDF is fit to known data using 20 free parameters, each with an associated uncertainty.  Varying each parameter changes the best fit function for the PDF.  
+This gives 40 new variations on each PDF.  
+In order to avoid the large CPU time needed to regenerate events with a different PDF, a weight for each event is calculated for each PDF variation 
+based on the momentum fraction carried by each incoming parton ($x_1, x_2$) and the momentum scale of the event ($Q$).  
+It is assumed the kinematics of each event does not change dramatically based on the PDF variation selected.
+The number of events passing the selection criteria for both signal and background is calculated using the weights generated for each PDF variation.  
+This gives an estimate on the uncertainty of the number of selected events due to uncertainties in the PDF.
 %FIXME - the ref PDFRescaling is only for the AN, not the PAS%
 %FIXME - the ref PDFRescaling is only for the AN, not the PAS%
 %[reference https://twiki.cern.ch/twiki/bin/view/CMS/AachenPdfUncertainties].
@@ -91,13 +97,7 @@ The relative uncertainties on the differential cross sections
 typically range from 2-5\% for Standard Model processes, 
 but may rise to 10\% or larger for parton processes at the TeV-scale 
 (like the leptoquark pair production).
-%From The relative uncertainties on the differential cross sections 
-%typically range from 2-5\% for Standard Model processes, 
-%but may rise to 10\% or larger for parton processes at the TeV-scale.
-These uncertainties will be evaluated and included in future upgrades of this analysis.
-%According to reference XXX  http://arxiv.org/pdf/0804.2800v3, page 6 the  
-%NLO cross section for ttbar ranges between 396 and 455 pb due to variations in PDFs.  
-%
+
 \end{enumerate}
 %
 %\end{document}
