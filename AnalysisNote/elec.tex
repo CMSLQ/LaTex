@@ -33,11 +33,17 @@ The definitions of the variables used in this analysis are given below:
 the electromagnetic energy of the supercluster associated with the electron; 
 an H/E cut of $<0.1$ is applied at pre-selection level.
 %
-\item $\sigma_{\eta\eta}$: a variable reflecting the distribution along $\eta$ of the electron shower:
+\item $\sigma_{i\eta i\eta}$: a variable reflecting the distribution along $\eta$ of the electron shower:
 \begin{displaymath}
-\sigma_{\eta\eta} = \sum( \eta_i - \eta_s )^2 \frac{E_i}{E_{\mbox{s}}} \quad ,
+\sigma_{\eta\eta} = \frac{\sum_i w_i( \eta_i - \bar\eta )^2 \quad}{\sum_i w_i} ,
 \end{displaymath}
-where $E_i$ is the energy in the $i^{th}$ crystal, and $E_s$ is the the energy in the seed cluster of the supercluster associated to the electron.
+where $\eta_i$ is the eta position of the $i^{th}$ crystal of a 5x5 square of crystals centered at the seed of the supercluster associated to the electron, $\bar\eta$ is the energy weighted mean $\eta$ of the block, and $w_i$ is the weight given to each crystal as defined by:
+\begin{displaymath}
+w_i = 4.2 + ln (\frac{E_i}{\bar E})
+\end{displaymath}
+where $E_i$ is the energy in the $i^{th}$ crystal and $\bar E$ is the average energy of the block.
+The values for the endcap are corrected for the different crystal size according to a linear correction.
+%sqrt(sigEtaEta) - 0.02 (abs(eta) - 2.3)
 %
 \item $\Delta\eta^{trk-SC}$ and $\Delta\phi^{trk-SC}$: the difference in $\eta$ and $\phi$ between the track position extrapolated from 
 the inner layer tracker to the ECAL surface and the $\eta$ and $\phi$ of the supercluster.
