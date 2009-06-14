@@ -20,6 +20,11 @@ to a change of +1 to +10\% (-3 to -15\%) in the signal efficiency and +33 to +52
 while a +2\% (-2\%) variation in the electron energy scale yields a +1 to +2\% (-1 to -4\%) 
 change in signal efficiency and a +1 to +9\% (-9 to -20\%) change in the number of background events. 
 
+Jet and electron energy scale uncertainties
+are not included for $t\bar{t}$ and $Z/\gamma$+jets backgrounds,
+since they are determined using the data driven methods discussed
+in Section~\ref{sec:bkgStudy}.
+
 %In the early period of data taking the reconstructed energy of the electron and jets will not be known with 
 %a high degree of certainty. To quantify the effect of this uncertainty on the number of signal and background events
 %passing the selection criteria, the analysis is repeated with a multiplicative factor introduced to the energy 
@@ -65,6 +70,10 @@ described in section~\ref{sec:bkgStudy}.
 These uncertainties are calculated for an integrated luminosity of 100~pb$^{-1}$ 
 and are used in Section~\ref{CMSpotential} only for the plots relative to this scenario.
 
+The uncertainties on the ratios $R(p_{T})$ (see Equation~\ref{formula:NeejFromNemujj})
+and $R_{OffZ/AtZ}$ (see Equation~\ref{formula:NeejjZ})
+are small compared to the counting error associated with the
+size of the control samples.
 
 %Estimates of the background by data driven techniques are affected by the statistical
 %uncertainties on the size of the control samples.
@@ -75,21 +84,28 @@ and are used in Section~\ref{CMSpotential} only for the plots relative to this s
 
 \item Theoretical uncertainties 
 
-Theoretical uncertainties can affect the total cross section and the acceptance of the kinematic cuts, for both signal 
-and background events. 
-At the LHC the PDF uncertainties are expected to give a non-neglible
+%Theoretical uncertainties can affect the total cross section 
+%and the acceptance of the kinematic cuts, for both signal 
+%and background events. 
+At the LHC the PDF uncertainties are expected to give a major
 contribution to the theoretical uncertainties.  
 %At LHC the PDF uncertainties are expected to give the largest contribution. 
-The effect of this systematic uncertainty can be estimated 
+The effect of this systematic uncertainty has been estimated
 using the method developed by the CTEQ collaboration~\cite{PDFRescaling,Martin:2003sk}.
 
-Each PDF is fit to known data using 20 free parameters, each with an associated uncertainty.  Varying each parameter changes the best fit function for the PDF.  
+Each PDF is fit to known data using 20 free parameters, each with an associated uncertainty.  
+Varying each parameter changes the best fit function for the PDF.  
 This gives 40 new variations on each PDF.  
-In order to avoid the large CPU time needed to regenerate events with a different PDF, a weight for each event is calculated for each PDF variation 
-based on the momentum fraction carried by each incoming parton ($x_1, x_2$) and the momentum scale of the event ($Q$).  
-It is assumed the kinematics of each event does not change dramatically based on the PDF variation selected.
-The number of events passing the selection criteria for both signal and background is calculated using the weights generated for each PDF variation.  
-This gives an estimate on the uncertainty of the number of selected events due to uncertainties in the PDF.
+In order to avoid the large CPU time needed to regenerate events with 
+a different PDF, a weight for each event is calculated for each PDF variation 
+based on the momentum fraction carried by each incoming parton ($x_1, x_2$) 
+and the momentum scale of the event ($Q$).  
+It is assumed the kinematics of each event does not change dramatically based 
+on the PDF variation selected.
+The number of events passing the selection criteria for both signal and background 
+is calculated using the weights generated for each PDF variation.  
+This gives an estimate on the uncertainty of the number of selected events due 
+to uncertainties in the PDF.
 %FIXME - the ref PDFRescaling is only for the AN, not the PAS%
 %FIXME - the ref PDFRescaling is only for the AN, not the PAS%
 %[reference https://twiki.cern.ch/twiki/bin/view/CMS/AachenPdfUncertainties].
