@@ -87,25 +87,40 @@ size of the control samples.
 %Theoretical uncertainties can affect the total cross section 
 %and the acceptance of the kinematic cuts, for both signal 
 %and background events. 
-At the LHC the PDF uncertainties are expected to give a major
+At the LHC the PDF uncertainties are expected to contribute the most significant
 contribution to the theoretical uncertainties.  
 %At LHC the PDF uncertainties are expected to give the largest contribution. 
 The effect of this systematic uncertainty has been estimated
 using the method developed by the CTEQ collaboration~\cite{PDFRescaling,Martin:2003sk}.
+In calculating a PDF to be used by the event generation algorithm the CTEQ group fits
+the function to 20 parameters, the value and uncertainty of which are taken from the
+combination of data from current and previous experiments.
+If the value of any one of these 20 parameters is varied according to the uncertainty on that value 
+the best fit function will naturally change.  This leads to 40 new possible PDFs corresponding to the positive or
+negative variation of each of the 20 parameters.  All 41 functions are provided in a set by the CTEQ collaboration.
+%Each PDF is fit to known data using 20 free parameters, each with an associated uncertainty.  
+%Varying each parameter changes the best fit function for the PDF.  
+%This gives 40 new variations on each PDF.  
 
-Each PDF is fit to known data using 20 free parameters, each with an associated uncertainty.  
-Varying each parameter changes the best fit function for the PDF.  
-This gives 40 new variations on each PDF.  
-In order to avoid the large CPU time needed to regenerate events with 
-a different PDF, a weight for each event is calculated for each PDF variation 
+%In order to avoid the large CPU time needed to regenerate events with 
+%a different PDF, 
+The uncertainty associated with the PDF is taken into account by calculating
+a weight for each event corresponding to each PDF variation 
 based on the momentum fraction carried by each incoming parton ($x_1, x_2$) 
 and the momentum scale of the event ($Q$).  
-It is assumed the kinematics of each event does not change dramatically based 
-on the PDF variation selected.
+%It is assumed the kinematics of each event does not change dramatically based 
+%on the PDF variation selected.  
+For this analysis we have used the PDF set CTEQ6.1.
+
 The number of events passing the selection criteria for both signal and background 
 is calculated using the weights generated for each PDF variation.  
-This gives an estimate on the uncertainty of the number of selected events due 
-to uncertainties in the PDF.
+The number of signal events that pass chages by approximately 8\% for a leptoquark with a mass of 400 $GeV/c^2$, 
+while the change in the number of background events
+passing is approximately 8\% for $t\bar{t}$ events and 3\% for $Z/\gamma$+jet 
+events for the corresponding selection criteria.
+The contribution of other background processies is negligible.   
+The variation in the signal efficiency is about 0.2\% in the mass range considered.
+
 %FIXME - the ref PDFRescaling is only for the AN, not the PAS%
 %FIXME - the ref PDFRescaling is only for the AN, not the PAS%
 %[reference https://twiki.cern.ch/twiki/bin/view/CMS/AachenPdfUncertainties].
