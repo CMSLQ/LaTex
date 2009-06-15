@@ -33,15 +33,18 @@ The definitions of the variables used in this analysis are given below:
 the electromagnetic energy of the supercluster associated with the electron; 
 an H/E cut of $<0.1$ is applied at pre-selection level.
 %
-\item $\sigma_{i\eta i\eta}$: a variable reflecting the distribution along $\eta$ of the electron shower:
+\item $\sigma_{\eta\eta}$: a variable reflecting the distribution along $\eta$ of the electron shower 
 \begin{displaymath}
-\sigma_{i\eta i\eta} = \frac{\sum_i w_i( \eta_i - \bar\eta )^2 \quad}{\sum_i w_i} ,
+\sigma_{\eta\eta} = \frac{\sum_k^{5x5} w_k( i_{\eta}^k - \bar{i_{\eta}} )^2 \quad}{\sum_k^{5x5} w_k} \quad ,
 \end{displaymath}
-where $\eta_i$ is the eta position of the $i^{th}$ crystal of a 5x5 square of crystals centered at the seed of the cluster associated to the electron, $\bar\eta$ is the energy weighted mean $\eta$ of the block, and $w_i$ is the weight given to each crystal as defined by:
+where $i_{\eta}^k$ is the index of the $\eta$ position of the $k^{th}$ crystal in a 5x5 matrix 
+of crystals centered on the seed crystal of the cluster associated to the electron, 
+$\bar{i_{\eta}}$ is the energy weighted mean index of the $\eta$ position of the 5x5 block, 
+and $w_k$ is a weight given to each crystal as defined by
 \begin{displaymath}
-w_i = 4.2 + ln (\frac{E_i}{\bar E})
+w_k = 4.2 + ln (\frac{E_k}{E_{5x5}}) \quad , 
 \end{displaymath}
-where $E_i$ is the energy in the $i^{th}$ crystal and $\bar E$ is the average energy of the block.
+where $E_k$ is the energy of the $k^{th}$ crystal and $E_{5x5}$ is the total energy deposited in the 5x5 block.
 The values for the endcap are corrected for the different crystal size with respect to the barrel region.
 %sqrt(sigEtaEta) - 0.02 (abs(eta) - 2.3)
 %http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/RecoEcal/EgammaCoreTools/src/EcalClusterTools.cc?revision=1.14&view=markup&pathrev=V00-05-18%
@@ -165,7 +168,7 @@ future upgrades of this analysis.
       \multicolumn{3}{|c|}{ID Variables} & \multicolumn{3}{|c|}{Isolation Variables} \\ 
       Variable & Barrel & Endcap & Variable & Barrel & Endcap  \\ \hline
       $H/E$  & $<0.05$ & $<0.1$ & $N_T$  & $<4$ & $<4$ \\ \hline
-      $\sigma_{i\eta i\eta}$  & $<0.011$ & $<0.0275$ & Track Iso (GeV) & $<7.5$ & $<15$ \\ \hline
+      $\sigma_{\eta\eta}$  & $<0.011$ & $<0.0275$ & Track Iso (GeV) & $<7.5$ & $<15$ \\ \hline
       $|\Delta\eta^{trk-SC}|$ & $<0.005$ & $<0.007$ & EM Iso (GeV) & $<6+0.01*E_{t}$ & $<6+0.01*E_{t}$ \\ \hline
       $|\Delta\phi^{trk-SC}|$ & $<0.09$ & $<0.09$ & HAD Iso (GeV) & $<4+0.005*E_{t}$ & $<4+0.005*E_{t}$ \\ \hline
     \end{tabular}
