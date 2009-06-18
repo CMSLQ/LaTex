@@ -35,14 +35,16 @@ an H/E cut of $<0.1$ is applied at pre-selection level.
 %
 \item $\sigma_{\eta\eta}$: a variable reflecting the distribution along $\eta$ of the electron shower 
 \begin{displaymath}
-\sigma_{\eta\eta} = \frac{\sum_k^{5x5} w_k( i_{\eta}^k - \bar{i_{\eta}} )^2 \quad}{\sum_k^{5x5} w_k} \quad ,
+\sigma_{\eta\eta} = \frac{\sum_k^{5x5} w_k( \imath_{\eta}^k - \bar{\imath}_{\eta} )^2 \quad}{\sum_k^{5x5} w_k} \quad ,
 \end{displaymath}
-where $i_{\eta}^k$ is the index of the $\eta$ position of the $k^{th}$ crystal in a 5x5 matrix 
-of crystals centered on the seed crystal of the cluster associated to the electron, 
-$\bar{i_{\eta}}$ is the energy weighted mean index of the $\eta$ position of the 5x5 block, 
+where $\imath_{\eta}^k$ is the index of the $\eta$ position of the $k^{th}$ crystal 
+in a 5x5 matrix of crystals centered on the seed crystal of the 
+cluster associated to the electron, 
+$\bar{\imath}_{\eta}$ is the energy weighted mean 
+index of the $\eta$ position of the 5x5 block, 
 and $w_k$ is a weight given to each crystal as defined by
 \begin{displaymath}
-w_k = 4.2 + ln (\frac{E_k}{E_{5x5}}) \quad , 
+w_k = 4.2 + {\rm ln} (\frac{E_k}{E_{5x5}}) \quad , 
 \end{displaymath}
 where $E_k$ is the energy of the $k^{th}$ crystal and $E_{5x5}$ is the total energy deposited in the 5x5 block.
 The values for the endcap are corrected for the different crystal size with respect to the barrel region.
@@ -52,18 +54,20 @@ The values for the endcap are corrected for the different crystal size with resp
 \item $\Delta\eta^{trk-SC}$ and $\Delta\phi^{trk-SC}$: the difference in $\eta$ and $\phi$ between the track position extrapolated from 
 the inner layer tracker to the ECAL surface and the $\eta$ and $\phi$ of the supercluster.
 %
-\item Number of Tracks ($N_T$): with $p_{T}>1.5$ GeV in an annulus $0.02 < \Delta\mbox{R} < 0.2 $ around the direction of the electron;
+\item Number of tracks ($N_T$): with $p_{T}>1.5$ GeV in an annulus $0.02 < \Delta\mbox{R} < 0.2 $ around the direction of the electron;
 %
-\item Track Isolation (Track Iso): the sum of the $p_{T}$ of tracks in the annulus defined above for $N_T$.
+\item Track isolation (Track iso): the sum of the $p_{T}$ of tracks in the annulus defined above for $N_T$.
 %
 %
-\item EM Isolation (Iso): the transverse part of the electromagnetic energy 
+\item Electromagnetic isolation (EM iso): 
+the transverse part of the electromagnetic energy 
 of all the ECAL Rec Hits (energy deposits in single channels)
 %deposited in all the clusters 
 in a cone $\Delta\mbox{R} < 0.3$, 
 centered on the electron's position in the calorimeter, excluding the Rec Hits that make up the supercluster;
 %
-\item HAD Isolation: the transverse part of the hadronic energy of all the HCAL Rec Hits in an annulus
+\item Hadronic isolation (HAD iso): 
+the transverse part of the hadronic energy of all the HCAL Rec Hits in an annulus
 $0.15 < \Delta\mbox{R} < 0.3$, centered on the electron's position in the calorimeter. 
 %
 \end{itemize}
@@ -168,11 +172,12 @@ future upgrades of this analysis.
       \multicolumn{3}{|c|}{ID Variables} & \multicolumn{3}{|c|}{Isolation Variables} \\ 
       Variable & Barrel & Endcap & Variable & Barrel & Endcap  \\ \hline
       $H/E$  & $<0.05$ & $<0.1$ & $N_T$  & $<4$ & $<4$ \\ \hline
-      $\sigma_{\eta\eta}$  & $<0.011$ & $<0.0275$ & Track Iso (GeV) & $<7.5$ & $<15$ \\ \hline
-      $|\Delta\eta^{trk-SC}|$ & $<0.005$ & $<0.007$ & EM Iso (GeV) & $<6+0.01*E_{t}$ & $<6+0.01*E_{t}$ \\ \hline
-      $|\Delta\phi^{trk-SC}|$ & $<0.09$ & $<0.09$ & HAD Iso (GeV) & $<4+0.005*E_{t}$ & $<4+0.005*E_{t}$ \\ \hline
+      $\sigma_{\eta\eta}$  & $<0.011$ & $<0.0275$ & Track iso (GeV) & $<7.5$ & $<15$ \\ \hline
+      $|\Delta\eta^{trk-SC}|$ & $<0.005$ & $<0.007$ & EM iso (GeV) & $<6+0.01*E_{t}$ & $<6+0.01*E_{t}$ \\ \hline
+      $|\Delta\phi^{trk-SC}|$ & $<0.09$ & $<0.09$ & HAD iso (GeV) & $<4+0.005*E_{t}$ & $<4+0.005*E_{t}$ \\ \hline
     \end{tabular}
-  \caption{\small \sl HEEP electron ID and isolation criteria. Reconstructed electrons are associated to the 
+  \caption{\small \sl HEEP electron ID and isolation criteria. 
+    Reconstructed electrons are associated to the 
     barrel (endcaps) if $|\eta|<1.442$ ($1.560<|\eta|<2.5$).}
   \end{center}
 \end{table}
@@ -185,8 +190,9 @@ hundreds of GeV, can be reconstructed with high efficiency.
 Table~\ref{tab:ElecEffAcc}
 shows the electron acceptance $A_{gen}$
 (the acceptance cuts are $p_{T}^{gen}>$ 30 $GeV/c$ and $|\eta^{gen}|<2.5$),
-the efficiency, $\varepsilon_{ele}$, for a reconstructed electron that have passed ID and isolation requirements
-within the acceptance region, and the overall efficiency, $A_{gen} \times \varepsilon_{ele}$,
+the efficiency, $\varepsilon_{ele}$, for a reconstructed electron to pass 
+ID and isolation requirements within the acceptance region, 
+and the overall efficiency, $A_{gen} \times \varepsilon_{ele}$,
 for single electrons from LQ decays for a 400 $GeV/c^2$ LQ mass.
 The overall single electron efficiency, including acceptance, is $\approx 80\%$.
 

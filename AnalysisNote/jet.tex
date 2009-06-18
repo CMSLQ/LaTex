@@ -15,9 +15,11 @@ and the process is continued iteratively until a stable jet four-vector is obtai
 
 %########Both mass at p must stabilize, or just the three-vector???????????
 
-This algorithm also provides high energy ``electrons'' to be included in the jet collection. 
-To remove such electrons ("cleaning") the collection of electrons that pass electron ID and Isolation 
-selection criteria is created, as described in Section~\ref{sec:electrons}. The three-vectors of the 
+This algorithm also provides high energy ``electrons'' to be included in 
+the jet collection. To remove such electrons ("cleaning") 
+the collection of electrons that pass electron ID and Isolation 
+selection criteria is created, as described in Section~\ref{sec:electrons}. 
+The three-vectors of the 
 electrons in this new collection is then compared to the three-vectors of the jets. 
 A jet is removed if it is within a $\Delta R$ of 0.5 from one of the electrons. 
 Figure~\ref{fig:JetCleaning} shows the distribution of the number of reconstructed jets 
@@ -42,7 +44,8 @@ coming from LQ decays are correctly removed from the jet list.
 
 \subsection{Jet Energy Corrections}
 
-The corrections for the Jet Energy Scale (JES) are divided into various levels in the CMS Software \cite{JES}.  
+The jet energy corrections (JEC) are divided into various levels in 
+the CMS Software \cite{JES}.  
 In this analysis the jet energy is corrected with the level 2, 3, and 5 corrections.
 
 The Level 2 jet energy corrections comprise the 
