@@ -26,33 +26,35 @@ They also constrain
 the coupling constant $\lambda$ at these masses to be less than 0.3.
 
 This paper presents the results of a search for a first-generation LQ
-using a data sample corresponding to 50 \ipb~ taken with the CMS
+using 
+events containing two electrons and two jets from
+a data sample corresponding to 50 \ipb~ taken with the CMS
 detector during December, 2009 
-at the CERN LHC \pp~ collider operating with \sqrts = 10 \tev~ using
-events containing two electrons and two jets.
-The peak instantaneous luminosity during this run was $2 \times 10^{32}~$cm$^{-2}$s$^{-1}$,
-corresponding to a  mean number of \pp~ interactions per crossing of 7
-for a beam crossing time of 75 ns.
+at the CERN LHC \pp~ collider operating with \sqrts = 10 \tev.
+The peak instantaneous luminosity during this run was $2 \times 10^{32}~$cm$^{-2}$s$^{-1}$
+and the time between collisions was 75 ns,
+corresponding to a  mean number of \pp~ interactions per crossing of 7.
 Current limits from the CDF \cite{bib:cdflq}
 and D0 experiments \cite{bib:d0lq}
 constrain the mass of a first-generation scalar LQ to be $>$ 256 \mgev.
 
 In \pp~ collisions at \sqrts = 10 \tev, LQ's are predominantly pair-produced 
 via gluon gluon fusion with a production
-cross section that is determined by the strong coupling
-constant $\alpha_s$ and that is independent of $\lambda$.
+cross section that depends on  the strong coupling
+constant $\alpha_s$ but is independent of $\lambda$.
 The cross section depends on the spin and the mass
 of the LQ and has been calculated to
-NLO \cite{bib:kramer1}.  The uncertainty on the cross section is
-dominated by uncertainties on the parton distribution functions
-(PDF's) and has been estimated to be 10\%. \cite{bib:kramer2}.
+NLO \cite{bib:kramer1}.  The uncertainty on the cross section has been
+estimated to be 10\%, and 
+is dominated by uncertainties on the parton distribution functions
+(PDF's). \cite{bib:kramer2}.
 
 The CMS detector \cite{bib:cmsjinst} consists of a large-bore
-superconducting solenoid with a 3.8T central field 
+superconducting solenoid with a 3.8 T central field 
 that encloses the central tracking and calorimeter systems. 
 The central tracking system is composed of
 an all-silicon pixel and strip tracker that provide efficient
-reconstructions of vertices and the momenta of charged particles with 
+reconstructions of vertices and of the momenta of charged particles with 
 pseudorapidities \aeta$<2.0$ \cite{bib:geo}.  
 A lead-tungstate scintillating-crystals electromagnetic 
 calorimeter, and a brass-scintillator sampling
@@ -60,11 +62,11 @@ hadron calorimeter are used to measure the momenta of photons,
 electrons, and hadrons.
 The central calorimeters cover \aeta$<1.4$ and the endcap
 calorimeters cover \aeta$<$ 3.0; 
+Forward  sampling calorimeters extend the pseudorapidity
+coverage to high values ($\eta \approx 5$) assuring very good hermeticity.
 The iron yoke of the solenoid's flux-return 
 is instrumented with four stations of muon
 detectors that cover \aeta$<$2.4.
-Forward  sampling calorimeters extend the pseudorapidity
-coverage to high values ($\eta \approx 5$) assuring very good hermeticity.
 Luminosity is measured using the forward calorimeters. 
 The normalization is set by a Van der Meer scan and the 
 uncertainty is estimated to be 10\%. \cite{bib:lumi}.
@@ -75,7 +77,7 @@ Events first must pass a trigger
 from a system of fast electronics that
 reconstructs objects within a subsystem (calorimeter or muon) and
 that makes
-a decision for every beam crossing.  The information from all subsystems
+a decision for every beam crossing (L1).  The information from all subsystems
 for these events are then processed by a
 High Level Trigger (HLT)
 that consists of a farm of commercial cpu's that runs a version
@@ -83,15 +85,16 @@ of the offline reconstruction optimized for timing considerations.
 
 %\input{detector-short}
 
-Events used in this analysis are required to pass a trigger that requires a
+Events used in this analysis are required to pass a L1 trigger that requires a
 cluster of energy in the electromagnetic calorimeter with \et $>$ 10
-\pgev~ and that passes a loose requirement on the ratio of hadronic
+\pgev~ that passes a loose requirement on the ratio of hadronic
 to electromagnetic energy and shower shape requirements on
 the trigger tower in cluster containing the highest energy
-in the first level trigger and
-15 \pgev~ in the HLT.
+in the first level trigger.  The event must also have an electron candidate
+with \et $>$
+15 \pgev~ reconstructed by the HLT that is well-matched to the L1 EM cluster.
 
-Electron candidates, reconstructed offline, are required to have 
+Offline, Electron candidates are required to have 
 a reconstructed electromagnetic cluster with
 transverse energy
 ($\et$) $>$ 25 \pgev, \aeta$< 2.5$, and must be 
@@ -106,15 +109,15 @@ in the calorimeter and from
 reconstructed tracks in the central tracking system.
 Only the two highest \et~ electrons in the event are considered
 in this analysis.
-At least one of these two 
+At least one of these  
 must be well-matched to the HLT electron that triggered the event. 
 The energy scale is set using \zee~ and $\pi_0$ events.
 For electrons within the fiducial region of the calorimeter and with
 \et $> 25$ \pgev, the average reconstruction efficiency is
 measured to be 95\%
 by comparing the rate of \zee~ events, after background subtraction,
-with two electrons, and
-with only 1 electron, passing the full identification requirements.
+with two electrons and
+with only 1 electron passing the full identification requirements.
 Due to a small gap between the barrel and endcap calorimeters at
 \aeta $\approx$ 1.5 and the reduced tracking efficiency beyond
 \aeta~ of 2.0, the efficiency times geometric acceptance for
@@ -123,8 +126,8 @@ More details on the electron selection can be found in
 \cite{bib:cmseid}
 
 
-Jet are reconstructed from the calorimeter energies using an 
-iterative cone algorithm.  
+Jets are reconstructed from the calorimeter energies using an 
+iterative cone algorithm with a cone size of 0.5.  
 The jet energy scale is determined using
 a combination of dijet events and $pp \rightarrow \gamma + {\rm jets}$ events.
 The jet energy resolution is measured using dijet events.
@@ -145,7 +148,7 @@ constructed from a track
 reconstructed in the central tracking system with a good match
 to a reconstructed track in the muon system.  Muons used in this 
 analysis are required to have transverse momentum (\pt) $>$ 25
-\pgev and \aeta $<$ 2.0.  The muon reconstruction efficiency
+\pgev~ and \aeta $<$ 2.0.  The muon reconstruction efficiency
 is measured in data using \zmumu ~ events.
 
 
@@ -165,8 +168,8 @@ we require \st, defined as the
 scalar sum of the magnitudes of the \pt~ of the electrons and jets, be large.
 The value of the \st~ requirement depends on the LQ mass and is given
 in table~\ref{tab:lqeff}.
-The cut value was chosen as the one that is predicted to
-give the optimum signal significance.
+The cut value was chosen to optimize the expected
+signal significance.
 
 The acceptances times efficiency for pair-production
 of scalar LQ's 
@@ -206,7 +209,7 @@ The \ttbar~ background is evaluated both using MC
 (MADGRAPH ~\cite{bib:madgraph} plus full detector simulation)
 and using a data-based technique.  
 Since the W's produced in \ttbar~ events decay to 
-electrons and muons, while LQ decay's are constrained to only
+electrons and muons, while LQ decays are constrained to only
 one generation,  events that pass all the LQ selection requirements,
 except with one electron and one muon instead of two electrons,
 can be used to estimate this background.
@@ -223,16 +226,18 @@ The two methods give similar results.
 The \zee~ background is also evaluated using both MC
 (MADGRAPH plus full detector simulation) and using a data-based method.  
 For the data-based method, we select events passing all the LQ
-selection requirements, but reversing the \mee~ requirement.
+selection requirements, except we reverse the \mee~ requirement.
 The predicted background is then
-$$B_{\zee} = N^{data}_{\mee<100} {{N^{MC}_{\mee>100}}\over{N^{MC}_{\mee<100}}}$$.
+$$B_{\zee} = N^{data}_{\mee<100} {{N^{MC}_{\mee>100}}\over{N^{MC}_{\mee<100}}}$$
+where ${{N^{MC}_{\mee>100}} \ {N^{MC}_{\mee<100}}}=xxx$ and was evaluated
+using MC.
 We observe XXX events in our control sample for an \st~ requirement
 of 460 GeV, for a statistical uncertainty on our background
 predicition of XX\%.
 Both methods give similar results.
 
 The multijet background is evaluated from the data using a sample
-of events with four reconstructed jets with \et $>$ 25 \pgev
+of events with four reconstructed jets with \et $>$ 25 \pgev~
 and passing all LQ selection requirements, but with \st~ calculated
 using the sum of the jet \et's.  The number of events is multiplied
 by the probability for a jet to fake an electron, measured in
@@ -244,8 +249,8 @@ The predicted and measured number of events after each set of requirements
 is given in Tab. ~\ref{tab:eventflow} for an \st~ requirement of 460 GeV.
 The number of events in the data are in good agreement with the
 background-only hypothesis.  In addition, the kinematic distributions
-also agree well. Figure ~\ref{fig:ejmass} shows the electron-jet mass
-from data, predicted backgrounds and for the signal.
+also agree well. Figure ~\ref{fig:ejmass} shows the electron-jet mass distribution
+from data, for the predicted backgrounds and for the signal.
 There are two entrees per event;  the electron-jet pairing that
 minimizes the mass difference between the $e^+$-jet and the $e^-$-jet
 invariant masses is used.
@@ -297,7 +302,7 @@ on the production cross section ($\pm$ 10\%),
 jet energy scale, electron
 identification efficieicies.
 
-Limitson the \lq~ mass  as a function of $\beta$ are given in Figure ~\ref{fig:finalresult}
+Limits on the LQ mass  as a function of $\beta$ are given in Figure ~\ref{fig:finalresult}
 along with the expected limit.  As you can see, our limit is 
 worse than expected, and we may expect interesting things in the future.
 
