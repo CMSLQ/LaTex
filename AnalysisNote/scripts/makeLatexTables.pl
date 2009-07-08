@@ -108,7 +108,7 @@ foreach my $selectedLine (@selectedLines){
     $Den=@t[6];
     $DenErr=@t[7];
     #my @tableLineEntries=(@t[1]," \& ", @t[6],"\$\~\\pm\~\$",@t[7]," \& ", @t[8],"\$\~\\pm\~\$",@t[9], " \& ", @t[10],"\$\~\\pm\~\$",@t[11], "\\\\");
-    my @tableLineEntries=(@t[1]," \& ", sprintf("%.2e",@t[6]),"\$\~\\pm\~\$",sprintf("%.2e",@t[7])," \& ", sprintf("%.1e", $effRel),"\$\~\\pm\~\$",sprintf("%.1e",$effRelErr), " \& ", sprintf("%.1e",@t[10]),"\$\~\\pm\~\$",sprintf("%.1e",@t[11]), "\\\\");
+    my @tableLineEntries=(@t[1]," \& ", sprintf("%.3e",@t[6]),"\$\~\\pm\~\$",sprintf("%.1e",@t[7])," \& ", sprintf("%.2e", $effRel),"\$\~\\pm\~\$",sprintf("%.1e",$effRelErr), " \& ", sprintf("%.1e",@t[10]),"\$\~\\pm\~\$",sprintf("%.1e",@t[11]), "\\\\");
     $sizeOfTableLine = @tableLineEntries;
     foreach my $tableLineEntry (@tableLineEntries){
 	push(@tableLine, $tableLineEntry);
