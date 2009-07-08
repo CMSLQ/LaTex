@@ -97,16 +97,12 @@ foreach my $selectedLine (@selectedLines){
 	$effRel=1;
 	$effRelErr=0;
     } else {
-	if ( $Den == 0 ){
+	if ( $Den == 0 || $Num == 0){
 	    $effRel=0;
 	    $effRelErr=0;	    
 	} else {
 	    $effRel=$Num/$Den;
-	    if ( $Num == 0 ){
-		$effRelErr=sqrt(($DenErr/$Den)**2);		
-	    } else {
-		$effRelErr=sqrt(($NumErr/$Num)**2+($DenErr/$Den)**2);
-	    }
+	    $effRelErr=$effRel*sqrt(($NumErr/$Num)**2+($DenErr/$Den)**2);
 	}
     }
     $Den=@t[6];
